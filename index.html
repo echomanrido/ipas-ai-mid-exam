@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 應用規劃師(中級) 考古題學習系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-section" id="btn-home">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>中級 AI 應用規劃師</h1>
+                    <p>互動式考古題研習系統</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <label class="switch-container">
+                    <span>背題模式</span>
+                    <div class="switch">
+                        <input type="checkbox" id="mode-toggle">
+                        <span class="slider"></span>
+                    </div>
+                </label>
+                
+                <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換主題">
+                    <!-- Sun Icon (Light) -->
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 12h4.5M9.75 3.75h4.5m-4.5 16.5h4.5M2.25 12h19.5M3.75 9.75v4.5m16.5-4.5v4.5m-15-7.5l1.06-1.06m13.78 13.78l-1.06 1.06m-13.78 0l1.06 1.06m13.78-13.78l-1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                    </svg>
+                    <!-- Moon Icon (Dark) -->
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-secondary hidden" id="btn-back-landing">返回大綱</button>
+            </div>
+        </header>
+
+        <!-- Main Wrapper -->
+        <main class="main-wrapper">
+            <!-- SUBJECT SELECTOR (LANDING PAGE) -->
+            <section class="landing-panel" id="landing-panel">
+                <h2 class="landing-title">AI 應用規劃師中級能力鑑定考古題</h2>
+                <p class="landing-desc">本系統收錄 114 年與 115 年能力鑑定考試科目之官方試題。針對每一題提供詳細的解答、解題邏輯與技術背景，並針對涉及的機器學習與人工智慧方法提供運作原理說明與生活/業務應用實例，幫助您深度掌握核心技術點。</p>
+                
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="114_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">114 年第二次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="114_2_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">114 年第二次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_3">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">115 年第一次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_3">未開始</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" id="btn-clear-all" style="margin-top: 1.5rem; color: var(--error)">
+                    🗑️ 清除所有答題紀錄
+                </button>
+            </section>
+
+            <!-- PRACTICE CONTAINER -->
+            <section class="practice-container" id="practice-container">
+                <!-- Question Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title" id="sidebar-subject-title">學科名稱</h3>
+                        <div class="progress-container">
+                            <div class="stats-row" style="margin-bottom: 0.25rem;">
+                                <span>測驗進度</span>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progress-bar"></div>
+                            </div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stats-item">答對: <span id="stat-correct" style="color: var(--success)">0</span></div>
+                            <div class="stats-item">答錯: <span id="stat-incorrect" style="color: var(--error)">0</span></div>
+                            <div class="stats-item">未答: <span id="stat-unanswered">50</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-header" style="padding-bottom: 0.5rem; border-bottom: none;">
+                        <input type="text" class="search-input" id="search-input" placeholder="搜尋題目或ML方法...">
+                        <div class="filter-row">
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-all" title="顯示所有題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: var(--primary-light); color: var(--primary); border-color: var(--primary);">全部</button>
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-wrong" title="僅顯示答錯題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem;">僅錯題</button>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-grid-wrapper">
+                        <div class="questions-grid" id="questions-grid">
+                            <!-- Dynamically populated numbers 1-50 -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-footer">
+                        <button class="btn btn-secondary" id="btn-reset-current" style="width: 100%; font-size: 0.8rem;">重置本科目紀錄</button>
+                    </div>
+                </aside>
+
+                <!-- Workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb">
+                        <a id="breadcrumb-home">首頁</a> &gt; <span id="breadcrumb-subject">當前學科</span> &gt; <span>第 <span id="current-q-index">1</span> 題</span>
+                    </div>
+                    
+                    <!-- Question Card -->
+                    <div class="card">
+                        <div class="question-header">
+                            <span class="q-badge" id="question-number-badge">Question 1</span>
+                            <span class="q-badge" id="question-ml-method-badge" style="background-color: var(--primary-light); color: var(--primary); display: none;">TF-IDF</span>
+                        </div>
+                        <div class="question-text" id="question-text">
+                            讀取中...
+                        </div>
+                        
+                        <div class="options-list" id="options-list">
+                            <!-- Options (A) (B) (C) (D) -->
+                        </div>
+                        
+                        <!-- Nav buttons below options (before answer show) -->
+                        <div class="nav-actions">
+                            <button class="btn btn-secondary" id="btn-prev-q">上一題</button>
+                            <button class="btn btn-primary" id="btn-next-q">下一題</button>
+                        </div>
+                    </div>
+
+                    <!-- Explanation Panel -->
+                    <div class="explanation-panel" id="explanation-panel">
+                        <div class="result-banner" id="result-banner">
+                            <span id="result-icon">✓</span> <span id="result-text">回答正確！</span>
+                        </div>
+                        
+                        <h3 class="panel-title">💡 答案與解析</h3>
+                        <div class="explanation-text" id="explanation-text">
+                            詳細的解題邏輯與錯誤選項分析...
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <!-- Machine Learning Method Details -->
+                        <div class="method-box">
+                            <div class="method-header">
+                                <span class="method-name" id="method-name">DBSCAN</span>
+                                <span class="q-badge" style="background-color: var(--primary); color: white;">核心 ML 技術</span>
+                            </div>
+                            <div class="method-explanation" id="method-explanation">
+                                DBSCAN 是基於密度的分群方法...
+                            </div>
+                        </div>
+                        
+                        <!-- Examples section -->
+                        <h3 class="panel-title">🚀 生活與業務應用場景實例</h3>
+                        <div class="examples-grid" id="examples-grid">
+                            <div class="example-card">
+                                <h4 class="example-title" id="example1-title">實例一</h4>
+                                <p class="example-content" id="example1-content">實例內容描述...</p>
+                            </div>
+                            <div class="example-card">
+                                <h4 class="example-title" id="example2-title">實例二</h4>
+                                <p class="example-content" id="example2-content">實例內容描述...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script imports -->
+    <script src="questions_data.js"></script>
+    <script>
+        // Web Application Application Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            // State
+            let currentSubject = null;
+            let currentQuestionIdx = 0; // 0-based
+            let filterMode = "all"; // 'all' or 'wrong'
+            let searchKeyword = "";
+            let userProgress = {}; // subjectKey -> { questionId -> { userAnswer, isCorrect } }
+            let studyMode = false; // true = 背題模式 (直接看答案)
+
+            // LocalStorage loading
+            if (localStorage.getItem("ai_exam_user_progress")) {
+                try {
+                    userProgress = JSON.parse(localStorage.getItem("ai_exam_user_progress"));
+                } catch(e) {
+                    userProgress = {};
+                }
+            }
+
+            // Theme Management
+            const getPreferredTheme = () => {
+                return localStorage.getItem("theme") || "light";
+            };
+            
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                if (theme === "dark") {
+                    document.getElementById("sun-icon").classList.remove("hidden");
+                    document.getElementById("moon-icon").classList.add("hidden");
+                } else {
+                    document.getElementById("sun-icon").classList.add("hidden");
+                    document.getElementById("moon-icon").classList.remove("hidden");
+                }
+            };
+
+            setTheme(getPreferredTheme());
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                setTheme(currentTheme === "dark" ? "light" : "dark");
+            });
+
+            // UI Elements
+            const landingPanel = document.getElementById("landing-panel");
+            const practiceContainer = document.getElementById("practice-container");
+            const btnBackLanding = document.getElementById("btn-back-landing");
+            const sidebarSubjectTitle = document.getElementById("sidebar-subject-title");
+            const questionsGrid = document.getElementById("questions-grid");
+            const questionNumberBadge = document.getElementById("question-number-badge");
+            const questionMlBadge = document.getElementById("question-ml-method-badge");
+            const questionText = document.getElementById("question-text");
+            const optionsList = document.getElementById("options-list");
+            const explanationPanel = document.getElementById("explanation-panel");
+            const explanationText = document.getElementById("explanation-text");
+            const resultBanner = document.getElementById("result-banner");
+            const resultIcon = document.getElementById("result-icon");
+            const resultText = document.getElementById("result-text");
+            const methodName = document.getElementById("method-name");
+            const methodExplanation = document.getElementById("method-explanation");
+            const example1Title = document.getElementById("example1-title");
+            const example1Content = document.getElementById("example1-content");
+            const example2Title = document.getElementById("example2-title");
+            const example2Content = document.getElementById("example2-content");
+            const btnPrevQ = document.getElementById("btn-prev-q");
+            const btnNextQ = document.getElementById("btn-next-q");
+            const breadcrumbSubject = document.getElementById("breadcrumb-subject");
+            const modeToggle = document.getElementById("mode-toggle");
+            const searchInput = document.getElementById("search-input");
+            const btnFilterAll = document.getElementById("btn-filter-all");
+            const btnFilterWrong = document.getElementById("btn-filter-wrong");
+            const btnResetCurrent = document.getElementById("btn-reset-current");
+            const btnClearAll = document.getElementById("btn-clear-all");
+
+            // Subject Cards Init progress status on Landing Panel
+            const updateLandingProgress = () => {
+                document.querySelectorAll(".subj-progress-status").forEach(span => {
+                    const key = span.getAttribute("data-subj");
+                    if (userProgress[key]) {
+                        const total = 50;
+                        const answered = Object.keys(userProgress[key]).length;
+                        const correct = Object.values(userProgress[key]).filter(v => v.isCorrect).length;
+                        if (answered === 0) {
+                            span.textContent = "未開始";
+                            span.style.color = "var(--text-muted)";
+                        } else if (answered === total) {
+                            span.textContent = `已完成 (得分率: ${Math.round(correct/total*100)}%)`;
+                            span.style.color = "var(--success)";
+                        } else {
+                            span.textContent = `答題中 (${answered}/${total})`;
+                            span.style.color = "var(--primary)";
+                        }
+                    } else {
+                        span.textContent = "未開始";
+                        span.style.color = "var(--text-muted)";
+                    }
+                });
+            };
+            updateLandingProgress();
+
+            // Mode Toggle
+            modeToggle.addEventListener("change", (e) => {
+                studyMode = e.target.checked;
+                renderQuestion();
+            });
+
+            // Back to main landing
+            const showLanding = () => {
+                landingPanel.classList.remove("hidden");
+                practiceContainer.style.display = "none";
+                btnBackLanding.classList.add("hidden");
+                currentSubject = null;
+                updateLandingProgress();
+            };
+            document.getElementById("btn-home").addEventListener("click", showLanding);
+            btnBackLanding.addEventListener("click", showLanding);
+            document.getElementById("breadcrumb-home").addEventListener("click", showLanding);
+
+            // Subject Select
+            document.querySelectorAll(".subject-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    const subjKey = card.getAttribute("data-subject");
+                    if (typeof EXAM_DATA !== 'undefined' && EXAM_DATA[subjKey]) {
+                        loadSubject(subjKey);
+                    } else {
+                        alert("尚未加載此考古題資料。");
+                    }
+                });
+            });
+
+            const loadSubject = (subjKey) => {
+                currentSubject = subjKey;
+                currentQuestionIdx = 0;
+                filterMode = "all";
+                searchKeyword = "";
+                searchInput.value = "";
+                
+                // Toggle active button style
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+
+                if (!userProgress[currentSubject]) {
+                    userProgress[currentSubject] = {};
+                }
+
+                sidebarSubjectTitle.textContent = EXAM_DATA[currentSubject].title;
+                breadcrumbSubject.textContent = EXAM_DATA[currentSubject].title.split(" - ")[0];
+                
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "flex";
+                btnBackLanding.classList.remove("hidden");
+
+                renderSidebarGrid();
+                renderQuestion();
+                updateStats();
+            };
+
+            // Sidebar Filtering
+            btnFilterAll.addEventListener("click", () => {
+                filterMode = "all";
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            btnFilterWrong.addEventListener("click", () => {
+                filterMode = "wrong";
+                btnFilterWrong.style.backgroundColor = "var(--error-light)";
+                btnFilterWrong.style.color = "var(--error)";
+                btnFilterWrong.style.borderColor = "var(--error)";
+                btnFilterAll.style.backgroundColor = "transparent";
+                btnFilterAll.style.color = "var(--text-secondary)";
+                btnFilterAll.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.toLowerCase();
+                renderSidebarGrid();
+            });
+
+            // Sidebar Grid rendering
+            const renderSidebarGrid = () => {
+                questionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject][qId];
+                    
+                    // Match Filters
+                    if (filterMode === "wrong") {
+                        if (!progress || progress.isCorrect) return;
+                    }
+                    
+                    if (searchKeyword) {
+                        const questionMatch = q.question.toLowerCase().includes(searchKeyword);
+                        const methodMatch = q.ml_method && q.ml_method.toLowerCase().includes(searchKeyword);
+                        if (!questionMatch && !methodMatch) return;
+                    }
+
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    // Style by answer state
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        // Update active state in UI
+                        document.querySelectorAll(".q-btn").forEach(b => b.classList.remove("active"));
+                        qBtn.classList.add("active");
+                        renderQuestion();
+                    });
+                    
+                    questionsGrid.appendChild(qBtn);
+                });
+            };
+
+            // Main Area rendering
+            const renderQuestion = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const q = subject.questions[currentQuestionIdx];
+                
+                document.getElementById("current-q-index").textContent = q.id;
+                questionNumberBadge.textContent = `Question ${q.id}`;
+                questionText.textContent = q.question;
+                
+                if (q.ml_method) {
+                    questionMlBadge.textContent = q.ml_method;
+                    questionMlBadge.style.display = "inline-block";
+                } else {
+                    questionMlBadge.style.display = "none";
+                }
+
+                // Render Options
+                optionsList.innerHTML = "";
+                const userChoice = userProgress[currentSubject][q.id]?.userAnswer;
+                const isAnswered = userChoice !== undefined;
+                
+                Object.keys(q.options).forEach(letter => {
+                    const optionItem = document.createElement("div");
+                    optionItem.className = "option-item";
+                    
+                    const optionLetter = document.createElement("span");
+                    optionLetter.className = "option-letter";
+                    optionLetter.textContent = letter;
+                    
+                    const optionTextSpan = document.createElement("span");
+                    optionTextSpan.className = "option-text";
+                    optionTextSpan.textContent = q.options[letter];
+                    
+                    optionItem.appendChild(optionLetter);
+                    optionItem.appendChild(optionTextSpan);
+                    
+                    // Style options depending on answer states
+                    if (studyMode) {
+                        // In study mode, show the correct answer immediately
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct");
+                        }
+                    } else if (isAnswered) {
+                        // User already answered
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct"); // green for correct
+                        } else if (letter === userChoice) {
+                            optionItem.classList.add("incorrect"); // red for selected wrong
+                        }
+                    } else {
+                        // Interactive select event
+                        optionItem.addEventListener("click", () => handleSelectOption(letter));
+                    }
+                    
+                    optionsList.appendChild(optionItem);
+                });
+
+                // Render Explanation Panel
+                if (studyMode || isAnswered) {
+                    explanationPanel.style.display = "block";
+                    explanationText.textContent = q.explanation;
+                    
+                    // Show correct/incorrect indicator if answered in test mode
+                    if (isAnswered && !studyMode) {
+                        const isCorrect = userProgress[currentSubject][q.id].isCorrect;
+                        resultBanner.className = isCorrect ? "result-banner correct" : "result-banner incorrect";
+                        resultIcon.textContent = isCorrect ? "✓" : "✗";
+                        resultText.textContent = isCorrect ? "回答正確！" : `回答錯誤！正確答案是 (${q.answer})`;
+                    } else {
+                        // Study mode or pure display
+                        resultBanner.className = "result-banner correct";
+                        resultIcon.textContent = "★";
+                        resultText.textContent = `參考答案是 (${q.answer})`;
+                    }
+
+                    // Render ML info
+                    methodName.textContent = q.ml_method || "相關 AI 技術";
+                    methodExplanation.textContent = q.ml_method_explanation || "此題目涉及特定的機器學習架構或評估指標。";
+                    
+                    example1Title.textContent = "應用情境一";
+                    example1Content.textContent = q.examples && q.examples[0] ? q.examples[0] : "生活應用例子一";
+                    example2Title.textContent = "應用情境二";
+                    example2Content.textContent = q.examples && q.examples[1] ? q.examples[1] : "生活應用例子二";
+                } else {
+                    explanationPanel.style.display = "none";
+                }
+
+                // Update prev / next buttons
+                btnPrevQ.disabled = currentQuestionIdx === 0;
+                btnNextQ.disabled = currentQuestionIdx === subject.questions.length - 1;
+            };
+
+            const handleSelectOption = (letter) => {
+                const q = EXAM_DATA[currentSubject].questions[currentQuestionIdx];
+                const isCorrect = letter === q.answer;
+                
+                userProgress[currentSubject][q.id] = {
+                    userAnswer: letter,
+                    isCorrect: isCorrect
+                };
+                
+                // Save to local storage
+                localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                
+                // Re-render
+                renderQuestion();
+                renderSidebarGrid();
+                updateStats();
+            };
+
+            // Stats Update
+            const updateStats = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const total = subject.questions.length;
+                const progressObj = userProgress[currentSubject];
+                
+                const answered = Object.keys(progressObj).length;
+                const correct = Object.values(progressObj).filter(v => v.isCorrect).length;
+                const incorrect = answered - correct;
+                const unanswered = total - answered;
+                
+                const pct = Math.round((answered / total) * 100);
+                
+                document.getElementById("progress-percent").textContent = `${pct}%`;
+                document.getElementById("progress-bar").style.width = `${pct}%`;
+                document.getElementById("stat-correct").textContent = correct;
+                document.getElementById("stat-incorrect").textContent = incorrect;
+                document.getElementById("stat-unanswered").textContent = unanswered;
+            };
+
+            // Previous / Next button controls
+            btnPrevQ.addEventListener("click", () => {
+                if (currentQuestionIdx > 0) {
+                    currentQuestionIdx--;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            btnNextQ.addEventListener("click", () => {
+                const subject = EXAM_DATA[currentSubject];
+                if (currentQuestionIdx < subject.questions.length - 1) {
+                    currentQuestionIdx++;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            // Reset current subject history
+            btnResetCurrent.addEventListener("click", () => {
+                if (confirm("確定要重置本科目的所有答題紀錄嗎？此動作無法復原。")) {
+                    userProgress[currentSubject] = {};
+                    localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                    loadSubject(currentSubject);
+                }
+            });
+
+            // Clear all database history
+            btnClearAll.addEventListener("click", () => {
+                if (confirm("確定要清除本系統中的所有科目練習紀錄嗎？")) {
+                    userProgress = {};
+                    localStorage.removeItem("ai_exam_user_progress");
+                    updateLandingProgress();
+                    alert("已清除所有練習紀錄。");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
