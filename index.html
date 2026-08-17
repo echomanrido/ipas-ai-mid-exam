@@ -180,6 +180,48 @@
                                 DBSCAN 是基於密度的分群方法...
                             </div>
                         </div>
+
+                        <!-- Method Comparison Section -->
+                        <div class="method-box" id="comparison-box" style="background-color: var(--accent-light); border-left-color: var(--accent);">
+                            <div class="method-header">
+                                <span class="method-name" style="color: var(--accent);">⚙️ 技術對比與應用領域</span>
+                                <span class="q-badge" style="background-color: var(--accent); color: white;">方法比較</span>
+                            </div>
+                            <div class="method-explanation" id="comparison-explanation" style="white-space: pre-wrap;">
+                                比較正確答案與其他方法的應用差異...
+                            </div>
+                        </div>
+
+                        <!-- Knowledge Card Section -->
+                        <h3 class="panel-title">📚 知識擴充圖卡</h3>
+                        <div class="card" style="padding: 1.75rem; margin-bottom: 2rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--primary); display: flex; align-items: center; gap: 0.25rem;">
+                                    🏷️ 核心關鍵字 (Keywords)
+                                </h4>
+                                <div class="tag-container" id="keywords-tags">
+                                    <!-- Keyword tags -->
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: #7c3aed; display: flex; align-items: center; gap: 0.25rem;">
+                                    🧠 延伸應用與技術 (Extended Applications)
+                                </h4>
+                                <div id="extended-tech-list">
+                                    <!-- Extended tech list -->
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent); display: flex; align-items: center; gap: 0.25rem;">
+                                    📖 相關領域術語 (Terminology)
+                                </h4>
+                                <div class="tag-container" id="terminology-tags">
+                                    <!-- Terminology tags -->
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- Examples section -->
                         <h3 class="panel-title">🚀 生活與業務應用場景實例</h3>
@@ -517,6 +559,68 @@
                     // Render ML info
                     methodName.textContent = q.ml_method || "相關 AI 技術";
                     methodExplanation.textContent = q.ml_method_explanation || "此題目涉及特定的機器學習架構或評估指標。";
+                    
+                    // Render comparison
+                    const comparisonBox = document.getElementById("comparison-box");
+                    const comparisonExplanation = document.getElementById("comparison-explanation");
+                    if (q.comparison) {
+                        comparisonBox.style.display = "block";
+                        comparisonExplanation.textContent = q.comparison;
+                    } else {
+                        comparisonBox.style.display = "none";
+                    }
+
+                    // Render keywords (Tags)
+                    const keywordsTags = document.getElementById("keywords-tags");
+                    keywordsTags.innerHTML = "";
+                    if (q.keywords && q.keywords.length > 0) {
+                        q.keywords.forEach(kw => {
+                            const tag = document.createElement("span");
+                            tag.className = "keyword-tag";
+                            tag.textContent = kw;
+                            keywordsTags.appendChild(tag);
+                        });
+                    } else {
+                        keywordsTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無關鍵字資訊</span>";
+                    }
+
+                    // Render extended tech list
+                    const extTechList = document.getElementById("extended-tech-list");
+                    extTechList.innerHTML = "";
+                    if (q.extended_tech && q.extended_tech.length > 0) {
+                        q.extended_tech.forEach(tech => {
+                            const item = document.createElement("div");
+                            item.className = "extended-tech-item";
+                            
+                            const nameSpan = document.createElement("div");
+                            nameSpan.className = "extended-tech-name";
+                            nameSpan.textContent = tech.name;
+                            
+                            const descSpan = document.createElement("div");
+                            descSpan.className = "extended-tech-desc";
+                            descSpan.textContent = tech.desc;
+                            
+                            item.appendChild(nameSpan);
+                            item.appendChild(descSpan);
+                            extTechList.appendChild(item);
+                        });
+                    } else {
+                        extTechList.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無延伸應用技術</span>";
+                    }
+
+                    // Render terminology (Tags)
+                    const termTags = document.getElementById("terminology-tags");
+                    termTags.innerHTML = "";
+                    if (q.terminology && q.terminology.length > 0) {
+                        q.terminology.forEach(term => {
+                            const tag = document.createElement("span");
+                            tag.className = "term-tag";
+                            tag.textContent = term;
+                            termTags.appendChild(tag);
+                        });
+                    } else {
+                        termTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無領域術語資訊</span>";
+                    }
                     
                     example1Title.textContent = "應用情境一";
                     example1Content.textContent = q.examples && q.examples[0] ? q.examples[0] : "生活應用例子一";

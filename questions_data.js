@@ -18,6 +18,35 @@ const EXAM_DATA = {
         "examples": [
           "在金融市場領域，投資機構透過爬蟲技術收集大量財經新聞、社群平台上的股票討論區文章，並利用情感分析來判斷市場對特定公司或產業的看多與看空情緒，進而作為演算法交易策略中的一項量化指標，以預測短期股價波動。",
           "在政治與公共政策管理中，政府單位可藉由情感分析即時監測社群網路上對於新推行政策或重大社會事件的民意反應。透過量化民眾的滿意或不滿意情緒，相關部門能迅速掌握輿情趨勢，及早擬定公關應對策略或調整施政方向。"
+        ],
+        "comparison": "情感分析（Sentiment Analysis）主要用於識別文本的情緒極性（如正負向），通常應用於社群輿情監測與品牌管理；相較之下，文本摘要（Text Summarization）旨在提取長文本的核心重點，適用於新聞快速閱讀與會議記錄；而意圖辨識（Intent Recognition）則著重於理解使用者當下的具體需求（如購買或投訴），廣泛應用於智能客服與對話機器人系統中。這三者雖同屬 NLP 領域，但在商業價值與落地場景上各有不同的側重點。",
+        "keywords": [
+          "情感分析 (Sentiment Analysis)",
+          "自然語言處理 (Natural Language Processing)",
+          "輿情監測 (Public Opinion Monitoring)",
+          "情緒極性 (Emotional Polarity)",
+          "文本分類 (Text Classification)"
+        ],
+        "extended_tech": [
+          {
+            "name": "基於方面的情感分析 (Aspect-Based Sentiment Analysis)",
+            "desc": "此技術能針對文本中的特定實體或屬性（如餐廳的服務或餐點）進行更細粒度的情感分析，幫助企業精準定位產品的優缺點，從而進行具體改善。"
+          },
+          {
+            "name": "情緒識別 (Emotion Recognition)",
+            "desc": "有別於簡單的正負面情感，情緒識別能進一步分類出喜悅、憤怒、悲傷或恐懼等多種細微情緒，常應用於心理健康監測與高階互動式 AI 客服中。"
+          },
+          {
+            "name": "意圖分類 (Intent Classification)",
+            "desc": "在對話系統中，透過意圖分類可以快速判斷使用者發言的目的（如退貨、查詢進度），從而自動觸發對應的業務流程，大幅減少人工客服的負載。"
+          }
+        ],
+        "terminology": [
+          "Sentiment Polarity",
+          "Aspect Extraction",
+          "Opinion Mining",
+          "Emotion Detection",
+          "Subjectivity Analysis"
         ]
       },
       {
@@ -36,6 +65,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫療影像報告系統中，醫院利用基於 Transformer 的架構將醫生口述的語音或凌亂的病例紀錄自動轉換為結構化的文字報告。模型能夠根據長篇病史上下文，精準辨識出專業醫療術語及病徵，減少人為撰寫錯誤。",
           "在軟體開發領域，許多企業導入基於 Transformer 架構的 AI 程式碼輔助工具（如 GitHub Copilot）。當開發者輸入部分程式碼或註解時，模型能透過捕捉全域程式碼的邏輯關聯，準確預測並自動補全後續的程式碼片段，大幅提升開發效率。"
+        ],
+        "comparison": "Transformer 架構透過自注意力機制解決了長距離依賴的問題，主要應用於機器翻譯與大型語言模型領域；相較之下，卷積神經網路（CNN）擅長提取局部空間特徵，通常應用於影像辨識與電腦視覺場景；而循環神經網路（RNN/LSTM）雖然也能處理序列資料，但因循序運算的特性容易產生梯度消失，適合處理較短的時間序列預測（如短期股價或語音辨識），在長文本理解上遠不及 Transformer 高效。",
+        "keywords": [
+          "自注意力機制 (Self-Attention Mechanism)",
+          "序列處理 (Sequence Processing)",
+          "長距離依賴 (Long-range Dependencies)",
+          "機器翻譯 (Machine Translation)",
+          "深度學習架構 (Deep Learning Architecture)"
+        ],
+        "extended_tech": [
+          {
+            "name": "預訓練語言模型 (Pre-trained Language Models)",
+            "desc": "基於 Transformer 的預訓練模型（如 BERT 或 GPT），能在大量無標註文本上學習語言通則，隨後只需微調即可應用於各類 NLP 任務，是目前企業 AI 的主流做法。"
+          },
+          {
+            "name": "視覺變換器 (Vision Transformer, ViT)",
+            "desc": "將 Transformer 的注意力機制引入影像處理領域，將圖片切割為多個區塊並視為序列，在許多大型視覺識別任務中展現出超越傳統 CNN 的優異效能。"
+          },
+          {
+            "name": "多模態變換器 (Multimodal Transformer)",
+            "desc": "能夠同時處理並融合文字、圖像與聲音等多種模態資料的 Transformer 架構，廣泛應用於影音自動加上字幕或跨模態內容檢索系統中。"
+          }
+        ],
+        "terminology": [
+          "Positional Encoding",
+          "Multi-Head Attention",
+          "Encoder-Decoder",
+          "Contextual Embeddings",
+          "Sequence-to-Sequence"
         ]
       },
       {
@@ -54,6 +112,35 @@ const EXAM_DATA = {
         "examples": [
           "在搜尋引擎優化（SEO）與資訊檢索系統中，工程師可運用基於 MLM 訓練出來的語意向量模型來理解使用者查詢的真實意圖。即使使用者輸入的關鍵字存在錯字或語意不清，模型也能憑藉上下文還原查詢本意，提供更精準的搜尋結果。",
           "在網路資安防禦中，企業利用類似 MLM 的概念來訓練異常日誌偵測系統。系統會學習正常網路行為日誌的序列上下文特徵，當遇到一段被刻意竄改或特徵隱藏的攻擊日誌時，模型能透過雙向關聯性分析指出日誌序列中的不合理之處，從而即時發布資安警報。"
+        ],
+        "comparison": "遮罩語言模型（MLM，如 BERT）透過雙向上下文來預測缺失字詞，非常適合需要深度理解語意的任務，例如文本分類與實體辨識；相對地，自迴歸語言模型（Autoregressive Model，如 GPT）則是基於前面的字詞來預測下一個字，這種單向生成的特性使其在文本創作、對話生成與文章續寫等任務上表現卓越。兩者雖然都是預訓練技術，但 MLM 重於「理解」，而自迴歸模型重於「生成」，在業務落地時應依據任務本質進行選擇。",
+        "keywords": [
+          "遮罩語言模型 (Masked Language Model)",
+          "雙向上下文 (Bidirectional Context)",
+          "預訓練 (Pre-training)",
+          "自監督學習 (Self-supervised Learning)",
+          "文本理解 (Text Understanding)"
+        ],
+        "extended_tech": [
+          {
+            "name": "下一句預測 (Next Sentence Prediction, NSP)",
+            "desc": "這是 BERT 預訓練中的另一項關鍵任務，讓模型判斷兩段文本在原文中是否相鄰，有助於模型理解句子與句子之間的邏輯關聯，應用於問答系統尤為有效。"
+          },
+          {
+            "name": "動態遮罩 (Dynamic Masking)",
+            "desc": "在訓練過程中，每次將相同文本輸入模型時皆隨機產生不同的遮罩位置，這能迫使模型學習到更豐富的上下文變化，進一步提升語意表徵的泛化能力。"
+          },
+          {
+            "name": "文本相似度比對 (Semantic Textual Similarity)",
+            "desc": "利用 MLM 訓練出的深層語意向量，企業可以快速比對兩篇文件的相似程度，廣泛應用於合約比對、重複問題偵測以及內容推薦系統中。"
+          }
+        ],
+        "terminology": [
+          "Contextual Representation",
+          "Autoencoding",
+          "Self-attention",
+          "Fine-tuning",
+          "Tokenization"
         ]
       },
       {
@@ -72,6 +159,35 @@ const EXAM_DATA = {
         "examples": [
           "電子商務平台的商品推薦系統利用詞向量技術，將使用者的瀏覽紀錄、購物清單與商品標籤轉化為高維向量。透過計算不同商品向量之間的餘弦相似度，系統可以向消費者精準推薦與其購物車中商品最具語意關聯性的互補產品。",
           "在人力資源招募系統中，企業運用詞向量將求職者的履歷文字及企業的職缺描述轉換為數值表示。這樣可以自動比對並篩選出技能描述上雖然用詞不同（例如『軟體工程師』與『程式設計師』）但實質能力高度匹配的潛在候選人，大幅減少人工審閱時間。"
+        ],
+        "comparison": "GloVe 與 Word2Vec 皆屬於靜態詞向量技術，能將詞彙轉換為固定向量以捕捉語意相似度，常應用於早期的文本分類或簡單推薦系統中；相較之下，動態詞向量模型（如 ELMo 或 BERT）則會根據上下文即時賦予同一個詞彙不同的向量表示（解決一詞多義問題），在處理複雜語境與高階問答任務時展現出壓倒性的優勢，現今已成為企業級 NLP 應用的標準配備。",
+        "keywords": [
+          "詞向量 (Word Embedding)",
+          "共現統計 (Co-occurrence Statistics)",
+          "全局矩陣 (Global Matrix)",
+          "上下文預測 (Context Prediction)",
+          "語意表示 (Semantic Representation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "FastText",
+            "desc": "這是一種改進的詞向量模型，將詞彙拆解為子詞（Subword）的 N-gram 組合，這使其能夠有效處理拼寫錯誤與未登錄詞（OOV），特別適合處理構詞複雜的語言。"
+          },
+          {
+            "name": "餘弦相似度分析 (Cosine Similarity Analysis)",
+            "desc": "藉由計算兩個詞向量在空間中的夾角餘弦值，企業可量化文本之間的語意接近程度，常被用於文件分群與檢索增強系統中的初步過濾。"
+          },
+          {
+            "name": "文件嵌入 (Doc2Vec)",
+            "desc": "延伸自 Word2Vec，能將整篇文件或段落轉換為單一的高維向量表示，這對於長篇新聞分類、專利文件檢索或社群貼文分析具有極大的應用價值。"
+          }
+        ],
+        "terminology": [
+          "Skip-gram",
+          "Continuous Bag of Words (CBOW)",
+          "Co-occurrence Matrix",
+          "Dimensionality Reduction",
+          "Out-of-Vocabulary (OOV)"
         ]
       },
       {
@@ -90,6 +206,35 @@ const EXAM_DATA = {
         "examples": [
           "在數位圖書館的全文檢索系統中，TF-IDF 廣泛應用於對數以萬計的學術論文進行自動關鍵字提取與索引建置。當使用者輸入查詢關鍵字時，系統利用此演算法快速計算各篇論文的相關性得分，將最相關的文獻排列在搜尋結果的最前方。",
           "新聞媒體平台透過 TF-IDF 演算法自動對每日產出的大量新聞稿件進行主題標籤（Tagging）。藉由擷取每篇新聞中權重最高的幾個關鍵字，系統可以自動將新聞分類至特定的版面，並推播給關注這些主題的讀者群體。"
+        ],
+        "comparison": "TF-IDF 是一種基於字詞統計的特徵提取技術，運算快速且直觀，常應用於早期的搜尋引擎與簡單的文件關鍵字擷取；相較之下，BM25 演算法改良了 TF-IDF 對長文本權重放大的缺陷，成為現代搜尋引擎（如 Elasticsearch）的預設算法；而近年流行的密集檢索（Dense Retrieval）技術則是利用深度神經網路將文本轉為語意向量，能理解字面不同但語意相同的查詢，應用於高階 RAG 系統的知識檢索中。",
+        "keywords": [
+          "詞頻-逆文件頻率 (TF-IDF)",
+          "特徵提取 (Feature Extraction)",
+          "資訊檢索 (Information Retrieval)",
+          "關鍵字擷取 (Keyword Extraction)",
+          "文件正規化 (Document Normalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "BM25 演算法 (Okapi BM25)",
+            "desc": "一種基於機率檢索框架的改進算法，引入了文本長度懲罰與詞頻飽和機制，能有效避免長文本或重複字詞導致的分數異常，是業界搜尋引擎的主力配置。"
+          },
+          {
+            "name": "文字雲視覺化 (Word Cloud Visualization)",
+            "desc": "企業常將 TF-IDF 計算出的高權重關鍵字，結合視覺化套件生成文字雲圖表，幫助行銷人員一眼看出近期社群討論的核心話題與消費者關注焦點。"
+          },
+          {
+            "name": "停用詞過濾 (Stop Words Removal)",
+            "desc": "在進行 TF-IDF 運算前，必須先過濾掉「的、是、在」等毫無區分力的常見助詞或代名詞，這是確保統計權重能精準反映核心語意的重要前處理步驟。"
+          }
+        ],
+        "terminology": [
+          "Term Frequency",
+          "Inverse Document Frequency",
+          "Bag-of-Words",
+          "Document Frequency",
+          "Vector Space Model"
         ]
       },
       {
@@ -108,6 +253,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧型手機的虛擬鍵盤輸入法中，系統利用 N-gram 語言模型來提供「下一個字詞預測」的功能。當使用者打出「今天天氣很」，模型會根據過去龐大的語料統計，瞬間計算出後接「好」或「熱」的機率最高，進而將其顯示在建議列中供使用者選取。",
           "在早期的拼字檢查與文法糾錯軟體中，N-gram 被用來識別不合理或機率極低的詞彙組合。如果使用者輸入了一個在語料庫中從未出現過的 Bigram（例如不符合常理的字詞搭配），系統便會利用統計機率異常來標記該處可能存在拼寫或文法錯誤。"
+        ],
+        "comparison": "N-gram 模型透過統計固定長度相鄰詞彙的機率來預測文字，運算負載極低，適合用於早期的拼寫檢查與手機輸入法聯想；相較之下，LSTM 等循環神經網路能透過記憶單元（Memory Cell）記住更早之前的資訊，適用於機器翻譯與語音辨識；而現代的 Transformer 模型則憑藉強大的注意力機制，能全域性地捕捉超長文本中的複雜語意與長距離依賴，成為生成式 AI（如 ChatGPT）對話連貫順暢的核心基礎。",
+        "keywords": [
+          "N-gram 語言模型 (N-gram Language Model)",
+          "馬可夫假設 (Markov Assumption)",
+          "長距離依賴 (Long-range Dependencies)",
+          "統計機率 (Statistical Probability)",
+          "自然語言生成 (Natural Language Generation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "平滑化技術 (Smoothing Techniques)",
+            "desc": "在統計語言模型中，為了解決語料庫中未曾出現過的詞彙組合（導致機率為零）的問題，會引入拉普拉斯平滑或 Kneser-Ney 平滑技術，將部分機率分配給未知詞組以維持系統強健性。"
+          },
+          {
+            "name": "困惑度評估 (Perplexity Evaluation)",
+            "desc": "這是評估語言模型預測能力的核心量化指標。困惑度越低，代表模型對測試句子的預測機率越高、不確定性越小，企業常以此標準來比較不同語言模型的優劣。"
+          },
+          {
+            "name": "隱馬可夫模型 (Hidden Markov Model, HMM)",
+            "desc": "結合了狀態轉移機率與觀察機率的統計模型，除了能處理序列資料外，更廣泛應用於早期的詞性標註（POS Tagging）與語音辨識領域的聲學建模中。"
+          }
+        ],
+        "terminology": [
+          "Markov Property",
+          "Data Sparsity",
+          "Trigram",
+          "Unigram",
+          "Conditional Probability"
         ]
       },
       {
@@ -126,6 +300,35 @@ const EXAM_DATA = {
         "examples": [
           "在自動駕駛汽車的感知系統中，物件偵測模型被用來即時辨識前方的行人、車輛與交通號誌。為了確保行車安全，系統對預測邊界框的 IoU 閾值要求極高，因為稍微的位置預測偏差都可能導致自動煞車系統誤判距離而引發交通事故。",
           "在智慧農業的無人機巡檢中，農場利用高解析度空拍影像結合物件偵測技術來定位農田中出現病蟲害的作物區域。透過設定精確的邊界框，系統能夠指導自動噴灑機具只針對受感染的特定植株施加農藥，達到精準農業並減少化學藥劑的浪費。"
+        ],
+        "comparison": "物件偵測（Object Detection，如 YOLO）主要任務是利用邊界框框出影像中多個目標的位置與類別，常應用於賣場人流計算或自駕車感知；相較之下，影像分類（Image Classification，如 ResNet）僅能判斷整張影像的主題為何，無法定位目標，適用於簡單的良率判定；而語意分割（Semantic Segmentation）則要求像素級別的精準分類，能描繪出物體的精確不規則輪廓，通常應用於高精地圖構建與精細醫學影像分析中。",
+        "keywords": [
+          "物件偵測 (Object Detection)",
+          "交除聯 (Intersection over Union, IoU)",
+          "平均精確率 (Mean Average Precision, mAP)",
+          "邊界框 (Bounding Box)",
+          "電腦視覺 (Computer Vision)"
+        ],
+        "extended_tech": [
+          {
+            "name": "YOLO 演算法 (You Only Look Once)",
+            "desc": "這是一種將物件偵測轉化為單一迴歸問題的深度學習架構，能夠在保持一定準確率的同時達成極高的即時推論速度，廣泛應用於即時交通監控與智慧安防中。"
+          },
+          {
+            "name": "非極大值抑制 (Non-Maximum Suppression, NMS)",
+            "desc": "在物件偵測推論的後處理階段，模型常對同一物體產生多個重疊的預測框。NMS 演算法能依據信心分數與 IoU 篩選掉多餘的框，確保每個物體最終只被標記一次。"
+          },
+          {
+            "name": "實例分割 (Instance Segmentation)",
+            "desc": "結合了物件偵測的個體區分能力與語意分割的像素級別精度，不僅能區分影像中有多台車，還能精確描繪出每一台車的獨立輪廓，適用於複雜場景的機器人視覺操作。"
+          }
+        ],
+        "terminology": [
+          "True Positive",
+          "False Positive",
+          "Precision-Recall Curve",
+          "Anchor Box",
+          "Region Proposal Network"
         ]
       },
       {
@@ -144,6 +347,35 @@ const EXAM_DATA = {
         "examples": [
           "在製造業的產品外觀瑕疵檢測系統中，卷積神經網路大量運用 Max-Pooling 層來提取影像中最顯著的邊緣或刮痕特徵，同時過濾掉無關的背景雜訊，使模型能不受產品在輸送帶上些微位置偏移的影響，穩定地抓取瑕疵特徵。",
           "在醫療病理切片分析中，AI 分類模型在最後一層利用 Softmax 函數，將提取出的各種病灶特徵分數轉換為患者罹患不同類型腫瘤的機率值（如良性 85%、惡性 15%），讓醫生能依據直觀的機率分佈來輔助臨床診斷與決策。"
+        ],
+        "comparison": "Softmax 通常作為神經網路輸出層的激勵函數，負責將模型計算的特徵分數轉化為標準的機率分佈，主要應用於多類別分類問題（如判斷圖片是貓、狗或鳥）；相較之下，Sigmoid 函數雖然也將數值壓縮至 0 到 1 之間，但其各類別機率總和不為 1，因此更適合應用於多標籤分類任務（例如一張圖片同時具備「戶外」與「晴天」等多個獨立標籤）。",
+        "keywords": [
+          "Softmax 函數 (Softmax Function)",
+          "最大池化 (Max-Pooling)",
+          "機率分佈 (Probability Distribution)",
+          "特徵壓縮 (Feature Compression)",
+          "卷積神經網路 (CNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "全局平均池化 (Global Average Pooling, GAP)",
+            "desc": "這是一種更為激進的降維技術，它將整張特徵圖的所有數值取平均後轉換為單一數值，常被用來取代傳統的全連接層，以大幅減少模型參數並降低過擬合風險。"
+          },
+          {
+            "name": "溫度縮放 (Temperature Scaling)",
+            "desc": "在應用 Softmax 函數時引入溫度參數，可用來平滑或銳化輸出機率分佈。這項技術廣泛應用於知識蒸餾與生成式 AI 中，用以控制語言模型回答的隨機性與創造力。"
+          },
+          {
+            "name": "批次正規化 (Batch Normalization)",
+            "desc": "在神經網路的各個隱藏層之間插入正規化操作，能有效穩定並加速模型的收斂過程，解決內部協變量偏移問題，是訓練深層卷積網路不可或缺的標準組件。"
+          }
+        ],
+        "terminology": [
+          "Activation Function",
+          "Downsampling",
+          "Logits",
+          "Translational Invariance",
+          "Cross-Entropy Loss"
         ]
       },
       {
@@ -162,6 +394,35 @@ const EXAM_DATA = {
         "examples": [
           "在牙科 X 光片分析系統中，為了克服罕見牙齒病變樣本不足的問題，開發者利用資料增強技術對現有病變影像進行輕微的旋轉、對比度調整與彈性形變。這模擬了不同拍攝角度與不同機器的成像差異，使模型在面對各家診所上傳的 X 光片時都能保持高準確率。",
           "語音助理在訓練喚醒詞（Wake Word）辨識模型時，會將原本乾淨的錄音樣本疊加各種背景噪音（如街道車聲、冷氣運轉聲、電視聲），並進行音調與語速的隨機改變。這種音訊資料增強能確保系統在吵雜的真實客廳環境中依然能被精準喚醒。"
+        ],
+        "comparison": "資料增強（Data Augmentation）透過啟發式的幾何或數值轉換來擴充現有資料集，是一種低成本且高效的防過擬合策略，廣泛應用於深度學習各領域；相較之下，合成資料生成（Synthetic Data Generation，如利用 GAN）則是無中生有地創造出全新的逼真資料，雖能解決隱私限制與極端樣本不足的問題，但運算成本高且容易引入無法預期的模型偏見。企業應視專案的資料敏感度與運算資源來選擇合適的資料擴展手段。",
+        "keywords": [
+          "資料增強 (Data Augmentation)",
+          "泛化能力 (Generalization Ability)",
+          "過擬合 (Overfitting)",
+          "特徵分佈 (Feature Distribution)",
+          "語意一致性 (Semantic Consistency)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Mixup 增強技術",
+            "desc": "這是一種進階的資料增強方法，透過將兩張完全不同的圖片及其對應的標籤進行線性插值混合，迫使神經網路學習更平滑的決策邊界，顯著提升模型對抗惡意雜訊的強健性。"
+          },
+          {
+            "name": "生成對抗網路 (GAN)",
+            "desc": "在真實醫療或金融資料因為極度注重隱私而難以取得時，企業常利用 GAN 生成極度逼真的合成資料集，以作為訓練預測模型或進行系統壓力測試的安全替代方案。"
+          },
+          {
+            "name": "領域適應 (Domain Adaptation)",
+            "desc": "這是一種遷移學習技術，當訓練資料（如模擬器生成的影像）與真實應用場景（真實街景）存在分佈差異時，透過領域適應演算法可幫助模型克服水土不服，維持高精度的推論表現。"
+          }
+        ],
+        "terminology": [
+          "Image Cropping",
+          "Affine Transformation",
+          "Noise Injection",
+          "Overfitting Prevention",
+          "Label Preserving"
         ]
       },
       {
@@ -180,6 +441,35 @@ const EXAM_DATA = {
         "examples": [
           "在銀行信用卡的盜刷偵測系統中，正常交易數量遠大於盜刷交易。若僅追求精確率，可能會漏抓許多盜刷；若僅追求召回率，則會頻繁封鎖正常交易引發客訴。透過監控 F1 分數，資料科學家能找到最佳的模型決策閾值，兼顧防堵犯罪與客戶體驗。",
           "在工業產線上的產品瑕疵檢測中，漏檢瑕疵品（低召回率）會導致劣質品流入市場，而誤判良品為瑕疵（低精確率）則會增加無謂的重工成本。工程團隊以 F1 分數作為模型優化的首要目標，確保系統能在不影響產能良率的前提下嚴格把關品質。"
+        ],
+        "comparison": "F1 分數（F1 Score）是精確率與召回率的調和平均數，適用於需要精確權衡兩者的業務場景（如瑕疵檢測與疾病篩檢）；相較之下，ROC-AUC 指標關注的是模型在不同信心閾值下區分正負樣本的整體排序能力，對於極度不平衡的資料（如百萬分之一的詐欺率）有時會過於樂觀。因此，在資源極端稀缺或樣本極度偏斜的風控系統中，實務上常優先參考 PR-AUC 或 F1 分數而非 ROC-AUC。",
+        "keywords": [
+          "F1 分數 (F1 Score)",
+          "精確率 (Precision)",
+          "召回率 (Recall)",
+          "調和平均數 (Harmonic Mean)",
+          "不平衡資料集 (Imbalanced Dataset)"
+        ],
+        "extended_tech": [
+          {
+            "name": "ROC 曲線與 AUC 值 (ROC-AUC)",
+            "desc": "這是一種評估二元分類器整體效能的圖表與量化指標，它展示了模型在不同閾值設定下的真陽性率與假陽性率的權衡，廣泛應用於信用評分與風險預測模型的基礎效能比較。"
+          },
+          {
+            "name": "混淆矩陣 (Confusion Matrix)",
+            "desc": "透過表格視覺化呈現模型預測結果的真陽性、假陽性、真陰性與假陰性數量，幫助資料科學家直觀分析模型是在哪個特定的類別上發生了系統性的誤判，從而針對性地改善特徵工程。"
+          },
+          {
+            "name": "過取樣與欠取樣 (Oversampling and Undersampling)",
+            "desc": "在面對如金融詐欺這類極端不平衡的資料集時，除了關注 F1 分數，資料團隊常搭配 SMOTE 等過取樣技術人工合成少數類樣本，或隨機剔除多數類樣本，以協助模型更平穩地學習決策邊界。"
+          }
+        ],
+        "terminology": [
+          "Trade-off",
+          "True Positive",
+          "False Negative",
+          "Thresholding",
+          "Macro/Micro Average"
         ]
       },
       {
@@ -198,6 +488,35 @@ const EXAM_DATA = {
         "examples": [
           "共享單車業者利用 DBSCAN 演算法分析城市中單車的 GPS 停放座標數據。透過密度分群，系統可以自動識別出城市中未經規劃但民眾高度集中停放的「熱點區域」，同時將偶發性零星停放的單車視為雜訊，據此協助調度員精準規劃車輛投放與回收路線。",
           "電信公司分析手機用戶的基地台連線地理位置軌跡。藉由 DBSCAN 排除移動中的雜訊軌跡，系統能夠自動找出使用者白天最常停留的密集區域（工作地點）與夜間密集區域（居住地），從而提供更個人化的通訊方案與區域性網路優化服務。"
+        ],
+        "comparison": "DBSCAN 透過密度連通性進行分群，不需要預先指定群數，且能自動識別並排除離群雜訊，特別適合應用於地理座標分析與異常軌跡偵測；相較之下，K-Means 演算法運算速度極快且易於解釋，但必須人為設定聚類數量（K值），並且容易受到極端異常值的拉扯而導致群集中心偏移，通常應用於較為單純且分佈呈現凸形（Convex）的客戶輪廓區隔任務中。",
+        "keywords": [
+          "DBSCAN 演算法 (DBSCAN Clustering)",
+          "密度分群 (Density-Based Clustering)",
+          "鄰域半徑 (Epsilon)",
+          "最小點數 (MinPts)",
+          "雜訊資料 (Noise Data)"
+        ],
+        "extended_tech": [
+          {
+            "name": "OPTICS 演算法",
+            "desc": "這是 DBSCAN 的改良版本，透過建立資料點的到達距離圖，解決了 DBSCAN 在處理密度分佈極不均勻的資料集時難以選定單一 Epsilon 參數的痛點，特別適合高維度行為日誌分析。"
+          },
+          {
+            "name": "階層式分群 (Hierarchical Clustering)",
+            "desc": "一種不需要預設群數的分群演算法，透過計算資料點間的距離逐步將群集進行合併或分裂，最終生成樹狀圖（Dendrogram），企業常利用此圖表直觀決策客戶區隔的最佳層次。"
+          },
+          {
+            "name": "孤立森林 (Isolation Forest)",
+            "desc": "專注於異常值偵測的樹狀演算法。有別於 DBSCAN 將異常值視為副產物，孤立森林直接透過隨機切割特徵空間來找出最快被孤立的資料點，是金融詐欺與伺服器日誌監控領域的首選工具。"
+          }
+        ],
+        "terminology": [
+          "Unsupervised Learning",
+          "Core Point",
+          "Border Point",
+          "Outlier Detection",
+          "Spatial Data Analysis"
         ]
       },
       {
@@ -216,6 +535,35 @@ const EXAM_DATA = {
         "examples": [
           "基因體學研究中，科學家面對單一病患多達數萬個基因表現量的高維度特徵。透過應用 PCA，研究人員可以將數萬維的基因資料降維到二維或三維空間中進行視覺化，藉此觀察不同疾病亞型的病患在降維空間中是否會自動聚集成不同的群體，加速致病基因的探索。",
           "在信用卡客戶風險評估中，銀行收集了包含年收入、存款餘額、貸款總額、月消費額等數十個高度相關的財務指標。為避免線性模型訓練時發生不穩定現象，資料科學家利用 PCA 將這些指標轉換為三個獨立的綜合風險主成分，再輸入模型進行信用評分預測。"
+        ],
+        "comparison": "PCA 是一種基於線性代數的降維技術，透過投影尋找資料變異量最大的正交軸，非常適合消除數值型特徵間的多重共線性並加速模型訓練；相較之下，t-SNE 與 UMAP 等非線性降維演算法則專注於保留資料點在局部空間中的相對距離，能在二維或三維圖表中呈現出極為精美的群聚結構，主要應用於高維度資料的探索性視覺化，而非作為預測模型的前處理特徵工程。",
+        "keywords": [
+          "主成分分析 (Principal Component Analysis, PCA)",
+          "降維 (Dimensionality Reduction)",
+          "多重共線性 (Multicollinearity)",
+          "特徵萃取 (Feature Extraction)",
+          "正交轉換 (Orthogonal Transformation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "L1 正規化 (Lasso Regression)",
+            "desc": "在線性迴歸模型中加入絕對值懲罰項，這會迫使模型在訓練過程中自動將不重要或高度相關特徵的權重縮減為零，不僅能防止過擬合，同時也達到自動特徵篩選的效果。"
+          },
+          {
+            "name": "奇異值分解 (Singular Value Decomposition, SVD)",
+            "desc": "一種強大的矩陣分解數學工具，除了是 PCA 底層運算的核心機制外，更被廣泛應用於協同過濾推薦系統中，用來挖掘使用者與商品之間潛在的隱含關聯性。"
+          },
+          {
+            "name": "UMAP 非線性降維",
+            "desc": "近年來廣受歡迎的流形學習降維技術。相較於 PCA，UMAP 能更優異地保留複雜非線性資料的局部與全局結構，同時運算速度遠勝 t-SNE，是現代資料視覺化分析的利器。"
+          }
+        ],
+        "terminology": [
+          "Variance",
+          "Eigenvector",
+          "Covariance Matrix",
+          "Feature Engineering",
+          "Curse of Dimensionality"
         ]
       },
       {
@@ -234,6 +582,35 @@ const EXAM_DATA = {
         "examples": [
           "熱門的即時語音翻譯應用程式在全球各地都有使用者。工程團隊透過 Kubernetes 部署其語言翻譯模型，當適逢大型國際賽事期間、API 請求量暴增時，K8s 能夠在數秒內自動橫向擴展（Scale-out）翻譯推論容器的數量來消化流量，並在離峰時自動縮減以節省成本。",
           "在大型電商的雙十一購物節中，商品推薦系統必須承受極高的瞬時併發請求。運維團隊利用 Kubernetes 將推薦模型部署為微服務，不僅實現了不同模型版本之間的金絲雀發佈（Canary Release）以測試成效，更確保單一節點故障時能迅速將流量導向健康的節點，維持推薦功能的正常運作。"
+        ],
+        "comparison": "Kubernetes 主要負責容器化應用的運算資源調度與生命週期管理，是保障大規模 AI 推論服務高可用性與彈性擴展的底層基石；相較之下，MLflow 或 Weights & Biases 專注於實驗追蹤與模型版控，Kubeflow 則是架構在 Kubernetes 之上，提供從資料準備、模型訓練到部署的完整端到端 MLOps 工作流程編排，三者在 AI 基礎設施堆疊中扮演著不同層級的角色。",
+        "keywords": [
+          "Kubernetes (K8s)",
+          "模型部署 (Model Deployment)",
+          "容器編排 (Container Orchestration)",
+          "自動擴展 (Auto-scaling)",
+          "機器學習營運 (MLOps)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Kubeflow",
+            "desc": "專為 Kubernetes 環境打造的機器學習工具包，它讓資料科學家能以宣告式的方式編排複雜的訓練工作流程（Pipeline），極大簡化了在雲端叢集上進行分散式深度學習訓練的門檻。"
+          },
+          {
+            "name": "KServe (原 KFServing)",
+            "desc": "構建於 Kubernetes 與 Knative 之上的標準化模型推論平台，它隱藏了底層基礎設施的複雜度，提供開箱即用的 Serverless 擴展能力，甚至支援將模型縮容至零（Scale to Zero）以節省成本。"
+          },
+          {
+            "name": "Docker 容器技術",
+            "desc": "將應用程式及其依賴的函式庫、環境配置完全封裝為標準化的映像檔。這是實現「在開發者筆電上能跑，在生產伺服器上也能跑」一致性的關鍵，也是 K8s 編排運作的基礎單元。"
+          }
+        ],
+        "terminology": [
+          "Inference Service",
+          "Load Balancing",
+          "High Availability",
+          "Microservices",
+          "Canary Deployment"
         ]
       },
       {
@@ -252,6 +629,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫學影像分析的研究中，由於罹患特定罕見疾病的病人 X 光片資料極其稀少，研究人員無法奢侈地將大量資料劃分為獨立的測試集。因此，他們採用 5-Fold 交叉驗證來訓練與調校 CNN 模型的超參數，確保模型效能的評估結果客觀可靠，而非僅是對一小批病患資料過度擬合。",
           "行銷數據分析團隊在建立客戶終身價值（CLV）預測模型時，需要從隨機森林的眾多超參數（如樹的深度、特徵選擇比例）中找出最佳組合。為避免模型僅對去年某個特定促銷季的資料表現良好，團隊運用交叉驗證跨越不同時間區段進行測試，以挑選出在未來各種情境下皆能穩健預測的參數配置。"
+        ],
+        "comparison": "交叉驗證（Cross-Validation）是一種穩健的模型效能評估方法，它能最大化利用有限的訓練數據來挑選出最不易過擬合的超參數組合；相較之下，網格搜尋（Grid Search）與隨機搜尋（Random Search）則是定義「如何探索」超參數空間的演算法策略。在實務的 AutoML 流程中，通常會將貝氏最佳化搜尋（Bayesian Optimization）與交叉驗證結合使用，以最少的運算成本精準鎖定全域最佳的超參數設定。",
+        "keywords": [
+          "交叉驗證 (Cross-Validation)",
+          "超參數調校 (Hyperparameter Tuning)",
+          "泛化能力 (Generalization Ability)",
+          "過擬合 (Overfitting)",
+          "模型評估 (Model Evaluation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "貝氏最佳化 (Bayesian Optimization)",
+            "desc": "這是一種智慧型的超參數搜尋演算法。它會根據過去評估的結果建立機率代理模型，有策略地預測哪一組未知的參數組合最有可能帶來效能突破，其搜索效率遠高於盲目的網格搜尋。"
+          },
+          {
+            "name": "早期停止機制 (Early Stopping)",
+            "desc": "在深度學習訓練過程中，透過監控獨立驗證集的損失值變化。當模型在驗證集上的誤差不再下降甚至開始反彈時，系統便自動終止訓練流程，這能有效防止神經網路發生過擬合。"
+          },
+          {
+            "name": "分層抽樣交叉驗證 (Stratified K-Fold)",
+            "desc": "針對類別極度不平衡的資料集進行改良，確保在每一次的資料折疊劃分中，各類別樣本的比例都能與原始資料集保持一致，從而避免模型評估時產生嚴重的統計偏差。"
+          }
+        ],
+        "terminology": [
+          "Validation Set",
+          "Grid Search",
+          "Epochs",
+          "Overfitting Trade-off",
+          "Out-of-Sample Performance"
         ]
       },
       {
@@ -270,6 +676,35 @@ const EXAM_DATA = {
         "examples": [
           "大型金融機構在開發信用評分模型時，要求極高的合規性與可追溯性。透過導入 MLflow 等 Model Registry 工具，稽核人員可以隨時調閱當前線上運作模型（Version 3.2）的詳細履歷，清楚了解該模型當初是由哪位資料科學家、使用哪一版歷史交易數據與參數所訓練而成。",
           "串流影音平台的推薦系統團隊每週都會利用最新收集到的觀看紀錄自動重新訓練推薦演算法。一旦新模型的離線評估指標勝過舊版，系統會透過 Model Registry 的 API 自動將新版本的狀態標記為「Staging」並發起整合測試，待測試通過後再推進至「Production」自動觸發 K8s 部署更新。"
+        ],
+        "comparison": "在 MLOps 生態系中，Model Registry 負責集中版控「已經訓練完成的模型產出物」，確保從實驗轉往生產的過程有跡可循；相較之下，Feature Store 則是專注於管理「模型輸入的特徵資料」，確保離線訓練與線上推論時的特徵邏輯絕對一致；而 Git 儲存庫則單純負責版控「訓練模型的原始程式碼」。這三者緊密結合，共同築起了企業級 AI 系統的合規性與可重現性基礎。",
+        "keywords": [
+          "模型註冊表 (Model Registry)",
+          "機器學習營運 (MLOps)",
+          "版本控制 (Version Control)",
+          "模型生命週期 (Model Lifecycle)",
+          "模型部署 (Model Deployment)"
+        ],
+        "extended_tech": [
+          {
+            "name": "特徵平台 (Feature Store)",
+            "desc": "這是一個用於集中計算、儲存與共享機器學習特徵的資料平台。它徹底解決了訓練與推論階段因為特徵萃取程式碼不一致所引發的預測偏差（Training-Serving Skew）問題。"
+          },
+          {
+            "name": "MLflow 實驗追蹤",
+            "desc": "這是一個開源平台，除了包含 Model Registry 功能外，其核心組件 Tracking 能讓資料科學家在撰寫程式碼時，輕鬆記錄下每一次實驗所使用的超參數組合、損失函數曲線與視覺化圖表。"
+          },
+          {
+            "name": "A/B 測試架構 (A/B Testing Infrastructure)",
+            "desc": "在線上環境同時運行兩個不同版本的模型（由 Model Registry 管理提供），並透過即時的業務指標（如點擊率或轉換率）來科學化地驗證新演算法是否真的能帶來商業價值的提升。"
+          }
+        ],
+        "terminology": [
+          "Data Provenance",
+          "Staging Environment",
+          "Canary Release",
+          "CI/CD Pipeline",
+          "Model Artifacts"
         ]
       },
       {
@@ -288,6 +723,35 @@ const EXAM_DATA = {
         "examples": [
           "國際新聞通訊社為了加速新聞稿的本地化作業，導入了基於 Seq2Seq 架構的自動翻譯系統。該系統能夠將駐外記者即時回傳的英文新聞草稿，快速且流暢地轉換為語意通順的中文與日文版本，並交由當地編輯進行最後潤飾。",
           "企業客服中心採用 Seq2Seq 技術開發對話摘要生成工具。當客服人員結束長達半小時、充滿來回確認與雜訊的客戶通話後，系統會分析語音轉文字的對話逐字稿，自動提取出問題重點與解決方案，生成簡明扼要的處理摘要存入工單系統。"
+        ],
+        "comparison": "Seq2Seq 模型架構（Encoder-Decoder）設計用於處理輸入與輸出長度皆不固定的任務，是機器翻譯與文本摘要的標準解法；相較之下，純編碼器架構（如 BERT）擅長從輸入文本中提取深層語意特徵，適用於文本分類與實體辨識；而純解碼器架構（如 GPT 系列）則專注於依據提示詞不斷預測下一個字，在開放式文本生成與對話代理人等應用上展現出最強的創造力。",
+        "keywords": [
+          "序列到序列 (Seq2Seq Model)",
+          "編碼器與解碼器 (Encoder-Decoder)",
+          "機器翻譯 (Machine Translation)",
+          "文本摘要 (Text Summarization)",
+          "自迴歸生成 (Autoregressive Generation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "注意力機制 (Attention Mechanism)",
+            "desc": "最初是為了解決 Seq2Seq 模型中 Encoder 將長句壓縮成單一向量導致資訊遺失的問題而發明。它讓 Decoder 在生成每個字時，都能動態「回頭關注」輸入原文中最相關的片段，是現代 NLP 的基石。"
+          },
+          {
+            "name": "語音轉文字 (Speech-to-Text, ASR)",
+            "desc": "這本質上也是一種 Seq2Seq 任務，系統將連續變動的音頻聲學特徵序列作為輸入，並透過聲學模型與語言模型解碼生成對應的文字序列，廣泛應用於語音助理與會議逐字稿生成。"
+          },
+          {
+            "name": "束搜索演算法 (Beam Search)",
+            "desc": "在 Seq2Seq 模型的推論解碼階段，若每次只選擇機率最高的一個字（貪婪搜索），容易導致整體句子不通順。束搜索會同時保留多個候選路徑，綜合評估生成出整體機率最高、最流暢的完整句子。"
+          }
+        ],
+        "terminology": [
+          "Context Vector",
+          "Recurrent Neural Network",
+          "Sequence Labeling",
+          "Hidden State",
+          "Teacher Forcing"
         ]
       },
       {
@@ -306,6 +770,35 @@ const EXAM_DATA = {
         "examples": [
           "跨國法律事務所建置了一套基於 RAG 技術的法律助理系統。律師在處理跨國商業合約糾紛時，可以直接用自然語言詢問系統特定條文的解釋。系統會從內部數十萬份歷史判例及合約條文中精準檢索出相關的法律依據，並交由 LLM 總結出專業的法律見解。",
           "高科技製造業的設備維修部門利用 RAG 架構開發維修指引機器人。當機台發生未知的錯誤代碼時，工程師向機器人提問，系統會立刻在數千頁的機台技術手冊與過往的維修工單紀錄中檢索出與該錯誤代碼高度相關的處置步驟，並生成清晰的排障指南供工程師參考。"
+        ],
+        "comparison": "RAG 架構透過即時檢索外部知識庫來輔助語言模型回答，具有知識可更新、幻覺率低且實作成本平易近人的優勢，是企業打造專屬知識問答系統的首選；相較之下，微調（Fine-tuning）技術雖然能深刻改變模型的說話風格與特定領域邏輯，但其訓練成本高昂，且模型仍無法完全避免幻覺，也難以即時更新知識庫。實務上，企業常將 RAG 作為主軸，必要時再輔以微調來優化整體服務體驗。",
+        "keywords": [
+          "檢索增強生成 (RAG)",
+          "向量搜尋 (Vector Search)",
+          "大型語言模型 (LLM)",
+          "AI 幻覺 (AI Hallucination)",
+          "意圖匹配 (Intent Matching)"
+        ],
+        "extended_tech": [
+          {
+            "name": "混合檢索 (Hybrid Search)",
+            "desc": "在 RAG 的檢索階段，同時結合基於關鍵字的稀疏檢索（如 BM25）與基於語意向量的密集檢索。這種雙管齊下的策略能互補彼此盲區，顯著提升文件召回的精準度與相關性。"
+          },
+          {
+            "name": "重排序模型 (Re-ranking Models)",
+            "desc": "一種計算成本較高但準確度極佳的模型（如 Cross-Encoder）。在向量檢索快速找出前 50 篇相關文件後，重排序模型會進行二次精細評估與排序，確保餵給 LLM 的是最具價值的資訊。"
+          },
+          {
+            "name": "知識圖譜增強檢索 (GraphRAG)",
+            "desc": "結合圖資料庫的關聯知識與向量檢索，讓系統不僅能找回語意相似的文字段落，還能循著實體關係（如人物、組織間的連結）爬梳出深層邏輯脈絡，以回答跨越多份文件的複雜分析問題。"
+          }
+        ],
+        "terminology": [
+          "Vector Database",
+          "Embedding",
+          "Chunking Strategy",
+          "Prompt Engineering",
+          "Context Window"
         ]
       },
       {
@@ -324,6 +817,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫學超長病歷的自動摘要任務中，傳統的注意力機制很容易在數千字節中迷失方向，使得生成的摘要流於平淡。藉由導入稀疏注意力機制的 Transformer，模型能強硬地濾除大量冗言贅字，將運算資源與權重高度集中在含有「診斷結果」、「用藥過敏」等關鍵字眼上。",
           "在分析長篇財務財報以進行自動化投資評級時，文件充斥著大量制式的免責聲明與格式文字。研究團隊利用施加稀疏化約束的語言模型，讓注意力權重精準鎖定在營收數字變動、未來展望指引等少數關鍵段落，從而大幅提升財報情感分析的準確率。"
+        ],
+        "comparison": "密集注意力機制（Dense Attention）會計算文本中所有字詞兩兩之間的關聯性，運算精準度高但計算量與文本長度的平方成正比，難以處理超長文本；相較之下，稀疏注意力（Sparse Attention）透過局部滑動窗口或隨機取樣機制，強制切斷不相關詞彙的運算路徑，大幅降低了記憶體消耗，使得現代語言模型（如 Longformer）能夠一次吞下數萬字的超長文件而不崩潰。",
+        "keywords": [
+          "注意力分布平均 (Attention Collapse)",
+          "稀疏化約束 (Sparsity Constraint)",
+          "注意力機制 (Attention Mechanism)",
+          "Softmax 函數 (Softmax Function)",
+          "長文本處理 (Long Document Processing)"
+        ],
+        "extended_tech": [
+          {
+            "name": "局部注意力 (Local Attention)",
+            "desc": "這是一種限制注意力運算範圍的技術，強制模型在計算某個字詞的權重時，只允許它觀察周圍相鄰的幾個字詞，這在處理具有強烈局部關聯性特徵（如語音訊號與視覺邊緣）時極為有效。"
+          },
+          {
+            "name": "多頭注意力機制 (Multi-Head Attention)",
+            "desc": "讓模型並行地在不同的線性子空間中執行多次獨立的注意力計算。這使得神經網路能夠同時關注句子中的句法結構（如主謂賓關係）與深層語意關聯，是構成 Transformer 的骨幹設計。"
+          },
+          {
+            "name": "快閃注意力 (FlashAttention)",
+            "desc": "一種底層硬體感知的注意力演算法優化技術。透過精巧地安排 GPU 記憶體的讀寫操作，它能在不損失任何數學精確度的前提下，大幅加速大型語言模型的訓練與長序列推論速度。"
+          }
+        ],
+        "terminology": [
+          "Query-Key Dot Product",
+          "Attention Weights",
+          "Uniform Distribution",
+          "Transformer Architecture",
+          "Self-Attention"
         ]
       },
       {
@@ -342,6 +864,35 @@ const EXAM_DATA = {
         "examples": [
           "開發針對台灣閩南語（台語）語音辨識與文字翻譯系統的團隊，面臨台語書面語料極度匱乏的困境。工程師運用反向翻譯技術，將大量標準中文新聞稿機器翻譯為台語文字，再將其作為擴增的偽訓練語料加入模型中，顯著提升了系統對台語特殊語法與句型的泛化能力。",
           "在智慧型客服對話系統中，為因應少見的特定產業專業用語（如冷門的化工材料詢問），團隊利用反向翻譯，將有限的真實對話紀錄在英文與中文之間來回轉換。藉此自動生成了各種不同問法但意圖相同的顧客詢問句，成功增強了意圖辨識模型的強健性。"
+        ],
+        "comparison": "反向翻譯（Back-Translation）是針對文本資料進行擴增的專門技術，能夠在不改變原始語意的情況下創造出豐富的句法變化，特別適用於神經機器翻譯與對話系統；相較之下，同義詞替換（Synonym Replacement）或隨機字詞插入等傳統 NLP 資料增強方法雖然運算成本極低，但生成的句子往往生硬不自然，甚至可能破壞語言邏輯，在應對需要高度語境理解的高階深度學習模型時，其效果遠不如反向翻譯顯著。",
+        "keywords": [
+          "低資源語言 (Low-Resource Language)",
+          "反向翻譯 (Back-Translation)",
+          "偽平行語料 (Pseudo-Parallel Corpus)",
+          "資料增強 (Data Augmentation)",
+          "過擬合 (Overfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "遷移學習 (Transfer Learning)",
+            "desc": "在 NLP 領域，最典型的做法是先利用如英文等富資源語言的大量數據對模型進行預訓練，使其具備基礎的語言邏輯，隨後再利用有限的低資源語言目標數據進行微調，這是突破資料瓶頸的標準範式。"
+          },
+          {
+            "name": "跨語言知識蒸餾 (Cross-lingual Knowledge Distillation)",
+            "desc": "一種將強勢語言模型（如英文 GPT）的強大推理能力，透過特徵映射與對齊技術，轉移給資源匱乏語言模型的高階技巧，使其能在沒有大量翻譯資料的情況下具備跨語種的理解能力。"
+          },
+          {
+            "name": "少樣本學習 (Few-Shot Learning)",
+            "desc": "這是一種前瞻性的機器學習典範。透過極度龐大的預訓練語言模型結合精巧的提示詞工程（Prompt Engineering），模型只需參考 2 到 3 個範例，就能直接執行特定任務，完全免除了重新訓練模型的資料需求。"
+          }
+        ],
+        "terminology": [
+          "Low-Resource NLP",
+          "Generalization",
+          "Data Sparsity",
+          "Machine Translation",
+          "Fine-Tuning"
         ]
       },
       {
@@ -359,7 +910,36 @@ const EXAM_DATA = {
         "ml_method_explanation": "生成對抗網路（GAN）是由生成器與鑑別器組成的博弈系統，生成器負責將隨機雜訊轉換為逼真數據，鑑別器則負責分辨數據是來自真實集還是生成器。兩者在互相競爭中不斷進化。然而，傳統 GAN 常因損失函數的數學特性導致訓練極度不穩定與模式崩潰（生成的樣本千篇一律）。為此，研究者提出了 Wasserstein GAN（WGAN），它捨棄了傳統的 JS 散度，改用 Earth Mover's Distance（Wasserstein 距離）來衡量兩個機率分布的差異。這項改進為生成器提供了持續且平滑的梯度指引，確保模型能學習到涵蓋多樣性特徵的完整真實數據分佈。",
         "examples": [
           "在虛擬時尚與服裝設計領域，設計師利用基於 WGAN 架構的生成模型來自動探索新的服裝款式。得益於解決了模式崩潰問題，模型能穩定地從潛在空間中生成包含不同剪裁、色彩與布料紋理的豐富設計草圖，激發設計師的靈感，而非只反覆生成單一的暢銷款式。",
-          "在醫療影像隱私保護中，研究人員需要建立一個合成病患資料集供外界分析使用。他們使用高度穩定的 GAN 生成了成千上萬張逼真的合成肺部 X 光片。這些合成影像不僅成功保留了各種不同疾病亞型的特徵多樣性（避免模式崩潰），更確保了真實病患的隱私不會被洩漏。"
+          "在醫療影像隱私保護中，研究人員需要建立一個合成病患資料集供外界分析使用。他們使用高度穩定的 GAN 生成了成千上萬張逼定的合成肺部 X 光片。這些合成影像不僅成功保留了各種不同疾病亞型的特徵多樣性（避免模式崩潰），更確保了真實病患的隱私不會被洩漏。"
+        ],
+        "comparison": "GAN 的核心優勢在於能生成極度銳利、逼真的高解析度影像，曾一度主導 Deepfake 與虛擬人像技術領域，但其訓練極度困難且容易發生模式崩潰；相較之下，擴散模型（Diffusion Models，如 Midjourney 或 Stable Diffusion）雖然生成速度較慢，但其基於逐步去噪的數學過程極其穩定，不僅徹底解決了模式崩潰問題，在文本生成圖像（Text-to-Image）任務上展現出空前的語意控制能力，目前已成為 AI 藝術創作的業界霸主。",
+        "keywords": [
+          "模式崩潰 (Mode Collapse)",
+          "生成對抗網路 (GAN)",
+          "Wasserstein 距離 (Wasserstein Distance)",
+          "資料分佈 (Data Distribution)",
+          "損失函數 (Loss Function)"
+        ],
+        "extended_tech": [
+          {
+            "name": "擴散模型 (Diffusion Models)",
+            "desc": "新一代的生成技術霸主。其原理是先在真實圖片中逐步加入高斯雜訊直到變為純雜訊，接著訓練神經網路學習逆向的去噪過程，以此從隨機雜訊中穩定地生成出高品質且高度多樣化的影像作品。"
+          },
+          {
+            "name": "變分自編碼器 (Variational Autoencoder, VAE)",
+            "desc": "另一種經典生成模型，它強制將資料的潛在表徵對齊標準常態分佈。雖然生成的影像通常比 GAN 模糊，但它具備優異的數學解釋性與穩定的訓練過程，常被用於特徵降維與擴散模型的底層壓縮空間中。"
+          },
+          {
+            "name": "條件 GAN (Conditional GAN, cGAN)",
+            "desc": "在 GAN 的生成器與鑑別器中額外輸入條件標籤（如類別或文本描述），這使得開發者能夠隨心所欲地控制生成影像的特定屬性（如指定生成『紅色的車』），大幅擴展了 GAN 在商業設計上的實用性。"
+          }
+        ],
+        "terminology": [
+          "Generator",
+          "Discriminator",
+          "Jensen-Shannon Divergence",
+          "Gradient Penalty",
+          "Latent Space"
         ]
       },
       {
@@ -378,6 +958,35 @@ const EXAM_DATA = {
         "examples": [
           "在社群媒體的自動內容審查系統中，AI 需要同時分析使用者的貼文圖片與文字敘述。當使用者上傳了可能違規的圖片但並未附上任何文字時，具備模態缺失感知能力的多模態模型會自動調整其內部注意力權重，純粹依賴影像特徵進行精準的風險評估與攔截。",
           "在醫療健康監測穿戴式裝置中，系統會同時收集心率感測器與使用者語音紀錄以評估壓力指數。如果使用者在某些時段未用語音輸入導致該模態缺失，系統仍能憑藉強健的融合架構，僅透過分析心率變異度（HRV）生理數據來提供穩定且可靠的健康警示。"
+        ],
+        "comparison": "多模態融合技術（Multimodal Fusion）致力於在共同空間中整合影像、文字與語音，優勢在於能獲得極度全面的情境理解能力，常應用於高階自駕車與情緒互動機器人；相較之下，單一模態模型雖然在處理特定資料（如純粹的語音轉文字）時開發成本低且速度極快，但在面對充滿雜訊或語意模糊的真實複雜情境時，缺乏跨模態資訊交叉驗證的能力，極易產生致命誤判。",
+        "keywords": [
+          "多模態 AI (Multimodal AI)",
+          "模態缺失 (Missing Modality)",
+          "強健性 (Robustness)",
+          "隨機遮蔽 (Modality Dropout)",
+          "聯合嵌入空間 (Joint Embedding Space)"
+        ],
+        "extended_tech": [
+          {
+            "name": "對比語言-圖像預訓練 (CLIP)",
+            "desc": "由 OpenAI 提出的一種極具突破性的多模態技術。它透過大規模對比學習，將圖片與描述文字對齊到同一個向量空間中，這使得模型具備了強大的零樣本（Zero-Shot）影像分類與跨模態圖文檢索能力。"
+          },
+          {
+            "name": "跨模態注意力機制 (Cross-Modal Attention)",
+            "desc": "在 Transformer 架構中，允許某一個模態的特徵（如文字 Query）去查詢並關注另一個模態（如影像 Key）的最相關區域，廣泛應用於視覺問答（VQA）系統中，能精準回答出「圖片中那隻狗在做什麼」。"
+          },
+          {
+            "name": "早期融合與晚期融合 (Early vs Late Fusion)",
+            "desc": "這是處理多模態資料的兩種經典架構策略。早期融合是在特徵提取階段就將不同模態的原始資料拼接在一起；而晚期融合則是讓各模態獨立做出決策後，再透過投票或加權機制統整出最終結果，以換取更高的系統穩定度。"
+          }
+        ],
+        "terminology": [
+          "Sensor Fusion",
+          "Cross-Alignment",
+          "Visual Question Answering",
+          "Feature Concatenation",
+          "Zero-Shot Learning"
         ]
       },
       {
@@ -396,6 +1005,35 @@ const EXAM_DATA = {
         "examples": [
           "在全球新冠疫情爆發期間，許多銀行原有的機器學習信用評分模型出現了嚴重失準。因為經濟封鎖導致消費者的收入與支出行為發生劇變，工程團隊透過計算交易特徵分佈的 KL 散度，成功偵測到嚴重的資料漂移，並迅速決定凍結舊模型，引入近期數據重新訓練新模型。",
           "物流公司的配送時間預測系統在進入嚴冬季節後預測誤差大幅增加。MLOps 監控儀表板顯示，氣溫與道路結冰等輸入特徵的當前分佈與夏季訓練集相比，其 PSI 與 KL 散度飆高，系統便自動發出資料漂移警報，提醒資料科學家需要針對冬季數據加入新的季節性特徵並更新模型。"
+        ],
+        "comparison": "資料漂移（Data Drift）專指輸入系統的「特徵變數分佈」發生了改變（如使用者年齡層突然改變），這可透過 KL 散度等統計檢定提早發覺；相較之下，概念漂移（Concept Drift）則是更深層的挑戰，指的是「特徵與目標標籤之間的關聯邏輯」發生本質上的變異（例如原本視為高風險的特徵，因法規改變而變為低風險），這種情況單靠監控特徵分佈無法察覺，必須依賴持續比對真實業務的 Ground Truth 才能診斷，兩者在 MLOps 監控策略上截然不同。",
+        "keywords": [
+          "資料漂移 (Data Drift)",
+          "KL 散度 (KL Divergence)",
+          "機器學習營運 (MLOps)",
+          "模型衰退 (Model Decay)",
+          "特徵分佈 (Feature Distribution)"
+        ],
+        "extended_tech": [
+          {
+            "name": "人口穩定度指數 (Population Stability Index, PSI)",
+            "desc": "在金融風控與信用評分領域極為普及的指標。它將特徵數值劃分為多個區間，分別計算訓練基準與線上即時數據在各區間的比例差異，能非常直觀地量化客群屬性是否發生顯著位移。"
+          },
+          {
+            "name": "自動化再訓練管線 (Automated Retraining Pipeline)",
+            "desc": "結合漂移偵測的進階 MLOps 實踐。當系統偵測到 KL 散度或 PSI 超標時，不僅會發送警報，還能自動觸發排程工具（如 Airflow），提取最新資料並啟動一連串的模型重新訓練與驗證腳本，實現自癒能力。"
+          },
+          {
+            "name": "影子測試 (Shadow Deployment)",
+            "desc": "應對資料漂移的高階部署策略。將剛重新訓練好的新模型部署至線上但不影響真實業務決策（僅紀錄預測結果），工程團隊能藉此無風險地觀察新模型在面對最新線上資料流時，是否真能有效克服漂移帶來的誤差。"
+          }
+        ],
+        "terminology": [
+          "Concept Drift",
+          "Ground Truth",
+          "Kolmogorov-Smirnov Test",
+          "Model Degradation",
+          "Continuous Monitoring"
         ]
       },
       {
@@ -414,6 +1052,35 @@ const EXAM_DATA = {
         "examples": [
           "知名的叫車服務平台在推出能結合即時天氣與交通路況的新一代 AI 派車演算法時，選擇先在美國某個中型城市進行漸進式部署。團隊花了一週時間觀察司機接單率與乘客等候時間，確認演算法無誤後，才逐步拓展至全國各大都會區。",
           "線上串流影音巨頭在測試全新的首頁個人化推薦模型時，利用流量路由技術，將 1% 的活躍訂閱戶無縫導向新模型。透過 A/B 測試比對這群用戶的觀看時長及點擊率是否優於舊模型，在獲得顯著的數據支持後，才以 10%、50%、100% 的節奏逐步完成全球更新。"
+        ],
+        "comparison": "金絲雀發佈（Canary Deployment）強調利用正式生產環境的極少數真實流量進行風險可控的試營運，適合用於 AI 模型的穩定性驗證與災難預防；相較之下，A/B 測試（A/B Testing）主要目的是在商業層面比較多個版本模型帶來的轉換率差異，偏向於假設檢定與行銷決策；而藍綠部署（Blue-Green Deployment）則是準備兩套完全相同的基礎設施來進行新舊版本的一鍵切換，具備零停機時間的極大優勢，但無法像金絲雀發佈那樣進行細粒度的流量風險控制。",
+        "keywords": [
+          "漸進式部署 (Phased Rollout)",
+          "金絲雀發佈 (Canary Deployment)",
+          "風險控制 (Risk Management)",
+          "機器學習營運 (MLOps)",
+          "流量路由 (Traffic Routing)"
+        ],
+        "extended_tech": [
+          {
+            "name": "藍綠部署 (Blue-Green Deployment)",
+            "desc": "這是一種確保服務零中斷的高階部署策略。企業會同時維護『藍』（現行版本）與『綠』（新版本）兩套獨立的生產環境。當新模型在綠色環境徹底測試無誤後，運維人員只需切換負載平衡器的路由設定，瞬間將所有流量導向新版，一旦發生問題也能在秒級內切換回滾。"
+          },
+          {
+            "name": "特徵旗標 (Feature Flags / Toggles)",
+            "desc": "將新功能的程式碼部署到生產環境，但預設為隱藏狀態。產品經理可以透過後台系統，在不重新部署程式碼的情況下，隨時針對特定使用者群體動態開啟或關閉 AI 功能，實現極致敏捷的功能釋放控制。"
+          },
+          {
+            "name": "服務網格技術 (Service Mesh)",
+            "desc": "如 Istio 等雲端原生技術，它在應用程式外部建立專屬的網路通訊層，賦予運維團隊強大的微服務流量塑形能力。這使得執行複雜的金絲雀發佈或根據特定 HTTP 標頭進行 A/B 測試流量路由變得異常簡單且透明。"
+          }
+        ],
+        "terminology": [
+          "Big Bang Deployment",
+          "Rollback Plan",
+          "Staging Environment",
+          "Load Balancer",
+          "Fault Tolerance"
         ]
       },
       {
@@ -432,6 +1099,35 @@ const EXAM_DATA = {
         "examples": [
           "在人臉辨識支付系統中，曾有研究指出攻擊者只需佩戴一副印有特定干擾圖案的特製眼鏡，就能誤導 AI 系統將其辨識為特定名人。為防範此類實體對抗攻擊，開發團隊在訓練辨識網路時，大量加入了佩戴各種干擾配件的對抗樣本，大幅強化了模型對臉部核心特徵提取的穩定度。",
           "在自駕車的交通號誌辨識系統中，若攻擊者在「停止」標誌上貼上幾張精心計算過位置的黑色貼紙，就可能導致模型將其誤認為「速限 80」標誌。車廠透過引入對抗訓練與圖像平滑化技術，確保 AI 感知系統能夠濾除這些局部的惡意擾動，準確辨識出號誌的真實語意以保障行車安全。"
+        ],
+        "comparison": "對抗性攻擊（Adversarial Attack）是一種針對神經網路內部決策漏洞進行的數學擾動攻擊，其輸入通常在人類眼中毫無異狀，常應用於突破電腦視覺辨識系統；相較之下，資料下毒攻擊（Data Poisoning）則是駭客提早潛伏，在企業收集訓練資料階段就惡意注入錯誤標籤的樣本，導致模型從一開始就學壞，這兩種攻擊分別威脅著 AI 系統的推理階段與訓練階段，需要完全不同的防禦機制。",
+        "keywords": [
+          "對抗性攻擊 (Adversarial Attack)",
+          "對抗訓練 (Adversarial Training)",
+          "模型脆弱性 (Model Vulnerability)",
+          "特徵擾動 (Feature Perturbation)",
+          "AI 資訊安全 (AI Security)"
+        ],
+        "extended_tech": [
+          {
+            "name": "特徵擠壓技術 (Feature Squeezing)",
+            "desc": "一種針對影像對抗性攻擊的高效防禦手段。透過降低影像色彩深度（如將 8-bit 色彩降為 4-bit）或進行空間平滑化處理，它能有效濾除攻擊者隱藏在像素微小變化中的惡意干擾信號，迫使模型回歸到主要的宏觀特徵上進行判斷。"
+          },
+          {
+            "name": "資料下毒防禦 (Poisoning Defense)",
+            "desc": "為了防範駭客在訓練資料中植入後門（Backdoor）導致模型行為異常，企業必須導入自動化的資料溯源追蹤與統計異常值檢測管線，在訓練前將可疑的訓練樣本剔除。"
+          },
+          {
+            "name": "生成式紅隊演練 (Generative Red Teaming)",
+            "desc": "為大型語言模型量身打造的安全防護機制。由另一套 AI 扮演攻擊者，利用各種極端的提示詞（Prompt Injection）試圖誘發目標模型輸出有害或洩密的內容，藉此提早發現漏洞並設計防禦機制。"
+          }
+        ],
+        "terminology": [
+          "Evasion Attack",
+          "Fast Gradient Sign Method (FGSM)",
+          "Robustness",
+          "Decision Boundary",
+          "Model Inversion"
         ]
       },
       {
@@ -450,6 +1146,35 @@ const EXAM_DATA = {
         "examples": [
           "全球知名的圖庫公司在推出自家的 AI 圖片生成工具時，為確保企業客戶商業使用的安全性，採取了嚴格的資料治理策略。他們宣佈該生成模型僅使用公司擁有完整版權的圖庫與經授權的作品進行訓練，並為客戶生成的每一張圖片提供法律賠償擔保，徹底免除了使用者的侵權疑慮。",
           "一間大型軟體企業在開發程式碼輔助生成（AI Coding Assistant）模型時，為了避免模型輸出其他公司享有版權的封閉原始碼，他們在訓練階段建立了強大的過濾機制，僅從具備寬鬆開源授權條款（如 MIT 或 Apache License）的公共儲存庫中提取訓練資料，從源頭阻斷了法律風險。"
+        ],
+        "comparison": "在 AI 治理中，資料授權審查（Data Provenance）是從源頭根絕侵權風險，適用於自建模型的企業以規避法律訴訟；相較之下，浮水印技術（Watermarking）與內容過濾器（Content Filter）則是終端防護機制，前者用於防止深偽假消息擴散，後者用於攔截有害與暴力內容。雖然這三者皆屬於 AI 安全合規的範疇，但只有嚴謹的資料授權審查能真正確保生成模型在商業應用上的合法性。",
+        "keywords": [
+          "AI 資料治理 (AI Data Governance)",
+          "著作權保護 (Copyright Protection)",
+          "資料授權 (Data Licensing)",
+          "源頭把關 (Data Provenance)",
+          "生成式 AI 合規 (Generative AI Compliance)"
+        ],
+        "extended_tech": [
+          {
+            "name": "機器學習忘卻 (Machine Unlearning)",
+            "desc": "因應隱私法規（如 GDPR 的被遺忘權）而生的新興技術。當創作者要求撤回版權作品授權時，該技術能在不從頭重新訓練龐大模型的前提下，精準抹除神經網路中與特定版權樣本相關的記憶與特徵關聯。"
+          },
+          {
+            "name": "數位隱形浮水印 (Invisible Digital Watermarking)",
+            "desc": "在 AI 生成的圖片或文本中，嵌入人類肉眼無法察覺但演算法可輕易讀取的數位簽章。這使得平台方能在海量網路內容中，快速且確鑿地追溯某個爭議作品是否由自家的 AI 模型所生成。"
+          },
+          {
+            "name": "差分隱私訓練 (Differential Privacy Training)",
+            "desc": "在神經網路模型訓練過程中刻意加入統計學上的數學雜訊，確保模型只會學習到群體數據的普遍通則，而絕對不會記住任何單一病患或客戶的敏感隱私細節，是醫療 AI 的合規標配。"
+          }
+        ],
+        "terminology": [
+          "Public Domain",
+          "Fair Use",
+          "Data Sanitization",
+          "Intellectual Property",
+          "Algorithmic Audit"
         ]
       },
       {
@@ -468,6 +1193,35 @@ const EXAM_DATA = {
         "examples": [
           "在基因表現數據分析中，科學家面臨數萬個基因特徵，但只有少數基因與特定疾病相關。使用 LASSO 迴歸可以自動將無關基因的權重降為零，從而篩選出關鍵的致病基因。",
           "在信用風險評估模型中，銀行會收集客戶的數百項財務指標。由於許多指標（如月收入與年收入）高度相關，LASSO 能幫助銀行篩選出最具代表性的少數特徵，建立精簡且具解釋性的信用評分模型。"
+        ],
+        "comparison": "LASSO 迴歸與一般線性迴歸相比，最大的優勢在於其能透過 L1 正則化將不重要或高度相關特徵的權重壓縮至零，具備內建特徵選擇功能，特別適用於變數極多且存在多重共線性的財務預測與基因分析領域。相較之下，決策樹雖不受共線性影響，但難以捕捉全局線性關係；傳統線性迴歸會因共線性導致估計極不穩定；而 SVM 若不更動核函數，則無自動特徵篩選能力。",
+        "keywords": [
+          "LASSO 迴歸 (LASSO Regression)",
+          "L1 正則化 (L1 Regularization)",
+          "多重共線性 (Multicollinearity)",
+          "特徵選擇 (Feature Selection)",
+          "線性模型 (Linear Models)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Ridge 迴歸 (Ridge Regression)",
+            "desc": "使用 L2 正則化，主要用於處理共線性但不會將權重壓縮至零，適用於保留所有特徵的預測場景。"
+          },
+          {
+            "name": "彈性網迴歸 (Elastic Net)",
+            "desc": "結合 L1 與 L2 正則化，在特徵高度相關時能整組選擇，常應用於複雜基因交互作用分析。"
+          },
+          {
+            "name": "隨機森林 (Random Forest)",
+            "desc": "透過樹狀模型評估特徵對純度的貢獻度，作為非線性資料中的特徵篩選與重要性評估工具。"
+          }
+        ],
+        "terminology": [
+          "正則化懲罰 (Regularization Penalty)",
+          "過擬合 (Overfitting)",
+          "變異數 (Variance)",
+          "特徵權重 (Feature Weight)",
+          "稀疏矩陣 (Sparse Matrix)"
         ]
       },
       {
@@ -486,6 +1240,35 @@ const EXAM_DATA = {
         "examples": [
           "在電子商務網站的異常流量偵測中，工程師將使用者的點擊日誌按 10 分鐘的時間窗口進行聚合，計算每個 IP 的請求次數與錯誤率，以此作為特徵來即時預測並阻擋潛在的 DDoS 攻擊。",
           "在智慧工廠中，設備感測器會持續回傳包含多層次狀態的 JSON 數據。系統利用時間窗口技術，每小時計算一次溫度震盪幅度和馬達轉速均值，作為機器壽命預測模型的輸入特徵。"
+        ],
+        "comparison": "針對複雜且巢狀的 JSON 時序日誌，使用時間窗口聚合（Time Window Aggregation）能有效提取反映短期動態變化的固定維度特徵，非常適合異常偵測與系統監控領域。相較於將資料直接扁平化為 CSV，時間窗口能保留時間序列的關聯性；而直接將 JSON 輸入 RNN 則會因為結構字元與過長序列導致訓練困難且效率極低；若僅保留時間戳記則會丟失關鍵狀態資訊，無法建構有效預測。",
+        "keywords": [
+          "時序特徵工程 (Temporal Feature Engineering)",
+          "時間窗口 (Time Window)",
+          "日誌分析 (Log Analysis)",
+          "聚合運算 (Aggregation)",
+          "資料扁平化 (Data Flattening)"
+        ],
+        "extended_tech": [
+          {
+            "name": "滑動窗口 (Sliding Window)",
+            "desc": "時間窗口的一種變體，允許窗口之間有重疊，以更平滑地捕捉時序信號的連續變化趨勢。"
+          },
+          {
+            "name": "長短期記憶網路 (LSTM)",
+            "desc": "一種特殊的 RNN架構，擅長處理長序列依賴，常與時間窗口特徵結合應用於設備剩餘壽命預測。"
+          },
+          {
+            "name": "Apache Flink",
+            "desc": "分散式流處理框架，支援強大的時間窗口聚合功能，廣泛用於即時日誌分析與串流特徵計算。"
+          }
+        ],
+        "terminology": [
+          "巢狀結構 (Nested Structure)",
+          "時序動態 (Temporal Dynamics)",
+          "特徵萃取 (Feature Extraction)",
+          "全域統計量 (Global Statistics)",
+          "資料降維 (Data Dimensionality Reduction)"
         ]
       },
       {
@@ -504,6 +1287,35 @@ const EXAM_DATA = {
         "examples": [
           "在廣告點擊率預測中，用戶所在的「城市」是一個類別繁多的特徵。分析師使用目標編碼，將城市名稱替換為該城市過去的平均點擊率，同時對用戶的「年齡」與「瀏覽時間」進行標準化，大幅提升預測精準度。",
           "在保險理賠金額估算系統裡，保單的「車輛型號」被轉換為歷史平均理賠額（目標編碼），而「車輛行駛里程」則經過標準化處理，並將兩者結合生成交互特徵，幫助模型更精細地評估風險。"
+        ],
+        "comparison": "在處理混合型特徵時，標準化連續特徵能加速模型收斂，而目標編碼能將高基數類別特徵轉換為具預測力的數值，廣泛應用於廣告點擊率預測與保險精算等領域。相比之下，標籤編碼會引入不合理的大小關係，容易誤導線性模型；將連續變數全數離散化則會導致細微數值的資訊嚴重流失；而直接忽略類別特徵更是會遺漏關鍵資訊，大幅降低模型的泛化與預測精準度。",
+        "keywords": [
+          "特徵工程 (Feature Engineering)",
+          "標準化 (Standardization)",
+          "目標編碼 (Target Encoding)",
+          "高基數特徵 (High Cardinality Features)",
+          "標籤編碼 (Label Encoding)"
+        ],
+        "extended_tech": [
+          {
+            "name": "獨熱編碼 (One-Hot Encoding)",
+            "desc": "將類別特徵轉換為多個二元特徵，適用於基數較低的類別變數，廣泛用於各類機器學習模型的前處理。"
+          },
+          {
+            "name": "特徵交叉 (Feature Crossing)",
+            "desc": "將兩個或多個特徵組合產生新的互動特徵，協助線性模型捕捉非線性關係，常用於推薦系統。"
+          },
+          {
+            "name": "Min-Max 縮放 (Min-Max Scaling)",
+            "desc": "將連續數值線性縮放到特定範圍（通常是0到1），適合用於神經網路或對數值範圍敏感的演算法。"
+          }
+        ],
+        "terminology": [
+          "收斂速度 (Convergence Speed)",
+          "交互特徵 (Interaction Feature)",
+          "資訊遺失 (Information Loss)",
+          "常態分佈 (Normal Distribution)",
+          "梯度下降 (Gradient Descent)"
         ]
       },
       {
@@ -522,6 +1334,35 @@ const EXAM_DATA = {
         "examples": [
           "在自動駕駛軟體開發中，數十位工程師共同維護感知模組。透過 CI 系統，只要有人提交新的影像處理演算法，系統便會立即自動執行數百個邊角案例的測試，確保新演算法不會引發迴歸錯誤。",
           "在金融科技公司的演算法交易團隊，每次量化研究員將新的交易策略腳本推送到代碼庫時，CI 系統會自動檢查程式碼風格規範，並利用歷史回測資料進行快速沙盒測試，驗證邏輯正確性後才允許合併。"
+        ],
+        "comparison": "持續整合（CI）強調頻繁且自動化的建置與測試，每次代碼提交後即時驗證，能快速抓出錯誤並降低整合風險，廣泛應用於敏捷開發與 MLOps 領域。這與傳統手動合併或定期回顧的作法截然不同，後者容易造成代碼分歧過大並引發「整合地獄」。此外，批次釋出到測試環境屬於持續部署（CD）的範疇，雖然重要，但無法取代 CI 階段快速反饋與單元測試的核心價值。",
+        "keywords": [
+          "持續整合 (Continuous Integration)",
+          "自動化測試 (Automated Testing)",
+          "模型開發生命週期 (ML Lifecycle)",
+          "版本控制 (Version Control)",
+          "靜態分析 (Static Analysis)"
+        ],
+        "extended_tech": [
+          {
+            "name": "持續部署 (Continuous Deployment, CD)",
+            "desc": "CI的延伸，將通過測試的代碼自動部署至生產環境，實現軟體交付的全自動化。"
+          },
+          {
+            "name": "GitOps",
+            "desc": "以 Git 為單一真實來源的基礎設施即代碼實踐，結合 CI/CD 自動化管理雲端基礎架構與應用程式狀態。"
+          },
+          {
+            "name": "模型註冊中心 (Model Registry)",
+            "desc": "MLOps 中用於集中管理模型版本、中繼資料與部署狀態的系統，確保模型追溯性與協作效率。"
+          }
+        ],
+        "terminology": [
+          "單元測試 (Unit Test)",
+          "整合地獄 (Integration Hell)",
+          "建置流程 (Build Process)",
+          "迴歸錯誤 (Regression Error)",
+          "沙盒環境 (Sandbox Environment)"
         ]
       },
       {
@@ -540,6 +1381,35 @@ const EXAM_DATA = {
         "examples": [
           "在區塊鏈基礎的智能合約中，當 AI 預言機（Oracle）將外部資產價格匯入鏈上時，必須對價格數據附上數位簽章，確保數據提供者日後無法否認其提供的數據，保障交易公正性。",
           "在遠距醫療系統中，AI 輔助診斷軟體生成的醫療影像分析報告會即時產生雜湊值並由醫院系統簽署數位簽章，確保報告作為醫療糾紛法庭證據時，其內容與生成當下完全一致未被竄改。"
+        ],
+        "comparison": "在金融等高監管領域，確保 AI 模型決策的不可否認性至關重要。使用加密雜湊值並搭配數位簽章，能透過密碼學原理保證推論紀錄未被竄改，為事後稽核與法庭舉證提供堅實基礎。相較之下，優化推論延遲、增加主機備援或引入負載平衡器等措施，雖然能分別提升系統的效能、可用性與吞吐量，但完全無法解決資料完整性與來源證明的資安法規要求，應用目的完全不同。",
+        "keywords": [
+          "不可否認性 (Non-repudiation)",
+          "數位簽章 (Digital Signature)",
+          "雜湊函數 (Hash Function)",
+          "資料完整性 (Data Integrity)",
+          "法規遵循 (Regulatory Compliance)"
+        ],
+        "extended_tech": [
+          {
+            "name": "區塊鏈溯源 (Blockchain Traceability)",
+            "desc": "利用分散式帳本的不可竄改特性，記錄 AI 模型的訓練數據與推論歷程，增強信任度。"
+          },
+          {
+            "name": "同態加密 (Homomorphic Encryption)",
+            "desc": "允許在密文狀態下進行模型推論運算，確保敏感資料在運算過程中的絕對隱私安全。"
+          },
+          {
+            "name": "零知識證明 (Zero-Knowledge Proof)",
+            "desc": "在不揭露實際資料內容的情況下，證明某項 AI 推論結果或資料屬性的正確性與合規性。"
+          }
+        ],
+        "terminology": [
+          "公鑰與私鑰 (Public/Private Key)",
+          "稽核軌跡 (Audit Trail)",
+          "高可用性 (High Availability)",
+          "單向加密 (One-way Encryption)",
+          "負載平衡 (Load Balancing)"
         ]
       },
       {
@@ -558,6 +1428,35 @@ const EXAM_DATA = {
         "examples": [
           "大型串流影音平台在熱門賽事直播期間，其推薦系統的 API 呼叫量會瞬間飆升數十倍。透過 Kubernetes 的自動彈性伸縮機制，系統會在幾分鐘內自動增開數百個 AI 推論節點來處理流量，賽後再自動縮減。",
           "美食外送平台在中午用餐尖峰時段，其 AI 派單路徑最佳化系統會面臨極高併發。利用 Auto Scaling 結合容器化部署，平台確保派單延遲始終維持在毫秒級，不會因流量暴增而導致系統崩潰。"
+        ],
+        "comparison": "面對高 RPS 且耗時的模型推論，採用容器化與自動彈性伸縮（Auto Scaling）能根據流量動態增減資源，是現代雲端原生架構確保高可用性的最佳實踐。這比單純依賴垂直擴展（Scale-up）更具彈性且無硬體上限限制；相較於限制併發數，能提供更佳的用戶體驗而不拒絕服務；而單純增加批次處理大小雖然能提高吞吐，卻會大幅增加回應延遲，不適合要求即時回應的系統。",
+        "keywords": [
+          "自動彈性伸縮 (Auto Scaling)",
+          "容器化 (Containerization)",
+          "高可用性 (High Availability)",
+          "負載平衡 (Load Balancing)",
+          "微服務架構 (Microservices Architecture)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Kubernetes (K8s)",
+            "desc": "業界標準的容器編排平台，提供強大的自動化部署、擴展與應用程式管理能力，支撐大規模 AI 服務。"
+          },
+          {
+            "name": "無伺服器架構 (Serverless Computing)",
+            "desc": "開發者無需管理底層伺服器，由雲端平台根據請求量自動且毫秒級地分配資源，適合高度波動負載。"
+          },
+          {
+            "name": "服務網格 (Service Mesh)",
+            "desc": "專門處理服務間通訊的基礎架構層，提供負載平衡、服務發現與加密連線，強化微服務穩定性。"
+          }
+        ],
+        "terminology": [
+          "吞吐量 (Throughput)",
+          "回應延遲 (Response Latency)",
+          "水平擴展 (Scale-out)",
+          "垂直擴展 (Scale-up)",
+          "單點故障 (Single Point of Failure)"
         ]
       },
       {
@@ -576,6 +1475,35 @@ const EXAM_DATA = {
         "examples": [
           "在信用卡風險評分模型中，資料科學家每週計算客戶收入特徵的 PSI。若發現 PSI 異常飆高，可能代表近期湧入大量不同客群的申請者，團隊便能及時介入調查是否需要更新模型。",
           "電商的商品推薦系統會監控用戶點擊行為特徵的 PSI。當行銷部門舉辦大型促銷活動導致用戶行為模式劇變時，PSI 監控系統會立即發出警報，提示工程師暫時切換至規則推薦以避免 AI 模型產生誤判。"
+        ],
+        "comparison": "在線上模型監控中，PSI（群體穩定度指標）是專門用於量化輸入特徵分佈變化的統計指標，能最早期預警資料漂移導致的模型效能衰退，廣泛用於信用評分與行銷推薦等場景。相較之下，CPU/記憶體或 API 延遲屬於 IT 基礎設施監控，無法反映模型預測準確度；而置信度分佈雖有參考價值，但在深度神經網路過度自信時往往失準，不及 PSI 直接監控輸入分佈來得可靠與提早。",
+        "keywords": [
+          "群體穩定度指標 (Population Stability Index, PSI)",
+          "資料漂移 (Data Drift)",
+          "模型監控 (Model Monitoring)",
+          "特徵分佈 (Feature Distribution)",
+          "機器學習營運 (MLOps)"
+        ],
+        "extended_tech": [
+          {
+            "name": "概念漂移監測 (Concept Drift Detection)",
+            "desc": "監測特徵與目標變數之間關聯性的改變，常用於適應金融市場規則改變或消費者行為模式轉移。"
+          },
+          {
+            "name": "KL 散度 (Kullback-Leibler Divergence)",
+            "desc": "衡量兩個機率分佈之間差異的資訊理論指標，為 PSI 計算背後的核心數學基礎之一。"
+          },
+          {
+            "name": "影子部署 (Shadow Deployment)",
+            "desc": "將新版模型與舊版平行運行接收真實流量，但新模型結果不回傳給用戶，專用於安全評估新模型效能。"
+          }
+        ],
+        "terminology": [
+          "泛化能力 (Generalization)",
+          "過度自信 (Overconfidence)",
+          "統計檢定 (Statistical Test)",
+          "基準資料 (Baseline Data)",
+          "閾值警報 (Threshold Alert)"
         ]
       },
       {
@@ -594,6 +1522,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫學文獻檢索系統中，許多專業藥物名稱或罕見疾病是低頻詞。開發者使用 Skip-gram 訓練詞向量，使得系統能夠精準理解這些罕見專業術語之間的複雜關聯，提升搜尋相關性。",
           "在分析社群媒體上的非主流次文化用語時，由於這些網路俚語出現頻率低且語境多變，利用 Skip-gram 模型能夠更靈敏地捕捉這些新造詞的潛在語意，協助行銷團隊掌握最新流行趨勢。"
+        ],
+        "comparison": "在 Word2Vec 中，Skip-gram 利用中心詞預測周圍詞的機制，能為每次出現的詞彙創造多次參數更新機會，特別適合捕捉低頻詞與罕見詞的精細語意，常應用於醫學術語或社群俚語分析。相較之下，CBOW 利用周圍詞預測中心詞，在聚合上下文時會平滑掉罕見詞特徵，雖訓練較快且對高頻詞表現好，但在處理低頻詞時則不如 Skip-gram。隨機初始化或 TF-IDF 權重均非解決此根本架構差異的有效策略。",
+        "keywords": [
+          "Word2Vec",
+          "Skip-gram",
+          "連續詞袋模型 (CBOW)",
+          "詞嵌入 (Word Embedding)",
+          "低頻詞 (Rare Words)"
+        ],
+        "extended_tech": [
+          {
+            "name": "FastText",
+            "desc": "Word2Vec 的改良版，將詞彙拆解為字元 n-gram，能有效處理未登錄詞（OOV）與形態變化豐富的語言。"
+          },
+          {
+            "name": "GloVe",
+            "desc": "結合全局矩陣分解與局部上下文窗口優勢的詞嵌入模型，在捕捉全域統計特性方面表現優異。"
+          },
+          {
+            "name": "BERT (上下文詞嵌入)",
+            "desc": "基於 Transformer 的動態詞嵌入模型，能根據上下文改變同一個詞的向量表示，解決一詞多義問題。"
+          }
+        ],
+        "terminology": [
+          "密集向量 (Dense Vector)",
+          "梯度更新 (Gradient Update)",
+          "上下文窗口 (Context Window)",
+          "潛在語意空間 (Latent Semantic Space)",
+          "負採樣 (Negative Sampling)"
         ]
       },
       {
@@ -612,6 +1569,35 @@ const EXAM_DATA = {
         "examples": [
           "在農業無人機空拍分析中，全景分割技術不僅能劃分出大面積的土壤、水源與作物區域（背景），還能精準分割並計算出畫面中每一棵獨立果樹的像素面積（個體），幫助精準施肥。",
           "在智慧城市的街景分析系統中，政府利用全景分割模型來處理路口監視器影像，同時分類出人行道、斑馬線等基礎設施，並獨立追蹤每一台腳踏車與行人，以優化交通號誌時相。"
+        ],
+        "comparison": "全景分割完美結合了語義分割與實例分割的特性，能同時對不可數的背景（Stuff）與可數的個體（Things）進行像素級辨識，是自駕車與智慧城市場景理解的最理想技術。相比之下，語義分割無法區分同類別的不同實體；實例分割通常只處理前景個體而忽略背景結構；而物件偵測僅能提供粗略的邊界框，無法達到自動駕駛所需的像素級環境理解與輪廓精確度。",
+        "keywords": [
+          "全景分割 (Panoptic Segmentation)",
+          "語義分割 (Semantic Segmentation)",
+          "實例分割 (Instance Segmentation)",
+          "物件偵測 (Object Detection)",
+          "像素級分類 (Pixel-level Classification)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Mask R-CNN",
+            "desc": "經典的實例分割模型，在 Faster R-CNN 基礎上增加掩膜預測分支，廣泛用於精確框選與分割個體物件。"
+          },
+          {
+            "name": "U-Net",
+            "desc": "常用於醫學影像的語義分割架構，具備編碼器與解碼器及跳躍連接，能有效還原影像邊緣細節。"
+          },
+          {
+            "name": "單階段物件偵測 (YOLO)",
+            "desc": "追求極致推論速度的物件偵測演算法，適用於資源受限且需要即時反應的邊緣運算設備。"
+          }
+        ],
+        "terminology": [
+          "邊界框 (Bounding Box)",
+          "可數物件 (Things)",
+          "不可數背景 (Stuff)",
+          "場景理解 (Scene Understanding)",
+          "空間拓樸 (Spatial Topology)"
         ]
       },
       {
@@ -630,6 +1616,35 @@ const EXAM_DATA = {
         "examples": [
           "電子商務平台利用 CLIP 建立以圖搜圖與以文搜圖的混合搜尋引擎。使用者可以直接輸入「適合海灘度假的紅色連身裙」字串，系統透過比較文字與商品圖片的向量相似度，即時回傳最符合的商品影像。",
           "數位資產管理系統中，設計師匯入數千張未命名的素材圖，利用 CLIP 技術，系統允許設計師直接輸入任意文字描述（如「充滿科技感的霓虹城市夜景」），無需預先建立標籤庫即可找出相符的圖片。"
+        ],
+        "comparison": "CLIP 模型透過圖文對比式學習將影像與文字映射至共同的嵌入空間，賦予其強大的零樣本（Zero-shot）分類與跨模態搜尋能力，這使其成為無需額外標註資料即可進行圖文匹配的完美選擇。這有別於傳統依賴多層感知器進行特定類別監督式學習的模型，也不同於自迴歸文字生成模型（如 GPT）的逐步生成機制。影像增強技術雖有助訓練，但並非 CLIP 達成零樣本辨識的核心機制。",
+        "keywords": [
+          "對比學習 (Contrastive Learning)",
+          "零樣本分類 (Zero-shot Classification)",
+          "共同嵌入空間 (Shared Embedding Space)",
+          "跨模態搜尋 (Cross-modal Search)",
+          "CLIP 模型 (CLIP)"
+        ],
+        "extended_tech": [
+          {
+            "name": "對比預訓練 (SimCLR)",
+            "desc": "純影像領域的自監督對比學習框架，透過將同一影像的不同增強版本拉近，學習強健的視覺特徵。"
+          },
+          {
+            "name": "視覺語言預訓練 (ViLBERT)",
+            "desc": "早期的多模態模型，透過雙流 Transformer 架構分別處理並融合視覺與語言資訊，用於視覺問答等任務。"
+          },
+          {
+            "name": "擴散模型 (Diffusion Models)",
+            "desc": "常利用 CLIP 的文字編碼器作為條件引導，將文字提示精準轉換為高品質生成的影像像素。"
+          }
+        ],
+        "terminology": [
+          "特徵空間 (Feature Space)",
+          "餘弦相似度 (Cosine Similarity)",
+          "正樣本與負樣本 (Positive/Negative Samples)",
+          "遷移學習 (Transfer Learning)",
+          "鑑別式模型 (Discriminative Model)"
         ]
       },
       {
@@ -648,6 +1663,35 @@ const EXAM_DATA = {
         "examples": [
           "在訓練隨機森林模型來預測客戶流失時，工程師設定決策樹數量為 [50, 100, 200]，最大深度為 [10, 20, 30]。透過網格搜尋，系統自動訓練並測試這 9 種組合，找出能達到最高 F1 分數的設定。",
           "工廠的影像瑕疵檢測系統使用支持向量機 (SVM)。為了找到最佳的決策邊界，開發者運用網格搜尋窮舉測試懲罰係數 C 的 5 種數值與核函數參數 Gamma 的 5 種數值，從 25 種組合中選出泛化能力最強的模型。"
+        ],
+        "comparison": "網格搜尋（Grid Search）透過窮舉所有預設的超參數組合進行系統化測試，保證在給定範圍內找到最佳解，非常適合參數空間較小且需嚴謹評估的模型調校。相較之下，隨機搜尋雖效率高但不保證系統化涵蓋；貝葉斯優化則根據歷史結果動態學習，屬智慧搜尋而非單純窮舉；而交叉驗證是評估泛化能力的方法，常與這些搜尋策略結合使用，但其本身並非尋找參數組合的搜尋演算法。",
+        "keywords": [
+          "網格搜尋 (Grid Search)",
+          "超參數調校 (Hyperparameter Tuning)",
+          "交叉驗證 (Cross Validation)",
+          "隨機搜尋 (Random Search)",
+          "貝葉斯優化 (Bayesian Optimization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "貝葉斯優化 (Bayesian Optimization)",
+            "desc": "利用高斯過程建立代理模型，智慧地選擇下一個最可能提升效能的參數組合，適合高計算成本的模型。"
+          },
+          {
+            "name": "Hyperband 演算法",
+            "desc": "結合隨機搜尋與提早停止機制，將運算資源優先分配給有潛力的參數組合，大幅加速調校過程。"
+          },
+          {
+            "name": "巢狀交叉驗證 (Nested Cross-Validation)",
+            "desc": "內外雙層循環的驗證機制，能無偏差地評估包含超參數調校流程的整體模型泛化能力。"
+          }
+        ],
+        "terminology": [
+          "超參數空間 (Hyperparameter Space)",
+          "泛化能力 (Generalization)",
+          "過擬合 (Overfitting)",
+          "驗證集 (Validation Set)",
+          "參數組合 (Parameter Grid)"
         ]
       },
       {
@@ -666,6 +1710,35 @@ const EXAM_DATA = {
         "examples": [
           "研究機構在訓練參數量達數十億的開源語言模型時，單張 RTX 3090 無法塞入 Batch Size 為 32 的資料。工程師將 Batch Size 降為 4，並啟用梯度累積技術，順利在有限硬體上完成訓練。",
           "醫療影像團隊處理高解析度 3D MRI 影像時，因影像體積過大導致 GPU 記憶體頻繁崩潰。他們將每批次處理的影像數量減至 1，並利用多台 GPU 分散處理不同的影像資料（Data Sharding），成功穩定了模型訓練過程。"
+        ],
+        "comparison": "在模型與硬體固定的情況下，減少批次大小（Batch Size）能最直接有效地降低 GPU 活化值的記憶體佔用，搭配資料分片能彌補分散式訓練中的效能問題，是解決 OOM 的標準手段。相較之下，減少訓練資料量不僅無助於降低單步運算的峰值記憶體，還會嚴重損害模型效能；增加學習率與記憶體佔用毫無關聯；而改用測試集進行訓練則是嚴重違反機器學習原則的資料洩漏行為。",
+        "keywords": [
+          "批次大小 (Batch Size)",
+          "資料分片 (Data Sharding)",
+          "記憶體不足 (Out-of-Memory, OOM)",
+          "分散式訓練 (Distributed Training)",
+          "梯度累積 (Gradient Accumulation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "梯度累積 (Gradient Accumulation)",
+            "desc": "在較小批次上計算梯度並累加多次後才更新權重，藉此在有限記憶體下模擬大批次訓練的穩定性。"
+          },
+          {
+            "name": "混合精度訓練 (Mixed Precision Training)",
+            "desc": "交替使用 FP16 與 FP32 數值格式，能在幾乎不損失準度的情況下，將記憶體消耗減半並加速運算。"
+          },
+          {
+            "name": "模型平行化 (Model Parallelism)",
+            "desc": "當單一模型大到無法放入單張 GPU 時，將模型網路的不同層或張量拆分至多張 GPU 協同運算。"
+          }
+        ],
+        "terminology": [
+          "活化值 (Activations)",
+          "優化器狀態 (Optimizer State)",
+          "收斂品質 (Convergence Quality)",
+          "資料洩漏 (Data Leakage)",
+          "資料平行 (Data Parallelism)"
         ]
       },
       {
@@ -684,6 +1757,35 @@ const EXAM_DATA = {
         "examples": [
           "遊戲美術設計師使用 AI 生成遊戲場景的材質貼圖。為了確保石頭與木紋的表面紋理逼真且不模糊，設計師將取樣步數從預設的 20 提高到 50，並切換至高階的祖先取樣器，成功獲得高清晰度的材質。",
           "室內設計公司利用擴散模型生成裝潢效果圖。當發現生成的沙發布料呈現塊狀模糊時，操作員調整參數，增加去噪步數，讓系統能更細緻地計算光影與布料皺褶，產出達到照片級真實感的渲染圖。"
+        ],
+        "comparison": "在擴散模型中，增加取樣步數並搭配高品質取樣器能讓模型進行更細緻的去噪過程，顯著提升邊緣清晰度、紋理細節與影像真實感，是解決顆粒化的首選作法。相反地，降低步數會導致去噪不完全與模糊加劇；提高 CFG 值雖能強化提示詞符合度，但過高會造成對比失真與影像崩壞，無助於細節平滑過渡；而改用低解析度輸入則完全與提升 4K 畫質清晰度的目標背道而馳。",
+        "keywords": [
+          "擴散模型 (Diffusion Models)",
+          "取樣步數 (Sampling Steps)",
+          "取樣器 (Sampler)",
+          "CFG 值 (Classifier-Free Guidance)",
+          "去噪過程 (Denoising Process)"
+        ],
+        "extended_tech": [
+          {
+            "name": "潛在擴散模型 (Latent Diffusion Models)",
+            "desc": "將去噪過程移至低維度潛在空間執行，大幅降低高解析度影像生成的計算資源需求（如 Stable Diffusion）。"
+          },
+          {
+            "name": "ControlNet",
+            "desc": "擴散模型的擴充架構，允許輸入邊緣圖或人體骨架等條件，精確控制影像生成的結構與空間配置。"
+          },
+          {
+            "name": "LoRA (Low-Rank Adaptation)",
+            "desc": "輕量級微調技術，透過少量參數更新即可讓擴散模型快速學習並生成特定畫風或特定人物特徵。"
+          }
+        ],
+        "terminology": [
+          "高斯雜訊 (Gaussian Noise)",
+          "微分方程求解器 (ODE Solver)",
+          "紋理層次 (Texture Detail)",
+          "提示詞引導 (Prompt Guidance)",
+          "影像崩壞 (Image Artifacts)"
         ]
       },
       {
@@ -702,6 +1804,35 @@ const EXAM_DATA = {
         "examples": [
           "零售業預測衛生紙銷量時，建立的 ARIMA 模型殘差在 Lag=7 時總是出現顯著的相關性。這暗示銷量存在明顯的「每週」週期性波動，分析師據此升級為包含季節性參數的 SARIMA 模型以消除此誤差。",
           "發電廠使用時間序列預測明日用電量。如果發現模型的預測誤差呈現波浪狀起伏（非白噪音），工程師會重新檢視並增加自迴歸項(p)的階數，迫使模型進一步學習氣溫變化對用電量的潛在遞延影響。"
+        ],
+        "comparison": "在時間序列預測中，ARIMA 模型配適良好的指標是殘差呈現無自相關的白噪音。若殘差顯示週期性波動且 ACF 不為零，代表模型配適不足（Underfitting），未能完全捕捉資料的時間依賴性，應調整自迴歸(p)或移動平均(q)參數，或引入季節性模型（SARIMA）。此時若將殘差視為隨機誤差或白噪音而忽略不計，將導致預測模型失去對趨勢與週期性的敏銳度，嚴重影響商業決策準確性。",
+        "keywords": [
+          "ARIMA 模型",
+          "殘差診斷 (Residual Diagnostics)",
+          "自相關函數 (ACF)",
+          "白噪音 (White Noise)",
+          "配適不足 (Underfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "SARIMA (季節性 ARIMA)",
+            "desc": "在傳統 ARIMA 基礎上加入季節性自迴歸與差分參數，專門處理具備明顯季節性或週期性波動的時間序列資料。"
+          },
+          {
+            "name": "Ljung-Box 檢定",
+            "desc": "一種統計檢定方法，用於正式測試時間序列模型的殘差是否整體呈現隨機獨立的白噪音狀態。"
+          },
+          {
+            "name": "Prophet 預測模型",
+            "desc": "由 Meta 開發的加法時間序列模型，能靈活處理缺失值、趨勢變化以及複雜的節假日效應。"
+          }
+        ],
+        "terminology": [
+          "時滯 (Lag)",
+          "移動平均 (Moving Average)",
+          "時間依賴性 (Time Dependence)",
+          "差分 (Differencing)",
+          "平穩性 (Stationarity)"
         ]
       },
       {
@@ -720,6 +1851,35 @@ const EXAM_DATA = {
         "examples": [
           "在藥物分子設計中，研究員利用 VAE 將已知化學結構編碼為連續的潛在向量，並在該空間中平滑插值，生成具有潛在新療效且結構合理的候選藥物分子。",
           "影視特效公司使用 GAN 技術將白天拍攝的風景影片自動轉換為逼真的黑夜場景；而當需要根據導演的精確文字指令生成特定風格的科幻概念圖時，則採用擴散模型以獲得最高的細節與可控性。"
+        ],
+        "comparison": "VAE、GAN 與擴散模型在生成策略上有根本差異。VAE 透過顯式潛在空間建模，生成結果平滑但解析度有限；GAN 依賴對抗學習，生成品質極高但訓練極不穩定且易模式崩潰；擴散模型則透過條件化去噪，完美平衡了高保真品質、訓練穩定性與樣本多樣性。將 VAE 與 Diffusion 誤認為依賴對抗訓練，或認為三者僅解碼器不同，皆是嚴重誤解了這三種當代主流生成架構的底層數學機制。",
+        "keywords": [
+          "生成對抗網路 (GAN)",
+          "變分自編碼器 (VAE)",
+          "擴散模型 (Diffusion Models)",
+          "潛在空間對齊 (Latent Alignment)",
+          "對抗損失 (Adversarial Loss)"
+        ],
+        "extended_tech": [
+          {
+            "name": "條件生成對抗網路 (cGAN)",
+            "desc": "在 GAN 架構中加入條件標籤，使模型能根據指定類別或屬性生成特定特徵的影像資料。"
+          },
+          {
+            "name": "VQ-VAE",
+            "desc": "結合向量量化技術的變分自編碼器，能有效壓縮特徵並生成高解析度、邊緣銳利的影像。"
+          },
+          {
+            "name": "流匹配模型 (Flow Matching)",
+            "desc": "新興的生成模型框架，透過連續時間常微分方程直接建立數據與雜訊的傳輸映射，訓練效率優於傳統擴散模型。"
+          }
+        ],
+        "terminology": [
+          "模式崩潰 (Mode Collapse)",
+          "條件化去噪 (Conditional Denoising)",
+          "隱式生成 (Implicit Generative)",
+          "馬爾可夫鏈 (Markov Chain)",
+          "KL 散度 (KL Divergence)"
         ]
       },
       {
@@ -738,6 +1898,35 @@ const EXAM_DATA = {
         "examples": [
           "參加 Kaggle 機器學習競賽時，參賽者若單純根據 Public Leaderboard (等同於驗證集) 不斷微調超參數以衝高分數，最終在 Private Leaderboard (獨立測試集) 揭曉時往往會遭遇分數暴跌，這就是過度適應驗證集導致的偏差。",
           "醫療團隊開發疾病預測模型時，將所有醫院資料混在一起做 K-Fold 調參數並直接發布準確率。上線後發現對新病患預測極差，原因就是他們沒有預留獨立醫院的資料作為最終盲測，導致對模型效能過度樂觀。"
+        ],
+        "comparison": "在 K-Fold 交叉驗證中直接依賴驗證摺（Validation Fold）來反覆調整超參數並以此報告最終效能，會導致模型對該驗證集產生過度適應，引發「資料洩漏」與過度樂觀的效能偏差。正確作法是引入完全獨立的測試集或採用巢狀交叉驗證。這與單純的參數訓練不穩、效能方差增大或假設衝突無關，其核心問題在於破壞了模型評估中「測試資料必須未曾參與任何模型決策」的神聖原則。",
+        "keywords": [
+          "交叉驗證 (Cross-Validation)",
+          "超參數調校 (Hyperparameter Tuning)",
+          "資料洩漏 (Data Leakage)",
+          "過度樂觀偏差 (Over-optimistic Bias)",
+          "模型泛化 (Model Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "巢狀交叉驗證 (Nested Cross-Validation)",
+            "desc": "包含內圈負責超參數調校，外圈負責效能評估的嚴謹架構，有效避免參數選擇導致的資料洩漏。"
+          },
+          {
+            "name": "保留驗證法 (Holdout Validation)",
+            "desc": "將資料集單次切分為訓練、驗證與測試三個完全獨立的子集，是最直觀防止資訊洩漏的評估方式。"
+          },
+          {
+            "name": "時間序列交叉驗證 (Time Series Split)",
+            "desc": "專為時序資料設計的滾動式驗證方法，嚴格遵守時間先後順序，避免使用未來資訊預測過去。"
+          }
+        ],
+        "terminology": [
+          "驗證集 (Validation Fold)",
+          "測試集 (Test Set)",
+          "過度適應 (Overfitting to Validation)",
+          "選型偏差 (Selection Bias)",
+          "效能評估 (Performance Evaluation)"
         ]
       },
       {
@@ -756,6 +1945,35 @@ const EXAM_DATA = {
         "examples": [
           "信用卡發卡銀行在原有預測違約的模型旁，平行部署了一個 VAE 監控模型。當經濟大環境改變導致客戶消費行為模式整體偏移時，VAE 偵測到重建誤差異常變大，提醒團隊必須即刻收集最新資料重新訓練鑑別模型。",
           "製造業產線的 AI 瑕疵檢測系統中，工程師使用 Autoencoder 監控攝影機捕捉到的產品影像。當廠房更換照明設備導致影像色溫與陰影改變時，系統能自動辨識出影像分佈偏移，暫停 AI 自動剔除機制並呼叫人工介入。"
+        ],
+        "comparison": "當線上系統遭遇資料漂移導致錯誤率上升時，利用 VAE 或 Autoencoder 等生成模型監控潛在空間分佈，能有效量化輸入資料的異常與偏移程度，及時預警並觸發重訓。相比之下，盲目使用 GAN 生成樣本無法反映真實世界發生的新分佈；改用簡單的邏輯迴歸或單純增加模型容量，皆無法解決輸入特徵與歷史訓練集已經產生本質差異的核心問題，甚至會加劇對舊資料的過擬合。",
+        "keywords": [
+          "分佈外偵測 (OOD Detection)",
+          "資料漂移 (Data Drift)",
+          "潛在空間監控 (Latent Space Monitoring)",
+          "變分自編碼器 (VAE)",
+          "機器學習營運 (MLOps)"
+        ],
+        "extended_tech": [
+          {
+            "name": "孤立森林 (Isolation Forest)",
+            "desc": "基於樹狀結構的異常偵測演算法，透過隨機切割特徵空間，能高效識別出與多數樣本分佈迥異的異常點。"
+          },
+          {
+            "name": "單類支持向量機 (One-Class SVM)",
+            "desc": "無監督異常偵測技術，試圖在特徵空間中尋找包圍正常資料的最小超球體，落於球外者視為異常分佈。"
+          },
+          {
+            "name": "概念漂移適應 (Concept Drift Adaptation)",
+            "desc": "在線上學習系統中，能根據新進資料流動態更新模型權重，使模型自動適應特徵與標籤關係的改變。"
+          }
+        ],
+        "terminology": [
+          "鑑別式架構 (Discriminative Architecture)",
+          "重構誤差 (Reconstruction Error)",
+          "閾值警報 (Threshold Alert)",
+          "密度估計 (Density Estimation)",
+          "無監督學習 (Unsupervised Learning)"
         ]
       },
       {
@@ -774,6 +1992,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫療影像罕見疾病分類中，由於標註過的病變影像極度缺乏。研究團隊發現直接訓練 CNN (鑑別式) 效果很差；改用先以大量未標註健康影像訓練生成模型建構特徵空間，再用少量標註資料微調分類器，準確率顯著提升。",
           "語音助理在識別不同方言指令時，直接使用端到端的深度神經網路（鑑別式）需要龐大的方言標記語料；若採用生成式架構先無監督學習方言的聲學聲碼特徵，就能以極少量的標記語料快速適應新方言。"
+        ],
+        "comparison": "生成式模型（如 VAE 架構）擅長捕捉資料整體分佈，能在無監督狀態下利用大量未標註資料建構特徵空間，在標註資料稀缺的低資源情境下展現極佳的資料利用效率與泛化能力。相反地，鑑別式模型（如 BERT Classifier）直接學習決策邊界，高度依賴大量標註資料。因此，透過模擬逐步減少標註比例的實驗，最能精準比較兩者在資料依賴性上的本質差異，這是全量訓練或引入 GAN 擴充資料所無法突顯的。",
+        "keywords": [
+          "生成式模型 (Generative Models)",
+          "鑑別式模型 (Discriminative Models)",
+          "低資源情境 (Low-resource Setting)",
+          "資料利用效率 (Data Efficiency)",
+          "模型泛化能力 (Generalization Capability)"
+        ],
+        "extended_tech": [
+          {
+            "name": "半監督學習 (Semi-supervised Learning)",
+            "desc": "結合少量標註資料與大量未標註資料進行訓練，最大化利用可用資訊，是生成式架構發揮優勢的重要場景。"
+          },
+          {
+            "name": "主動學習 (Active Learning)",
+            "desc": "模型主動挑選最具資訊量或最不確定的未標註樣本交由人工標記，大幅降低標註成本並提升鑑別模型效能。"
+          },
+          {
+            "name": "零樣本學習 (Zero-shot Learning)",
+            "desc": "模型無需任何特定任務的標註資料，僅依賴預訓練的廣泛語意知識（如 CLIP）即可對新類別進行預測。"
+          }
+        ],
+        "terminology": [
+          "聯合機率分佈 (Joint Probability Distribution)",
+          "決策邊界 (Decision Boundary)",
+          "特徵空間 (Feature Space)",
+          "無監督學習 (Unsupervised Learning)",
+          "F1 分數 (F1-score)"
         ]
       },
       {
@@ -792,6 +2039,35 @@ const EXAM_DATA = {
         "examples": [
           "自駕車公司為了測試演算法在極端氣候下的反應，利用 GAN 生成大量包含暴風雪、濃霧等現實中難以安全收集的虛擬街景影像，以此擴增訓練與測試資料庫，提升系統安全性。",
           "銀行為了符合嚴格的個資隱私法規，不允許資料科學家直接存取真實客戶交易紀錄。團隊利用 VAE 訓練並生成了一批統計特性與真實資料完全一致，但無法回推至任何真人的「虛擬客戶交易資料集」，供外部廠商開發防詐欺演算法。"
+        ],
+        "comparison": "深度生成模型（VAE/GAN）除了能捕捉特徵表示，更具備從潛在空間中採樣並生成全新、逼真且具備統計特性虛擬樣本的能力，是進行策略模擬與資料擴增的首選。相較之下，傳統隨機森林與邏輯迴歸屬於鑑別式預測模型，只能進行分類或回歸，無法「無中生有」生成合理的分佈資料；而強化學習代理主要用於優化序列決策過程，並不具備生成高維度靜態虛擬資料樣本的機制。",
+        "keywords": [
+          "深度生成模型 (Deep Generative Models)",
+          "變分自編碼器 (VAE)",
+          "生成對抗網路 (GAN)",
+          "虛擬資料生成 (Synthetic Data Generation)",
+          "鑑別式預測 (Discriminative Prediction)"
+        ],
+        "extended_tech": [
+          {
+            "name": "合成少數過採樣技術 (SMOTE)",
+            "desc": "傳統的資料擴增方法，透過在少數類別樣本之間進行線性插值生成新樣本，以解決資料不平衡問題。"
+          },
+          {
+            "name": "數位孿生 (Digital Twin)",
+            "desc": "在虛擬環境中建立實體系統或業務流程的高擬真數位複本，常結合生成式 AI 進行大規模場景壓力測試。"
+          },
+          {
+            "name": "差分隱私生成模型 (DP-GAN)",
+            "desc": "結合差分隱私技術的生成網路，確保生成的虛擬資料在保有統計價值的同時，絕對無法回推外洩真實個資。"
+          }
+        ],
+        "terminology": [
+          "潛在空間 (Latent Space)",
+          "虛擬樣本 (Virtual Samples)",
+          "機率分佈 (Probability Distribution)",
+          "資料擴增 (Data Augmentation)",
+          "A/B 測試 (A/B Testing)"
         ]
       },
       {
@@ -810,6 +2086,35 @@ const EXAM_DATA = {
         "examples": [
           "在基因體學研究中，研究人員需要分析包含數萬個基因表現量的微陣列數據。透過 PCA 降維，他們能將數萬維度壓縮至 2 到 3 維的視覺化散佈圖，直觀地觀察不同癌症細胞株在基因表現上的群聚現象。",
           "人臉辨識系統的早期實作（如 Eigenfaces）中，系統將每張由數萬像素組成的人臉影像，透過 PCA 轉換為數十個「特徵臉」的線性組合權重。這大幅降低了資料儲存空間，並使得後續比對搜尋的速度達到了即時性要求。"
+        ],
+        "comparison": "PCA 降維能有效捨棄高維資料中的冗餘資訊與雜訊，降低維度災難，進而大幅減輕 SVM 模型的計算負載、縮短訓練時間並降低過擬合風險，在基因體學與影像辨識中極具實務意義。然而，PCA 是非監督式的變異最大化投影，並不保證保留下來的主成分最有利於「分類」準確率提升。此外，保留原始高維資料往往帶來過多雜訊；且 PCA 本身屬線性轉換，無法賦予 SVM 處理非線性資料的能力。",
+        "keywords": [
+          "主成分分析 (Principal Component Analysis, PCA)",
+          "支持向量機 (SVM)",
+          "降維 (Dimensionality Reduction)",
+          "維度災難 (Curse of Dimensionality)",
+          "過擬合 (Overfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "t-SNE (t-分布隨機鄰居嵌入)",
+            "desc": "一種強大的非線性降維技術，特別擅長將高維資料映射到 2D 或 3D 空間進行分群視覺化。"
+          },
+          {
+            "name": "線性鑑別分析 (LDA)",
+            "desc": "監督式降維方法，尋找能最大化類別間距離並最小化類別內變異的投影軸，通常比 PCA 更利於後續分類。"
+          },
+          {
+            "name": "核支持向量機 (Kernel SVM)",
+            "desc": "透過核技巧（Kernel Trick）將資料隱式映射至更高維空間，使 SVM 能夠有效處理複雜的非線性決策邊界。"
+          }
+        ],
+        "terminology": [
+          "特徵向量 (Eigenvector)",
+          "共變異數矩陣 (Covariance Matrix)",
+          "冗餘資訊 (Redundant Information)",
+          "非線性資料 (Nonlinear Data)",
+          "計算負載 (Computational Load)"
         ]
       },
       {
@@ -828,6 +2133,35 @@ const EXAM_DATA = {
         "examples": [
           "電子商務平台的商品推薦模型在 COVID-19 疫情爆發初期失效。因為消費者忽然大量搜尋口罩與居家辦公用品，這與訓練模型時的常態消費數據產生嚴重「資料漂移」。具備監控機制的 MLOps 系統第一時間發出警報並自動觸發模型重訓以適應新常態。",
           "銀行信貸審核 AI 模型中，若央行突然大幅調升利率，導致高薪族群也開始出現違約狀況，此時特徵與標籤的關係發生改變（概念漂移）。監控系統發現模型預測的違約率與實際回收數據脫鉤，即時暫停模型自動放款並轉交人工審核。"
+        ],
+        "comparison": "線上模型預測準確率下降且無系統錯誤，通常是「資料漂移（Data Drift）」所致。建立即時的資料與概念漂移監測機制，能透過統計檢定持續比對線上資料與訓練集的分佈差異，是 MLOps 確保模型健康的最關鍵防線。相較之下，模型量化僅為解決系統延遲；增加超參數調整是開發階段的優化手段；固定隨機種子只影響訓練重現性。這三者皆無法主動偵測並預警線上資料環境的分佈變化。",
+        "keywords": [
+          "機器學習營運 (MLOps)",
+          "資料漂移 (Data Drift)",
+          "概念漂移 (Concept Drift)",
+          "分佈偏移 (Distribution Shift)",
+          "模型監控 (Model Monitoring)"
+        ],
+        "extended_tech": [
+          {
+            "name": "自動化重訓管線 (Automated Retraining Pipeline)",
+            "desc": "當漂移監控系統觸發警報時，自動收集最新資料、標註並啟動模型重新訓練與驗證的端到端 MLOps 流程。"
+          },
+          {
+            "name": "A/B 測試與金絲雀發布 (Canary Release)",
+            "desc": "逐步將流量導向更新後的模型，透過對比舊模型的業務指標，確保新模型適應新資料分佈且無潛在風險。"
+          },
+          {
+            "name": "特徵庫 (Feature Store)",
+            "desc": "集中管理、運算與提供特徵資料的基礎設施，確保模型訓練與線上推論時所使用的特徵邏輯與分佈保持高度一致。"
+          }
+        ],
+        "terminology": [
+          "統計檢定 (Statistical Test)",
+          "預警機制 (Alert Mechanism)",
+          "生命週期 (Lifecycle)",
+          "量化版本 (Quantized Version)",
+          "重現性 (Reproducibility)"
         ]
       },
       {
@@ -846,6 +2180,35 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛汽車的視覺系統使用單一卷積神經網路同時執行「車輛偵測」與「車道線分割」兩個任務。若未對兩者的損失函數進行平衡，模型可能會因為車輛偵測的損失值較大，而將所有運算能力投入偵測，導致車道線識別變得模糊不清。",
           "社群媒體內容審查 AI 必須同時判斷一則貼文的「仇恨言論程度」與「是否包含暴力」。透過多任務學習與自適應損失權重調整，模型能平衡兩者的學習，確保在精準攔截暴力內容的同時，也不會錯放隱晦的仇恨言論。"
+        ],
+        "comparison": "在多任務學習中，若各任務的損失函數未進行適當的權重平衡，梯度較大或學習較快的任務（如 NER）會主導整個神經網路的權重更新，導致其他任務（如分類）效能退化，這被稱為負遷移或任務競爭。這是多任務優化的核心難題。相反地，Transformer 或 BERT 架構非常擅長支援多任務輸出頭，且文檔分類絕對需要語意化表徵才能精準運作。將問題歸咎於架構限制或認為分類不需要語意表徵皆屬錯誤觀念。",
+        "keywords": [
+          "多任務學習 (Multi-Task Learning, MTL)",
+          "損失平衡 (Loss Balancing)",
+          "負遷移 (Negative Transfer)",
+          "任務競爭 (Task Competition)",
+          "Transformer 架構"
+        ],
+        "extended_tech": [
+          {
+            "name": "不確定性權重分配 (Uncertainty-based Weighting)",
+            "desc": "在多任務學習中，根據各任務模型預測的不確定性動態調整損失權重，使模型自動平衡學習進度。"
+          },
+          {
+            "name": "梯度投射 (Gradient Projection)",
+            "desc": "當不同任務的梯度方向發生衝突時，將梯度投影到正交方向，避免任務之間互相干擾與抵銷。"
+          },
+          {
+            "name": "遷移學習 (Transfer Learning)",
+            "desc": "將在大型資料集上預訓練的模型權重作為起點，微調應用於特定單一下游任務，是 MTL 的重要基礎概念。"
+          }
+        ],
+        "terminology": [
+          "語意化表徵 (Contextualized Representation)",
+          "輸出頭 (Output Head)",
+          "損失函數 (Loss Function)",
+          "梯度下降 (Gradient Descent)",
+          "聯合優化 (Joint Optimization)"
         ]
       },
       {
@@ -864,6 +2227,35 @@ const EXAM_DATA = {
         "examples": [
           "在地圖導航軟體中，系統需要從數百萬個 GPS 座標點中，利用 DBSCAN 快速找出用戶頻繁停留的「興趣熱區」。透過底層建立 Ball Tree 索引，系統將分群運算時間從數小時壓縮到幾分鐘內完成。",
           "天文學家分析射電望遠鏡接收到的海量星系位置數據時，使用配備 KD-Tree 的 DBSCAN 演算法，能高效地在三維空間中聚類出星系團結構，而不會因為資料量達到千萬級而導致超級電腦記憶體溢出。"
+        ],
+        "comparison": "DBSCAN 演算法面臨海量數據時的效能瓶頸在於頻繁的距離計算。引入 KD-Tree 或 Ball Tree 等空間索引結構，能大幅減少不必要的距離比對，將時間複雜度降至 O(n log n)，是加速的最有效且標準作法，完全不改變核心邏輯。相較之下，改用階層式群集會改變演算法本質且通常更慢；調小半徑 ε 會破壞分群結果的商業意義；而增加特徵維度更會引發維度災難，導致運算與記憶體負擔雪上加霜。",
+        "keywords": [
+          "DBSCAN",
+          "空間索引結構 (Spatial Index Structure)",
+          "KD-Tree",
+          "Ball Tree",
+          "時間複雜度 (Time Complexity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "HDBSCAN",
+            "desc": "DBSCAN 的進化版，採用階層式密度分群，能自動適應資料中不同密度的群集，無需手動微調半徑參數 ε。"
+          },
+          {
+            "name": "局部敏感雜湊 (Locality-Sensitive Hashing, LSH)",
+            "desc": "透過雜湊函數將相似的高維資料點映射到同一個桶中，用於極大規模資料集中的近似最近鄰搜尋加速。"
+          },
+          {
+            "name": "K-Means++",
+            "desc": "優化初始群集中心選擇的 K-Means 演算法，加速收斂並避免落入局部最佳解，適用於球狀分群場景。"
+          }
+        ],
+        "terminology": [
+          "密度分群 (Density-based Clustering)",
+          "維度災難 (Curse of Dimensionality)",
+          "最近鄰搜尋 (Nearest Neighbor Search)",
+          "剪枝 (Pruning)",
+          "歐式空間 (Euclidean Space)"
         ]
       },
       {
@@ -882,6 +2274,35 @@ const EXAM_DATA = {
         "examples": [
           "知名企業曾開發 AI 履歷篩選系統，但因歷史錄取資料多為男性工程師，模型錯誤地學習到「女性相關社團」是扣分特徵。這種因訓練資料偏差導致的嚴重性別歧視，最終迫使該專案被終止。",
           "語音辨識系統在早期常面臨口音偏誤問題。由於訓練語料高度集中於標準美式英語，當帶有濃厚非裔美國人白話英語 (AAVE) 或蘇格蘭口音的用戶使用時，辨識錯誤率急遽飆升，引發公平性爭議。"
+        ],
+        "comparison": "AI 模型對特定族群或語氣產生誤判，其根本原因通常源於訓練資料的代表性不足或內隱偏誤（如語料偏向主流文化）。即使採用強大的 Transformer 架構，依然會學習到這些資料偏差（Garbage in, garbage out）。相反地，詞嵌入正規化只是穩定餘弦相似度計算的數學操作，無法解決模型對語意文化「理解錯誤」或「帶有偏見」的本質問題。因此，將誤判歸咎於未啟用詞嵌入正規化是完全不正確的技術認知。",
+        "keywords": [
+          "AI 偏誤 (AI Bias)",
+          "資料代表性 (Data Representation)",
+          "內隱偏誤 (Implicit Bias)",
+          "資料不平衡 (Data Imbalance)",
+          "詞嵌入正規化 (Embedding Normalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "公平性感知機器學習 (Fairness-aware Machine Learning)",
+            "desc": "在模型訓練過程中引入公平性約束或正則化項，強制演算法降低對性別、種族等敏感屬性的依賴與歧視。"
+          },
+          {
+            "name": "重抽樣與資料擴增 (Resampling and Data Augmentation)",
+            "desc": "透過過採樣少數族群資料或生成對抗樣本，主動平衡訓練集的分佈，從資料源頭緩解模型偏誤。"
+          },
+          {
+            "name": "可解釋性 AI (Explainable AI, XAI)",
+            "desc": "透過 SHAP 或 LIME 等技術剖析模型預測依據，協助開發者揪出隱藏在黑盒子中的不合理偏見決策邏輯。"
+          }
+        ],
+        "terminology": [
+          "資料治理 (Data Governance)",
+          "上下文語意 (Contextual Semantics)",
+          "餘弦相似度 (Cosine Similarity)",
+          "標籤分佈 (Label Distribution)",
+          "決策邊界 (Decision Boundary)"
         ]
       },
       {
@@ -900,6 +2321,35 @@ const EXAM_DATA = {
         "examples": [
           "廣告文案要求生成「一隻戴著藍色帽子並穿著紅色鞋子的貓」。由於模型在跨模態特徵對齊時發生屬性糾纏（Attribute Entanglement），經常生成「紅色帽子與藍色鞋子的貓」，無法正確綁定顏色與物體。",
           "遊戲開發者使用 AI 生成角色揮劍的動作設定圖。由於生成模型缺乏人體骨骼動力學的三維約束機制，且文字編碼難以精準描述手部關節的遮擋與旋轉，生成的角色手腕往往呈現不符合人體工學的扭曲狀態。"
+        ],
+        "comparison": "當代文字生圖模型（如 Stable Diffusion）高度依賴 CLIP 進行文字與影像的跨模態對齊。若 CLIP 在潛在空間中對細節屬性（如顏色綁定）或複雜空間結構（如人體關節）未充分對齊，生成模型就會接收到模糊的引導訊號，導致屬性錯亂或結構崩壞（如手部變形）。這並非隨機梯度漂移或提示語過長超出上下文限制所致，且這些模型底層必定採用了某種對比學習機制，只是在微觀結構對齊上存在技術瓶頸。",
+        "keywords": [
+          "跨模態對齊 (Cross-modal Alignment)",
+          "屬性綁定 (Attribute Binding)",
+          "生成缺陷 (Generation Artifacts)",
+          "CLIP 模型",
+          "多模態生成模型 (Multimodal Generative Models)"
+        ],
+        "extended_tech": [
+          {
+            "name": "ControlNet",
+            "desc": "為擴散模型提供強大的空間結構控制能力，透過輸入骨架圖或深度圖，精確解決人物肢體變形與姿態不自然的問題。"
+          },
+          {
+            "name": "GLIGEN",
+            "desc": "透過在擴散模型中引入接地（Grounding）指令，允許使用者以邊界框精確指定特定物件（如紅色杯子）的生成位置與屬性。"
+          },
+          {
+            "name": "人類偏好對齊 (RLHF/DPO)",
+            "desc": "收集人類對生成影像品質與邏輯合理性的偏好反饋，透過強化學習微調生成模型，減少結構崩壞的發生機率。"
+          }
+        ],
+        "terminology": [
+          "潛在空間 (Latent Space)",
+          "交叉注意力機制 (Cross-Attention)",
+          "屬性糾纏 (Attribute Entanglement)",
+          "空間拓樸約束 (Spatial Topological Constraint)",
+          "梯度漂移 (Gradient Drift)"
         ]
       }
     ]
@@ -923,6 +2373,35 @@ const EXAM_DATA = {
         "examples": [
           "在開發醫療影像輔助診斷系統時，為了確保模型對於不同醫院、不同機器拍攝的 X 光片都能保持穩定的判讀準確率，工程師會使用 K-Fold 交叉驗證來確保模型不是只記住了特定病患的影像特徵。",
           "金融機構在建立信用卡盜刷偵測系統時，為了驗證模型在未來能否準確抓出新型態的詐騙手法，會透過時間序列交叉驗證，將過去的交易紀錄依時間切分，反覆訓練與測試，確保系統的穩健性。"
+        ],
+        "comparison": "交叉驗證（Cross-Validation）主要用於評估機器學習模型的泛化能力，確保模型不會過度擬合訓練資料。相比之下，F檢定和t檢定是傳統統計學中用於比較群組平均數或變異數差異的方法，主要應用於實驗設計和假設檢定。卡方檢定則常用於市場調查或流行病學中分析類別變數的關聯性。在機器學習領域，交叉驗證是模型評估與超參數調校的核心標準，確保在多變的業務場景下能保持穩定。",
+        "keywords": [
+          "交叉驗證 (Cross-Validation)",
+          "泛化能力 (Generalization)",
+          "過度擬合 (Overfitting)",
+          "訓練集 (Training Set)",
+          "測試集 (Test Set)"
+        ],
+        "extended_tech": [
+          {
+            "name": "K-折交叉驗證 (K-Fold Cross-Validation)",
+            "desc": "將資料集平均切分為 K 份，輪流將其中一份作為測試集，其餘作為訓練集，適合資料量中等的機器學習任務，能提供比單次切割更穩定的效能評估。"
+          },
+          {
+            "name": "留一法交叉驗證 (Leave-One-Out Cross-Validation, LOOCV)",
+            "desc": "每次只留下一個樣本作為測試集，其餘所有樣本皆為訓練集。此方法計算成本極高，但適合樣本數非常稀少的情境，例如罕見疾病診斷或高階醫療研究。"
+          },
+          {
+            "name": "分層交叉驗證 (Stratified Cross-Validation)",
+            "desc": "在切分資料時，確保每個子集中的類別比例與原始資料集一致。這在處理不平衡資料集（如信用卡盜刷、罕見疾病）時非常關鍵，能避免某個子集完全沒有少數類別的樣本。"
+          }
+        ],
+        "terminology": [
+          "Validation Set",
+          "Generalization Error",
+          "Holdout Method",
+          "Overfitting",
+          "Bias-Variance Tradeoff"
         ]
       },
       {
@@ -941,6 +2420,35 @@ const EXAM_DATA = {
         "examples": [
           "在基因體學研究中，科學家可能擁有數萬個基因特徵，但只有極少數與特定疾病相關。使用 L1 正則化的模型能自動將無關基因的權重歸零，幫助科學家快速鎖定關鍵的致病基因。",
           "房地產估價平台在預測房價時，可能會收集上百種變數（如格局、採光、鄰近設施等）。為了建立一個容易解釋且運算快速的模型，開發團隊會使用 Lasso 迴歸，自動剔除不具影響力的特徵。"
+        ],
+        "comparison": "L1 正則化 (Lasso) 與 L2 正則化 (Ridge) 同為防止過擬合的技術。L1 的最大特色在於能產生稀疏矩陣，將不重要的特徵權重降為零，因此自帶特徵選擇功能，非常適合特徵維度極高且多數特徵無關的場景（如基因資料分析或文本分類）。相比之下，L2 正則化傾向於均勻地縮小所有權重但不歸零，適合所有特徵都有一定貢獻度的連續預測問題，能穩定模型表現而不會完全剔除特定變數。",
+        "keywords": [
+          "正則化 (Regularization)",
+          "Lasso 迴歸 (Lasso Regression)",
+          "稀疏模型 (Sparse Model)",
+          "特徵選擇 (Feature Selection)",
+          "過度擬合 (Overfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "彈性網正則化 (Elastic Net Regularization)",
+            "desc": "結合了 L1 與 L2 正則化的優點。當特徵之間存在高度相關性時，Lasso 可能會隨機選擇其中一個而捨棄其他，Elastic Net 則能更穩定地選出一組相關特徵，適合高度共線性的財務與醫療資料。"
+          },
+          {
+            "name": "L2 正則化 (Ridge Regression)",
+            "desc": "在損失函數中加入權重平方和作為懲罰項。它不會產生稀疏模型，而是將權重均勻縮小，非常適合處理存在多重共線性但每個特徵都具有一定預測價值的商業預測場景。"
+          },
+          {
+            "name": "Dropout (神經網路正則化)",
+            "desc": "在深度神經網路訓練過程中，隨機讓部分神經元失去作用。這能迫使網路學習更強健的特徵表示，而不依賴特定的神經元路徑，是現代深度學習最常見的防過擬合技術。"
+          }
+        ],
+        "terminology": [
+          "Penalty Term",
+          "Sparsity",
+          "Overfitting",
+          "Cost Function",
+          "Feature Weight"
         ]
       },
       {
@@ -959,6 +2467,35 @@ const EXAM_DATA = {
         "examples": [
           "物流公司在規劃車隊的最佳配送路線時，如果演算法只考慮當下最近的送貨點（貪婪搜尋），可能會陷入局部最優解，導致整體配送時間拉長，而非找到全局最短的總路徑。",
           "在訓練自然語言處理的大型語言模型時，若優化器設計不當，模型參數可能會卡在某個次佳的局部最優解，導致模型雖然能產出通順的語句，但在邏輯推理任務上表現不佳。"
+        ],
+        "comparison": "在模型優化過程中，「局部最優解」與「梯度消失」是兩種常見但截然不同的困境。局部最優解是因為目標函數的地形起伏（非凸性），使得演算法卡在一個「次佳的低谷」，這在路徑規劃、排程優化等非線性問題中最常見。而梯度消失則是因為深度神經網路層數過多，反向傳播時誤差遞減趨近於零，導致淺層網路無法學習。兩者均會導致模型停止進步，但解決方案完全不同（前者需調整動量或學習率，後者需更換激勵函數或殘差設計）。",
+        "keywords": [
+          "局部最優解 (Local Optima)",
+          "非凸函數 (Non-convex Function)",
+          "梯度下降 (Gradient Descent)",
+          "全局最優解 (Global Optima)",
+          "優化演算法 (Optimization Algorithm)"
+        ],
+        "extended_tech": [
+          {
+            "name": "動量法 (Momentum)",
+            "desc": "在梯度下降中加入物理學的動量概念，讓參數更新時能累積先前的動能。這有助於優化器「衝過」較淺的局部最優解，進而更有機會探索到全局最佳解，廣泛應用於深度學習訓練中。"
+          },
+          {
+            "name": "模擬退火演算法 (Simulated Annealing)",
+            "desc": "一種啟發式搜尋演算法，模擬金屬冶煉的退火過程。在搜尋初期允許接受較差的解以跳脫局部最優解，隨著時間推移降低接受機率，常用於物流排程、電路設計等複雜組合最佳化問題。"
+          },
+          {
+            "name": "遺傳演算法 (Genetic Algorithm, GA)",
+            "desc": "模擬生物進化過程（選擇、交配、突變）的全域最佳化方法。透過突變機制，能有效避免群體陷入單一局部最優解，常應用於特徵選擇與自動化機器學習架構搜尋中。"
+          }
+        ],
+        "terminology": [
+          "Global Minimum",
+          "Saddle Point",
+          "Gradient Descent",
+          "Convex Optimization",
+          "Loss Landscape"
         ]
       },
       {
@@ -977,6 +2514,35 @@ const EXAM_DATA = {
         "examples": [
           "電信業者透過 DBSCAN 分析基地台接收到的手機 GPS 訊號，能夠自動將人群密集聚集的區域（如演唱會現場或熱門商圈）分群出來，同時排除偶爾路過的孤立訊號（雜訊點）。",
           "在信用卡異常交易偵測中，系統利用 DBSCAN 將正常消費行為根據時間與金額聚類，那些無法被歸入任何正常消費群集的獨立交易，就會被標記為雜訊點，進而觸發防盜刷警報。"
+        ],
+        "comparison": "DBSCAN 與最常見的 K-Means 都是群集分析（Clustering）的經典演算法。K-Means 是基於距離中心點的劃分法，適用於球形、大小相近的聚類，且必須預先指定分群數量 K，常用於顧客分群或市場區隔。然而，DBSCAN 是基於密度的分群法，能夠找出任意不規則形狀的群集，且不需要指定 K 值，更棒的是它能自動識別出異常值（雜訊點）。這使得 DBSCAN 成為地理空間數據分析和異常行為偵測的首選工具。",
+        "keywords": [
+          "DBSCAN",
+          "密度分群 (Density-Based Clustering)",
+          "核心點 (Core Point)",
+          "雜訊點 (Noise Point)",
+          "異常偵測 (Anomaly Detection)"
+        ],
+        "extended_tech": [
+          {
+            "name": "OPTICS 演算法",
+            "desc": "DBSCAN 的擴充版本，解決了 DBSCAN 對參數 Eps 極度敏感的缺點。它能處理不同密度級別的群集結構，並產生一個可視化的可達距離圖，廣泛用於複雜的空間資料與生態學物種分佈分析。"
+          },
+          {
+            "name": "孤立森林 (Isolation Forest)",
+            "desc": "雖然不是分群演算法，但這是一種專為異常偵測設計的高效樹狀演算法。相較於 DBSCAN 需要計算距離密度，它透過隨機切割空間來快速孤立異常點，特別適合高維度資料庫的安全監控與防詐欺系統。"
+          },
+          {
+            "name": "高斯混合模型 (Gaussian Mixture Model, GMM)",
+            "desc": "基於機率分佈的軟分群演算法。不同於 DBSCAN 絕對的邊界劃分，GMM 能給出樣本屬於某個群集的機率值，適合處理聚類邊界模糊的場景，如語音識別中的音素分類。"
+          }
+        ],
+        "terminology": [
+          "Epsilon (Eps)",
+          "MinPts",
+          "Density Reachability",
+          "Border Point",
+          "Outlier"
         ]
       },
       {
@@ -995,6 +2561,35 @@ const EXAM_DATA = {
         "examples": [
           "在車牌自動辨識系統中，CNN 的第一層卷積層會掃描攝影機拍下的車輛畫面，自動提取出車牌上的直線邊緣和角點等基礎視覺特徵，為後續的字母與數字辨識做準備。",
           "農產品質檢系統利用 CNN 分析輸送帶上的蘋果影像，淺層卷積層能有效捕捉蘋果表皮的紋理變化或顏色不均的局部特徵，協助判斷是否有撞傷或病斑。"
+        ],
+        "comparison": "在深度神經網路架構中，CNN的「卷積層」與「池化層（Pooling Layer）」經常搭配使用。卷積層的職責是主動地從影像中提取特徵圖（如尋找輪廓與邊緣），其學習重點在於特徵的「品質」。而池化層則是進行下採樣，藉由保留主要特徵（如Max Pooling）來縮小特徵圖的尺寸，其目的在於降低維度、減少運算量，並賦予模型平移不變性（Translation Invariance）。兩者相輔相成，是所有現代電腦視覺應用（如醫療影像判讀或自駕車視覺）的基石。",
+        "keywords": [
+          "卷積神經網路 (CNN)",
+          "卷積層 (Convolutional Layer)",
+          "局部特徵 (Local Features)",
+          "卷積核 (Convolutional Kernel)",
+          "特徵提取 (Feature Extraction)"
+        ],
+        "extended_tech": [
+          {
+            "name": "殘差網路 (Residual Network, ResNet)",
+            "desc": "透過引入跳躍連接（Skip Connection）來解決深層網路梯度消失的問題。這使得 CNN 能夠訓練深達上百層的模型，大幅提升了圖像分類與物體偵測的準確率，廣泛應用於醫療診斷。"
+          },
+          {
+            "name": "物件偵測模型 (YOLO - You Only Look Once)",
+            "desc": "基於 CNN 架構的即時物件偵測演算法。不同於傳統分階段掃描，YOLO 能在單次網路前向傳播中同時預測出物體類別與邊界框（Bounding Box），是安防監控與自動駕駛的核心技術。"
+          },
+          {
+            "name": "語意分割 (Semantic Segmentation)",
+            "desc": "不僅辨識影像中的物體，更將影像中的每一個像素都分類到特定的類別。這在醫學影像（如腫瘤範圍精確標記）與自動駕駛（辨識可行駛路面與行人）中是不可或缺的進階視覺技術。"
+          }
+        ],
+        "terminology": [
+          "Filter/Kernel",
+          "Stride",
+          "Padding",
+          "Feature Map",
+          "Activation Map"
         ]
       },
       {
@@ -1013,6 +2608,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧型手機的人臉解鎖功能中，CNN 的參數共享機制確保了無論使用者的臉部出現在畫面的哪個位置，模型都能使用同一組特徵提取器來辨識眼睛和鼻子的輪廓，且運算速度足以達到即時解鎖。",
           "無人機進行森林火災巡檢時，CNN 模型利用區域感知能力，快速掃描廣大林地影像的各個區塊，尋找異常的煙霧特徵，而不會被影像中大量無關的樹冠細節消耗過多運算資源。"
+        ],
+        "comparison": "相比於傳統的全連接神經網路 (FCNN) 中每個神經元都與前一層所有像素相連導致權重數量爆炸，CNN 的「參數共享」與「區域感知」設計是專為空間結構資料（如影像）所優化的。FCNN 適合處理無空間關聯的結構化特徵數據（如客戶的年齡、收入、職位等獨立變數）。但在處理百萬像素等級的高解析度監控畫面時，FCNN 會面臨記憶體崩潰與極度嚴重的過度擬合問題，而 CNN 卻能高效地捕捉局部特徵並完成即時推論，因此主宰了現代電腦視覺領域。",
+        "keywords": [
+          "參數共享 (Parameter Sharing)",
+          "區域感知 (Local Receptive Field)",
+          "卷積神經網路 (CNN)",
+          "模型效率 (Model Efficiency)",
+          "空間特徵 (Spatial Features)"
+        ],
+        "extended_tech": [
+          {
+            "name": "深度可分離卷積 (Depthwise Separable Convolution)",
+            "desc": "一種極致優化參數量與運算量的卷積方式，將標準卷積拆分為空間卷積與通道卷積。這項技術是 MobileNet 架構的核心，使得高效能 CNN 模型能夠部署在資源受限的邊緣裝置（如智慧型手機、物聯網感測器）上。"
+          },
+          {
+            "name": "空間金字塔池化 (Spatial Pyramid Pooling, SPP)",
+            "desc": "為了打破傳統 CNN 必須輸入固定尺寸影像的限制，SPP 層透過多尺度的池化操作，將任意大小的特徵圖轉換為固定長度的特徵向量。這在處理不同解析度的醫學影像或網路圖片時，能避免影像形變導致的失真。"
+          },
+          {
+            "name": "注意力機制應用於視覺 (Vision Transformer, ViT)",
+            "desc": "突破 CNN 區域感知的限制，ViT 將影像切割成多個區塊（Patches）並視為序列，運用 Transformer 的全局注意力機制來捕捉全圖上下文關聯，在超大型資料集上展現出超越傳統 CNN 的潛力。"
+          }
+        ],
+        "terminology": [
+          "Fully Connected Layer",
+          "Receptive Field",
+          "Translation Equivariance",
+          "Weight Matrix",
+          "Computation Complexity"
         ]
       },
       {
@@ -1031,6 +2655,35 @@ const EXAM_DATA = {
         "examples": [
           "影音串流平台利用 LSTM 模型分析使用者過去觀看的影片序列歷史，捕捉其長期的觀影品味變化，進而精準推薦符合使用者當下偏好的影集。",
           "製造業的預測性維護系統收集機台運轉時的震動與溫度時間序列感測資料，輸入至 LSTM 模型中，藉此預測機台未來一週內發生故障的機率，以便提前安排維修。"
+        ],
+        "comparison": "LSTM 與常見的 ARIMA 模型都是處理時間序列預測的主力工具，但它們的應用領域各有千秋。ARIMA 是一種傳統的統計模型，適合處理具備明確季節性與趨勢、且變數關係簡單的單變量時間序列資料（如單純的銷售量預測），具備極高的可解釋性。相對地，LSTM 屬於深度學習模型，能夠處理含有大量非線性關係、多變量輸入，並能捕捉跨度極長的時間記憶依賴關係，特別適合如電力需求預測、股市高頻交易訊號、或是自然語言處理中的語音識別等複雜任務。",
+        "keywords": [
+          "長短期記憶網路 (LSTM)",
+          "時間序列 (Time Series)",
+          "遞迴神經網路 (RNN)",
+          "記憶細胞 (Cell State)",
+          "閘門機制 (Gating Mechanism)"
+        ],
+        "extended_tech": [
+          {
+            "name": "門控循環單元 (Gated Recurrent Unit, GRU)",
+            "desc": "LSTM 的簡化變體，將遺忘閘與輸入閘合併為更新閘，減少了模型參數量與運算成本。在許多語音識別與時間序列預測任務中，GRU 能達到與 LSTM 相似的效能，但訓練速度更快，適合中等規模的資料集。"
+          },
+          {
+            "name": "雙向 LSTM (Bidirectional LSTM, BiLSTM)",
+            "desc": "在處理序列資料時，同時訓練兩個 LSTM 網路，一個從前往後讀取，一個從後往前讀取。這在自然語言處理（如命名實體識別或機器翻譯）中非常關鍵，因為理解一個詞彙通常需要同時參考其前後文。"
+          },
+          {
+            "name": "序列到序列模型 (Seq2Seq Model)",
+            "desc": "由編碼器與解碼器（通常由 LSTM 構成）組成的架構。主要用於輸入與輸出序列長度不一致的任務，如機器翻譯（將英文句子轉譯為長度不同的中文句子）或智慧客服對話系統。"
+          }
+        ],
+        "terminology": [
+          "Vanishing Gradient",
+          "Forget Gate",
+          "Hidden State",
+          "Time Steps",
+          "Sequential Data"
         ]
       },
       {
@@ -1049,6 +2702,35 @@ const EXAM_DATA = {
         "examples": [
           "銀行審核信用貸款時，決策樹系統會計算「年收入」、「職業」與「負債比」等特徵的資訊增益。若發現「負債比」能最大幅度區分違約與正常戶，系統就會將其作為第一層的判斷規則。",
           "電信公司的客服進線分流系統利用決策樹分析客戶語音，系統根據「關鍵字」的資訊增益，決定優先將包含「斷線」字眼的來電轉接給技術支援部門，有效提升處理效率。"
+        ],
+        "comparison": "決策樹依賴「資訊增益」作為特徵選擇的依據，其建構的樹狀規則極度直觀且具備高度可解釋性，這與支持向量機 (SVM) 依賴「核函數」進行數學空間映射，或是深度神經網路 (DNN) 隱含在隱藏層中的非線性權重黑盒子有著顯著的對比。決策樹非常適合應用在需要合規性審查與業務解釋的領域（如醫療輔助診斷、金融放貸標準），而 SVM 與 DNN 則更偏向追求極致的分類準確率與處理非結構化資料（如影像、語音）。",
+        "keywords": [
+          "決策樹 (Decision Tree)",
+          "資訊增益 (Information Gain)",
+          "資訊熵 (Entropy)",
+          "特徵選擇 (Feature Selection)",
+          "節點分裂 (Node Splitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "吉尼不純度 (Gini Impurity)",
+            "desc": "除了資訊增益外，這是另一種（如 CART 演算法）用來評估決策樹節點純度的常見指標。其運算上因為不需要計算對數函數，所以在建立大規模隨機森林模型時，執行速度通常比資訊增益更快。"
+          },
+          {
+            "name": "隨機森林 (Random Forest)",
+            "desc": "一種整合學習演算法，透過結合數百棵決策樹的預測結果來進行投票或平均。它解決了單一決策樹容易過度擬合訓練資料的缺點，是金融風控與零售行銷中最穩定且強大的基礎模型之一。"
+          },
+          {
+            "name": "決策樹剪枝 (Tree Pruning)",
+            "desc": "為了防止決策樹長得太深而導致過度擬合，剪枝技術會主動移除對整體預測力貢獻極小的葉節點。這不僅能提升模型在未知資料上的泛化能力，也讓最終的商業決策規則更簡潔易懂。"
+          }
+        ],
+        "terminology": [
+          "Root Node",
+          "Leaf Node",
+          "Information Theory",
+          "Classification and Regression Trees (CART)",
+          "Overfitting"
         ]
       },
       {
@@ -1067,6 +2749,35 @@ const EXAM_DATA = {
         "examples": [
           "在建立房價預測的 KNN 模型時，若不進行特徵縮放，範圍達數千萬的「總價」會完全掩蓋範圍僅在 0~10 的「房數」特徵，導致模型無法正確找出相似的房屋物件。",
           "電子商務平台在分析用戶輪廓時，會將「年齡（18-80）」與「年消費額（1,000-1,000,000）」進行標準化，這樣在進行 SVM 分類或 K-Means 分群時，兩種行為特徵才能享有平等的權重。"
+        ],
+        "comparison": "在資料前處理階段，「特徵縮放」對於以空間距離為核心的模型（如 KNN 預測、K-Means 分群、SVM 邊界尋找）是生死攸關的步驟，因為未縮放的資料會導致模型產生嚴重偏誤。相對而言，基於樹狀結構的模型（如隨機森林、XGBoost）或貝氏分類器，主要是透過比較特徵值的相對大小來進行條件分支，對資料的絕對數值尺度毫不敏感，因此在這類模型中，特徵縮放並非必要步驟。這突顯了選擇演算法必須搭配適當的前處理策略。",
+        "keywords": [
+          "特徵縮放 (Feature Scaling)",
+          "歐氏距離 (Euclidean Distance)",
+          "標準化 (Standardization)",
+          "正規化 (Normalization)",
+          "K近鄰演算法 (KNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Z-score 標準化 (Standardization)",
+            "desc": "將特徵資料轉換為平均值為 0、標準差為 1 的分佈。這種縮放方法不受極端異常值的嚴重影響，且廣泛應用於需要梯度下降優化的深度學習與邏輯迴歸模型中，以加速模型收斂。"
+          },
+          {
+            "name": "Min-Max 正規化 (Normalization)",
+            "desc": "將資料線性縮放至 0 到 1 之間。這種方法能精確保留原始資料中的相對關係，特別適合應用於神經網路的輸入層，或用於處理影像像素值（常為 0-255）的預處理。"
+          },
+          {
+            "name": "強健型縮放 (Robust Scaling)",
+            "desc": "使用資料的中位數與四分位距（IQR）進行縮放。當資料庫中存在大量且難以剔除的極端異常值（如金融詐欺交易金額）時，強健型縮放能避免整體資料的分佈被異常值過度扭曲。"
+          }
+        ],
+        "terminology": [
+          "Euclidean Distance",
+          "Gradient Descent",
+          "Outlier",
+          "Distance Metric",
+          "Preprocessing"
         ]
       },
       {
@@ -1085,6 +2796,35 @@ const EXAM_DATA = {
         "examples": [
           "一家連鎖零售業的行銷主管，在沒有資料科學家的協助下，直接將過往的會員消費紀錄上傳到 AutoML 雲端平台，平台自動比較了數十種演算法後，產出了一個高準確度的促銷回應預測模型。",
           "傳統製造業希望導入 AI 進行瑕疵檢測，IT 部門可以先利用 AutoML 快速訓練出一個基準的影像分類模型來驗證可行性，節省了初期耗費數週撰寫程式與調校模型架構的時間。"
+        ],
+        "comparison": "AutoML 與傳統的客製化模型開發（Custom Modeling）代表了 AI 落地策略的兩個極端。客製化開發需要由資深資料科學家手動調優每一個特徵與網路層，耗時數月，適用於對準確率要求極高、業務邏輯極度複雜的場景（如高頻演算法交易或醫療核心診斷）。相比之下，AutoML 將大量試錯過程自動化，雖然產出的模型未必是絕對最佳解，但能在幾小時內提供一個高水準的基準線，極度適合行銷預測、內部流程自動化等強調「快速落地與敏捷迭代」的商業情境。",
+        "keywords": [
+          "自動化機器學習 (AutoML)",
+          "特徵工程 (Feature Engineering)",
+          "模型選擇 (Model Selection)",
+          "基準模型 (Baseline Model)",
+          "快速原型 (Rapid Prototyping)"
+        ],
+        "extended_tech": [
+          {
+            "name": "神經架構搜尋 (Neural Architecture Search, NAS)",
+            "desc": "AutoML 的進階分支，專注於利用演算法自動設計出最佳的深度神經網路結構。這項技術能發掘出人類難以設計出的複雜網路拓撲，曾被用來設計出效能超越頂尖專家的影像分類模型架構。"
+          },
+          {
+            "name": "自動特徵工程 (Automated Feature Engineering)",
+            "desc": "AutoML 工具箱中的關鍵技術。它能自動執行變數轉換、多項式展開、交互作用組合等操作，並過濾掉無用特徵。這解決了傳統機器學習專案中，耗費人工最多時間的瓶頸。"
+          },
+          {
+            "name": "無程式碼/低程式碼 AI 平台 (No-Code/Low-Code AI)",
+            "desc": "將 AutoML 結合視覺化拖曳介面，讓完全不懂程式語言的業務專家也能直接匯入資料並產出預測模型，進一步推動了企業內部 AI 普及化（Democratization of AI）。"
+          }
+        ],
+        "terminology": [
+          "Hyperparameter Optimization (HPO)",
+          "End-to-End Learning",
+          "Model Evaluation",
+          "Baseline",
+          "Algorithm Selection"
         ]
       },
       {
@@ -1103,6 +2843,35 @@ const EXAM_DATA = {
         "examples": [
           "在訓練複雜的深度學習神經網路時，工程師需要同時調整學習率、批次大小、神經元數量等多達十幾個超參數。使用隨機搜尋可以在限定的一天運算時間內，快速找到一組表現優異的參數設定。",
           "金融機構在最佳化隨機森林模型的樹的深度與數量時，利用 Random Search 代替 Grid Search，大幅節省了模型訓練時間，讓模型能更快上線部署以應對市場變化。"
+        ],
+        "comparison": "超參數優化中，網格搜尋（Grid Search）與隨機搜尋（Random Search）是最基礎的兩種策略。網格搜尋堅持地毯式搜索，保證不會遺漏任何設定點，適合超參數數量極少（例如 2-3 個）且運算資源充足的小型機器學習專案。相對地，隨機搜尋打破了固定間距的限制，能在極短時間內測試更多獨特的參數值。當處理現代深度學習或 XGBoost 這種動輒超過 10 個超參數的高維度問題時，隨機搜尋是跳脫運算災難、迅速找到可用設定的實戰首選。",
+        "keywords": [
+          "隨機搜尋 (Random Search)",
+          "網格搜尋 (Grid Search)",
+          "超參數優化 (Hyperparameter Optimization)",
+          "高維參數空間 (High-dimensional Parameter Space)",
+          "計算效率 (Computational Efficiency)"
+        ],
+        "extended_tech": [
+          {
+            "name": "貝氏最佳化 (Bayesian Optimization)",
+            "desc": "比隨機搜尋更聰明的進階策略。它會建立一個代理模型來記錄過去嘗試過的參數組合與效能，並推測出下一次最可能提升效能的參數設定，能用極少的嘗試次數找到全域最佳解，適合每次訓練成本極高的大型神經網路。"
+          },
+          {
+            "name": "Hyperband 演算法",
+            "desc": "結合了隨機搜尋與提早停止（Early Stopping）機制。它會快速發起大量隨機的參數組合進行短期訓練，並迅速淘汰表現不佳的組合，將運算資源集中在最有潛力的模型上，大幅縮短了整體調校時間。"
+          },
+          {
+            "name": "遺傳演算法應用於調參 (Evolutionary Tuning)",
+            "desc": "借鑑生物演化過程，將優良的超參數組合視為親代進行「交配」與「突變」，產生下一代參數組合。這種方法特別擅長在極度複雜且不連續的模型架構空間中搜尋出意想不到的高效能配置。"
+          }
+        ],
+        "terminology": [
+          "Curse of Dimensionality",
+          "Hyperparameter Tuning",
+          "Parameter Space",
+          "Cross-Validation",
+          "Objective Function"
         ]
       },
       {
@@ -1121,6 +2890,35 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛視覺辨識系統在初步訓練階段，工程師設定了較大的學習率讓模型快速掌握道路輪廓，到了訓練後期則調小學習率，讓模型精細微調對行人特徵的判斷。",
           "語音辨識模型在訓練時發生損失值不斷震盪、無法下降的情況，開發人員透過引入學習率衰減（Decay）機制，成功讓模型穩定收斂並達到了目標的準確率。"
+        ],
+        "comparison": "在神經網路的訓練中，「學習率」與「批次大小（Batch Size）」是決定模型能否穩定收斂的兩把鑰匙。學習率控制的是每一次參數更新的步伐長度；而批次大小控制的是每一次更新方向的準確性。如果學習率過大，模型會像酒醉般在山谷間劇烈震盪；如果批次過小，梯度更新的方向會因為單一雜訊資料而充滿隨機性。實務上，調整這兩個超參數往往需要相輔相成，才能在訓練速度與模型最終泛化能力之間取得最佳平衡點。",
+        "keywords": [
+          "學習率 (Learning Rate)",
+          "收斂速度 (Convergence Speed)",
+          "梯度下降 (Gradient Descent)",
+          "超參數 (Hyperparameter)",
+          "權重更新 (Weight Update)"
+        ],
+        "extended_tech": [
+          {
+            "name": "學習率衰減 (Learning Rate Decay)",
+            "desc": "在訓練過程的初期使用較大的學習率以加速收斂並跳脫局部最佳解，隨著訓練週期增加，逐步調降學習率，讓模型在靠近全域最佳解時能精確微調，是深度學習標準配備。"
+          },
+          {
+            "name": "預熱機制 (Warmup)",
+            "desc": "在訓練剛開始的幾個週期，從極小的學習率逐漸增加到預設的基準值。這種策略能避免神經網路在剛初始化不穩定時，因為過大的步伐而直接破壞了潛在的特徵分佈，廣泛應用於 Transformer 模型的訓練。"
+          },
+          {
+            "name": "餘弦退火排程 (Cosine Annealing Scheduler)",
+            "desc": "讓學習率依照餘弦函數的波形，週期性地從高點下降到低點再拉升。這種動態排程能讓模型有機會週期性地逃離次佳的平緩區域，在複雜的損失函數地形中探索出更優質的解。"
+          }
+        ],
+        "terminology": [
+          "Gradient Descent",
+          "Epoch",
+          "Learning Rate Scheduler",
+          "Local Minima",
+          "Loss Function"
         ]
       },
       {
@@ -1139,6 +2937,35 @@ const EXAM_DATA = {
         "examples": [
           "某企業使用過去十年的履歷篩選結果來訓練 AI 招募系統，由於過去的人資主管在標記「合格候選人」時存在潛在的性別偏好，導致 AI 系統也學會了對特定性別的履歷給予較低評分。",
           "醫院的 AI 皮膚病變診斷模型若其訓練資料集中的標籤，大部分是由習慣診斷特定膚色病患的醫生所標註，模型可能無法正確辨識其他膚色病患身上的病徵，產生嚴重的醫療偏差。"
+        ],
+        "comparison": "機器學習中的偏見主要可分為「標籤偏差」與「取樣偏差（Sampling Bias）」。標籤偏差問題出在「答案是錯的」，也就是資料本身被錯誤或帶有主觀偏見地標記，這在依賴人工審核的應用（如內容審查、招募決策）中最為致命。相對地，取樣偏差問題出在「資料不具代表性」，例如只收集了城市使用者的數據去推論全國趨勢，導致模型對鄉村群體預測失效。兩者都會嚴重損害 AI 系統的公平性與可靠性，但必須從不同的資料蒐集環節去解決。",
+        "keywords": [
+          "標籤偏差 (Label Bias)",
+          "資料偏見 (Data Bias)",
+          "機器學習公平性 (Machine Learning Fairness)",
+          "監督式學習 (Supervised Learning)",
+          "主觀偏見 (Subjective Bias)"
+        ],
+        "extended_tech": [
+          {
+            "name": "主動學習 (Active Learning)",
+            "desc": "在資料標註成本高昂的情況下，演算法會主動挑選出預測最不確定或最具資訊量的樣本，交由人類專家進行人工標註。這能有效提高標籤品質並減少標註量，但仍需注意專家本身潛藏的偏差。"
+          },
+          {
+            "name": "公平感知機器學習 (Fairness-aware Machine Learning)",
+            "desc": "一組專門對抗模型偏見的技術。透過在模型訓練的損失函數中加入公平性約束條件，強迫模型在做決策時不能依賴受保護的敏感屬性（如種族、性別），以符合倫理與法規要求。"
+          },
+          {
+            "name": "交叉標註與共識機制 (Consensus Labeling)",
+            "desc": "為了解決單一人類標註員的主觀偏差，資料準備階段會將同一個樣本派發給多位獨立標註員。最後透過多數決或信賴度加權的方式來決定最終標籤，是建立高品質大型資料集的標準流程。"
+          }
+        ],
+        "terminology": [
+          "Ground Truth",
+          "Sampling Bias",
+          "Algorithmic Fairness",
+          "Measurement Error",
+          "Supervised Learning"
         ]
       },
       {
@@ -1157,6 +2984,35 @@ const EXAM_DATA = {
         "examples": [
           "金融業在利用 AI 審核房貸申請時，必須透過 XAI 技術產出拒絕貸款的具體原因（如負債比過高或近期有遲繳紀錄），以符合法規要求並向客戶解釋。",
           "自動駕駛汽車在測試發生誤判時，工程師利用可解釋性工具分析神經網路的注意力熱力圖，發現模型錯誤地將路邊廣告看板上的圖案識別為行人，進而進行針對性的模型修正。"
+        ],
+        "comparison": "在評估 AI 系統的優先級時，「可解釋性（XAI）」與「模型效能（如準確率）」常常處於拔河的狀態。對於低風險、高頻率的任務（如精準廣告投放、商品推薦），企業會優先採用結構複雜但極度精準的深度學習黑盒子模型；然而，在醫療診斷、刑事司法判決或金融放貸等高風險、強監管領域，即使傳統決策樹或邏輯迴歸的準確率稍遜一籌，企業仍會因為其具備完美的可解釋性而將其作為首選，確保決策的透明與合規。",
+        "keywords": [
+          "可解釋人工智慧 (Explainable AI, XAI)",
+          "黑盒子模型 (Black-box Model)",
+          "特徵貢獻度 (Feature Contribution)",
+          "醫療診斷 (Medical Diagnosis)",
+          "信任度 (Trustworthiness)"
+        ],
+        "extended_tech": [
+          {
+            "name": "SHAP 值分析 (SHapley Additive exPlanations)",
+            "desc": "基於賽局理論發展出的模型解釋工具。它能為模型預測出的每一個結果，精確計算出各個輸入特徵的邊際貢獻度（是正向推升或負向拉低預測值），被公認為目前最嚴謹的特徵重要性評估方法。"
+          },
+          {
+            "name": "LIME 演算法 (Local Interpretable Model-agnostic Explanations)",
+            "desc": "一種與模型架構無關的局部解釋技術。它的運作原理是在某個特定樣本的周圍生成微擾資料，並訓練一個簡單的線性模型來逼近黑盒子模型在該局部的決策邊界，從而解釋單一預測的依據。"
+          },
+          {
+            "name": "類別活化映射 (Class Activation Mapping, CAM)",
+            "desc": "專門用於解釋卷積神經網路（CNN）影像分類決策的技術。它能生成類似熱力圖的視覺化結果，明確標示出模型在進行分類判斷時，目光主要聚焦在影像中的哪一個區域（例如貓的耳朵或尾巴）。"
+          }
+        ],
+        "terminology": [
+          "Interpretability",
+          "Model Transparency",
+          "Regulatory Compliance",
+          "Local Explanation",
+          "Global Explanation"
         ]
       },
       {
@@ -1175,6 +3031,35 @@ const EXAM_DATA = {
         "examples": [
           "在房地產估價模型中，若系統的回報 R² 為 0.90，代表房價高低波動中有 90% 的原因可以被系統納入的坪數、屋齡、捷運距離等特徵所解釋。",
           "冷氣製造商分析氣溫與冷氣銷量的關係，得到的線性迴歸模型 R² 為 0.75，表示冷氣銷量的增減有 75% 的變異是由氣溫變化所決定的，其餘 25% 則可能是受促銷或其他因素影響。"
+        ],
+        "comparison": "在評估數值預測模型時，R² 決定係數與均方根誤差（RMSE）扮演著互補的角色。R² 提供的是一個「相對」比例概念，它告訴我們模型解釋資料波動的能力有多強，無論目標是百萬級的房價還是個位數的溫度，R² 永遠介於 0 到 1 之間，方便跨模型比較。而 RMSE 提供的是「絕對」誤差數值，直接反映預測值與實際值的物理差距。在商業報告中，通常會同時呈現 R²（衡量模型品質）與 RMSE（衡量實際業務誤差風險）以獲得全面的評估。",
+        "keywords": [
+          "決定係數 (R-squared, R²)",
+          "變異 (Variance)",
+          "線性迴歸 (Linear Regression)",
+          "模型配適度 (Goodness of Fit)",
+          "殘差 (Residual)"
+        ],
+        "extended_tech": [
+          {
+            "name": "調整後決定係數 (Adjusted R-squared)",
+            "desc": "傳統 R² 的改良版。當模型加入越來越多的無用特徵時，傳統 R² 仍然會呈現虛假的上升；調整後 R² 則會針對引入無效變數進行懲罰，更能真實反映多元迴歸模型的優劣，是特徵選擇的關鍵指標。"
+          },
+          {
+            "name": "平均絕對誤差 (Mean Absolute Error, MAE)",
+            "desc": "計算預測值與真實值之間絕對誤差的平均。與 RMSE 相比，MAE 不會放大極端異常值（Outlier）的影響，更能反映模型在一般情況下的典型預測誤差，適合包含許多離群值的商業預測情境。"
+          },
+          {
+            "name": "均方根誤差 (Root Mean Square Error, RMSE)",
+            "desc": "先將誤差平方後取平均再開根號。由於平方效應，RMSE 會強烈放大預測偏差極大的極端案例。在金融預測或精密製造中，若偶發的巨大誤差會帶來毀滅性後果，RMSE 便是最優先參考的評估指標。"
+          }
+        ],
+        "terminology": [
+          "Goodness of Fit",
+          "Total Sum of Squares (SST)",
+          "Residual Sum of Squares (SSR)",
+          "Explained Variance",
+          "Regression Analysis"
         ]
       },
       {
@@ -1193,6 +3078,35 @@ const EXAM_DATA = {
         "examples": [
           "在垃圾郵件過濾系統中，我們既不希望漏抓垃圾信（需高召回率），也不希望把重要信件誤判為垃圾信（需高精確率），使用 F1 分數能最客觀地評估過濾器的整體表現。",
           "工廠生產線的瑕疵檢測 AI，若資料中 99% 都是良品，工程師會專注於優化 AI 的 F1 分數，以確保系統能精準挑出瑕疵品，同時減少誤報導致的人工複檢成本。"
+        ],
+        "comparison": "F1 分數是「精確率（Precision）」與「召回率（Recall）」兩難困境下的折衷解。精確率強調「不要抓錯」，適用於誤報成本極高的場景，例如將正常信件誤判為垃圾信；召回率強調「不要漏抓」，適用於漏報成本極高的場景，例如癌症篩檢或防毒軟體偵測。當業務場景無法偏廢任何一方，且資料極度不平衡時，F1 分數（兩者的調和平均）能避免模型透過極端策略（如全猜正或全猜負）來洗高分數，提供最客觀的綜合評估。",
+        "keywords": [
+          "F1 分數 (F1 Score)",
+          "精確率 (Precision)",
+          "召回率 (Recall)",
+          "調和平均數 (Harmonic Mean)",
+          "不平衡資料集 (Imbalanced Dataset)"
+        ],
+        "extended_tech": [
+          {
+            "name": "ROC 曲線與 AUC (Area Under the ROC Curve)",
+            "desc": "這是一種評估二元分類器在不同判定門檻下整體效能的圖表與指標。AUC 值越接近 1，代表模型區分正負樣本的能力越強。相較於 F1 分數專注於單一預測門檻，AUC 提供了模型在各種情境下的全域評估視角。"
+          },
+          {
+            "name": "混淆矩陣 (Confusion Matrix)",
+            "desc": "將模型的分類結果展開成一個矩陣，詳列出真陽性(TP)、假陽性(FP)、真陰性(TN)與假陰性(FN)的具體數量。這是計算精確率、召回率與 F1 分數的基石，能幫助工程師精確診斷模型到底在哪一種類型上犯錯最多。"
+          },
+          {
+            "name": "F-beta 分數 (F-beta Score)",
+            "desc": "F1 分數的泛化版本，允許引入一個權重參數 Beta。當業務場景認為召回率比精確率更重要（如疾病篩檢）時，可設定 Beta 大於 1；反之則設定小於 1，賦予模型評估更高的業務彈性。"
+          }
+        ],
+        "terminology": [
+          "True Positive (TP)",
+          "False Positive (FP)",
+          "False Negative (FN)",
+          "Accuracy",
+          "Threshold"
         ]
       },
       {
@@ -1211,6 +3125,35 @@ const EXAM_DATA = {
         "examples": [
           "在訓練複雜的生成對抗網路（GAN）生成高畫質人臉影像時，研究人員通常會選擇 Adam 優化器，因為它能更穩定、更快速地在生成器與判別器的對抗訓練中找到收斂平衡點。",
           "自然語言處理領域在微調擁有數十億參數的 BERT 語言模型時，Adam 憑藉其自適應調整每個權重學習率的特性，能夠在少量的運算週期內迅速將模型調適到新的文本分類任務上。"
+        ],
+        "comparison": "在神經網路優化器家族中，SGD（隨機梯度下降）是最傳統且單純的方法，每次更新完全依賴當下的梯度，容易在狹長山谷地形中劇烈震盪且收斂緩慢。RMSProp 解決了學習率衰減問題，但缺乏方向的慣性。而 Adam 優化器則被視為集大成者，它同時內建了「動量（保持方向慣性避免震盪）」與「自適應學習率（針對不同參數微調步伐）」雙重機制。這使得 Adam 成為九成以上深度學習與自然語言處理專案預設的開局首選優化器。",
+        "keywords": [
+          "Adam 優化器 (Adam Optimizer)",
+          "動量 (Momentum)",
+          "自適應學習率 (Adaptive Learning Rate)",
+          "梯度下降 (Gradient Descent)",
+          "一階與二階動量 (First and Second Moment)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Nadam 優化器 (Nesterov-accelerated Adaptive Moment Estimation)",
+            "desc": "Adam 的進階改良版。它將 Nesterov 預見動量機制（在更新前先往前看一步的梯度）融入了 Adam 的一階動量計算中。在訓練某些高度非線性的圖像分類網路時，能提供比標準 Adam 更快且更穩定的收斂曲線。"
+          },
+          {
+            "name": "LBFGS 優化演算法",
+            "desc": "一種基於牛頓法（計算二階導數與海森矩陣）的進階優化演算法。相較於 Adam 這種基於一階梯度的演算法，它在處理全批量資料且參數規模較小（如數千個參數）的傳統機器學習問題時，能極度精準地收斂到最佳解。"
+          },
+          {
+            "name": "AdamW (Adam with Weight Decay)",
+            "desc": "為了解決標準 Adam 在引入 L2 正則化時數學推導上的瑕疵而誕生。AdamW 將權重衰減（Weight Decay）從梯度計算中解耦，這能顯著提升訓練出的大型 Transformer 模型的泛化能力，避免過度擬合。"
+          }
+        ],
+        "terminology": [
+          "Gradient",
+          "Exponential Moving Average (EMA)",
+          "RMSProp",
+          "Stochastic Gradient Descent (SGD)",
+          "Hyperparameter"
         ]
       },
       {
@@ -1229,6 +3172,35 @@ const EXAM_DATA = {
         "examples": [
           "銀行利用 XGBoost 模型分析客戶的存款、消費紀錄與貸款歷史來預測違約機率。其內建處理缺失值的能力，讓銀行不需捨棄資料不齊全的新客戶樣本，並能給出高準確度的信用評分。",
           "線上零售商使用 XGBoost 分析海量的用戶點擊日誌與商品特徵，其平行化訓練的優勢讓演算法團隊每天都能快速利用最新資料更新推薦排序模型，提升使用者的購買轉化率。"
+        ],
+        "comparison": "XGBoost 屬於 Boosting（提升法）的代表，其核心思想是「從錯誤中學習」，後面的樹專門修正前面樹的失誤，因此預測準確率極高，但訓練容易過度擬合且難以完全平行化。相反地，隨機森林屬於 Bagging（裝袋法）的代表，其核心是「眾人智慧」，讓數百棵樹獨立成長並進行投票。隨機森林不容易過擬合且訓練速度快，適合做基準模型；而 XGBoost 透過引入正則化與系統優化，在兼顧防過擬合的同時榨出了極限效能，是表格型數據的王者。",
+        "keywords": [
+          "XGBoost",
+          "梯度提升 (Gradient Boosting)",
+          "正則化 (Regularization)",
+          "平行化運算 (Parallel Computation)",
+          "整合學習 (Ensemble Learning)"
+        ],
+        "extended_tech": [
+          {
+            "name": "LightGBM",
+            "desc": "由微軟開發的另一款高效能梯度提升樹演算法。它採用了基於直方圖的決策樹算法與單邊梯度抽樣技術，在處理特徵維度極高、樣本數達百萬級別的海量資料時，其訓練速度與記憶體消耗表現甚至優於 XGBoost。"
+          },
+          {
+            "name": "CatBoost",
+            "desc": "由 Yandex 開發的梯度提升演算法，專門針對包含大量「類別型特徵（Categorical Features）」的資料集進行了深度優化。開發者不需預先進行繁瑣的 One-Hot 編碼，模型便能自動且高效地處理字串型態的分類特徵，廣泛應用於行銷推薦系統。"
+          },
+          {
+            "name": "Stacking 堆疊法",
+            "desc": "一種更高階的整合學習技巧，將 XGBoost、隨機森林、神經網路等多種不同底層邏輯的強模型預測結果，作為一個「超級元模型（Meta-Model）」的輸入特徵來進行最終預測，是 Kaggle 競賽中突破準確率極限的常見殺手鐧。"
+          }
+        ],
+        "terminology": [
+          "Weak Learner",
+          "Boosting",
+          "Taylor Expansion",
+          "Loss Function",
+          "Missing Value Handling"
         ]
       },
       {
@@ -1247,6 +3219,35 @@ const EXAM_DATA = {
         "examples": [
           "製造業在訓練 AI 檢測晶片瑕疵時，由於良品率高達 99.9%，工程師會透過調整模型的類別權重，讓 AI 如果漏抓一顆瑕疵晶片，就會受到比誤判良品大上百倍的懲罰。",
           "防毒軟體公司在偵測新型惡意程式時，利用 SMOTE 技術生成與已知惡意程式特徵相似的人工樣本，豐富了原本稀缺的少數類訓練資料，有效提升了模型對變種病毒的辨識能力。"
+        ],
+        "comparison": "在面對不平衡資料集時，從「資料面」處理的 SMOTE（過採樣）與從「演算法面」處理的類別權重調整是最常被比較的兩種策略。SMOTE 透過插值法無中生有創造出新的少數類特徵樣本，這賦予模型更豐富的邊界學習資訊，但代價是訓練時間增加與潛在的雜訊干擾。調整類別權重則是直接修改損失函數，讓演算法為錯判少數類付出慘痛代價，這不需更動原始資料結構，執行速度快，是醫療確診或金融防詐場景下最直接暴力的改善方案。",
+        "keywords": [
+          "不平衡資料集 (Imbalanced Dataset)",
+          "過採樣 (Oversampling)",
+          "欠採樣 (Undersampling)",
+          "SMOTE 演算法",
+          "類別權重 (Class Weight)"
+        ],
+        "extended_tech": [
+          {
+            "name": "SMOTE 演算法 (Synthetic Minority Over-sampling Technique)",
+            "desc": "為了解決少數類樣本稀缺的問題，SMOTE 會找出少數類樣本在特徵空間中的 K 個最近鄰居，並在它們的連線上隨機插值，合成出全新的少數類人工樣本。這比單純複製舊樣本更能有效避免模型發生過度擬合現象。"
+          },
+          {
+            "name": "Focal Loss 損失函數",
+            "desc": "一種專為極度不平衡分類任務設計的進階損失函數，最初應用於 RetinaNet 物件偵測模型。它會自動降低容易分類的背景多數樣本的損失權重，強迫深度神經網路將學習焦點完全集中在那些數量稀少、難以區分的關鍵少數目標上。"
+          },
+          {
+            "name": "異常偵測架構 (Anomaly Detection formulation)",
+            "desc": "當正樣本數量趨近於零或特徵極不穩定時（如零日攻擊防護），乾脆放棄二元分類架構。改為只使用大量正常的「負樣本」訓練 One-Class SVM 或 Autoencoder，只要新資料的特徵分佈偏離正常模型，即警報為異常。"
+          }
+        ],
+        "terminology": [
+          "Class Imbalance",
+          "Accuracy Paradox",
+          "Resampling",
+          "Cost-sensitive Learning",
+          "Minority Class"
         ]
       },
       {
@@ -1265,6 +3266,35 @@ const EXAM_DATA = {
         "examples": [
           "影音平台在推薦電影時，會建立使用者年齡段與電影類型的互動特徵（如「20-29歲_科幻片」），幫助模型精準捕捉特定族群對特定類型內容的強烈偏好。",
           "保險公司評估車險費率時，將「駕駛人年齡」與「車輛馬力」相乘建立互動特徵，因為數據顯示年輕駕駛若駕駛大馬力跑車，其肇事風險會呈現乘數效應的飆升。"
+        ],
+        "comparison": "在特徵工程中，「互動特徵」是針對多個變數之間的非線性組合，例如「年齡」與「性別」的交叉組合，主要用於提升簡單模型（如邏輯迴歸）對複雜關係的捕捉能力。這與「特徵轉換（如取對數或平方）」完全不同，特徵轉換是針對「單一」特徵進行數學變換以符合常態分佈假設或消除右偏尾巴。值得一提的是，現代深度神經網路或梯度提升樹（GBDT）在訓練過程中已內建了自動挖掘特徵交互作用的能力，因此人工設計的必要性已不如以往。",
+        "keywords": [
+          "特徵交互作用 (Feature Interaction)",
+          "特徵工程 (Feature Engineering)",
+          "非線性關係 (Non-linear Relationship)",
+          "特徵組合 (Feature Crossing)",
+          "乘積特徵 (Multiplicative Features)"
+        ],
+        "extended_tech": [
+          {
+            "name": "多項式特徵展開 (Polynomial Features)",
+            "desc": "在線性模型中，自動將現有的所有特徵進行高次方的乘積組合（如包含 A平方、B平方以及 A乘B）。這是一種快速暴力擴充特徵維度以逼近複雜非線性邊界的方法，常應用於基礎的線性或邏輯迴歸分析中。"
+          },
+          {
+            "name": "因子分解機 (Factorization Machines, FM)",
+            "desc": "專為處理極度稀疏資料（如點擊率預測中的用戶ID與商品ID）而設計的演算法。它透過引入隱變量向量，能自動且高效地計算出所有特徵之間的二階交互作用，是現代推薦系統與計算廣告學的基石。"
+          },
+          {
+            "name": "Embedding 嵌入技術",
+            "desc": "在深度學習中，將原本高維稀疏的類別型特徵（如上百萬種商品）轉換為低維稠密的實數向量。這種連續的向量空間能自然地隱含特徵之間的語意關聯與相似性互動，是 NLP 詞向量與影音推薦系統的核心。"
+          }
+        ],
+        "terminology": [
+          "Feature Engineering",
+          "Cross Feature",
+          "Non-linearity",
+          "Dimensionality Expansion",
+          "Main Effect"
         ]
       },
       {
@@ -1283,6 +3313,35 @@ const EXAM_DATA = {
         "examples": [
           "在機器翻譯任務中，Transformer 的多頭注意力機制可以讓其中一個 Head 負責追蹤名詞與代名詞的指代關係，另一個 Head 負責捕捉動詞的時態變化，最終產出精確的翻譯結果。",
           "AI 寫作輔助軟體分析長篇合約文件時，多頭注意力能同時關注重點條款的財務數字關聯性以及免責聲明的法律語氣一致性，有效審查文件中的潛在風險。"
+        ],
+        "comparison": "在捕捉序列資料關聯性時，「多頭注意力機制」與傳統的「遞迴神經網路(RNN)」有著根本的差異。RNN 必須嚴格按照時間順序一步步讀取資料，難以長時間保留記憶，且無法平行運算。多頭注意力機制則打破了時間順序的限制，能夠「同時」檢視整個句子中所有詞彙之間的雙向關聯，並且透過多個獨立的「Head」分別關注不同的語法或語意特徵。這種全局視野與極致並行化的設計，奠定了 Transformer 在大型語言模型（如 ChatGPT）中的霸主地位。",
+        "keywords": [
+          "多頭注意力 (Multi-head Attention)",
+          "Transformer 模型",
+          "自注意力機制 (Self-Attention)",
+          "表示子空間 (Representation Subspaces)",
+          "上下文關聯 (Contextual Dependencies)"
+        ],
+        "extended_tech": [
+          {
+            "name": "自注意力機制 (Self-Attention)",
+            "desc": "多頭注意力的基礎單元。其核心運算是透過 Query, Key, Value 三個矩陣的內積，計算出輸入序列中任何兩個元素之間的關聯性權重。這讓模型能精準捕捉到「銀行」一詞在不同語境下到底是金融機構還是河岸的意思。"
+          },
+          {
+            "name": "掩碼注意力機制 (Masked Attention)",
+            "desc": "主要應用於 Transformer 的解碼器（Decoder）端。在訓練文字生成模型時，這項機制會強行遮蔽掉未來的詞彙，強迫模型只能依賴「過去的語境」來預測下一個字，確保模型不會因為作弊偷看答案而失去預測能力。"
+          },
+          {
+            "name": "稀疏注意力機制 (Sparse Attention)",
+            "desc": "由於標準注意力機制的運算複雜度與序列長度的平方成正比，處理超長文本（如整本書）會消耗驚人記憶體。稀疏注意力透過限制每個 Token 只與局部相鄰或特定跨度的 Token 計算關聯，大幅降低運算成本，是現代超長文本模型的核心技術。"
+          }
+        ],
+        "terminology": [
+          "Query, Key, Value",
+          "Self-Attention",
+          "Transformer Architecture",
+          "Representation Subspace",
+          "Sequence-to-Sequence"
         ]
       },
       {
@@ -1301,6 +3360,35 @@ const EXAM_DATA = {
         "examples": [
           "電子郵件服務商利用單純貝氏分類器分析信件內容。模型透過計算信件中同時出現「免費」、「抽獎」與「限時」等關鍵字的條件機率，精準判斷該信件為垃圾郵件的後驗機率。",
           "醫療診斷系統利用貝氏定理，結合某種疾病在當地的流行率（先驗機率），以及病患出現發燒、咳嗽且篩檢呈陽性的條件機率，推估該病患確實染病的最終機率，以協助醫師確診。"
+        ],
+        "comparison": "單純貝氏分類器 (Naive Bayes) 與邏輯迴歸 (Logistic Regression) 都是處理二元或多元分類的經典演算法。邏輯迴歸屬於判別模型，其目標是直接學習出一條能將類別分開的最佳決策邊界，適合處理特徵之間存在關聯的複雜預測。相反地，單純貝氏屬於生成模型，它是基於純粹的機率統計與特徵互相獨立的強烈假設來運作。雖然在真實世界中特徵很少絕對獨立，但單純貝氏在處理海量特徵（如文本中的萬千詞彙）時展現了驚人的運算速度，是垃圾郵件攔截的經典王者。",
+        "keywords": [
+          "貝氏定理 (Bayes' Theorem)",
+          "單純貝氏分類器 (Naive Bayes)",
+          "先驗機率 (Prior Probability)",
+          "後驗機率 (Posterior Probability)",
+          "條件機率 (Conditional Probability)"
+        ],
+        "extended_tech": [
+          {
+            "name": "貝氏網路 (Bayesian Belief Network, BBN)",
+            "desc": "放寬了單純貝氏「特徵必須完全獨立」的嚴苛假設。它利用有向無環圖（DAG）來直觀表達多個變數之間的因果與條件依賴關係，非常適合用於醫療症狀推導與工業設備故障的複雜根因分析。"
+          },
+          {
+            "name": "高斯單純貝氏 (Gaussian Naive Bayes)",
+            "desc": "標準單純貝氏的變體，專門用來處理連續型數值特徵。它假設這些連續特徵的值在每個類別下都服從常態分佈（高斯分佈），進而計算機率，廣泛應用於含有大量實數感測器資料的預測分類任務。"
+          },
+          {
+            "name": "隱馬可夫模型 (Hidden Markov Model, HMM)",
+            "desc": "基於貝氏理論延伸出的時間序列機率模型。它假設系統包含不可見的隱藏狀態，並透過觀察到的序列反推最可能的隱藏狀態路徑。在深度學習崛起前，HMM 是語音辨識與自然語言詞性標註的絕對主流技術。"
+          }
+        ],
+        "terminology": [
+          "Prior Probability",
+          "Posterior Probability",
+          "Conditional Probability",
+          "Generative Model",
+          "Feature Independence"
         ]
       },
       {
@@ -1317,8 +3405,37 @@ const EXAM_DATA = {
         "ml_method": "蒙地卡羅方法 (Monte Carlo Method)",
         "ml_method_explanation": "蒙地卡羅方法是一種以機率統計理論為指導的一類非常重要的數值計算方法。當系統過於複雜，存在許多交互影響的隨機變數，導致無法建立精確的數學模型求解時，蒙地卡羅方法會根據變數的機率分佈，進行成千上萬次的亂數隨機抽樣與情境模擬。根據大數法則，隨著模擬次數的增加，所有隨機情境產生的統計結果平均值將會收斂至系統的真實期望值，為複雜的系統動態與風險評估提供可靠的量化依據。",
         "examples": [
-          "投資銀行在進行資產風險控管時，會使用蒙地卡羅模擬法，隨機產生未來股市、匯率與利率的上萬種可能走勢，藉此精準計算投資組合在極端市場情況下的最大可能損失（VaR）。",
+          "投資銀行在進行資產風險控管時，會使用蒙地卡羅模擬法，隨機產生未來股市、匯率與利率的上萬種可能走勢，藉此精準計算投資組合在極端極端市場情況下的最大可能損失（VaR）。",
           "半導體製造廠在評估新製程的良率時，會利用蒙地卡羅方法隨機模擬各道光刻與蝕刻機台的微小參數誤差，預測最終晶片成品的整體良率分佈區間，以提早制定優化對策。"
+        ],
+        "comparison": "在處理不確定性問題時，「蒙地卡羅方法」與傳統的機器學習「迴歸預測（如 SVR 或線性迴歸）」有著截然不同的切入點。迴歸模型致力於基於歷史資料給出一個「精確的點預測值（如明天發電量為100萬度）」，這在確定性高的場景下非常有用。然而，蒙地卡羅方法的核心在於風險控管，它並不追求單一解答，而是透過成千上萬次的亂數模擬，給出整個事件發生的「機率分佈與區間（如發電量有95%機率落在80至120萬度之間）」，這在金融風險分析或大型工程專案評估中更具實用價值。",
+        "keywords": [
+          "蒙地卡羅方法 (Monte Carlo Method)",
+          "隨機抽樣 (Random Sampling)",
+          "風險區間 (Risk Interval)",
+          "情境模擬 (Scenario Simulation)",
+          "機率分佈 (Probability Distribution)"
+        ],
+        "extended_tech": [
+          {
+            "name": "馬可夫鏈蒙地卡羅法 (Markov Chain Monte Carlo, MCMC)",
+            "desc": "蒙地卡羅方法的進階技術。當高維度機率分佈極度複雜，無法直接進行簡單隨機抽樣時，MCMC 透過建立馬可夫鏈，讓採樣過程能智慧地朝著高機率密度區域游走。這是現代貝氏統計推論與複雜機器學習模型推估的核心運算骨幹。"
+          },
+          {
+            "name": "蒙地卡羅樹搜尋 (Monte Carlo Tree Search, MCTS)",
+            "desc": "結合了樹狀結構搜尋與隨機模擬的決策演算法。在面臨龐大且無法窮舉的決策空間時（如圍棋），它會隨機模擬未來的數百步棋局來評估當下某一步的勝率。這正是驅動 AlphaGo 擊敗人類世界冠軍的關鍵大腦核心。"
+          },
+          {
+            "name": "自助抽樣法 (Bootstrapping)",
+            "desc": "一種與蒙地卡羅概念相似的重抽樣統計技術。它從有限的原始資料集中進行「有放回」的隨機抽樣，產生出多組新的模擬資料集。這不僅用於統計推論估算信賴區間，也是隨機森林等 Bagging 整合機器學習演算法的基石。"
+          }
+        ],
+        "terminology": [
+          "Law of Large Numbers",
+          "Random Variables",
+          "Risk Assessment",
+          "Stochastic Process",
+          "Numerical Integration"
         ]
       },
       {
@@ -1337,6 +3454,35 @@ const EXAM_DATA = {
         "examples": [
           "行銷分析師利用線性迴歸預測廣告預算對營收的影響，在檢查殘差圖時發現 U 型分佈，這提示分析師廣告效益存在邊際遞減效應（非線性），應將預算取對數後再重新建模。",
           "氣象局利用迴歸模型預測氣溫，發現冬季某幾天的預測殘差極大，經檢視後發現是因為這些日子發生了罕見的寒流（異常值）。將異常值排除或引入新變數後，模型的預測穩定度大幅提升。"
+        ],
+        "comparison": "在模型評估環節中，「殘差分析」與常見的「效能指標（如 R平方或 RMSE）」提供了不同維度的洞察。R平方或 RMSE 只能給出一個綜合評分，告訴你模型預測得「準不準」，但無法告訴你「為什麼不準」。相對地，殘差分析就像是模型的 X光片，透過檢視殘差分佈圖的形狀（如喇叭狀擴散代表變異數不齊次，U型代表遺漏了非線性特徵），能明確指引資料科學家接下來應該進行特徵轉換、剔除異常值，或是改用更複雜的非線性演算法。",
+        "keywords": [
+          "殘差分析 (Residual Analysis)",
+          "多元迴歸 (Multiple Regression)",
+          "非線性關係 (Non-linear Relationship)",
+          "異常值 (Outlier)",
+          "變異數同質性 (Homoscedasticity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Box-Cox 轉換 (Box-Cox Transformation)",
+            "desc": "當殘差分析顯示模型的誤差項不符合常態分佈或變異數不齊次時，這是一套強大的特徵轉換工具。它能自動尋找最佳的次方參數，將非態分佈的資料拉回常態，從而滿足線性迴歸的嚴格統計假設，顯著提升模型穩定度。"
+          },
+          {
+            "name": "廣義線性模型 (Generalized Linear Model, GLM)",
+            "desc": "傳統線性迴歸的終極升級版。當預測目標的殘差明顯不符合常態分佈（例如預測網頁點擊次數這種泊松分佈，或預測機率這種二項式分佈）時，GLM 透過引入連結函數（Link Function），成功將線性框架擴展至各種非態分佈的商業場景中。"
+          },
+          {
+            "name": "庫克距離 (Cook's Distance)",
+            "desc": "在迴歸分析中專門用來量化並尋找「高影響力異常點（Influential Points）」的進階統計指標。它能計算出如果將某個特定資料點從訓練集中刪除，會對整個迴歸方程式的權重參數造成多麼劇烈的改變，是資料清洗環節的利器。"
+          }
+        ],
+        "terminology": [
+          "Residual Plot",
+          "Heteroscedasticity",
+          "Linearity Assumption",
+          "Outlier Detection",
+          "Ordinary Least Squares (OLS)"
         ]
       },
       {
@@ -1355,6 +3501,35 @@ const EXAM_DATA = {
         "examples": [
           "信用卡中心在審核民眾發卡申請時，背後的評分卡模型會根據申請者的年齡段分箱、職業別WOE權重以及聯徵中心的信用歷史，計算出一個綜合信用分數，並依據門檻決定是否核卡。",
           "數位銀行為了符合金管會的稽核要求，不採用最新的黑盒子深度學習演算法，而是利用邏輯迴歸建立信用評分卡，讓客服人員能夠明確告知客戶貸款遭拒是因為「近期負債比分數過低」。"
+        ],
+        "comparison": "信用評分卡模型與現代機器學習（如 XGBoost 或神經網路）在金融風控領域中各自佔據重要地位。現代機器學習依賴複雜的決策樹交疊或多層神經元來壓榨出最高的預測準確率，非常適合用於防範即時信用卡盜刷這類不需要向客戶解釋原因的場景。相對地，信用評分卡堅守簡單的邏輯迴歸與 WOE 特徵轉換，雖然準確率稍低，但其計分邏輯清晰透明，符合金融法規要求，能向客戶明確解釋拒絕放款的原因，因此在放貸審查等核心業務中無可取代。",
+        "keywords": [
+          "信用評分卡 (Credit Scorecard)",
+          "邏輯迴歸 (Logistic Regression)",
+          "資訊值 (Information Value, IV)",
+          "證據權重 (Weight of Evidence, WOE)",
+          "樣本穩定性指標 (Population Stability Index, PSI)"
+        ],
+        "extended_tech": [
+          {
+            "name": "證據權重轉換 (Weight of Evidence, WOE)",
+            "desc": "評分卡模型中專屬的特徵轉換技術。它將連續變數分箱後，計算每個箱內好壞客戶比例的對數值。這不僅能處理遺漏值，還能將原本與目標呈非線性關係的特徵，轉換為與對數勝率呈完美線性關係的形式，極大化了邏輯迴歸的預測威力。"
+          },
+          {
+            "name": "樣本穩定性指標 (Population Stability Index, PSI)",
+            "desc": "用於監控模型上線後健康度的核心指標。它透過比較模型訓練時的資料分佈與上線營運時的實際資料分佈差異，來判斷客群是否發生了嚴重偏移。當 PSI 數值飆高，即代表外在經濟環境已改變，金融機構必須立刻啟動模型重訓流程。"
+          },
+          {
+            "name": "多重共線性檢測 (VIF Analysis)",
+            "desc": "在建立線性或邏輯迴歸模型前必經的統計考驗。若特徵之間高度相關（如年收入與繳稅額），會導致模型權重極度不穩定，失去商業解釋意義。透過計算變異數膨脹因子（VIF），分析師能精準剔除重疊的特徵，確保評分卡規則的穩健性。"
+          }
+        ],
+        "terminology": [
+          "Binning",
+          "Weight of Evidence (WOE)",
+          "Information Value (IV)",
+          "Multicollinearity",
+          "Logistic Regression"
         ]
       },
       {
@@ -1373,6 +3548,34 @@ const EXAM_DATA = {
         "examples": [
           "在醫療診斷系統中，模型可能因為過擬合而記住某家醫院特定儀器的浮水印，導致在其他醫院資料上表現不佳。透過加入Dropout或提前停止訓練，能讓模型專注於真實病理特徵。",
           "在自動駕駛的影像辨識中，若模型過度擬合於晴天資料，遇到雨天將無法正確辨識行人。正則化技術有助於提取更普遍強健的特徵，避免對特定環境條件過度依賴。"
+        ],
+        "comparison": "正則化與Dropout主要應用於深度學習與機器學習模型的訓練階段，透過降低模型複雜度來防止過擬合。與特徵擴增不同，特徵擴增（如多項式特徵）通常用於解決欠擬合問題，常見於需要捕捉複雜模式的數據分析場景中。正則化適用於高維度特徵的醫療預測，而Dropout則廣泛用於影像與自然語言處理。",
+        "keywords": [
+          "過擬合 (Overfitting)",
+          "正則化 (Regularization)",
+          "隨機失活 (Dropout)",
+          "早期停止 (Early Stopping)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Data Augmentation (資料擴增)",
+            "desc": "在影像或語音處理中，透過旋轉、縮放、加入雜訊等方式人為增加訓練資料的多樣性，以減少過擬合風險。"
+          },
+          {
+            "name": "Ensemble Learning (集成學習)",
+            "desc": "將多個不同的基礎模型組合在一起，例如隨機森林或XGBoost，以降低單一模型的方差並提升整體預測穩定性。"
+          },
+          {
+            "name": "Batch Normalization (批次標準化)",
+            "desc": "在神經網路中對每一批次的數據進行標準化，不僅加速收斂，同時也具備輕微的正則化效果，降低過擬合。"
+          }
+        ],
+        "terminology": [
+          "L1 正則化 (L1 Regularization)",
+          "L2 正則化 (L2 Regularization)",
+          "泛化誤差 (Generalization Error)",
+          "權重衰減 (Weight Decay)"
         ]
       },
       {
@@ -1391,6 +3594,34 @@ const EXAM_DATA = {
         "examples": [
           "在語音辨識系統中，音訊特徵的變化高度非線性。若僅使用線性函數，系統無法區分相似發音。引入 ReLU 等非線性函數能讓模型學習到更複雜的聲學特徵，提升辨識準確率。",
           "應用於金融詐欺偵測的深度學習模型，異常交易行為間的關聯通常是非線性的。採用適當的非線性激活函數有助於捕捉隱含的詐欺模式，而非單純套用簡單的線性判斷規則。"
+        ],
+        "comparison": "ReLU 激活函數主要應用於深層神經網路的隱藏層，以引入非線性特徵並解決梯度消失問題。相對於 Sigmoid 函數通常應用於二元分類的輸出層，或是早期淺層網路。線性激活函數則常見於簡單的線性迴歸任務中。在智慧製造或影像辨識等需要提取複雜非線性特徵的場景，ReLU 及其變體是首選。",
+        "keywords": [
+          "激活函數 (Activation Function)",
+          "非線性 (Non-linearity)",
+          "梯度消失 (Vanishing Gradient)",
+          "特徵表達 (Feature Representation)",
+          "卷積神經網路 (CNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Leaky ReLU (帶洩漏的線性整流)",
+            "desc": "為了解決 ReLU 在負值區域梯度為零導致的神經元死亡問題，給予負值一個微小的斜率，維持模型學習能力。"
+          },
+          {
+            "name": "GELU (高斯誤差線性單元)",
+            "desc": "結合了 Dropout 的隨機性與 ReLU 的非線性，廣泛應用於 BERT、GPT 等先進的自然語言處理 Transformer 模型中。"
+          },
+          {
+            "name": "Swish (Swish 激活函數)",
+            "desc": "由 Google 提出的一種平滑且非單調的激活函數，在許多深層網路架構中表現出優於 ReLU 的預測準確率與收斂性。"
+          }
+        ],
+        "terminology": [
+          "梯度消失 (Vanishing Gradient)",
+          "死神經元 (Dying ReLU)",
+          "非線性映射 (Non-linear Mapping)",
+          "前向傳播 (Forward Propagation)"
         ]
       },
       {
@@ -1409,6 +3640,34 @@ const EXAM_DATA = {
         "examples": [
           "在人力資源的履歷篩選 AI 系統中，如果訓練資料大部分來自某特定名校畢業的員工履歷，系統可能會產生取樣偏差，進而自動過濾掉其他同樣優秀但非名校出身的求職者。",
           "在臉部辨識系統中，若訓練用的影像資料多數為特定種族或膚色的人群，系統在辨識其他種族時準確率會大幅降低，這不僅是技術瑕疵，更可能引發嚴重的公平性問題。"
+        ],
+        "comparison": "取樣偏差常見於資料收集階段，當訓練數據僅涵蓋特定群體（如高活躍顧客）時發生，導致模型在其他群體預測失準。相較於特徵偏差（特徵工程階段）與標籤偏差（人工標註階段），取樣偏差直接影響模型的泛化邊界。在金融信用評分、零售推薦系統等業務中，確保樣本多樣性與真實母體分佈一致是防止此問題的關鍵。",
+        "keywords": [
+          "取樣偏差 (Sampling Bias)",
+          "泛化能力 (Generalization)",
+          "模型預測 (Model Prediction)",
+          "特徵偏差 (Feature Bias)",
+          "標籤偏差 (Label Bias)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Stratified Sampling (分層抽樣)",
+            "desc": "在資料收集與切分階段，確保各類別或各特徵群體的比例與母體一致，避免少數群體被忽略，提升模型全面性。"
+          },
+          {
+            "name": "SMOTE (合成少數類過採樣技術)",
+            "desc": "針對資料不平衡問題，透過演算法人工合成少數類別的樣本，使模型能更均勻地學習各類別特徵，常用於詐欺偵測。"
+          },
+          {
+            "name": "Active Learning (主動學習)",
+            "desc": "在標註資源有限的情況下，由演算法主動挑選對提升模型決策邊界最有幫助的樣本交由人工標註，減少偏差並降低成本。"
+          }
+        ],
+        "terminology": [
+          "資料不平衡 (Data Imbalance)",
+          "母體分佈 (Population Distribution)",
+          "選擇偏差 (Selection Bias)",
+          "代表性樣本 (Representative Sample)"
         ]
       },
       {
@@ -1427,6 +3686,34 @@ const EXAM_DATA = {
         "examples": [
           "在股市預測模型中，金融市場的交易模式與投資人情緒會隨時間改變。若使用十年前的固定資料來驗證模型，將難以適應現今市場。透過滑動視窗動態更新資料，模型能更好地捕捉近期趨勢。",
           "電商平台的推薦系統，使用者的購物偏好會隨季節或流行趨勢迅速改變。利用時間序列交叉驗證，能夠持續評估模型在面對最新消費行為時的表現，適時進行模型再訓練。"
+        ],
+        "comparison": "滑動視窗驗證與時間序列交叉驗證專門應對具時間依賴性的資料，如感測器監控或金融市場數據。相對於傳統的 K-Fold 交叉驗證（假設數據獨立同分佈，適用於靜態影像或文本），時間序列驗證能有效捕捉概念飄移。在工業設備預測性維護中，隨時間更新驗證集是確保模型適應設備老化與環境變化的唯一可靠方法。",
+        "keywords": [
+          "概念飄移 (Concept Drift)",
+          "滑動視窗驗證 (Rolling Window Validation)",
+          "時間序列交叉驗證 (Time Series CV)",
+          "泛化能力 (Generalization)",
+          "穩健性 (Robustness)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Online Learning (線上學習)",
+            "desc": "模型在部署後能隨著新資料的流入持續進行小幅度的權重更新，無需重新訓練整個模型，適合高頻交易與即時推薦。"
+          },
+          {
+            "name": "Domain Adaptation (領域自適應)",
+            "desc": "將在一個環境（如模擬數據或舊工況）學到的知識，透過特徵對齊等技術遷移到另一個環境（如實際數據或新工況）中。"
+          },
+          {
+            "name": "Continual Learning (持續學習)",
+            "desc": "讓人工智慧模型能夠在學習新任務與新資料趨勢的同時，保留對舊有知識的記憶，避免發生災難性遺忘。"
+          }
+        ],
+        "terminology": [
+          "時間序列 (Time Series)",
+          "概念飄移 (Concept Drift)",
+          "資料洩漏 (Data Leakage)",
+          "交叉驗證 (Cross-Validation)"
         ]
       },
       {
@@ -1445,6 +3732,34 @@ const EXAM_DATA = {
         "examples": [
           "在自駕車系統中，如果模型僅在加州晴天的影像上進行訓練，當部署到下著大雪的北歐城市時，由於環境影像特徵的巨大差異，辨識車輛與行人的能力會顯著降低。",
           "一個在專業醫學文獻上訓練的自然語言處理模型，當應用於分析一般民眾在社群媒體上的健康討論時，會因為大量口語化與不規範的用詞，導致實體辨識與情感分析的準確率大幅下降。"
+        ],
+        "comparison": "領域轉移主要發生在模型訓練環境與實際部署環境存在語言、文化或物理差異時。它與模型過擬合（模型在同一領域的測試集表現差）不同。領域轉移在跨國語言分析、自駕車不同城市部署等場景中非常常見，需要透過遷移學習或領域自適應技術解決，而非單純改變評估指標如 F1-score 或 MSE。",
+        "keywords": [
+          "領域轉移 (Domain Shift)",
+          "召回率 (Recall)",
+          "跨語言轉移 (Cross-lingual Transfer)",
+          "泛化能力 (Generalization)",
+          "F1 分數 (F1-score)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Transfer Learning (遷移學習)",
+            "desc": "利用在大型通用語料庫上訓練好的預訓練模型（如 BERT），針對特定語言或領域進行微調，大幅減少對目標領域資料的需求。"
+          },
+          {
+            "name": "Domain Adaptation (領域自適應)",
+            "desc": "透過演算法對齊來源領域（如英文）與目標領域（如西班牙文）的特徵分佈，使模型能跨領域保持穩定的預測能力。"
+          },
+          {
+            "name": "Multilingual Models (多語系模型)",
+            "desc": "在訓練初期即納入多種語言資料（如 mBERT 或 XLM-R），使模型具備跨語言的語意理解能力，適用於全球化業務部署。"
+          }
+        ],
+        "terminology": [
+          "領域轉移 (Domain Shift)",
+          "分佈偏移 (Distribution Shift)",
+          "微調 (Fine-tuning)",
+          "跨領域評估 (Cross-domain Evaluation)"
         ]
       },
       {
@@ -1463,6 +3778,34 @@ const EXAM_DATA = {
         "examples": [
           "在訓練房價預測的神經網路時，隨著訓練輪數增加，雖然訓練誤差持續逼近零，但驗證誤差可能在第50輪後反彈。透過設定耐心值為10的早停機制，系統會自動在第60輪停止並取回第50輪的最佳模型。",
           "企業開發客訴文本分類系統，使用複雜的 Transformer 模型容易快速記住訓練文本。啟動早停機制能夠確保模型在學會捕捉核心情緒特徵後即時停止，避免學習到特定客戶的專有語氣雜訊。"
+        ],
+        "comparison": "早期停止法透過設定耐心值（Patience）來監控驗證集損失，是深度神經網路中最常見的正則化手段。與基於訓練集損失停止（容易過擬合）或使用測試集停止（導致資料洩漏）不同，它在模型訓練成本與泛化能力間取得平衡。廣泛應用於具有高隨機性與季節波動的能源預測、金融序列分析等容易產生震盪收斂的場景。",
+        "keywords": [
+          "早期停止 (Early Stopping)",
+          "驗證集 (Validation Set)",
+          "耐心值 (Patience)",
+          "過擬合 (Overfitting)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Learning Rate Decay (學習率衰減)",
+            "desc": "在訓練過程中，當驗證損失不再下降時，自動降低優化器的學習率，幫助模型在最佳解附近進行更精細的收斂。"
+          },
+          {
+            "name": "Model Checkpointing (模型檢查點)",
+            "desc": "在訓練過程中，每當驗證集上的效能指標達到歷史新高時，自動儲存該回合的模型權重，確保訓練中斷或過擬合時能回復。"
+          },
+          {
+            "name": "K-Fold Cross Validation (K折交叉驗證)",
+            "desc": "搭配早停機制，對多個資料折疊進行驗證，最終採用各折模型的集成結果，進一步提升對時間序列或小數據集的預測穩定性。"
+          }
+        ],
+        "terminology": [
+          "耐心值 (Patience)",
+          "資料洩漏 (Data Leakage)",
+          "損失函數收斂 (Loss Convergence)",
+          "模型檢查點 (Model Checkpoint)"
         ]
       },
       {
@@ -1481,6 +3824,34 @@ const EXAM_DATA = {
         "examples": [
           "在基因表現數據分析中，特徵（基因）數量動輒上萬，但真正與某特定疾病相關的基因只有少數幾個。使用 L1 正則化能夠自動將大量無關基因的權重歸零，幫助研究人員找出關鍵致病基因。",
           "銀行開發信用風險評分模型，收集了數百個客戶屬性變數。透過套用 L1 正則化的邏輯迴歸，模型能剔除許多冗餘變數（如高度相關的不同借款餘額），保留最具預測力的少數指標，提升模型可解釋性。"
+        ],
+        "comparison": "L1 正則化（Lasso）因其能產生稀疏矩陣的特性，特別適合用於特徵選擇與過濾冗餘變數；而 L2 正則化（Ridge）則傾向保留所有特徵但縮小權重，適合處理多重共線性但不想丟棄任何特徵的情境。在電信客戶流失預測、基因數據分析等高維度業務場景中，L1 正則化能有效簡化模型並提升業務可解釋性。",
+        "keywords": [
+          "L1 正則化 (L1 Regularization)",
+          "特徵選擇 (Feature Selection)",
+          "稀疏矩陣 (Sparse Matrix)",
+          "多重共線性 (Multicollinearity)",
+          "過擬合 (Overfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Elastic Net (彈性網正則化)",
+            "desc": "結合了 L1 與 L2 正則化的優點，既能進行特徵選擇（L1），又能處理高度相關特徵群的群體效應（L2），模型更加穩健。"
+          },
+          {
+            "name": "Tree-based Feature Importance (樹狀模型特徵重要性)",
+            "desc": "利用隨機森林或 XGBoost 等決策樹模型，根據特徵在節點分裂時的資訊增益來評估特徵重要性，自動篩選關鍵變數。"
+          },
+          {
+            "name": "Principal Component Analysis, PCA (主成分分析)",
+            "desc": "透過線性轉換將高維度的原始特徵壓縮成少數幾個不相關的主成分，適合用來降維及消除共線性，但會喪失部分物理意義。"
+          }
+        ],
+        "terminology": [
+          "稀疏矩陣 (Sparse Matrix)",
+          "多重共線性 (Multicollinearity)",
+          "懲罰項 (Penalty Term)",
+          "特徵工程 (Feature Engineering)"
         ]
       },
       {
@@ -1499,6 +3870,34 @@ const EXAM_DATA = {
         "examples": [
           "開發交友軟體的配對推薦系統，若使用巢狀迴圈讓所有用戶兩兩計算興趣相似度，其 O(n²) 的複雜度會讓百萬用戶的運算耗時過長，因此實務上會改用局部敏感雜湊 (LSH) 等降維技術來加速。",
           "物流公司在計算多個配送點之間的最短路徑時，單純比對所有節點的距離矩陣會面臨 O(n²) 問題，當節點數過多時，必須依賴空間索引或啟發式演算法來縮短搜尋時間。"
+        ],
+        "comparison": "O(n²) 時間複雜度的演算法（如巢狀迴圈兩兩比對）適用於小規模資料集的精確計算；但在大數據場景下，這種暴力法會導致運算時間呈幾何級數增長。相對地，O(n log n) 或 O(n) 的演算法（如 KD-Tree 或局部敏感雜湊）在推薦系統、社交網路關聯分析等需要處理百萬級用戶比對的業務中更為常見，用以突破效能瓶頸。",
+        "keywords": [
+          "時間複雜度 (Time Complexity)",
+          "Big O 記號 (Big O Notation)",
+          "O(n²) (二次方時間)",
+          "演算法效能 (Algorithm Performance)",
+          "客戶相似度 (Customer Similarity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Locality-Sensitive Hashing, LSH (局部敏感雜湊)",
+            "desc": "一種降維與快速近鄰搜尋技術，能將相似的資料高機率地雜湊到同一個桶中，將比對複雜度從 O(n²) 大幅降至接近 O(n)。"
+          },
+          {
+            "name": "KD-Tree / Ball Tree (空間劃分樹)",
+            "desc": "用於多維空間資料結構的索引技術，能加速最近鄰搜尋（KNN），在低維度特徵空間中比對效率遠優於線性掃描。"
+          },
+          {
+            "name": "Matrix Factorization (矩陣分解)",
+            "desc": "在推薦系統中，將龐大的用戶-商品互動矩陣分解為低維度的用戶特徵與商品特徵矩陣，藉由內積快速計算相似度與預測評分。"
+          }
+        ],
+        "terminology": [
+          "大O記號 (Big O Notation)",
+          "時間複雜度 (Time Complexity)",
+          "暴力搜尋 (Brute-force Search)",
+          "空間複雜度 (Space Complexity)"
         ]
       },
       {
@@ -1517,6 +3916,34 @@ const EXAM_DATA = {
         "examples": [
           "在信用卡盜刷偵測系統中，盜刷交易可能只佔總交易量的 0.1%。使用分層交叉驗證可以確保每一折的測試資料中都包含適當比例的盜刷紀錄，避免模型評估時誤判為完美。",
           "製造業的良率預測模型中，嚴重瑕疵品往往是非常稀少的極端案例。透過分層技術確保訓練與驗證集的瑕疵分佈一致，能幫助工程師更準確地評估模型偵測罕見瑕疵的能力。"
+        ],
+        "comparison": "分層留一法交叉驗證兼具留一法（最大化資料利用率）與分層交叉驗證（維持類別比例）的優勢，特別適合極小樣本且類別嚴重不平衡的醫療診斷或罕見疾病預測場景。相較於一般 K-Fold 可能導致某些折完全缺乏正樣本，或單純留一法無法控制比例，分層留一法能確保模型評估的公平性與結果穩定性。",
+        "keywords": [
+          "分層交叉驗證 (Stratified CV)",
+          "留一法 (Leave-One-Out CV)",
+          "類別不平衡 (Class Imbalance)",
+          "資料利用率 (Data Utilization)",
+          "模型評估 (Model Evaluation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "SMOTE (合成少數類過採樣技術)",
+            "desc": "在極度不平衡的資料集中，透過內插法合成少數類別的虛擬樣本，增加訓練資料量，使模型更容易學習至少數類的特徵。"
+          },
+          {
+            "name": "Focal Loss (焦點損失函數)",
+            "desc": "一種專為類別不平衡設計的損失函數，透過降低易分類樣本的權重，迫使模型在訓練時將焦點集中於難以分類的少數類別樣本。"
+          },
+          {
+            "name": "Bootstrap Resampling (拔靴法重抽樣)",
+            "desc": "從有限的原始資料中有放回地隨機抽樣，產生多個不同的訓練集，常搭配集成學習來評估小樣本資料下模型的變異與信心區間。"
+          }
+        ],
+        "terminology": [
+          "類別不平衡 (Class Imbalance)",
+          "分層抽樣 (Stratified Sampling)",
+          "交叉驗證 (Cross-Validation)",
+          "模型穩定性 (Model Stability)"
         ]
       },
       {
@@ -1535,6 +3962,34 @@ const EXAM_DATA = {
         "examples": [
           "在影像壓縮應用中，一張高解析度照片可視為數百萬個像素的特徵。透過 PCA 提取出捕捉大部分影像輪廓與色彩漸層的主要成分，即可用極少的數據量重建出人類視覺難以分辨差異的影像。",
           "在客戶消費行為分析中，行銷部門可能收集了幾十種不同的購物指標。利用 PCA 可將這些指標降維成少數兩三個代表整體購買力與偏好的綜合指數，方便在二維圖表上進行客戶分群視覺化。"
+        ],
+        "comparison": "主成分分析（PCA）是一種無監督的降維技術，透過特徵值分解提取主要特徵，適用於感測器訊號、影像壓縮等高維連續資料。這與特徵選擇（如 Lasso 或決策樹，保留原始變數）不同，PCA 轉換後的新特徵會失去原始的物理意義。在製造業製程監控中，保留解釋 80% 變異量的前幾個主成分，能在降低運算與雜訊的同時維持核心資訊。",
+        "keywords": [
+          "主成分分析 (PCA)",
+          "特徵值 (Eigenvalue)",
+          "降維 (Dimensionality Reduction)",
+          "總變異量 (Total Variance)",
+          "資料特徵提取 (Feature Extraction)"
+        ],
+        "extended_tech": [
+          {
+            "name": "t-SNE (t-分佈隨機鄰近嵌入)",
+            "desc": "一種非線性的降維與視覺化演算法，特別擅長將高維度的資料映射到二維或三維空間，並保留資料群聚的局部結構特性。"
+          },
+          {
+            "name": "Autoencoder (自編碼器)",
+            "desc": "利用類神經網路進行非線性降維，透過編碼器將資料壓縮至潛在空間，再透過解碼器還原，能捕捉比 PCA 更複雜的資料特徵。"
+          },
+          {
+            "name": "Independent Component Analysis, ICA (獨立成分分析)",
+            "desc": "不僅尋找不相關的成分，更致力於分離出統計上互相獨立的訊號源，廣泛應用於腦波訊號分離或語音盲源分離任務。"
+          }
+        ],
+        "terminology": [
+          "主成分 (Principal Component)",
+          "特徵值 (Eigenvalue)",
+          "協方差矩陣 (Covariance Matrix)",
+          "變異量解釋率 (Variance Explained)"
         ]
       },
       {
@@ -1553,6 +4008,34 @@ const EXAM_DATA = {
         "examples": [
           "醫療研究機構希望利用雲端強大的算力分析患者基因數據以預測疾病風險。使用同態加密，他們可將基因資料加密上傳，雲端模型在密文上進行推理，將加密的預測結果傳回，確保病患隱私不被雲端供應商獲取。",
           "跨國企業希望統計各地區分公司的財務總額，但各分公司基於合規要求不能互相透露真實數字。透過同態加密，總部能匯總所有加密後的報表算出總和，而無法反推單一分公司的數據。"
+        ],
+        "comparison": "同態加密允許在密文上直接進行運算，適用於需要將敏感資料交由第三方（如雲端 AI）處理但不能解密的場景，如金融聯合建模或跨院醫療分析。這與差分隱私（透過加入雜訊保護統計結果）或聯邦學習（資料不出地，僅交換模型權重）不同。同態加密能保證數學運算的精確性，但目前仍受限於龐大的運算開銷。",
+        "keywords": [
+          "同態加密 (Homomorphic Encryption)",
+          "隱私保護 (Privacy Protection)",
+          "密文運算 (Ciphertext Computation)",
+          "資料安全 (Data Security)",
+          "機器學習模型 (ML Models)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Federated Learning (聯邦學習)",
+            "desc": "允許各參與方在本地端利用自有資料訓練模型，僅將加密後的模型權重或梯度上傳至中心伺服器進行聚合，確保原始資料不離開本地。"
+          },
+          {
+            "name": "Secure Multi-Party Computation, SMPC (安全多方計算)",
+            "desc": "多個參與方共同計算一個函數，在整個計算過程中，沒有任何一方能獲得其他方的輸入資料，確保分散式計算的絕對隱私。"
+          },
+          {
+            "name": "Differential Privacy (差分隱私)",
+            "desc": "在資料查詢或模型訓練過程中加入精心設計的隨機數學雜訊，確保外部攻擊者無法透過輸出結果反推出任何單一個體的隱私資訊。"
+          }
+        ],
+        "terminology": [
+          "同態加密 (Homomorphic Encryption)",
+          "密文 (Ciphertext)",
+          "明文 (Plaintext)",
+          "隱私強化計算 (Privacy-Enhancing Technologies)"
         ]
       },
       {
@@ -1571,6 +4054,34 @@ const EXAM_DATA = {
         "examples": [
           "各家競爭的電商平台希望共同建立一個更強大的詐欺用戶黑名單模型，但拒絕分享客戶資料。利用聯邦學習與安全多方計算，各平台可在本地端訓練模型，僅共享加密後的權重更新至中心伺服器，共同提升風控能力。",
           "政府機構發布人口普查統計資料供學術界訓練模型時，為了避免駭客透過交叉比對反推出特定民眾的詳細背景，會導入差分隱私技術，在統計結果中加入微小的數學雜訊以掩蓋個體特徵。"
+        ],
+        "comparison": "隱私強化技術組合中，同態加密專注於「密文可用不可見」，適合跨機構聯合訓練；非對稱加密與數位簽章確保通訊雙方身分認證與資料防竄改；對稱加密則保障大流量傳輸效率。這套組合拳有別於單純的資料去識別化（容易被重新識別）。在跨國金融風控、政企數據交換等最高安規場景中，此類綜合加密架構是合規的技術基礎。",
+        "keywords": [
+          "同態加密 (Homomorphic Encryption)",
+          "非對稱加密 (Asymmetric Encryption)",
+          "數位簽章 (Digital Signature)",
+          "單向雜湊 (Hash Function)",
+          "資料安全傳輸 (Secure Data Transmission)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Federated Learning (聯邦學習)",
+            "desc": "解決資料孤島問題，各銀行在內部訓練模型並僅共享加密後的梯度更新，配合安全多方計算，達成更高效率的隱私保護聯合建模。"
+          },
+          {
+            "name": "Zero-Knowledge Proof (零知識證明)",
+            "desc": "允許一方（證明者）向另一方（驗證者）證明某個陳述是真實的，而無需透露任何超出「該陳述為真」以外的具體資訊，常用於身分驗證。"
+          },
+          {
+            "name": "Trusted Execution Environment, TEE (可信賴執行環境)",
+            "desc": "在硬體層級隔離出的安全區域（如 Intel SGX），資料在 CPU 內部解密與運算，對作業系統與雲端供應商皆保密，提升運算效能。"
+          }
+        ],
+        "terminology": [
+          "安全多方計算 (Secure Multi-Party Computation)",
+          "數位簽章 (Digital Signature)",
+          "雜湊函數 (Hash Function)",
+          "隱私強化技術 (PETs)"
         ]
       },
       {
@@ -1589,6 +4100,34 @@ const EXAM_DATA = {
         "examples": [
           "在預測房價的模型中，若預測值偏離真實房價 100 萬，MSE 會將此誤差放大為 1,000,000 的平方，迫使模型在最佳化過程中優先修正這些極端嚴重的預測失誤。",
           "在供應鏈庫存預測系統中，低估需求可能導致斷貨，嚴重影響信譽。使用類似 MSE 且加重懲罰的模型能確保預測結果不會與真實需求產生巨大的災難性落差，維持庫存穩定。"
+        ],
+        "comparison": "均方誤差（MSE）是迴歸任務中最基礎的損失函數，因其對極端誤差給予平方懲罰，特別適用於容錯率低、需嚴格控制大偏差的場景（如醫療劑量預測或精密製造）。相對於平均絕對誤差（MAE）對離群值較不敏感，MSE 更容易受雜訊干擾。若業務目標是追求整體平均準確度且資料含大量雜訊，通常會改用 MAE 或 Huber Loss。",
+        "keywords": [
+          "均方誤差 (MSE)",
+          "迴歸問題 (Regression Problem)",
+          "損失函數 (Loss Function)",
+          "評估指標 (Evaluation Metric)",
+          "離群值 (Outliers)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Mean Absolute Error, MAE (平均絕對誤差)",
+            "desc": "計算預測值與真實值之間絕對誤差的平均。相比於 MSE，MAE 不會放大極端值，因此對於含有較多雜訊或離群值的資料集具有更強的穩健性。"
+          },
+          {
+            "name": "Huber Loss (Huber 損失函數)",
+            "desc": "結合了 MSE 與 MAE 的優點：在誤差較小時採用類似 MSE 的平方計算使梯度平滑，在誤差較大時轉換為絕對值計算以降低對離群值的敏感度。"
+          },
+          {
+            "name": "Root Mean Squared Error, RMSE (均方根誤差)",
+            "desc": "將 MSE 開根號，使其數值尺度與原始目標變數相同，讓業務單位在解讀模型預測誤差時（如房價誤差幾萬元）更直觀且具備物理意義。"
+          }
+        ],
+        "terminology": [
+          "均方誤差 (Mean Squared Error)",
+          "損失函數 (Loss Function)",
+          "離群值 (Outlier)",
+          "梯度下降 (Gradient Descent)"
         ]
       },
       {
@@ -1607,6 +4146,34 @@ const EXAM_DATA = {
         "examples": [
           "在訓練複雜的影像分類 CNN 時，全連接層參數極多，極易死背訓練集特徵。在全連接層之間加入 Dropout，能促使網路關注影像的不同局部特徵，提升在未知測試照片上的泛化準確率。",
           "處理自然語言的深層 LSTM 或 Transformer 網路中，為避免模型過度專注於訓練文本中的特定詞彙共現，透過對神經元或注意力權重施加 Dropout，可使模型學會更深層的語意結構。"
+        ],
+        "comparison": "Dropout 是一種在訓練階段隨機丟棄神經元的正則化技術，迫使網路學習更具泛化性的特徵，適用於容易過擬合的深層卷積或全連接網路。這與 Batch Normalization（標準化特徵分佈以加速收斂）或 L1/L2 正則化（透過懲罰權重數值來限制複雜度）在機制上截然不同。Dropout 廣泛應用於影像分類與自然語言處理等複雜模型中。",
+        "keywords": [
+          "隨機失活 (Dropout)",
+          "正則化 (Regularization)",
+          "過擬合 (Overfitting)",
+          "神經網路 (Neural Networks)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Batch Normalization (批次標準化)",
+            "desc": "在神經網路的每一層輸入前進行正規化處理，能顯著解決內部協變量偏移問題，加速模型收斂，並帶有輕微的正則化與抗過擬合效果。"
+          },
+          {
+            "name": "Spatial Dropout (空間隨機失活)",
+            "desc": "針對卷積神經網路的特化 Dropout，它不是隨機丟棄單一神經元，而是直接丟棄整張特徵圖（Channel），有效打破相鄰像素間的高度關聯性。"
+          },
+          {
+            "name": "DropConnect (連接隨機失活)",
+            "desc": "Dropout 的變體，它隨機將神經元之間的「連接權重」設為零，而非丟棄神經元本身的輸出，在某些特定模型架構下能提供更強的正則化能力。"
+          }
+        ],
+        "terminology": [
+          "隨機失活 (Dropout)",
+          "共適應性 (Co-adaptation)",
+          "正則化 (Regularization)",
+          "前向傳播 (Forward Propagation)"
         ]
       },
       {
@@ -1625,6 +4192,34 @@ const EXAM_DATA = {
         "examples": [
           "在推薦系統中，用戶偏好與商品特徵常被編碼為高維度向量。系統透過計算兩者的向量內積，即可得出該用戶對該商品的預期喜好分數，進而決定推薦排序。",
           "在自然語言處理中，詞彙被轉換為詞向量（Word Embedding）。計算兩個詞向量的內積或餘弦相似度，可用來判斷兩個詞彙在語意上的相似程度，例如「國王」與「皇帝」的內積值會很高。"
+        ],
+        "comparison": "向量內積（Dot Product）是衡量兩個向量在空間中相似度或投影關係的基礎運算，廣泛應用於神經網路的權重計算與推薦系統的特徵比對。這與單純的矩陣反轉（用於解線性方程）或特徵值分解（用於 PCA 降維）不同。在 NLP 詞向量比對或使用者偏好分析等業務場景，內積與餘弦相似度是計算關聯性的核心數學工具。",
+        "keywords": [
+          "向量內積 (Dot Product)",
+          "Numpy 運算",
+          "線性代數 (Linear Algebra)",
+          "神經網路運算 (NN Computation)",
+          "特徵相似度 (Feature Similarity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Cosine Similarity (餘弦相似度)",
+            "desc": "利用兩個向量的內積除以其長度乘積，計算夾角的餘弦值。它消除了向量長度的影響，專注於方向差異，是文本與推薦系統中最常用的相似度指標。"
+          },
+          {
+            "name": "Matrix Multiplication (矩陣相乘)",
+            "desc": "內積概念的高維度延伸，是深度學習神經網路中前向傳播與反向傳播的底層運算核心，現代 GPU 架構皆針對此運算進行高度平行化最佳化。"
+          },
+          {
+            "name": "Attention Mechanism (注意力機制)",
+            "desc": "在 Transformer 模型中，利用 Query 矩陣與 Key 矩陣的內積（Scaled Dot-Product）來計算不同詞彙間的關聯權重，是現代大型語言模型的靈魂技術。"
+          }
+        ],
+        "terminology": [
+          "向量內積 (Dot Product)",
+          "線性代數 (Linear Algebra)",
+          "特徵向量 (Eigenvector)",
+          "純量 (Scalar)"
         ]
       },
       {
@@ -1643,6 +4238,34 @@ const EXAM_DATA = {
         "examples": [
           "在財務工程領域，由於選擇權的定價模型涉及多種隨機變數（如股價波動、利率變化），分析師常使用蒙地卡羅模擬數萬種未來的股價走勢路徑，並取其平均折現值來為金融衍生性商品定價。",
           "在知名的人工智慧棋盤遊戲（如 AlphaGo）中，蒙地卡羅樹搜尋（MCTS）會隨機模擬數千場對局直到分出勝負，以此來評估當下某一步棋獲勝的機率，進而選出最佳落子位置。"
+        ],
+        "comparison": "蒙地卡羅方法利用大量隨機抽樣來逼近複雜問題的數值解，特別適合高維度積分或無法建立精確數學模型的強化學習與金融定價場景。它與傳統的決定性演算法（如動態規劃，需遍歷所有狀態）不同。在AlphaGo或選擇權風險評估等業務中，當狀態空間大到無法窮舉時，蒙地卡羅模擬是唯一可行且高效的近似評估手段。",
+        "keywords": [
+          "蒙地卡羅方法 (Monte Carlo Method)",
+          "條件機率 (Conditional Probability)",
+          "隨機抽樣 (Random Sampling)",
+          "強化學習 (Reinforcement Learning)",
+          "近似估算 (Approximate Estimation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Monte Carlo Tree Search, MCTS (蒙地卡羅樹搜尋)",
+            "desc": "結合樹狀搜尋與隨機模擬的決策演算法，透過大量隨機走步來評估當下決策的勝率，是 AlphaGo 等頂尖人工智慧棋盤遊戲的核心技術。"
+          },
+          {
+            "name": "Markov Chain Monte Carlo, MCMC (馬可夫鏈蒙地卡羅)",
+            "desc": "用於從複雜的高維度機率分佈中進行抽樣的演算法，廣泛應用於貝氏機器學習與統計物理學中，用以估算後驗機率與模型參數分佈。"
+          },
+          {
+            "name": "Temporal Difference Learning (時間差分學習)",
+            "desc": "強化學習中的另一大流派，結合了蒙地卡羅方法的抽樣概念與動態規劃的拔靴法，能在回合未結束前即時更新價值函數，效率更高。"
+          }
+        ],
+        "terminology": [
+          "蒙地卡羅模擬 (Monte Carlo Simulation)",
+          "大數法則 (Law of Large Numbers)",
+          "條件機率 (Conditional Probability)",
+          "隨機抽樣 (Random Sampling)"
         ]
       },
       {
@@ -1661,6 +4284,34 @@ const EXAM_DATA = {
         "examples": [
           "當企業計畫將雲端訓練好的影像檢測模型部署到記憶體受限的邊緣裝置（如智慧手機或無人機）時，首要步驟通常是壓縮或移除佔用最多記憶體的全連接層，改以全卷積架構替代。",
           "研究人員在設計新型神經網路時，為了維持模型輕量化，會避免在高解析度特徵圖後直接接上全連接層，而是先透過池化層將維度縮小，以避免參數量爆炸導致記憶體溢出（OOM）。"
+        ],
+        "comparison": "在傳統 CNN（如 VGG）中，全連接層因需要將高維特徵與輸出節點一對一映射，佔據了模型 80% 以上的參數，是造成記憶體瓶頸的主因；而卷積層受惠於權重共享，參數極少。在行動裝置或邊緣運算的 AI 部署業務中，捨棄全連接層改用全局平均池化（如 ResNet 架構）是壓縮模型大小、減少記憶體佔用的關鍵設計趨勢。",
+        "keywords": [
+          "卷積神經網路 (CNN)",
+          "參數量 (Parameter Count)",
+          "全連接層 (Fully Connected Layer)",
+          "模型架構 (Model Architecture)",
+          "VGG16"
+        ],
+        "extended_tech": [
+          {
+            "name": "Global Average Pooling, GAP (全局平均池化)",
+            "desc": "在現代神經網路中用來取代厚重的全連接層。它對每張特徵圖計算空間平均值，將參數量降至零，大幅減小模型體積並有效防止過擬合。"
+          },
+          {
+            "name": "Model Quantization (模型量化)",
+            "desc": "將神經網路中佔據大量空間的 32 位元浮點數權重（特別是全連接層），壓縮成 8 位元整數，在幾乎不損害準確率的情況下大幅縮減模型大小與加速推論。"
+          },
+          {
+            "name": "Knowledge Distillation (知識蒸餾)",
+            "desc": "讓一個參數量龐大、準確率高的「教師模型」去指導一個輕量化的「學生模型」學習，使小模型能達到接近大模型的效能，適合邊緣裝置部署。"
+          }
+        ],
+        "terminology": [
+          "全連接層 (Fully Connected Layer)",
+          "參數量 (Parameter Count)",
+          "權重共享 (Weight Sharing)",
+          "模型壓縮 (Model Compression)"
         ]
       },
       {
@@ -1679,6 +4330,34 @@ const EXAM_DATA = {
         "examples": [
           "為了讓自駕車上的晶片能以每秒 60 幀的速度即時處理攝影機畫面，工程師無法使用標準的厚重卷積，必須設計如 MobileNet 般的輕量化結構，減少 FLOPs 運算以避免系統延遲。",
           "硬體製造商（如 NVIDIA 或 Google TPU）在設計 AI 加速晶片時，會特別針對卷積層中大量的矩陣乘加運算（MACs）進行硬體架構優化，例如設計龐大的脈動陣列（Systolic Array）來極大化運算吞吐量。"
+        ],
+        "comparison": "卷積層的運算量（FLOPs）雖然參數量少，但因需要在高解析度影像上進行密集的滑動矩陣相乘，成為消耗 GPU 計算資源的最大宗。這與全連接層（參數極多但僅計算一次內積）形成對比。在自駕車即時影像辨識或手機人臉解鎖等要求低延遲、低功耗的業務場景中，優化卷積運算（如深度可分離卷積）是提升推論速度的核心。",
+        "keywords": [
+          "運算量 (FLOPs)",
+          "卷積層 (Convolutional Layer)",
+          "深度學習硬體加速 (Hardware Acceleration)",
+          "即時推論 (Real-time Inference)",
+          "VGG16"
+        ],
+        "extended_tech": [
+          {
+            "name": "Depthwise Separable Convolution (深度可分離卷積)",
+            "desc": "將標準卷積拆分為空間通道的獨立卷積與 1x1 的跨通道卷積，大幅減少矩陣乘加運算量（FLOPs），是 MobileNet 等輕量級架構的核心。"
+          },
+          {
+            "name": "Tensor Processing Unit, TPU (張量處理單元)",
+            "desc": "Google 專為機器學習設計的 ASIC 晶片，內部具備龐大的脈動陣列，專門針對卷積層中海量的矩陣相乘進行硬體層級的平行加速優化。"
+          },
+          {
+            "name": "Model Pruning (模型剪枝)",
+            "desc": "透過演算法找出神經網路中對預測結果影響極小的權重或卷積核，並將其剔除，從而直接減少模型的 FLOPs 需求與推論延遲時間。"
+          }
+        ],
+        "terminology": [
+          "浮點運算次數 (FLOPs)",
+          "矩陣乘加 (MACs)",
+          "感受野 (Receptive Field)",
+          "推論延遲 (Inference Latency)"
         ]
       },
       {
@@ -1697,6 +4376,34 @@ const EXAM_DATA = {
         "examples": [
           "資料科學家在租用雲端 GPU 訓練大型影像生成模型時，發現即便模型權重只有 1GB，但在設定大批量（Batch Size）訓練時，仍會因為反向傳播需要儲存龐大的特徵圖而導致 16GB 的 GPU 記憶體耗盡（OOM）。",
           "在手機端部署臉部解鎖模型時，工程師不僅要壓縮模型的權重檔案大小，還必須精算推論時每一層產生的中間變數是否會超出手機 RAM 的極限，以避免應用程式崩潰。"
+        ],
+        "comparison": "VGG16 透過堆疊多層 3x3 小卷積核來增加網路深度與感受野，其典型結構（13層卷積+3層全連接）定義了早期深度學習的標準範式。相比現代的 ResNet（具備殘差連接）或 MobileNet（輕量化設計），VGG16 的參數量（約1.38億）與記憶體耗損極大。在現今的醫學影像特徵提取或工業瑕疵檢測中，VGG 仍常被作為穩定的預訓練基底。",
+        "keywords": [
+          "VGG16",
+          "模型架構 (Model Architecture)",
+          "參數量估算 (Parameter Estimation)",
+          "記憶體耗損 (Memory Footprint)",
+          "深度神經網路 (DNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Residual Network, ResNet (殘差網路)",
+            "desc": "透過引入跳躍連接（Skip Connection）解決了深層網路的梯度消失問題，使得訓練上百層的神經網路成為可能，且參數量遠低於 VGG。"
+          },
+          {
+            "name": "Gradient Accumulation (梯度累積)",
+            "desc": "在硬體記憶體受限無法使用大批量（Batch Size）訓練時，透過將多個小批量的梯度累加後再更新權重，以時間換取空間的記憶體優化技巧。"
+          },
+          {
+            "name": "Mixed Precision Training (混合精度訓練)",
+            "desc": "在訓練過程中同時使用 16 位元與 32 位元浮點數，這不僅能減少一半以上的 GPU 記憶體佔用，還能利用硬體的 Tensor Core 加速運算。"
+          }
+        ],
+        "terminology": [
+          "前向傳播 (Forward Propagation)",
+          "反向傳播 (Backpropagation)",
+          "特徵圖 (Feature Maps)",
+          "優化器狀態 (Optimizer State)"
         ]
       },
       {
@@ -1715,6 +4422,34 @@ const EXAM_DATA = {
         "examples": [
           "一間新創公司想開發辨識不同種類鳥類的模型。他們不需要從零開始訓練，而是下載 Google 已經在百萬張影像上訓練好的 ResNet 模型，凍結卷積特徵層，僅用幾千張鳥類照片訓練最後一層，即達到高準確率。",
           "在自然語言處理領域，開發者利用已預訓練好的 BERT 語言模型，將主體權重凍結，僅在頂端加上一層簡單的分類器，並使用少量公司內部的客服對話資料進行訓練，迅速完成客訴情感分類系統。"
+        ],
+        "comparison": "在遷移學習中，凍結前段卷積層（requires_grad=False）並微調最後的分類層，能快速適應新任務並防止小樣本過擬合。這與從頭訓練（耗時且易過擬合）或微調所有層（需大量資料）的策略不同。在製造業特定零件瑕疵檢測、醫療特定病灶辨識等「資料難以大量取得」的業務場景中，利用預訓練模型進行參數凍結與遷移學習是標準解法。",
+        "keywords": [
+          "遷移學習 (Transfer Learning)",
+          "參數凍結 (Freezing Layers)",
+          "微調 (Fine-tuning)",
+          "PyTorch 實作",
+          "預訓練模型 (Pre-trained Model)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Fine-tuning (全面微調)",
+            "desc": "當目標任務的資料量夠大時，不完全凍結特徵層，而是給予卷積層極小的學習率，分類層較大的學習率，讓整個模型針對新資料進行精細調整。"
+          },
+          {
+            "name": "Zero-shot Learning (零樣本學習)",
+            "desc": "利用如 CLIP 等具備強大多模態語意理解的先進模型，在完全沒有見過目標類別訓練資料的情況下，僅靠文字描述就能直接進行影像分類。"
+          },
+          {
+            "name": "LoRA (低秩適應微調)",
+            "desc": "主要應用於大型語言模型，透過在原有權重旁加入極小的低秩矩陣進行訓練，原有權重保持凍結，大幅降低微調百億參數模型所需的算力與記憶體。"
+          }
+        ],
+        "terminology": [
+          "遷移學習 (Transfer Learning)",
+          "參數凍結 (Freezing Layers)",
+          "預訓練模型 (Pre-trained Model)",
+          "梯度更新 (Gradient Update)"
         ]
       },
       {
@@ -1733,11 +4468,39 @@ const EXAM_DATA = {
         "examples": [
           "天文學家在處理望遠鏡拍攝的深空星系影像時，影像常佈滿感光元件的熱雜訊。透過 PCA 降維並重建，可有效分離星系的光學訊號與背景雜訊，使星體輪廓更加清晰。",
           "在腦波圖（EEG）訊號分析中，微弱的腦波容易被眼球運動或肌肉活動的雜訊掩蓋。研究人員利用 PCA 過濾掉變異量較小的干擾成分，還原出較為純淨的腦神經活動訊號。"
+        ],
+        "comparison": "PCA 除了降維，亦是訊號處理中有效的降噪工具。相較於影像處理領域的中值濾波或高斯模糊（針對空間像素平滑化），PCA 透過捨棄特徵值較小的次要成分來濾除隨機雜訊，並保留主要的結構資訊。在天文影像處理、腦電波（EEG）雜訊濾除或工業感測器高頻雜訊抑制等需要保留核心訊號特徵的業務場景中，強制設定 n_components 是關鍵步驟。",
+        "keywords": [
+          "主成分分析 (PCA)",
+          "降噪 (Noise Reduction)",
+          "特徵值 (Eigenvalue)",
+          "維度縮減 (Dimensionality Reduction)",
+          "訊號處理 (Signal Processing)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Autoencoder Denoising (去噪自編碼器)",
+            "desc": "在深度學習中，人為在輸入資料加入雜訊，並強制神經網路重建出無雜訊的原始資料，使其學會忽略雜訊並提取最穩健的核心特徵表示。"
+          },
+          {
+            "name": "Singular Value Decomposition, SVD (奇異值分解)",
+            "desc": "線性代數中強大的矩陣分解技術，PCA 底層即常依賴 SVD 實作。在推薦系統與影像壓縮中，透過截斷微小的奇異值可達到與 PCA 相同的去噪與壓縮效果。"
+          },
+          {
+            "name": "Wavelet Transform (小波轉換)",
+            "desc": "相較於 PCA 或傅立葉轉換，小波轉換能同時提供時間與頻率的局部資訊，在醫療訊號（如心電圖）及高解析度影像去噪任務中表現優異。"
+          }
+        ],
+        "terminology": [
+          "降噪 (Noise Reduction)",
+          "逆轉換 (Inverse Transform)",
+          "主成分 (Principal Component)",
+          "變異量 (Variance)"
         ]
       },
       {
         "id": 47,
-        "question": "研究人員在對 digits 資料集進行分類時，決定使用 KNN 並搭配交叉驗證來評估模型準確率。他們撰寫了四組不同的程式碼來進行 KNN 訓練與交叉驗證，但不確定哪幾組程式碼能正確執行並輸出準確率。請問哪幾組程式碼能正確使用 KNN 搭配交叉驗證，對 digits 資料集進行訓練並輸出準確率？",
+        "question": "研究人員在對 digits 資料集進行分類時決定使用 KNN 並搭配交叉驗證來評估模型準確率。他們撰寫了四組不同的程式碼來進行 KNN 訓練與交叉驗證，但不確定哪幾組程式碼能正確執行並輸出準確率。請問哪幾組程式碼能正確使用 KNN 搭配交叉驗證，對 digits 資料集進行訓練並輸出準確率？",
         "options": {
           "A": "程式碼 A、程式碼 B、程式碼 C、程式碼 D",
           "B": "程式碼 A、程式碼 C",
@@ -1751,6 +4514,34 @@ const EXAM_DATA = {
         "examples": [
           "房仲業者使用 KNN 預測房屋價格，透過尋找地理位置與坪數最相近的 5 筆歷史成交紀錄來估價。為了驗證這個估價模型的穩定性，他們使用交叉驗證對所有歷史資料進行全面測試，確保模型在不同地區都不會嚴重失準。",
           "線上購物平台開發商品推薦系統，利用 KNN 找出與當前用戶購買紀錄最相似的其他買家。透過交叉驗證，工程師能夠客觀比較不同距離度量方式（如歐式距離或餘弦相似度）的準確率，選擇最佳方案。"
+        ],
+        "comparison": "KNN 搭配交叉驗證是評估基於距離分類模型效能的嚴謹作法。與單次切分訓練集/測試集（容易受隨機抽樣極端值影響）相比，交叉驗證能提供更穩定的準確率估計。在房地產估價（尋找相似物件）或電商用戶相似度推薦等依賴歷史實例進行決策的業務中，透過交叉驗證尋找最佳的 K 值與距離度量公式，能有效防止模型過擬合或欠擬合。",
+        "keywords": [
+          "K-近鄰演算法 (KNN)",
+          "交叉驗證 (Cross-Validation)",
+          "模型評估 (Model Evaluation)",
+          "Scikit-learn",
+          "準確率 (Accuracy)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Grid Search CV (網格搜索交叉驗證)",
+            "desc": "將模型的多個超參數（如 KNN 的 K 值、距離權重）組合列出，透過交叉驗證自動暴力測試所有組合，找出能使模型效能最大化的最佳超參數設定。"
+          },
+          {
+            "name": "Distance Metrics Optimization (距離度量最佳化)",
+            "desc": "在 KNN 中，除了歐式距離，根據業務資料特性改用曼哈頓距離、馬氏距離或餘弦相似度，往往能大幅提升模型在特定場景（如高維文本）的準確率。"
+          },
+          {
+            "name": "Nearest Centroid Classifier (最近質心分類器)",
+            "desc": "KNN 的高效簡化版。在訓練時僅計算每個類別的平均中心點（質心），預測時比對測試樣本與各質心的距離，大幅降低推論時的運算與記憶體開銷。"
+          }
+        ],
+        "terminology": [
+          "K-近鄰 (K-Nearest Neighbors)",
+          "交叉驗證 (Cross-Validation)",
+          "距離度量 (Distance Metric)",
+          "超參數調校 (Hyperparameter Tuning)"
         ]
       },
       {
@@ -1769,6 +4560,34 @@ const EXAM_DATA = {
         "examples": [
           "在訓練房價預測的深度學習模型時，「房屋坪數」可能在數十到數百之間，而「屋齡」在數年到數十年之間。未經標準化，坪數的變化會嚴重干擾權重更新；標準化後，模型能更平穩地綜合考量各項特徵。",
           "使用 K-Means 進行客戶分群時，若客戶「年收入」（數百萬）與「造訪次數」（個位數）未經縮放，距離計算將完全被年收入主導。標準化能確保兩者在距離計算上具備相等的影響力。"
+        ],
+        "comparison": "Z-score 標準化將特徵轉換為平均值為0、標準差為1的分佈，解決不同特徵尺度差異過大的問題。相較於 Min-Max 正規化（將資料硬性壓縮至 0~1 之間，易受極端值影響），標準化能更好地處理離群值並加速神經網路的梯度收斂。在房價預測（坪數與屋齡尺度不同）、客戶分群等依賴距離計算或梯度下降的最佳化業務場景中，這是不可或缺的預處理步驟。",
+        "keywords": [
+          "資料標準化 (Standardization)",
+          "特徵縮放 (Feature Scaling)",
+          "多層感知機 (MLP)",
+          "梯度爆炸 (Gradient Exploding)",
+          "Z-score"
+        ],
+        "extended_tech": [
+          {
+            "name": "Min-Max Normalization (最小-最大正規化)",
+            "desc": "將資料線性縮放到固定的範圍（通常是 0 到 1 之間），適用於影像像素處理或不預設資料為常態分佈且邊界明確的神經網路輸入場景。"
+          },
+          {
+            "name": "Robust Scaler (穩健縮放)",
+            "desc": "使用中位數與四分位距（IQR）來取代平均值與標準差進行資料縮放。當資料集包含大量極端離群值時，此方法能避免縮放結果被異常值嚴重扭曲。"
+          },
+          {
+            "name": "Batch Normalization (批次標準化)",
+            "desc": "不僅在資料輸入前進行，更在神經網路的每一隱藏層中動態對特徵進行標準化，極大地提升了深層網路訓練的穩定性與收斂速度。"
+          }
+        ],
+        "terminology": [
+          "特徵縮放 (Feature Scaling)",
+          "標準化 (Standardization)",
+          "梯度爆炸 (Gradient Exploding)",
+          "常態分佈 (Normal Distribution)"
         ]
       },
       {
@@ -1787,6 +4606,34 @@ const EXAM_DATA = {
         "examples": [
           "工程師在將訓練好的 NLP 模型部署到微控制器（MCU）上時，必須精確計算每一層的 Dense 層參數量，確保整體模型大小不會超過設備僅有數百 KB 的唯讀記憶體限制。",
           "在設計推薦系統的 Embedding 層時，若特徵維度過大，後接的全連接層參數量會呈指數增長。透過參數量計算，團隊決定在中間加入瓶頸層（Bottleneck Layer）來大幅削減權重數量。"
+        ],
+        "comparison": "多層感知機（MLP）的參數量計算直接反映了模型的記憶體佔用與運算複雜度。相對於卷積神經網路（CNN）依賴卷積核與權重共享機制來減少參數，MLP 每一層的全連接特性會導致參數隨節點數呈幾何增長。在將 NLP 或推薦系統模型部署於邊緣設備（如 MCU 或手機）的業務場景中，精確計算參數量並設計瓶頸層來瘦身，是落實模型上線的關鍵工程能力。",
+        "keywords": [
+          "多層感知機 (MLP)",
+          "參數量計算 (Parameter Calculation)",
+          "全連接層 (Dense Layer)",
+          "激活函數 (Activation Function)",
+          "神經網路架構 (NN Architecture)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Bottleneck Layer (瓶頸層)",
+            "desc": "在兩個高維度的全連接層之間，插入一個節點數極少的隱藏層，透過先降維再升維的技巧，大幅削減網路整體的權重參數量與運算開銷。"
+          },
+          {
+            "name": "Softmax Activation (Softmax 激活函數)",
+            "desc": "與 Sigmoid 用於二元分類不同，Softmax 用於多類別分類的神經網路輸出層，能將多個輸出值轉換為總和為 1 的機率分佈，直觀呈現預測信心度。"
+          },
+          {
+            "name": "Model Pruning (模型剪枝)",
+            "desc": "在模型訓練完成後，計算各節點或權重的重要性，將接近零或無影響力的參數強制作廢，達成縮減模型體積與推論加速的目的。"
+          }
+        ],
+        "terminology": [
+          "多層感知機 (Multilayer Perceptron)",
+          "全連接層 (Fully Connected Layer)",
+          "參數量 (Parameter Count)",
+          "偏差 (Bias)"
         ]
       },
       {
@@ -1805,6 +4652,34 @@ const EXAM_DATA = {
         "examples": [
           "在開發語音辨識系統時，工程師每天早上的第一件事就是查看前一晚模型訓練的學習曲線圖。若發現紅色的驗證損失在第 20 輪就開始飆升，便會立刻停止訓練並加大 Dropout 的比例。",
           "資料科學家向客戶展示新開發的詐欺預測模型時，常會附上兩條線平穩收斂且緊密貼合的學習曲線圖，藉此證明模型不僅學會了特徵，且並未死背資料，具備良好的實戰泛化能力。"
+        ],
+        "comparison": "學習曲線視覺化是診斷模型欠擬合或過擬合的最直觀方法。相較於僅依賴最終的 Accuracy 或 F1-score 指標（無法反映訓練過程的穩定性），比較訓練損失與驗證損失隨時間的變化，能精準決定何時啟動早停機制。在語音辨識、詐欺預測等需不斷反覆調校超參數的模型開發業務中，學習曲線圖表是資料科學家調整 Dropout 比例或學習率的最重要決策依據。",
+        "keywords": [
+          "學習曲線 (Learning Curve)",
+          "訓練損失 (Training Loss)",
+          "驗證損失 (Validation Loss)",
+          "過擬合診斷 (Overfitting Diagnosis)",
+          "資料視覺化 (Data Visualization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "TensorBoard (深度學習視覺化工具)",
+            "desc": "Google 開發的強大視覺化套件，能即時監控訓練與驗證的損失變化、權重分佈與運算圖，幫助工程師在漫長的訓練過程中隨時掌握模型健康度。"
+          },
+          {
+            "name": "Learning Rate Scheduler (學習率排程器)",
+            "desc": "配合學習曲線的觀察，設定動態調整策略。當驗證損失在平原區停滯不前時，自動調降學習率，促使模型突破瓶頸找到更佳的局部最佳解。"
+          },
+          {
+            "name": "Cross-Validation Learning Curves (交叉驗證學習曲線)",
+            "desc": "在不同資料子集上繪製多條學習曲線並取平均，可消除單一資料切分帶來的隨機波動，更客觀且嚴謹地評估模型的真實泛化能力。"
+          }
+        ],
+        "terminology": [
+          "學習曲線 (Learning Curve)",
+          "訓練損失 (Training Loss)",
+          "驗證損失 (Validation Loss)",
+          "超參數調校 (Hyperparameter Tuning)"
         ]
       }
     ]
@@ -1828,6 +4703,35 @@ const EXAM_DATA = {
         "examples": [
           "智慧客服機器人利用詞性標註辨識出對話中的動詞與名詞，以精確提取使用者的核心意圖，例如從「我要退貨」中抓取關鍵動作。",
           "搜尋引擎在處理長尾查詢時，透過詞性標註過濾掉不重要的語氣詞或介系詞，將搜尋權重集中於關鍵名詞，提升搜尋結果的相關性。"
+        ],
+        "comparison": "詞性標註主要為文本中的每個詞彙標記其語法類別，如名詞、動詞等，主要應用於句法分析與資訊擷取系統，幫助理解句型結構。機器翻譯是將文本轉換為另一種語言，應用於跨國溝通；斷詞是將文本切分為基本單位，為所有NLP任務之前置作業；情感分析則專注於判斷文本情緒傾向，常用於社群媒體監控。",
+        "keywords": [
+          "詞性標註 (Part-of-Speech Tagging)",
+          "資訊擷取 (Information Extraction)",
+          "機器翻譯 (Machine Translation)",
+          "斷詞 (Tokenization)",
+          "情感分析 (Sentiment Analysis)"
+        ],
+        "extended_tech": [
+          {
+            "name": "命名實體識別 (Named Entity Recognition)",
+            "desc": "應用於從文本中提取人名、地名等特定實體，幫助系統快速掌握關鍵資訊，常應用於新聞分類與醫療病歷分析。"
+          },
+          {
+            "name": "句法分析 (Syntactic Parsing)",
+            "desc": "應用於分析句子中詞彙間的語法關係，建立語法樹，常應用於高階機器翻譯與問答系統，以深入理解句型。"
+          },
+          {
+            "name": "依存句法分析 (Dependency Parsing)",
+            "desc": "應用於揭示詞彙間的依存關係，幫助理解誰對誰做了什麼，在關係抽取與精確資訊檢索中扮演重要角色。"
+          }
+        ],
+        "terminology": [
+          "POS Tagging",
+          "Information Extraction",
+          "Tokenization",
+          "Syntax",
+          "Hidden Markov Model"
         ]
       },
       {
@@ -1846,6 +4750,35 @@ const EXAM_DATA = {
         "examples": [
           "醫療機構在不改變基礎模型架構的情況下，使用 LoRA 針對醫療文獻進行微調，快速打造出符合內部資安要求且具備醫學專業知識的問答系統。",
           "遊戲開發商為不同角色設計專屬對話風格時，只需為每個角色訓練一個輕量級的 LoRA 權重，並在推論時動態切換，大幅節省模型儲存空間。"
+        ],
+        "comparison": "LoRA透過在固定預訓練權重的基礎上加入低秩矩陣來微調模型，能在極低GPU記憶體消耗下達到接近全參數微調的效果，適合企業打造專屬領域模型。知識蒸餾是將大模型能力轉移到小模型，適合終端部署；模型剪枝是移除不重要參數以縮小體積，用於加速推論；稀疏注意力則降低長文本計算複雜度。",
+        "keywords": [
+          "領域微調 (Domain Fine-Tuning)",
+          "參數高效微調 (PEFT)",
+          "低秩適應 (Low-Rank Adaptation)",
+          "知識蒸餾 (Knowledge Distillation)",
+          "模型剪枝 (Model Pruning)"
+        ],
+        "extended_tech": [
+          {
+            "name": "提示微調 (Prompt Tuning)",
+            "desc": "在輸入端加入可訓練的連續向量來引導模型，無需修改內部權重，應用於多租戶架構下共用模型以節省儲存成本。"
+          },
+          {
+            "name": "適配器微調 (Adapter Tuning)",
+            "desc": "在Transformer架構特定層之間插入小型神經網路模組進行訓練，使得一個大模型能快速適應多種不同的下游任務。"
+          },
+          {
+            "name": "權重量化 (Weight Quantization)",
+            "desc": "將模型的浮點數權重轉換為低精度格式，大幅降低模型儲存空間與記憶體頻寬需求，適合缺乏資源的邊緣運算場景。"
+          }
+        ],
+        "terminology": [
+          "Low-Rank Adaptation",
+          "Domain Fine-Tuning",
+          "Knowledge Distillation",
+          "Model Pruning",
+          "Sparse Attention"
         ]
       },
       {
@@ -1864,6 +4797,35 @@ const EXAM_DATA = {
         "examples": [
           "電子商務平台利用 Skip-gram 模型將商品名稱與描述轉換為向量，從而能夠準確捕捉到銷量較少但具備獨特利基市場的長尾商品之間的關聯性。",
           "新聞推薦系統將用戶的閱讀歷史視為詞序列並訓練 Word2Vec 模型，藉此找出用戶興趣的潛在語義空間，以推薦更符合個人口味的冷門深度報導。"
+        ],
+        "comparison": "Skip-gram架構透過中心詞預測周圍詞，讓出現頻率極低的長尾詞彙也有獨立機會更新周圍詞彙的權重，因此在捕捉冷門詞義上表現優異，常應用於精細推薦系統。CBOW架構則利用周圍詞預測中心詞，會平滑掉低頻詞訊號，訓練速度快且對高頻詞表現良好，較常應用於一般大眾化的文本分類與基本檢索。",
+        "keywords": [
+          "詞向量 (Word Embedding)",
+          "長尾詞彙 (Long-tail Terms)",
+          "連續詞袋模型 (CBOW)",
+          "跳躍語法模型 (Skip-gram)",
+          "分散式表示 (Distributed Representation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "GloVe (Global Vectors)",
+            "desc": "結合全局詞頻統計與局部上下文窗口的方法，能捕捉語料庫整體的統計特性，常應用於需要全局語意關聯的分群任務。"
+          },
+          {
+            "name": "FastText",
+            "desc": "將詞彙拆解為字元級別的n-gram進行訓練，能有效推論未登錄詞的向量表示，廣泛應用於拼寫錯誤容忍度高的搜尋系統。"
+          },
+          {
+            "name": "詞義消歧 (Word Sense Disambiguation)",
+            "desc": "根據上下文判斷一個多義詞在特定句子中的確切含義，常見於機器翻譯、智慧客服與深度語意理解系統中，避免語意混淆。"
+          }
+        ],
+        "terminology": [
+          "Word2Vec",
+          "CBOW",
+          "Skip-gram",
+          "Long-tail Terms",
+          "Word Embedding"
         ]
       },
       {
@@ -1882,6 +4844,35 @@ const EXAM_DATA = {
         "examples": [
           "法律科技公司利用 MLM 在大量的判決書與合約條文上進行預訓練，使模型能夠精確理解複雜法律詞彙在不同法條上下文中的確切含義。",
           "生物資訊學領域將蛋白質序列視為文本，運用 MLM 技術遮蔽部分胺基酸，讓模型學習預測缺失片段，進而掌握蛋白質的結構與功能特性。"
+        ],
+        "comparison": "遮蔽語言建模（MLM）透過隨機遮蔽部分詞彙，要求模型利用左右雙向的上下文進行預測，讓BERT能深刻理解詞彙間複雜的雙向依賴關係，廣泛應用於情感分析與閱讀理解。自迴歸語言模型則是自左至右逐詞預測，擅長連續文本生成；對抗訓練用於生成高逼真度影像或音訊，並不屬於傳統語言模型的預訓練核心。",
+        "keywords": [
+          "遮蔽語言建模 (Masked Language Modeling)",
+          "自迴歸語言模型 (Autoregressive LM)",
+          "雙向上下文 (Bidirectional Context)",
+          "對抗訓練 (Adversarial Training)",
+          "自然語言理解 (NLU)"
+        ],
+        "extended_tech": [
+          {
+            "name": "預測下一個句子 (Next Sentence Prediction)",
+            "desc": "判斷兩個句子在原始文本中是否相鄰，幫助模型理解句子間的邏輯與因果關係，廣泛應用於問答系統與自然語言推理任務。"
+          },
+          {
+            "name": "替換詞彙偵測 (Replaced Token Detection)",
+            "desc": "透過判別器來判斷輸入序列中的詞彙是否被生成器替換過，提供更高效的訓練訊號，適用於計算資源受限的大規模預訓練。"
+          },
+          {
+            "name": "跨語言預訓練 (Cross-lingual Pre-training)",
+            "desc": "將不同語言的文本映射到同一語意空間，使模型具備多語言理解能力，廣泛應用於跨語言的資訊檢索與零樣本遷移學習。"
+          }
+        ],
+        "terminology": [
+          "Masked Language Modeling",
+          "Autoregressive LM",
+          "Bidirectional Context",
+          "Adversarial Training",
+          "Pre-training"
         ]
       },
       {
@@ -1900,6 +4891,35 @@ const EXAM_DATA = {
         "examples": [
           "人力資源系統將求職者的履歷關鍵字與職缺描述轉換為密集向量，透過計算向量相似度來實現自動化的人才與職缺精準媒合。",
           "網路論壇的自動審核系統利用詞嵌入技術，將各種惡意言論及其變體映射到相近的向量空間，從而更有效地攔截未見過的變形髒話或攻擊性詞彙。"
+        ],
+        "comparison": "Word2Vec將詞彙映射到低維度、連續的實數向量空間，減少了記憶體消耗，並能有效保留詞彙間的語意相似性與句法結構，廣泛應用於商品語意匹配與相似詞檢索。One-Hot編碼產生高維且極度稀疏的向量，無法表達詞彙關聯且容易導致維度災難，僅適合無語義關係的簡單統計模型；TF-IDF雖考慮詞頻但無法捕捉深層語境。",
+        "keywords": [
+          "獨熱編碼 (One-Hot Encoding)",
+          "詞向量 (Word Embedding)",
+          "密集向量 (Dense Vector)",
+          "維度災難 (Curse of Dimensionality)",
+          "語義相似度 (Semantic Similarity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "文本分類 (Text Classification)",
+            "desc": "將文章或句子自動分配到預定義的類別中，如垃圾郵件過濾、新聞主題分類等，透過密集向量表示能顯著提升對同義詞的泛化能力。"
+          },
+          {
+            "name": "語意搜尋 (Semantic Search)",
+            "desc": "超越傳統關鍵字匹配，透過計算查詢詞與文件向量之間的相似度，找出意義上最相關的結果，廣泛應用於現代搜尋引擎與推薦系統。"
+          },
+          {
+            "name": "文件嵌入 (Document Embedding)",
+            "desc": "將整段句子或整篇文章轉換為單一向量（如Doc2Vec），常用於文章相似度比對、自動文摘以及大規模知識庫的相似文件自動分群。"
+          }
+        ],
+        "terminology": [
+          "One-Hot Encoding",
+          "Dense Vector",
+          "TF-IDF",
+          "Semantic Similarity",
+          "Word Embedding"
         ]
       },
       {
@@ -1918,6 +4938,35 @@ const EXAM_DATA = {
         "examples": [
           "醫學影像分析中，實例分割被用來精確區分顯微鏡下重疊的細胞株，讓系統能正確計算細胞數量並獨立分析每個細胞的形態特徵。",
           "智慧工廠的機械手臂利用實例分割技術，在裝滿相同規格零件的散亂料盒中，精準辨識出每一個獨立零件的邊界與位置，以便進行精確夾取。"
+        ],
+        "comparison": "實例分割不僅進行逐像素分類，還會為影像中的每個獨立個體生成專屬的遮罩，能區分同類別的不同實體，常應用於自動駕駛中精確定位多名行人與車輛。語義分割僅將像素分配給預定義類別，無法區分同類別的不同個體，較常用於背景分析如天空、道路的區域識別；影像分類僅判斷整張影像類別，目標檢測則僅給出邊界框。",
+        "keywords": [
+          "實例分割 (Instance Segmentation)",
+          "語義分割 (Semantic Segmentation)",
+          "目標檢測 (Object Detection)",
+          "邊界框 (Bounding Box)",
+          "逐像素分類 (Pixel-level Classification)"
+        ],
+        "extended_tech": [
+          {
+            "name": "全景分割 (Panoptic Segmentation)",
+            "desc": "結合語義分割與實例分割的優點，不僅對背景物件進行類別標記，同時也對前景物件進行個體區分，為場景提供最全面的像素級理解。"
+          },
+          {
+            "name": "醫學影像分割 (Medical Image Segmentation)",
+            "desc": "應用於精確勾勒腫瘤或器官的邊界形狀，幫助醫師進行病灶體積計算與手術路徑規劃，極大地提升了臨床診斷與治療的精準度。"
+          },
+          {
+            "name": "姿態估計 (Pose Estimation)",
+            "desc": "偵測人體關鍵點並連接成骨架，常用於運動分析與人機互動，有時會結合實例分割來針對不同人物的個體姿勢進行精確建模與追蹤。"
+          }
+        ],
+        "terminology": [
+          "Instance Segmentation",
+          "Semantic Segmentation",
+          "Bounding Box",
+          "Mask",
+          "Computer Vision"
         ]
       },
       {
@@ -1936,6 +4985,35 @@ const EXAM_DATA = {
         "examples": [
           "農業無人機利用實例分割技術拍攝果園，精確區分並計算樹上每一顆蘋果的輪廓與大小，以評估果園的整體產量與成熟度分布。",
           "物流倉儲中的自動點貨機器人，透過實例分割準確辨識堆疊在棧板上的每一個獨立紙箱，即使紙箱外觀完全相同，也能精準計算數量並規劃搬運路徑。"
+        ],
+        "comparison": "實例分割能夠精確地進行逐像素標記，並且能區分畫面中屬於同一類別的不同個體，非常適合需要精細輪廓與數量統計的防損系統或無人機農業檢測。影像分類僅能告知畫面中有無特定物品；目標檢測雖然能框出每個個體，但只能提供粗略的矩形邊界框，無法給出精確形狀；語義分割能給出精確形狀，卻無法區分不同的顧客與商品。",
+        "keywords": [
+          "實例分割 (Instance Segmentation)",
+          "精確區域標記 (Pixel-level Mask)",
+          "影像分類 (Image Classification)",
+          "目標檢測 (Object Detection)",
+          "語義分割 (Semantic Segmentation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Mask R-CNN",
+            "desc": "實例分割領域的經典模型，在Faster R-CNN的基礎上新增了預測遮罩的分支，廣泛應用於工業自動化檢測與精細的醫療影像病灶標記。"
+          },
+          {
+            "name": "影片實例分割 (Video Instance Segmentation)",
+            "desc": "不僅在單張影像中分割物件，還能在連續影片影格中追蹤該物件的遮罩變化，常應用於安防監控系統以及進階的運動賽事分析轉播。"
+          },
+          {
+            "name": "3D點雲分割 (3D Point Cloud Segmentation)",
+            "desc": "將實例分割的概念延伸至三維空間，對光達掃描的點雲資料進行物件分離，為自動駕駛車輛提供高精度的立體環境感知與障礙物識別。"
+          }
+        ],
+        "terminology": [
+          "Instance Segmentation",
+          "Pixel-level Mask",
+          "Mask R-CNN",
+          "Object Detection",
+          "Semantic Segmentation"
         ]
       },
       {
@@ -1954,6 +5032,35 @@ const EXAM_DATA = {
         "examples": [
           "銀行在信用卡盜刷偵測系統中利用 ROC 曲線評估模型，權衡阻止真實盜刷的成功率與將正常交易誤判為盜刷而凍結卡片的客戶抱怨風險。",
           "工廠的產線瑕疵檢測系統使用 ROC 曲線來決定最佳的出貨攔截閾值，以在攔截不良品與避免誤殺良品報廢之間取得最佳的經濟平衡。"
+        ],
+        "comparison": "ROC曲線以假陽性率為X軸，真陽性率為Y軸，用來評估模型在不同閾值下的整體排序與區分能力，特別適合醫療診斷這類需要權衡誤診與漏診風險的情境。相比之下，PR曲線（以召回率為X軸，精確率為Y軸）更適合處理正負樣本極度不平衡的資料集；而IoU與mAP則是專用於評估物件偵測模型框選位置準確性的指標。",
+        "keywords": [
+          "ROC曲線 (ROC Curve)",
+          "假陽性率 (False Positive Rate)",
+          "真陽性率 (True Positive Rate)",
+          "召回率 (Recall)",
+          "曲線下面積 (AUC)"
+        ],
+        "extended_tech": [
+          {
+            "name": "精確率-召回率曲線 (PR Curve)",
+            "desc": "探討精確率與召回率之間的取捨關係，在負樣本數量壓倒性多於正樣本的情況下，PR曲線能比ROC曲線更真實地反映分類模型的實際效能。"
+          },
+          {
+            "name": "F1分數 (F1-Score)",
+            "desc": "精確率與召回率的調和平均數，提供了一個單一的平衡評估指標，廣泛應用於要求精確率與召回率並重的二元分類任務及自然語言處理。"
+          },
+          {
+            "name": "成本敏感學習 (Cost-Sensitive Learning)",
+            "desc": "在模型訓練過程中為不同類型的預測錯誤分配不同的懲罰權重，常用於醫療與金融防詐，以最小化誤判帶來的整體業務或健康損失。"
+          }
+        ],
+        "terminology": [
+          "ROC Curve",
+          "False Positive Rate",
+          "True Positive Rate",
+          "Recall",
+          "Precision"
         ]
       },
       {
@@ -1972,6 +5079,35 @@ const EXAM_DATA = {
         "examples": [
           "行銷團隊利用混淆矩陣來評估顧客流失預測模型，明確得知有多少潛在流失客戶被成功識別，以及有多少忠誠客戶被錯誤地發送了挽留折扣。",
           "垃圾郵件過濾系統的開發者查看混淆矩陣，以了解系統將正常工作郵件誤判為垃圾郵件的具體數量，進而調整過濾規則以降低偽陽性。"
+        ],
+        "comparison": "混淆矩陣呈現的是模型在「單一特定閾值」下的預測結果與真實標籤分布，適合用來直接計算該閾值下的精確率、召回率與準確率，廣泛應用於業務端評估當前上線版本的實際攔截與誤殺數量。然而，AUC衡量的是模型在「所有可能閾值」下的綜合排序能力，無法單純從一個靜態的混淆矩陣推導出來，需要模型整體的機率輸出。",
+        "keywords": [
+          "混淆矩陣 (Confusion Matrix)",
+          "精確率 (Precision)",
+          "準確率 (Accuracy)",
+          "召回率 (Recall)",
+          "ROC曲線下面積 (AUC)"
+        ],
+        "extended_tech": [
+          {
+            "name": "多類別混淆矩陣 (Multi-class Confusion Matrix)",
+            "desc": "將二元分類的混淆矩陣擴展至多個類別，幫助開發者精確找出模型最容易將哪兩個特定類別互相混淆，常應用於影像辨識的錯誤分析。"
+          },
+          {
+            "name": "校準曲線 (Calibration Curve)",
+            "desc": "用來評估模型輸出的機率值是否真實反映了實際發生的頻率，對於醫療診斷與信用評分等極度依賴準確機率預測的應用場景至關重要。"
+          },
+          {
+            "name": "A/B測試 (A/B Testing)",
+            "desc": "在線上環境將流量隨機分配給新舊模型，透過真實用戶行為數據來評估模型的商業價值，是彌補離線混淆矩陣與實際業務表現落差的關鍵。"
+          }
+        ],
+        "terminology": [
+          "Confusion Matrix",
+          "Precision",
+          "Accuracy",
+          "Recall",
+          "AUC"
         ]
       },
       {
@@ -1990,6 +5126,35 @@ const EXAM_DATA = {
         "examples": [
           "智慧城市的交通監控攝影機採用 YOLO 模型，能夠在極短的延遲內即時追蹤並辨識車流與行人，為紅綠燈動態控制提供實時數據。",
           "醫療研究團隊在分析高解析度的病理切片時，選擇使用 Faster R-CNN 來偵測微小的腫瘤細胞，因為此場景對定位精準度的要求遠高於即時推論速度。"
+        ],
+        "comparison": "YOLO是一種單階段目標檢測演算法，將檢測視為回歸問題，直接在特徵圖上預測邊界框與類別，推論速度極快，非常適合工廠即時瑕疵偵測或自駕車環境感知。相對地，Faster R-CNN屬於兩階段演算法，先透過區域生成網路(RPN)產生候選框，再進行特徵提取與分類，準確率通常較高，但運算較慢，常應用於醫療病理切片分析。",
+        "keywords": [
+          "目標檢測 (Object Detection)",
+          "單階段演算法 (One-stage Algorithm)",
+          "兩階段演算法 (Two-stage Algorithm)",
+          "YOLO",
+          "Faster R-CNN"
+        ],
+        "extended_tech": [
+          {
+            "name": "區域生成網路 (Region Proposal Network, RPN)",
+            "desc": "Faster R-CNN中的關鍵組件，負責在整張影像中快速篩選出可能包含物件的候選區域，大幅提升了兩階段檢測模型在定位上的精準度。"
+          },
+          {
+            "name": "特徵金字塔網路 (Feature Pyramid Network, FPN)",
+            "desc": "整合不同尺度的特徵圖以增強模型對各尺寸物件的偵測能力，特別是針對微小物體的識別，廣泛應用於先進的單階段與兩階段目標檢測模型中。"
+          },
+          {
+            "name": "非極大值抑制 (Non-Maximum Suppression, NMS)",
+            "desc": "物件偵測流程的最後步驟，用於過濾掉針對同一物件生成的多個重疊邊界框，僅保留信心分數最高的一個，確保最終輸出結果的清晰與唯一性。"
+          }
+        ],
+        "terminology": [
+          "Object Detection",
+          "YOLO",
+          "Faster R-CNN",
+          "One-stage",
+          "Two-stage"
         ]
       },
       {
@@ -2008,6 +5173,35 @@ const EXAM_DATA = {
         "examples": [
           "機器翻譯系統利用自注意力機制正確理解代名詞所指代的對象，例如在「那隻狗沒有過馬路因為它太累了」中，模型能將「它」與「狗」建立強烈關聯。",
           "推薦系統將使用者的歷史瀏覽紀錄視為序列，運用自注意力機制找出長期行為中互相關聯的興趣點，藉此提供更具個人化脈絡的商品推薦。"
+        ],
+        "comparison": "自注意力機制允許序列中的每個token直接計算與所有其他token的關聯權重，從而無縫捕捉長距離的語意依賴關係，是Transformer在機器翻譯與長文本理解上超越過去架構的關鍵。RNN則是透過隱藏狀態逐字遞迴傳遞資訊，容易在長序列中遺忘早期上下文；CNN則依賴局部卷積核，只能捕捉相鄰詞彙間的短距離特徵。",
+        "keywords": [
+          "自注意力機制 (Self-Attention Mechanism)",
+          "長距離依賴 (Long-range Dependency)",
+          "Transformer",
+          "遞迴神經網路 (RNN)",
+          "卷積神經網路 (CNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "多頭注意力機制 (Multi-Head Attention)",
+            "desc": "將自注意力機制平行執行多次，允許模型從不同的表示子空間同時捕捉多種語意特徵，進一步增強了模型對複雜句型與深層語意關係的解析能力。"
+          },
+          {
+            "name": "位置編碼 (Positional Encoding)",
+            "desc": "由於自注意力機制本身沒有順序概念，必須透過注入位置編碼來提供序列的絕對或相對位置資訊，這是Transformer能夠正確理解語句順序的基礎。"
+          },
+          {
+            "name": "交叉注意力機制 (Cross-Attention Mechanism)",
+            "desc": "在編碼器-解碼器架構中，讓解碼器在生成每個詞彙時能夠動態對齊並關注編碼器輸出的相關來源資訊，廣泛應用於機器翻譯與語音辨識系統。"
+          }
+        ],
+        "terminology": [
+          "Self-Attention",
+          "Long-range Dependency",
+          "Transformer",
+          "RNN",
+          "CNN"
         ]
       },
       {
@@ -2026,6 +5220,35 @@ const EXAM_DATA = {
         "examples": [
           "銀行的貸款違約預測模型在最終輸出層使用 Sigmoid 函數，將複雜的客戶財務特徵運算結果轉換為 0 到 1 的風險機率，供審核人員參考。",
           "醫療感測器演算法透過 Sigmoid 函數處理從穿戴裝置收集來的心跳波動特徵，輸出使用者目前處於「睡眠」或「清醒」狀態的機率值。"
+        ],
+        "comparison": "Sigmoid函數能將實數映射到(0,1)之間，適合表示二元分類的正類機率，廣泛應用於貸款違約或疾病預測。但其在輸入值極大或極小時斜率趨近於零，容易在深層網路引發梯度消失問題，使得模型難以訓練。相對地，ReLU函數在正數區間梯度穩定為1，有效解決了梯度消失問題；而Softmax則是將輸入轉換為多類別的機率分布。",
+        "keywords": [
+          "Sigmoid函數 (Sigmoid Function)",
+          "二元分類 (Binary Classification)",
+          "梯度消失 (Vanishing Gradient)",
+          "ReLU函數 (ReLU Function)",
+          "Softmax函數 (Softmax Function)"
+        ],
+        "extended_tech": [
+          {
+            "name": "ReLU啟動函數 (Rectified Linear Unit)",
+            "desc": "當前深度學習中最廣泛使用的啟動函數，能有效緩解深層網路中的梯度消失問題，顯著加速模型的收斂速度，廣泛應用於各類卷積神經網路中。"
+          },
+          {
+            "name": "批次正規化 (Batch Normalization)",
+            "desc": "在每一層神經網路輸入前對數據進行標準化處理，可避免啟動函數落入飽和區，搭配Sigmoid等函數使用能進一步穩定深層模型的訓練過程。"
+          },
+          {
+            "name": "Softmax回歸 (Softmax Regression)",
+            "desc": "Sigmoid函數在多類別分類任務上的推廣形式，能將網路輸出轉換為各類別的機率總和為1的分布，是現代影像辨識與語言模型輸出層的標準配置。"
+          }
+        ],
+        "terminology": [
+          "Sigmoid",
+          "Binary Classification",
+          "Vanishing Gradient",
+          "ReLU",
+          "Softmax"
         ]
       },
       {
@@ -2044,6 +5267,35 @@ const EXAM_DATA = {
         "examples": [
           "雲端服務供應商為數百家企業客戶提供客製化問答模型時，採用 Prompt Tuning 策略，讓所有客戶共用同一套基礎模型，僅需儲存各自的軟提示向量，大幅節省儲存成本。",
           "新聞機構在針對不同文體（如體育、財經、娛樂）自動生成摘要時，使用 Prompt Tuning 為每種文體訓練專屬的前綴向量，從而在不修改核心模型的前提下快速切換生成風格。"
+        ],
+        "comparison": "傳統微調會更新模型內部龐大的權重參數，需要耗費大量運算與儲存資源；而提示微調（Prompt Tuning）則保持模型參數完全凍結，僅在輸入層添加可訓練的軟提示向量來引導輸出。這使得提示微調特別適合雲端供應商在多租戶架構下，讓百家企業共用同一套底層模型，各自僅需儲存輕量級的提示向量，大幅降低營運成本。",
+        "keywords": [
+          "提示微調 (Prompt Tuning)",
+          "傳統微調 (Fine-Tuning)",
+          "參數高效微調 (PEFT)",
+          "軟提示 (Soft Prompt)",
+          "大型語言模型 (LLM)"
+        ],
+        "extended_tech": [
+          {
+            "name": "前綴微調 (Prefix-Tuning)",
+            "desc": "與提示微調類似，但在Transformer的每一層都加入可訓練的前綴向量，提供了更強的表達能力，特別適用於自然語言生成任務如自動摘要與對話系統。"
+          },
+          {
+            "name": "指示微調 (Instruction Tuning)",
+            "desc": "使用大量多樣化且帶有明確指令的任務資料對語言模型進行全面微調，使其能更好地理解並遵循人類指令，是打造ChatGPT等通用助理的關鍵技術。"
+          },
+          {
+            "name": "上下文學習 (In-Context Learning)",
+            "desc": "完全不更新任何參數，僅透過在提示詞中提供數個任務範例（Few-shot）來引導模型產生預期結果，是利用超大型語言模型進行快速任務原型的首選。"
+          }
+        ],
+        "terminology": [
+          "Prompt Tuning",
+          "Fine-Tuning",
+          "PEFT",
+          "Soft Prompt",
+          "LLM"
         ]
       },
       {
@@ -2062,6 +5314,35 @@ const EXAM_DATA = {
         "examples": [
           "法律事務所將通用的基礎語言模型微調為法律契約審查助手，透過 LoRA 技術保留了模型優異的日常對話與語言邏輯能力，同時又精通了艱澀的法律條文分析。",
           "軟體公司開發針對特定程式語言（如 Rust）的代碼生成工具時，使用 PEFT 技術微調模型，確保模型在學習 Rust 語法的同時，不會遺忘原本擅長的 Python 或 C++ 基礎編程知識。"
+        ],
+        "comparison": "災難性遺忘是模型學習新任務時覆蓋舊有知識的現象。透過PEFT技術（如LoRA）凍結原參數、僅訓練少量外掛模組，能有效保留基礎模型的廣泛能力，同時精通醫療等新領域知識，非常適合資源受限的情境。提高學習率或僅用新語料多輪訓練反而會加劇遺忘；增加批次大小雖穩定梯度，但無法從根本架構上解決遺忘問題。",
+        "keywords": [
+          "災難性遺忘 (Catastrophic Forgetting)",
+          "參數高效微調 (PEFT)",
+          "LoRA",
+          "監督微調 (Supervised Fine-Tuning)",
+          "領域知識 (Domain Knowledge)"
+        ],
+        "extended_tech": [
+          {
+            "name": "彈性權重鞏固 (Elastic Weight Consolidation, EWC)",
+            "desc": "一種經典的持續學習演算法，透過在損失函數中加入正則化項，限制對舊任務重要參數的更新幅度，從而在學習新知識時有效減緩災難性遺忘。"
+          },
+          {
+            "name": "經驗重播 (Experience Replay)",
+            "desc": "在訓練新任務時，隨機混入少量舊任務的訓練資料一起進行訓練，強迫模型在更新參數時兼顧過去的記憶，廣泛應用於持續學習與強化學習場景。"
+          },
+          {
+            "name": "適配器模組 (Adapter Modules)",
+            "desc": "在預訓練模型的各層之間插入輕量級的神經網路模組，微調時僅更新這些適配器參數，能以極低的資源成本讓單一模型同時掌握多種不同的下游任務。"
+          }
+        ],
+        "terminology": [
+          "Catastrophic Forgetting",
+          "PEFT",
+          "LoRA",
+          "Supervised Fine-Tuning",
+          "Continual Learning"
         ]
       },
       {
@@ -2080,6 +5361,35 @@ const EXAM_DATA = {
         "examples": [
           "自動化軟體開發平台中，協調代理人會將程式碼撰寫任務交給編程代理人，隨後將產出交給測試代理人，若測試失敗，協調代理人會將錯誤日誌反饋給編程代理人要求重寫。",
           "企業行銷內容生成系統中，協調者指派撰稿代理人撰寫文章，並由審核代理人檢查品牌語氣與事實，若發現偏誤，協調者會退回稿件並附加具體修改建議，直至達標為止。"
+        ],
+        "comparison": "在多代理人系統中，設計具備評估與重試機制的 Orchestrator 是確保系統容錯性的最佳實踐。當Worker Agent出錯時，協調者能記錄原因並要求重試，這比直接採用錯誤結果更能保障任務品質。強制使用相同模型會失去異質代理人的多樣性優勢；而一旦Worker失敗就中止任務則系統過於脆弱，缺乏實務上必要的自動恢復能力。",
+        "keywords": [
+          "多代理人系統 (Multi-Agent System)",
+          "協調者 (Orchestrator)",
+          "容錯機制 (Fault Tolerance)",
+          "重試機制 (Retry Mechanism)",
+          "結果評估 (Evaluation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "任務分解 (Task Decomposition)",
+            "desc": "協調者將龐大複雜的使用者請求拆解為多個可獨立執行的小型子任務，並分派給專業領域的代理人，大幅降低了單一模型處理複雜問題的失敗率。"
+          },
+          {
+            "name": "反思機制 (Self-Reflection)",
+            "desc": "賦予AI代理人審視自身輸出結果並主動識別錯誤的能力，透過內部的迭代修改來提升最終生成的程式碼或文本品質，是進階Agent架構的核心組件。"
+          },
+          {
+            "name": "代理人通訊協議 (Agent Communication Protocol)",
+            "desc": "規範多個代理人之間交換資訊、協商決策與傳遞狀態的標準格式，確保異質代理人能夠在分散式架構中無縫協作完成跨部門或跨領域的複合任務。"
+          }
+        ],
+        "terminology": [
+          "Multi-Agent System",
+          "Orchestrator",
+          "Fault Tolerance",
+          "Retry",
+          "Self-Reflection"
         ]
       },
       {
@@ -2098,6 +5408,35 @@ const EXAM_DATA = {
         "examples": [
           "個人理財助理 Agent 收到用戶詢問「今天台積電的殖利率是多少」時，不會直接憑記憶回答，而是先思考需要最新股價與配息資訊，接著呼叫財經 API 獲取即時數據後才給出精準解答。",
           "IT 維運自動化 Agent 在收到伺服器異常警報時，會透過 ReAct 框架先推理可能的故障原因，然後逐步呼叫系統日誌查詢工具、Ping 工具進行驗證，最終定位問題並採取修復行動。"
+        ],
+        "comparison": "ReAct框架的核心是要求模型在行動前先輸出思考過程（Thought），並依賴外部工具獲取資訊。若Agent直接憑內部知識回答即時性問題，極易產生幻覺。System Prompt必須強制規範其先使用搜尋工具驗證。移除Thought會破壞ReAct賦予的推理可解釋性；一次呼叫所有工具則缺乏根據前一步觀察進行邏輯推演的能力。",
+        "keywords": [
+          "ReAct框架 (ReAct Framework)",
+          "幻覺 (Hallucination)",
+          "系統提示詞 (System Prompt)",
+          "推理與行動 (Reasoning and Acting)",
+          "思維鏈 (Chain of Thought)"
+        ],
+        "extended_tech": [
+          {
+            "name": "工具增強語言模型 (Tool-Augmented LM)",
+            "desc": "賦予語言模型呼叫外部API、資料庫或計算引擎的能力，彌補了模型在即時資訊獲取與精確數學運算上的先天缺陷，大幅擴展了AI助理的應用邊界。"
+          },
+          {
+            "name": "思維鏈提示 (Chain of Thought Prompting)",
+            "desc": "透過在提示詞中提供逐步推理的範例，引導模型在給出最終答案前先寫出中間推導過程，顯著提升了大型模型解決複雜邏輯與數學問題的準確率。"
+          },
+          {
+            "name": "檢索增強生成 (Retrieval-Augmented Generation, RAG)",
+            "desc": "在生成回答前先從外部知識庫檢索相關文件作為上下文，結合了搜尋的準確性與生成的流暢性，是當前企業建置專屬知識問答系統的主流架構。"
+          }
+        ],
+        "terminology": [
+          "ReAct Framework",
+          "Hallucination",
+          "System Prompt",
+          "Chain of Thought",
+          "Tool-Augmented"
         ]
       },
       {
@@ -2116,6 +5455,35 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛系統在感知環境時，會同步利用 CNN 處理光學攝影機的影像數據，並運用 LSTM 或 Transformer 處理光達（LiDAR）隨時間變化的點雲序列，最後融合判斷前方障礙物的軌跡。",
           "社群媒體內容審查平台同時部署了 Transformer 來分析貼文的文字語意，以及 CNN 來檢測隨附圖片中是否包含違規內容，透過雙模態特徵融合以提高審查的準確度與覆蓋率。"
+        ],
+        "comparison": "CNN具備優異的空間局部特徵捕捉能力，最適合處理影像；Transformer擅長處理長距離序列語意，最適合文本；LSTM或Temporal CNN能有效捕捉時間動態，最適合時序感測資料。若全部統一使用傳統BERT或錯置模型架構，將無法充分發揮各模態資料特有的數據結構與統計特性，導致特徵擷取效率與最終預測準確度大幅下降。",
+        "keywords": [
+          "多模態機器學習 (Multi-Modal Machine Learning)",
+          "卷積神經網路 (CNN)",
+          "Transformer架構 (Transformer Architecture)",
+          "長短期記憶網路 (LSTM)",
+          "時序感測資料 (Time-series Data)"
+        ],
+        "extended_tech": [
+          {
+            "name": "多模態特徵融合 (Multi-Modal Feature Fusion)",
+            "desc": "將來自不同神經網路分支的異質特徵進行拼接、加權或注意力機制對齊，使得最終預測模型能綜合考量視覺、聽覺與文本等多維度資訊做出全面決策。"
+          },
+          {
+            "name": "視覺Transformer (Vision Transformer, ViT)",
+            "desc": "將影像切割為區塊並視為序列，直接運用Transformer架構處理視覺任務，在極大規模資料集上展現出超越傳統CNN的潛力，是現代多模態模型的基石。"
+          },
+          {
+            "name": "時序卷積網路 (Temporal Convolutional Network, TCN)",
+            "desc": "利用一維因果卷積與膨脹卷積處理時間序列資料，相比傳統LSTM具備更好的平行運算效率與更長的記憶窗口，廣泛應用於高頻金融預測與感測器分析。"
+          }
+        ],
+        "terminology": [
+          "Multi-Modal",
+          "CNN",
+          "Transformer",
+          "LSTM",
+          "Feature Fusion"
         ]
       },
       {
@@ -2134,6 +5502,35 @@ const EXAM_DATA = {
         "examples": [
           "影音串流平台利用跨模態對齊技術，將電影的畫面特徵與字幕文本特徵映射到同一空間，讓使用者能夠直接輸入文字描述（如「男主角在雨中奔跑」）來精準搜尋到影片的具體片段。",
           "電子商務平台的以圖搜圖系統，透過對齊商品圖片特徵與文字標籤特徵，不僅能辨識圖片，還能理解該圖片與「復古風皮革沙發」的深層語義關聯，進而提供更精準的推薦。"
+        ],
+        "comparison": "跨模態對齊技術的核心是將不同模態（如影像、文本、基因序列）的高維特徵映射到共享的語意表示空間中，讓模型理解不同模態間的語意等價性，是開發跨模態檢索與融合系統的基礎。僅聚焦單一模態會失去多模態互補優勢；自動生成配對標註是資料增強技術；而降低運算成本則是模型壓縮與架構優化的目標，皆非對齊的核心目的。",
+        "keywords": [
+          "跨模態對齊 (Cross-Modal Alignment)",
+          "對比學習 (Contrastive Learning)",
+          "共享語意空間 (Shared Semantic Space)",
+          "多模態融合 (Multi-modal Fusion)",
+          "潛在特徵空間 (Latent Space)"
+        ],
+        "extended_tech": [
+          {
+            "name": "對比語言-影像預訓練 (CLIP)",
+            "desc": "透過對比學習將大量網路圖片與對應的文字描述對齊至同一特徵空間，使得模型具備強大的零樣本影像分類能力，並成為眾多影像生成模型的核心組件。"
+          },
+          {
+            "name": "多模態知識圖譜 (Multi-modal Knowledge Graph)",
+            "desc": "在傳統文本知識圖譜中融入視覺與聽覺實體，建立更豐富的實體屬性與關係網絡，大幅提升了智慧搜尋系統與問答機器人在處理圖文並茂問題時的精準度。"
+          },
+          {
+            "name": "跨模態檢索 (Cross-Modal Retrieval)",
+            "desc": "允許使用者以一種模態作為查詢條件去檢索另一種模態的結果，例如以文搜圖或以圖搜影片片段，廣泛應用於電子商務商品搜尋與大型影音內容管理系統。"
+          }
+        ],
+        "terminology": [
+          "Cross-Modal Alignment",
+          "Contrastive Learning",
+          "Shared Semantic Space",
+          "Multi-modal",
+          "Latent Space"
         ]
       },
       {
@@ -2152,6 +5549,35 @@ const EXAM_DATA = {
         "examples": [
           "新聞平台的演算法團隊在離線測試中發現新模型的準確率極高，但上線後卻發現用戶停留時間大幅下降，原因是模型過度推薦了點擊誘餌（Clickbait）文章，損害了閱讀體驗。",
           "短影音應用程式透過線上 A/B 測試發現，雖然某個新版推薦模型的離線 AUC 指標略微遜色，但因為推薦的內容更具多樣性與探索性，反而顯著提升了用戶的長期留存率。"
+        ],
+        "comparison": "在評估模型成效時，離線指標（如AUC）僅反映模型在歷史靜態資料上的排序能力，並不必然等同於線上真實用戶的反饋與業務價值。若僅憑高AUC就忽略線上CTR下降等警訊，可能導致損害用戶體驗的錯誤決策。因此，評估AI系統必須結合A/B測試觀察線上商業指標（營收、點擊率等）的實際變化，而非單一依賴離線評估。",
+        "keywords": [
+          "離線評估 (Offline Evaluation)",
+          "線上評估 (Online Evaluation)",
+          "A/B測試 (A/B Testing)",
+          "點擊率 (CTR)",
+          "曲線下面積 (AUC)"
+        ],
+        "extended_tech": [
+          {
+            "name": "多變量測試 (Multivariate Testing)",
+            "desc": "比傳統A/B測試更進階，能同時測試推薦演算法、介面排版與按鈕顏色等多個變數的組合效果，幫助行銷與產品團隊找出能夠最大化線上轉換率的最佳配置。"
+          },
+          {
+            "name": "概念漂移監控 (Concept Drift Monitoring)",
+            "desc": "持續監控線上生產環境中輸入資料分佈或使用者行為模式的變化，當發現模型預測依據與歷史訓練資料出現顯著偏離時，自動觸發警報並啟動模型再訓練。"
+          },
+          {
+            "name": "線上學習 (Online Learning)",
+            "desc": "有別於傳統的批次訓練，模型會根據即時接收到的資料流不斷進行小幅度的權重更新，使其能夠極快地適應市場趨勢變化與突發事件，保持預測的時效性。"
+          }
+        ],
+        "terminology": [
+          "Offline Evaluation",
+          "Online Evaluation",
+          "A/B Testing",
+          "CTR",
+          "AUC"
         ]
       },
       {
@@ -2170,6 +5596,35 @@ const EXAM_DATA = {
         "examples": [
           "外送平台透過即時推薦架構，當偵測到用戶在雨天頻繁點擊火鍋類型的餐廳時，系統能在幾秒鐘內將首頁的推薦清單動態切換為熱湯與鍋物相關選項。",
           "線上影音網站在用戶觀看完一部動作片後，立刻透過串流資料流更新該用戶的即時興趣向量，並在用戶返回主頁的瞬間，無延遲地呈現動作電影的推薦清單。"
+        ],
+        "comparison": "要滿足100毫秒以下的極低延遲與即時動態調整，系統必須採用Kappa或Lambda架構。將資料先寫入倉儲再計算會引入嚴重延遲，無法達標，應予移除。最合理的規劃是利用Kafka處理即時點擊流，Redis提供低延遲特徵讀取，並結合部署為API的預訓練協同過濾模型進行快速推論。完全改用線上學習則技術風險過高且難以維護。",
+        "keywords": [
+          "即時推薦系統 (Real-time Recommendation System)",
+          "串流處理 (Streaming Data)",
+          "低延遲推論 (Low Latency Inference)",
+          "Kafka",
+          "記憶體快取 (In-memory Cache)"
+        ],
+        "extended_tech": [
+          {
+            "name": "特徵儲存庫 (Feature Store)",
+            "desc": "集中管理機器學習特徵的平台，確保離線訓練與線上推論時取用的特徵邏輯與數據完全一致，大幅減少了模型上線時的整合困難與特徵偏移（Feature Skew）問題。"
+          },
+          {
+            "name": "Lambda架構 (Lambda Architecture)",
+            "desc": "大數據處理的經典架構，結合了處理歷史資料的批次層與處理即時資料的串流層，能夠同時確保資料計算的最終一致性與提供低延遲的即時數據視圖。"
+          },
+          {
+            "name": "近似最近鄰搜尋 (Approximate Nearest Neighbor, ANN)",
+            "desc": "在推薦系統的召回階段，利用Faiss等向量資料庫技術快速在大規模商品向量庫中找出與使用者最相似的候選集合，是實現毫秒級推薦的關鍵底層技術。"
+          }
+        ],
+        "terminology": [
+          "Real-time Recommendation",
+          "Streaming Data",
+          "Low Latency",
+          "Kafka",
+          "Redis"
         ]
       },
       {
@@ -2188,6 +5643,35 @@ const EXAM_DATA = {
         "examples": [
           "心理諮商聊天機器人在面對長期用戶時，會定期將前幾次的冗長對話紀錄交由小型模型生成簡短的心理狀態摘要，從而大幅減少每次發送給主模型運算的輸入上下文長度。",
           "企業內部知識庫助理在服務不同部門員工時，利用 Prompt Caching 技術將長達數千字的公司通用政策與法規快取起來，避免了每次員工提問時重複傳輸這些靜態背景資料的費用。"
+        ],
+        "comparison": "在RAG系統中，成本與輸入/輸出token數成正比。將冗長且靜態的System Prompt使用Prompt Caching技術，並對長對話歷史進行語意摘要，能從根本上大幅削減每次請求的輸入token數量，在不嚴重影響回答品質下降低成本。強制壓縮輸出長度可能導致回答不完整；Batch API雖降低單價但犧牲了即時互動性。",
+        "keywords": [
+          "提示詞優化 (Prompt Optimization)",
+          "快取技術 (Prompt Caching)",
+          "對話摘要 (Dialogue Summarization)",
+          "輸入Tokens (Input Tokens)",
+          "檢索增強生成 (RAG)"
+        ],
+        "extended_tech": [
+          {
+            "name": "語義快取 (Semantic Caching)",
+            "desc": "在API閘道層快取先前的問答結果，當新查詢的向量與歷史查詢高度相似時直接返回快取答案，完全省去呼叫大型語言模型的費用並將延遲降至最低。"
+          },
+          {
+            "name": "動態上下文裁剪 (Dynamic Context Truncation)",
+            "desc": "根據當前使用者提問的具體意圖，智慧地過濾掉RAG檢索結果中與問題無關的段落，確保輸入給LLM的上下文是最精簡且資訊密度最高的關鍵內容。"
+          },
+          {
+            "name": "小型模型路由 (Model Routing)",
+            "desc": "建立一個輕量級的分類器，將簡單明確的問題派發給便宜且快速的小型開源模型處理，僅將需要複雜推理的問題交給昂貴的旗艦模型，從而優化整體系統成本。"
+          }
+        ],
+        "terminology": [
+          "Prompt Optimization",
+          "Prompt Caching",
+          "Input Tokens",
+          "RAG",
+          "Context Window"
         ]
       },
       {
@@ -2206,6 +5690,35 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛軟體公司利用 MLOps 平台，自動將車隊每天收集到的邊緣案例（Edge Cases）資料匯入資料湖，觸發夜間的模型微調訓練，並在隔天早上通過自動化測試後派發至測試車輛。",
           "零售連鎖企業的預測補貨系統依賴 MLOps 監控日常銷售預測模型的誤差率，一旦發現因突發事件（如颱風）導致誤差飆升，系統便自動啟動警報並重新以最新數據重訓模型。"
+        ],
+        "comparison": "MLOps的核心在於將DevOps理念引入機器學習，建立涵蓋模型開發、測試、部署與監控全生命週期的自動化管線，確保模型版本的可追溯性與持續更新能力，以應對線上資料分佈的衰退。專注資料標註是資料工程的範疇；自動調參屬於AutoML；而減少更新需求則完全違背了MLOps強調持續整合與持續訓練（CT）的動態演進理念。",
+        "keywords": [
+          "機器學習維運 (MLOps)",
+          "生命週期管理 (Lifecycle Management)",
+          "自動化管線 (Automated Pipeline)",
+          "持續訓練 (Continuous Training)",
+          "版本控制 (Version Control)"
+        ],
+        "extended_tech": [
+          {
+            "name": "自動化機器學習 (AutoML)",
+            "desc": "自動化執行特徵工程、模型選擇與超參數調優的過程，大幅降低了非AI專業背景人員開發機器的門檻，同時也常被整合進MLOps管線中以加速模型迭代。"
+          },
+          {
+            "name": "模型註冊中心 (Model Registry)",
+            "desc": "集中存放與管理所有訓練完成的模型版本的中央儲存庫，詳細記錄了模型的血緣、評估指標與當前部署狀態，是企業實現AI模型標準化治理的核心基礎設施。"
+          },
+          {
+            "name": "資料版本控制 (Data Version Control, DVC)",
+            "desc": "專為機器學習專案設計的版本控制工具，能像Git管理程式碼一樣追蹤大規模資料集與模型的變化，確保任何實驗結果都能夠基於特定的資料版本被完美重現。"
+          }
+        ],
+        "terminology": [
+          "MLOps",
+          "Lifecycle Management",
+          "Continuous Training",
+          "Pipeline",
+          "Version Control"
         ]
       },
       {
@@ -2224,6 +5737,35 @@ const EXAM_DATA = {
         "examples": [
           "智慧農場在缺乏高階運算設備的溫室內，使用經過量化壓縮的輕量級神經網路部署在 Raspberry Pi 上，即時辨識農作物的病蟲害狀態，而無需依賴不穩定的網路連線。",
           "無人機巡檢系統利用遷移學習技術，僅透過數百張電塔鏽蝕的照片微調通用視覺模型，再透過知識蒸餾將其縮小，以便能直接在無人機內建的低功耗晶片上流暢運行。"
+        ],
+        "comparison": "在資料量極少、無GPU且需低延遲推論的嚴苛邊緣環境下，從零訓練模型注定失敗。最合適方案是利用遷移學習在少量瑕疵樣本上微調預訓練模型，再透過量化或蒸餾技術壓縮模型體積，使其能在地端CPU順暢執行。上傳雲端無法保證延遲達標；暫緩導入則錯失優化機會。",
+        "keywords": [
+          "遷移學習 (Transfer Learning)",
+          "模型壓縮 (Model Compression)",
+          "邊緣運算 (Edge Computing)",
+          "模型量化 (Model Quantization)",
+          "知識蒸餾 (Knowledge Distillation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "小樣本學習 (Few-shot Learning)",
+            "desc": "致力於讓模型僅透過極少量的訓練樣本（通常在十張以內）就能掌握新類別的辨識能力，極大地降低了工業場景中因罕見瑕疵難以蒐集資料所帶來的開發瓶頸。"
+          },
+          {
+            "name": "硬體加速器優化 (Hardware Accelerator Optimization)",
+            "desc": "針對特定的邊緣AI晶片（如TPU、NPU）使用專用編譯器進行神經網路圖優化與算子融合，能將壓縮後的模型效能發揮到極致，實現超低延遲與低功耗推論。"
+          },
+          {
+            "name": "聯邦學習 (Federated Learning)",
+            "desc": "允許多個邊緣設備在不共享原始敏感資料的前提下，僅將本地訓練的模型權重更新上傳至中央伺服器進行聚合，是兼顧隱私保護與模型整體效能提升的前沿技術。"
+          }
+        ],
+        "terminology": [
+          "Transfer Learning",
+          "Model Compression",
+          "Edge Computing",
+          "Quantization",
+          "Knowledge Distillation"
         ]
       },
       {
@@ -2240,8 +5782,37 @@ const EXAM_DATA = {
         "ml_method": "Latency Testing in ML Deployments",
         "ml_method_explanation": "在機器學習系統部署中，延遲測試（Latency Testing）是效能測試的重要環節，專注於量測模型從接收到輸入特徵開始，歷經資料前處理、神經網路前向傳播計算，直到輸出預測結果所需的總體時間。對於高頻率、即時性要求極高的應用（如高頻交易、即時防詐欺、自駕車控制），模型推論延遲的微小增加都可能導致嚴重的業務損失或安全風險，因此必須在正式上線前確保其效能指標（如 P95, P99 延遲）符合嚴格的服務級別協定（SLA）。",
         "examples": [
-          "線上廣告競價系統在部署新的點擊率預測模型前，必須進行嚴格的延遲測試，確保模型能在 50 毫秒內評估數百個廣告候選者，否則將錯失將廣告展示給使用者的機會。",
+          "線上廣告競價系統在部署新的點擊率預測模型前，必須必須進行嚴格的延遲測試，確保模型能在 50 毫秒內評估數百個廣告候選者，否則將錯失將廣告展示給使用者的機會。",
           "電玩遊戲中的 AI 語音翻譯功能在發布前，會進行端到端的延遲測試，以保證玩家發言與生成翻譯文字之間的時間差不超過一秒，維持良好的互動遊戲體驗。"
+        ],
+        "comparison": "延遲測試專注於量測系統從接收輸入到輸出預測結果所需的端到端時間，確保其滿足即時系統的嚴格時間限制（SLA），對於高頻交易或防詐欺等應用至關重要。評估記憶體使用屬於資源監控；驗證抗攻擊穩定性屬於安全性測試；評估不同族群結果一致性則屬於模型公平性與偏差測試，皆非延遲測試的核心目標。",
+        "keywords": [
+          "延遲測試 (Latency Testing)",
+          "回應時間 (Response Time)",
+          "服務級別協定 (SLA)",
+          "推論延遲 (Inference Latency)",
+          "效能測試 (Performance Testing)"
+        ],
+        "extended_tech": [
+          {
+            "name": "壓力測試 (Stress Testing)",
+            "desc": "不斷增加系統的併發請求量直到其崩潰，藉此找出系統架構的效能瓶頸與最大吞吐量極限，是確保大型AI應用在行銷活動尖峰期間不會服務中斷的必要驗證。"
+          },
+          {
+            "name": "非同步推論 (Asynchronous Inference)",
+            "desc": "將模型推論請求放入訊息佇列中排隊處理，客戶端無須阻塞等待結果，適合處理大型文件分析或批次影像處理等對即時延遲要求較低但吞吐量需求極高的場景。"
+          },
+          {
+            "name": "邊緣運算部署 (Edge Deployment)",
+            "desc": "將經過壓縮的模型直接部署在靠近資料來源的終端設備上執行推論，徹底消除了資料來回傳輸雲端所產生的網路延遲，是自駕車與工業控制系統的標準架構。"
+          }
+        ],
+        "terminology": [
+          "Latency Testing",
+          "Response Time",
+          "SLA",
+          "Inference",
+          "Throughput"
         ]
       },
       {
@@ -2260,6 +5831,35 @@ const EXAM_DATA = {
         "examples": [
           "醫藥公司在申請 AI 醫療診斷軟體的 FDA 認證時，必須提供完整的 MLOps 執行日誌與唯讀的驗證資料集，讓審查官員能夠在獨立環境中重新運行評估腳本，驗證聲稱的診斷準確率。",
           "金融機構的信用評分模型在面臨公平性審查時，稽核團隊利用系統內建的可追溯機制，還原了一年前模型做出某一爭議拒絕貸款決策時的具體權重與輸入特徵，以釐清責任歸屬。"
+        ],
+        "comparison": "NIST AI RMF框架中的可驗證性強調開發與評估過程的透明度與可重現性。建立詳細的版本控制、參數紀錄與可追溯的測試資料集，能讓第三方稽核人員在獨立環境中完全重現實驗並得出相同結論，建立對系統的信任。單純提升準確率、加快迭代或擴充資料量，雖有助於效能與泛化，但無法滿足稽核所需的程序透明與可追溯要求。",
+        "keywords": [
+          "可驗證性 (Verifiability)",
+          "可重現性 (Reproducibility)",
+          "AI風險管理框架 (AI RMF)",
+          "資料血緣 (Data Lineage)",
+          "第三方稽核 (Third-party Audit)"
+        ],
+        "extended_tech": [
+          {
+            "name": "模型可解釋性 (Explainable AI, XAI)",
+            "desc": "提供工具與技術來解析黑盒子模型做出特定決策的內部邏輯與特徵權重，不僅有助於開發者除錯，更是應對金融與醫療等高監管行業合規性審查的關鍵利器。"
+          },
+          {
+            "name": "資料探查與偏見檢測 (Data Profiling and Bias Detection)",
+            "desc": "在訓練前對資料集進行系統性的統計分析，主動發掘潛在的族群偏見與資料分佈失衡，是確保AI系統輸出結果具備公平性並符合倫理規範的前置預防措施。"
+          },
+          {
+            "name": "模型卡片 (Model Cards)",
+            "desc": "為AI模型建立標準化的透明度報告，詳細記錄其預期用途、效能指標、訓練資料來源以及已知的局限性與潛在風險，是促進產業界負責任AI實踐的重要溝通工具。"
+          }
+        ],
+        "terminology": [
+          "Verifiability",
+          "Reproducibility",
+          "AI RMF",
+          "Data Lineage",
+          "Explainable AI"
         ]
       },
       {
@@ -2278,6 +5878,36 @@ const EXAM_DATA = {
         "examples": [
           "在醫療診斷領域，醫生使用 AI 輔助判讀 X 光片時，XAI 可以標示出影像中導致 AI 判定為異常的具體區域。這使得醫生能夠驗證 AI 的判斷依據，而不僅是盲目接受預測結果，從而提高醫療決策的安全性與可靠性。",
           "在人力資源的自動化履歷篩選系統中，XAI 技術能列出影響應徵者評分的關鍵經歷或技能特徵。這樣一來，人資主管能確保篩選標準並未隱含性別或種族等不公平的偏見，不僅符合企業的多元化政策，也符合相關勞工法規的要求。"
+        ],
+        "comparison": "負責任 AI 中的可解釋性技術（如 XAI）與傳統的黑箱模型（如未經解釋的深度神經網路）有著本質區別。黑箱模型通常追求極致的預測準確率，但在金融授信、醫療診斷等受到高度監管的領域，若無法解釋決策原因，將面臨極大的合規風險。相對地，XAI 技術能提供每個決策的特徵貢獻度，適用於需要高透明度、需向用戶或監理機構說明決策理由的業務場景，從而在風險控制與使用者信任之間取得平衡。",
+        "keywords": [
+          "負責任AI (Responsible AI)",
+          "可解釋性 (Explainability)",
+          "黑箱模型 (Black-box Model)",
+          "特徵貢獻 (Feature Contribution)",
+          "合規性 (Compliance)",
+          "透明度 (Transparency)"
+        ],
+        "extended_tech": [
+          {
+            "name": "LIME (Local Interpretable Model-agnostic Explanations)",
+            "desc": "透過局部線性近似來解釋任何黑箱模型的單一預測結果，常應用於文字或影像分類的除錯與模型驗證。"
+          },
+          {
+            "name": "SHAP (SHapley Additive exPlanations)",
+            "desc": "基於賽局理論計算各特徵對預測結果的邊際貢獻，廣泛應用於金融信用評分與風險分析領域。"
+          },
+          {
+            "name": "特徵重要性 (Feature Importance)",
+            "desc": "評估模型中各特徵對預測結果整體的影響程度，常用於隨機森林等樹狀模型中，協助特徵篩選。"
+          }
+        ],
+        "terminology": [
+          "Model Agnostic",
+          "Feature Importance",
+          "Trustworthy AI",
+          "Algorithmic Bias",
+          "Interpretability"
         ]
       },
       {
@@ -2296,6 +5926,35 @@ const EXAM_DATA = {
         "examples": [
           "在自駕車技術發展過程中，遠端遙控駕駛中心採用了 HITL 架構。當自駕車遇到無法處理的複雜路況（如施工封路或交警手勢指揮）時，系統會自動呼叫遠端的人類操作員接管控制權，確保車輛安全通過後再切換回自動駕駛模式。",
           "在社群媒體的內容審查機制中，AI 模型首先會自動過濾掉明顯違反社群守則的色情或暴力影像。然而，對於語意模糊的仇恨言論或具爭議性的政治貼文，系統會將其標記並轉交給人類審查員進行人工判定，以確保言論自由與社群安全的平衡。"
+        ],
+        "comparison": "人機協作（HITL）有別於完全自動化（Fully Autonomous）系統。完全自動化追求在無人為干預下執行任務，適用於低風險、高頻率的場景（如商品推薦）。然而在醫療診斷、自動駕駛或國防等高風險領域，一旦決策錯誤可能危及生命或產生重大法律責任。HITL 將 AI 定位為輔助角色，保留人類專家在最終決策階段的審核權，不僅確保了安全性與責任歸屬，也能在遇到邊緣案例時透過人工介入持續收集珍貴的訓練資料。",
+        "keywords": [
+          "人機協作 (Human-in-the-Loop)",
+          "最終決策責任 (Final Decision Responsibility)",
+          "高風險領域 (High-risk Domain)",
+          "系統安全機制 (System Safety Mechanism)",
+          "自動化 (Automation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "主動學習 (Active Learning)",
+            "desc": "系統主動挑選最具不確定性的樣本交由人類專家標註，以最低的人工成本大幅提升模型訓練效能與準確率。"
+          },
+          {
+            "name": "臨床決策支援系統 (Clinical Decision Support System, CDSS)",
+            "desc": "結合 AI 預測結果與專家領域知識，輔助醫療人員進行更精確的臨床診斷、治療計畫與病患風險評估。"
+          },
+          {
+            "name": "異常檢測 (Anomaly Detection)",
+            "desc": "自動識別偏離正常模式的行為或資料，對於高危險領域的早期預警及人工介入審核至關重要。"
+          }
+        ],
+        "terminology": [
+          "Human-in-the-Loop (HITL)",
+          "Edge Cases",
+          "Accountability",
+          "Augmented Intelligence",
+          "Fallback Mechanism"
         ]
       },
       {
@@ -2314,6 +5973,35 @@ const EXAM_DATA = {
         "examples": [
           "在房地產估價系統中，房仲業者利用 SHAP 值來向賣家解釋房屋定價的合理性。系統不僅給出房屋的預估總價，還能具體指出「靠近捷運站」讓房價增加了 150 萬，而「屋齡超過 30 年」則使房價減少了 80 萬，讓定價過程完全透明。",
           "在電子商務的客戶流失預測模型中，行銷團隊利用 SHAP 分析來制定挽回策略。對於被預測有高流失風險的客戶，SHAP 結果顯示「最近三個月無購買紀錄」和「客服客訴未解決」是主要推手，團隊便能針對性地發送優惠券或安排專人回訪。"
+        ],
+        "comparison": "SHAP 值解釋法與傳統的線性迴歸係數有顯著差異。線性迴歸係數反映的是全局的、固定的特徵影響，而 SHAP 能針對「單一樣本」給出每個特徵的具體貢獻，且適用於複雜的非線性模型（如 XGBoost）。在金融風控或個人化醫療中，我們不僅需要知道整體趨勢，更需要了解為何針對「這位特定客戶」做出特定預測。SHAP 提供了這種微觀層面的高精確度解釋，避免了單純看全局重要性而忽略個體差異的盲點。",
+        "keywords": [
+          "SHAP (SHapley Additive exPlanations)",
+          "特徵貢獻 (Feature Contribution)",
+          "局部解釋 (Local Explanation)",
+          "全局解釋 (Global Explanation)",
+          "基準值 (Base Value)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Partial Dependence Plot (PDP)",
+            "desc": "用於視覺化一個或兩個特徵對機器學習模型預測結果的邊際效應，幫助理解特徵與目標變數間的非線性關係。"
+          },
+          {
+            "name": "Individual Conditional Expectation (ICE)",
+            "desc": "PDP 的延伸，顯示單一觀察值中特徵改變對預測結果的影響，能更細緻地揭示樣本間的異質性。"
+          },
+          {
+            "name": "TreeSHAP",
+            "desc": "專為樹狀模型（如 Random Forest, XGBoost）優化的 SHAP 計算方法，大幅降低了計算複雜度與時間成本。"
+          }
+        ],
+        "terminology": [
+          "Shapley Value",
+          "Log Odds",
+          "Marginal Contribution",
+          "Game Theory",
+          "Local Interpretable"
         ]
       },
       {
@@ -2332,6 +6020,36 @@ const EXAM_DATA = {
         "examples": [
           "在製造業的產品表面瑕疵檢測系統中，Grad-CAM 被用來標示出 AI 認為有缺陷的具體位置。當系統判定某個金屬零件為「不良品」時，熱力圖會精準覆蓋在零件的刮痕或凹陷處，協助品管人員快速定位問題，減少人工複檢的時間。",
           "在野生動物監測的相機陷阱分析中，生態學家使用 Grad-CAM 來驗證物種辨識模型的正確性。如果模型將一張照片分類為「老虎」，熱力圖會顯示模型是否真的關注在老虎的獨特條紋特徵上，而不是錯誤地將背景中的特定樹枝形狀當成了判斷依據。"
+        ],
+        "comparison": "Grad-CAM 與 LIME 或 SHAP 等解釋方法在機制與應用場景上有很大不同。LIME/SHAP 大多需要透過大量擾動樣本來計算特徵重要性，這在處理高維度影像時運算成本極高，難以達成即時性。Grad-CAM 則是直接利用神經網路本身的反向傳播梯度來產生熱力圖，無需重複推論，因此能達到極低的延遲。在醫療影像輔助（如即時內視鏡分析）或工業即時瑕疵檢測等要求低延遲且需視覺化關注區域的場景中，Grad-CAM 是更務實的選擇。",
+        "keywords": [
+          "Grad-CAM",
+          "熱力圖 (Heatmap)",
+          "梯度反向傳播 (Gradient Backpropagation)",
+          "卷積神經網路 (CNN)",
+          "近即時推論 (Near Real-time Inference)",
+          "類別關注區域 (Class Activation Map)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Saliency Maps",
+            "desc": "一種早期的影像解釋技術，直接計算輸出對輸入像素的梯度，用於標示對分類結果最敏感的像素點。"
+          },
+          {
+            "name": "Integrated Gradients",
+            "desc": "透過從基準影像到目標影像的線性插值計算梯度積分，解決了傳統梯度方法中的飽和問題，提供更穩定的解釋。"
+          },
+          {
+            "name": "SmoothGrad",
+            "desc": "在輸入影像中加入隨機噪聲並多次計算梯度的平均值，以減少熱力圖的視覺雜訊，使得關注區域更加清晰明確。"
+          }
+        ],
+        "terminology": [
+          "Class Activation Mapping (CAM)",
+          "Gradient-weighted",
+          "Global Average Pooling (GAP)",
+          "Feature Map",
+          "Backpropagation"
         ]
       },
       {
@@ -2350,6 +6068,36 @@ const EXAM_DATA = {
         "examples": [
           "在金融領域的投資組合風險管理中，量化分析師使用 PCA 來分析股票市場中數百檔股票的歷史價格走勢。透過降維，他們可以識別出少數幾個推動整個市場波動的「潛在因子」（如市場整體趨勢、產業特定衝擊），從而更有效地構建避險策略。",
           "在基因體學研究中，生物學家需要處理包含數萬個基因表現水平的微陣列數據。利用 PCA，他們可以將這些極高維度的數據降至二維或三維空間進行視覺化，快速發現不同患者樣本之間是否因為疾病亞型或藥物反應而自然形成不同的分群。"
+        ],
+        "comparison": "主成分分析（PCA）與特徵選擇（Feature Selection）雖然都能減少特徵數量，但原理截然不同。特徵選擇是保留原始特徵中的一部分（如依據相關係數），而 PCA 是透過線性轉換（協方差矩陣特徵分解）將原始特徵投影到全新的正交空間中，產生無法直接對應原物理意義的新特徵。PCA 非常適合用於處理高度相關（多重共線性）的高維數值資料（如感測器數據、金融指標），能最大程度保留資料變異並降噪，但不適用於需要維持特徵原始業務可解釋性的場景。",
+        "keywords": [
+          "主成分分析 (PCA)",
+          "協方差矩陣 (Covariance Matrix)",
+          "特徵值分解 (Eigen Decomposition)",
+          "降維 (Dimensionality Reduction)",
+          "資料變異量 (Data Variance)",
+          "特徵向量 (Eigenvector)"
+        ],
+        "extended_tech": [
+          {
+            "name": "t-SNE (t-Distributed Stochastic Neighbor Embedding)",
+            "desc": "一種強大的非線性降維技術，專門用於高維資料的二維或三維視覺化，能極好地保留局部群聚結構。"
+          },
+          {
+            "name": "UMAP (Uniform Manifold Approximation and Projection)",
+            "desc": "比 t-SNE 速度更快、且能更好地保留全域資料結構的降維技術，廣泛應用於單細胞測序等大規模資料分析。"
+          },
+          {
+            "name": "Autoencoder (自編碼器)",
+            "desc": "基於神經網路的非線性降維與特徵萃取方法，適用於複雜的非線性資料，且可用於異常檢測與影像降噪。"
+          }
+        ],
+        "terminology": [
+          "Eigen Decomposition",
+          "Covariance Matrix",
+          "Orthogonal Projection",
+          "Multicollinearity",
+          "Variance Maximization"
         ]
       },
       {
@@ -2368,6 +6116,36 @@ const EXAM_DATA = {
         "examples": [
           "在電子商務平台的商品推薦系統中，若直接使用包含數千個維度（如瀏覽紀錄、購買歷史、點擊時間等）的原始特徵向量來尋找相似用戶，會發現所有用戶的相似度得分都很接近。系統必須先使用 Autoencoder 進行降維，才能有效進行分群。",
           "在自然語言處理的文本相似度比對中，若使用傳統的 TF-IDF 將文章轉換為包含數萬個詞彙維度的稀疏向量，使用基於歐式距離的分群方法將無法有效找出主題相似的文章。通常會改用餘弦相似度（Cosine Similarity）或先進行語意降維（如 LSA）來解決。"
+        ],
+        "comparison": "DBSCAN 等基於密度的分群演算法與 K-Means 等基於質心的演算法在應對高維資料時的弱點有所不同。高維資料會引發「維度詛咒」，使得歐氏距離變得缺乏鑑別力（所有點之間的距離趨於一致）。這對依賴絕對距離閾值（Epsilon）來定義「密度」的 DBSCAN 影響尤為致命，導致所有點被視為雜訊。相比之下，雖然 K-Means 在高維也會效能下降，但不會像 DBSCAN 那樣完全崩潰。處理這類高維業務場景（如文本向量、用戶行為特徵），通常必須先透過 PCA 或 Autoencoder 進行降維，或改用餘弦相似度。",
+        "keywords": [
+          "維度詛咒 (Curse of Dimensionality)",
+          "DBSCAN",
+          "密度估計 (Density Estimation)",
+          "高維資料 (High-dimensional Data)",
+          "群集分析 (Cluster Analysis)",
+          "雜訊點 (Noise Points)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Autoencoder (自編碼器)",
+            "desc": "在進行分群前，先利用神經網路將高維度的使用者行為特徵壓縮成低維度的潛在表示，以克服維度詛咒。"
+          },
+          {
+            "name": "HDBSCAN (Hierarchical DBSCAN)",
+            "desc": "DBSCAN 的改良版，能自動適應不同密度的群集，且對參數 Epsilon 的敏感度較低，在複雜資料集表現更穩健。"
+          },
+          {
+            "name": "Cosine Similarity (餘弦相似度)",
+            "desc": "在高維度稀疏資料（如文本 TF-IDF 向量）中，用來取代歐氏距離進行相似度計算，能有效減少維度造成的距離扭曲。"
+          }
+        ],
+        "terminology": [
+          "Curse of Dimensionality",
+          "Density-based Clustering",
+          "Epsilon (ε)",
+          "MinPts",
+          "Euclidean Distance"
         ]
       },
       {
@@ -2386,6 +6164,35 @@ const EXAM_DATA = {
         "examples": [
           "在銀行支票的數字自動光學字元辨識（OCR）系統中，CNN 提取出手寫數字的邊緣與曲線特徵後，這些二維的特徵映射必須經過 Flatten 處理，轉換成一維陣列，才能送入後續的神經網路層，最終判斷出該數字是 0 到 9 中的哪一個。",
           "在智慧農場的農作物病蟲害影像識別應用中，無人機拍攝的葉片影像經過多層卷積處理，保留了病斑的局部空間資訊。透過 Flatten 操作將這些空間特徵線性化後，分類器才能綜合評估所有特徵，精準預測植物感染了何種特定疾病。"
+        ],
+        "comparison": "Flatten 操作與 Global Average Pooling (GAP) 都是將 CNN 的多維卷積特徵圖轉換為一維向量以供全連結層使用的技術，但應用場景有別。Flatten 是將所有特徵粗暴地展平保留所有空間位置資訊，但會導致全連結層參數暴增，容易過擬合。GAP 則是計算每個特徵圖的平均值，大幅減少了參數數量並具有空間平移不變性。在傳統的簡單分類任務中 Flatten 仍常見，但在現代深層網路（如 ResNet）中，為了降低模型大小與過擬合風險，GAP 已成為主流的取代方案。",
+        "keywords": [
+          "Flatten (展平)",
+          "全連結層 (Fully Connected Layer)",
+          "卷積神經網路 (CNN)",
+          "特徵圖 (Feature Map)",
+          "維度轉換 (Dimension Transformation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Global Average Pooling (全域平均池化, GAP)",
+            "desc": "計算每個卷積特徵通道的平均值作為輸出，能顯著減少模型參數數量，降低過擬合風險，並增強空間平移不變性。"
+          },
+          {
+            "name": "1x1 Convolution (1x1 卷積)",
+            "desc": "用於在不改變空間維度的情況下進行跨通道的特徵整合與降維，是 Inception 架構與現代 CNN 中控制運算量的核心。"
+          },
+          {
+            "name": "Dropout",
+            "desc": "在全連結層中隨機停用部分神經元，以防止模型對訓練資料產生過度依賴，是深度學習中極為重要的正則化技術。"
+          }
+        ],
+        "terminology": [
+          "Flatten",
+          "Fully Connected Layer (Dense Layer)",
+          "Tensor",
+          "Global Average Pooling (GAP)",
+          "Overfitting"
         ]
       },
       {
@@ -2404,6 +6211,35 @@ const EXAM_DATA = {
         "examples": [
           "在金融防詐欺系統的開發中，真實的信用卡盜刷案件資料比例極低，且受限於嚴格的個資隱私法規難以共享。銀行利用生成對抗網路（GAN）生成大量符合真實交易模式特徵，但不包含任何真實客戶個資的合成盜刷紀錄，用以強化防護模型的偵測能力。",
           "在工業機器人手臂的視覺抓取訓練中，工程師使用 3D 渲染引擎（如 Unity 或 Unreal）構建虛擬工廠環境。他們在虛擬環境中合成數以萬計帶有不同光照角度、反光材質和隨機擺放位置的零件影像，讓機器人在虛擬空間中完成初步學習，再將模型轉移到實體機器人上。"
+        ],
+        "comparison": "合成資料（Synthetic Data）與傳統的資料擴增（Data Augmentation，如旋轉、裁切、加噪）不同。資料擴增只能在現有真實資料的基礎上進行微調，無法創造出從未出現過的全新場景。而合成資料透過 3D 引擎或生成模型（如 GANs），能夠憑空創造出極端邊緣情況（Edge Cases，如大雪中的車禍、罕見疾病的 X 光片）。這特別適用於資料取得成本極高、或涉及嚴重隱私保護法規的業務領域，是提升模型泛化能力與魯棒性的破局技術。",
+        "keywords": [
+          "合成資料 (Synthetic Data)",
+          "泛化能力 (Generalization Ability)",
+          "資料擴增 (Data Augmentation)",
+          "極端場景 (Edge Cases)",
+          "模型訓練 (Model Training)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Generative Adversarial Networks (GANs)",
+            "desc": "利用生成器與判別器的對抗訓練機制，生成高度逼真的合成影像或數據，廣泛應用於醫療影像擴充與金融防詐欺。"
+          },
+          {
+            "name": "Diffusion Models (擴散模型)",
+            "desc": "透過逐步添加噪聲再反向去噪的過程來生成高品質影像，其生成多樣性與真實度目前在許多視覺任務中已超越 GANs。"
+          },
+          {
+            "name": "Domain Randomization (領域隨機化)",
+            "desc": "在虛擬模擬環境中隨機改變光照、材質與背景，使模型在轉移至真實世界時對各種環境變化具備極強的適應力。"
+          }
+        ],
+        "terminology": [
+          "Synthetic Data",
+          "Ground Truth",
+          "Generalization",
+          "Sim2Real Gap",
+          "Edge Cases"
         ]
       },
       {
@@ -2422,6 +6258,35 @@ const EXAM_DATA = {
         "examples": [
           "在串流影音平台的個人化推薦系統中，使用者的喜好可能會隨時間快速改變（例如突然迷上某部剛上檔的韓劇）。透過增量學習，推薦模型可以在使用者每次點擊或觀看影片後，即時微調其興趣向量，在下一秒立刻給出最貼近當下心情的推薦片單。",
           "在物聯網的智慧電網預測中，電力負載會受到突發天氣變化或特殊節日活動的影響。採用增量學習的時間序列預測模型，能夠每分鐘接收最新的感測器讀數進行參數更新，快速捕捉到短期的耗電量波動趨勢，幫助調度中心做出更精準的發電決策。"
+        ],
+        "comparison": "增量學習（Incremental Learning）與傳統的批次學習（Batch Learning）在應對動態資料流時展現出完全不同的能力。批次學習在特徵擴增或數據分佈改變時，必須耗費巨量時間與資源重新訓練整個模型，這在需要即時反應的廣告競價（RTB）或內容推薦系統中是不可接受的。增量學習允許模型持續吸收新資料、即時微調權重，並能在動態擴展特徵空間的情況下維持最新準確度。它適用於環境變化快速、具備串流數據特性且運算資源有限的即時業務場景。",
+        "keywords": [
+          "增量學習 (Incremental Learning)",
+          "線上學習 (Online Learning)",
+          "特徵空間動態擴展 (Dynamic Feature Space Expansion)",
+          "即時準確度 (Real-time Accuracy)",
+          "模型過期 (Model Staleness)"
+        ],
+        "extended_tech": [
+          {
+            "name": "線上學習 (Online Learning)",
+            "desc": "資料以串流形式逐筆或小批次進入，模型即時更新參數，適用於股市高頻交易或即時廣告點擊率預測等極端延遲敏感場景。"
+          },
+          {
+            "name": "災難性遺忘對策 (Catastrophic Forgetting Mitigation)",
+            "desc": "增量學習中的關鍵技術，如 EWC (Elastic Weight Consolidation)，確保模型在學習新特徵時不會遺忘過去學到的重要知識。"
+          },
+          {
+            "name": "強化學習 (Reinforcement Learning)",
+            "desc": "透過與環境持續互動並獲得獎勵回饋來優化決策策略，同樣具備持續學習的特性，常用於自動駕駛與遊戲 AI。"
+          }
+        ],
+        "terminology": [
+          "Incremental Learning",
+          "Online Learning",
+          "Catastrophic Forgetting",
+          "Batch Training",
+          "Feature Space"
         ]
       },
       {
@@ -2440,6 +6305,36 @@ const EXAM_DATA = {
         "examples": [
           "在短影音平台的內容審查系統中，AI 必須同時分析影片的畫面（視覺特徵）、背景音樂與語音（聽覺特徵）以及影片的標題與字幕（文本特徵）。透過特徵融合技術，模型能綜合判斷「畫面正常但語音具有威脅性」的違規內容，大幅降低漏判率。",
           "在智慧手錶的睡眠品質監測應用中，裝置會同時收集用戶的心率變化（時序感測數據）和翻身動作（加速度計數據）。特徵融合模型會將這兩種不同維度的生理訊號整合，精準區分出淺眠、深眠與快速動眼期（REM），提供用戶更準確的健康分析報告。"
+        ],
+        "comparison": "在多模態學習中，特徵融合（Feature Fusion）策略遠優於將所有特徵粗暴拼接的方法。基因數值與文本語意的資料尺度、分佈和內在邏輯差異極大，直接拼接會導致模型難以捕捉兩者各自的深層特徵，甚至被高維文本特徵淹沒。採分層策略，利用各自領域最適用的模型（如基因用特徵選擇、文本用 Transformer）萃取出高階潛在表示（Latent Representations），再於決策前進行特徵融合，能最大化地發揮不同資料模態間的互補性，這是目前醫療 AI、影音審查等複雜業務的標準做法。",
+        "keywords": [
+          "特徵融合 (Feature Fusion)",
+          "多模態模型 (Multimodal Model)",
+          "異質特徵 (Heterogeneous Features)",
+          "分層策略 (Hierarchical Strategy)",
+          "語意表示 (Semantic Representation)",
+          "高維數值特徵 (High-dimensional Numerical Features)"
+        ],
+        "extended_tech": [
+          {
+            "name": "早期融合 (Early Fusion)",
+            "desc": "在輸入階段將多種資料模態拼接，適用於不同模態間存在強烈時間或空間同步關聯性的情境，如影音的唇語辨識。"
+          },
+          {
+            "name": "晚期融合 (Late Fusion)",
+            "desc": "各模態獨立運算得出預測機率後，再透過投票或加權平均整合結果，具有高度強健性，能避免單一感測器失效影響全局。"
+          },
+          {
+            "name": "Cross-modal Attention (跨模態注意力機制)",
+            "desc": "在深度神經網路中，利用注意力機制讓一個模態的特徵去引導另一個模態的特徵萃取，能更精準捕捉模態間的複雜對應關係。"
+          }
+        ],
+        "terminology": [
+          "Feature Fusion",
+          "Multimodal Learning",
+          "Latent Space",
+          "Heterogeneous Data",
+          "Representation Learning"
         ]
       },
       {
@@ -2458,6 +6353,36 @@ const EXAM_DATA = {
         "examples": [
           "在自然語言處理領域，一家新創公司希望開發專屬的醫療客服機器人。他們不需要從零開始訓練語言模型，而是下載已經吸收了大量網際網路知識的預訓練模型（如 BERT 或 Llama），然後僅使用醫院內部的醫療問答紀錄進行遷移學習，便能打造出專業的醫療助理。",
           "在衛星影像分析中，研究人員需要建立一個辨識特定稀有違章建築的模型。由於該類建築的樣本極少，他們採用了預先在百萬張一般街景圖片上訓練好的影像辨識模型，保留其辨識幾何形狀的能力，再利用少量的衛星空照圖進行微調，成功達到高辨識率。"
+        ],
+        "comparison": "在資料極度稀缺的情境下，遷移學習（Transfer Learning）與從頭訓練（Train from scratch）是成敗的關鍵差異。深度學習模型（尤其是 ViT 或大型 CNN）需要海量數據來收斂並避免過擬合。只有 500 張標註影像的工業瑕疵檢測若從頭訓練，模型只會死背這 500 張圖片。遷移學習透過借用在千萬張圖片上預訓練模型的「通用視覺知識」（如辨識邊緣、材質），只需微調最後幾層，就能在極少樣本下達到極高的業務精確度，是中小企業與醫療等少樣本場景導入 AI 的唯一實用途徑。",
+        "keywords": [
+          "遷移學習 (Transfer Learning)",
+          "預訓練模型 (Pre-trained Model)",
+          "微調 (Fine-tuning)",
+          "卷積神經網路 (CNN)",
+          "過擬合 (Overfitting)",
+          "標註資料稀缺 (Data Scarcity)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Few-Shot Learning (少樣本學習)",
+            "desc": "旨在讓模型僅透過極少數（通常個位數）的範例樣本就能學會辨識新類別，適用於類別頻繁變更且資料難以收集的場景。"
+          },
+          {
+            "name": "Domain Adaptation (領域適應)",
+            "desc": "遷移學習的一種，專注於解決訓練資料（來源域）與實際應用環境（目標域）分佈不同的問題，如從晴天影像遷移到雨天場景。"
+          },
+          {
+            "name": "Self-Supervised Learning (自監督學習)",
+            "desc": "利用大量無標註資料，透過設定代理任務（如預測遮蔽區塊）讓模型自主學習強大的特徵表示，再用少量標註資料進行微調。"
+          }
+        ],
+        "terminology": [
+          "Transfer Learning",
+          "Pre-training",
+          "Fine-tuning",
+          "Overfitting",
+          "Vision Transformer (ViT)"
         ]
       },
       {
@@ -2476,6 +6401,36 @@ const EXAM_DATA = {
         "examples": [
           "在銀行信用卡盜刷偵測系統中，正常的交易佔了 99.9% 以上，而真正的盜刷案件極少。為了讓 AI 模型學會辨識盜刷特徵，資料科學家利用 SMOTE 技術生成虛擬的異常交易紀錄，讓模型在訓練時能有足夠的反例學習，有效提高實際環境下的盜刷攔截率。",
           "在罕見疾病的基因檢測分析中，確診患者的資料量遠遠不及健康受試者。醫學資訊研究員使用 SMOTE 演算法，在現有病患的基因特徵空間中合成出更多潛在的陽性樣本數據，幫助機器學習模型建立更準確的診斷門檻，減少漏診的風險。"
+        ],
+        "comparison": "SMOTE 過採樣技術與簡單的資料複製（Random Over-sampling）在處理類別不平衡問題上有著本質差異。簡單複製少數類別（如瑕疵品）雖然平衡了數量，但會導致模型嚴重過度擬合這些重複的樣本點，失去對未知瑕疵的泛化能力。SMOTE 則是透過在少數類別樣本的特徵空間中進行 KNN 插值，合成出「合理但未曾出現」的新樣本。在製造業良率極高（99%）或信用卡盜刷極少等極端不平衡業務中，SMOTE 是前處理階段提升模型少數類別召回率（Recall）的標準且有效的解決方案。",
+        "keywords": [
+          "SMOTE",
+          "類別不平衡 (Class Imbalance)",
+          "過採樣 (Over-sampling)",
+          "少數類別擴增 (Minority Class Augmentation)",
+          "資料前處理 (Data Preprocessing)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "欠採樣 (Under-sampling)",
+            "desc": "隨機移除多數類別的樣本以達到資料平衡，雖然會遺失部分資訊，但在多數類別資料量極端龐大導致運算緩慢時非常有用。"
+          },
+          {
+            "name": "Focal Loss",
+            "desc": "在演算法層面解決不平衡問題的損失函數，透過動態降低易分類樣本的權重，強迫模型將專注力集中在難以分類的少數類別上。"
+          },
+          {
+            "name": "Cost-sensitive Learning (成本敏感學習)",
+            "desc": "在模型訓練中，對少數類別的誤判賦্যু予較高的懲罰權重，促使模型在不改變資料分佈的前提下，更謹慎地對待重要少數案例。"
+          }
+        ],
+        "terminology": [
+          "SMOTE",
+          "Class Imbalance",
+          "Over-sampling",
+          "Synthetic Samples",
+          "K-Nearest Neighbors (KNN)"
         ]
       },
       {
@@ -2494,6 +6449,35 @@ const EXAM_DATA = {
         "examples": [
           "在電商平台的用戶年齡資料庫中，發現有少數用戶的年齡被填寫為 150 歲或負數。系統在進入用戶畫像分析前，會自動執行離群值處理邏輯，將這些明顯不合常理的資料點剔除，或者統一填補為該用戶群體的年齡中位數，以確保推薦系統的準確性。",
           "在房地產價格預測模型中，如果有一筆房屋交易價格因為小數點誤植而高達市價的百倍，這個極端值會使線性迴歸模型產生嚴重的偏差。資料分析師會使用 IQR（四分位距）法則偵測出這些離群值並將其移除，確保模型能正確學習到真實的房價趨勢。"
+        ],
+        "comparison": "對於物理上不可能發生的極端離群值（如感測器錯誤產生的 999°C），直接刪除或用中位數填補，優於使用平均數填補或 Z-score 標準化。平均數與常規的標準化極易被單一極端值嚴重扭曲，導致整體特徵分佈失真。在 IoT 設備監控、金融交易等常有髒數據（Dirty Data）的業務場景中，識別並隔離這些因系統錯誤產生的離群值，是確保機器學習模型（特別是線性模型與距離度量模型）不會被錯誤引導決策邊界的關鍵資料清洗步驟。",
+        "keywords": [
+          "離群值處理 (Outlier Handling)",
+          "資料清洗 (Data Cleaning)",
+          "極端值 (Extreme Values)",
+          "中位數填補 (Median Imputation)",
+          "異常記錄 (Abnormal Records)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Isolation Forest (孤立森林)",
+            "desc": "一種基於樹狀結構的無監督異常檢測演算法，能有效且快速地在高維資料集中將離群值孤立出來，適用於詐欺偵測與設備預警。"
+          },
+          {
+            "name": "Robust Scaler",
+            "desc": "使用中位數與四分位距（IQR）進行資料標準化，對離群值具有極高的抵抗力，能避免極端值壓縮了正常資料的分佈空間。"
+          },
+          {
+            "name": "缺失值插補 (Missing Value Imputation)",
+            "desc": "處理資料遺失的技術，除了簡單的均值/中位數填補外，還包含使用 KNN 或機器學習模型預測缺失值的進階多重插補法 (MICE)。"
+          }
+        ],
+        "terminology": [
+          "Outlier",
+          "Imputation",
+          "Median",
+          "Z-score",
+          "Data Cleaning"
         ]
       },
       {
@@ -2512,6 +6496,36 @@ const EXAM_DATA = {
         "examples": [
           "在自動駕駛汽車的開發中，車輛每天產生數 TB 的感測器原始數據（包含攝影機影像、光達點雲）。這些海量的非結構化數據會直接存入「資料湖」供深度學習模型訓練使用；而經過分析後萃取出的車輛妥善率、每日行駛里程等結構化報表指標，則會同步到「資料倉儲」供管理層查詢。",
           "在大型零售企業的數據中台中，來自各家分店的客戶客訴錄音檔和社群媒體貼文會存放在「資料湖」中，等待 NLP 模型進行情緒分析；而各分店每日打平的營業額、庫存數量等精確數字，則會進入「資料倉儲」，支撐供應鏈系統進行即時的庫存調度與銷售預測。"
+        ],
+        "comparison": "資料湖（Data Lake）與資料倉儲（Data Warehouse）在架構定位上有明顯分工。資料湖支援「Schema-on-Read」，能以極低成本儲存海量非結構化原始資料（如影像、文本），是 AI 模型訓練與探索性分析的理想場所。資料倉儲則要求「Schema-on-Write」，專注於儲存經過嚴格清洗、關聯性強的結構化特徵，確保了極高的 SQL 查詢與分析效能。現代企業（如零售、生醫）面對多模態 AI 需求時，常採用這種分層架構（或融合兩者的 Data Lakehouse），以兼顧機器學習的彈性與商業分析的效能。",
+        "keywords": [
+          "資料湖 (Data Lake)",
+          "資料倉儲 (Data Warehouse)",
+          "非結構化資料 (Unstructured Data)",
+          "結構化資料 (Structured Data)",
+          "多模態模型 (Multimodal Model)",
+          "資料儲存架構 (Data Storage Architecture)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Data Lakehouse (資料湖倉)",
+            "desc": "結合了資料湖的低成本與非結構化儲存彈性，以及資料倉儲的 ACID 交易保證與高效 SQL 查詢能力的新一代資料架構。"
+          },
+          {
+            "name": "ETL / ELT Pipeline",
+            "desc": "負責將資料湖中的原始數據進行萃取、轉換，並載入到資料倉儲中的自動化資料工程管線，確保資料品質與一致性。"
+          },
+          {
+            "name": "Feature Store (特徵庫)",
+            "desc": "集中管理、儲存與提供機器學習特徵的平台，確保模型訓練（離線）與模型推論（線上）所使用的特徵定義與數據完全一致。"
+          }
+        ],
+        "terminology": [
+          "Data Lake",
+          "Data Warehouse",
+          "Unstructured Data",
+          "Schema-on-Read",
+          "Schema-on-Write"
         ]
       },
       {
@@ -2530,6 +6544,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧型手機上運行的語音助理（如 Siri 或 Google Assistant），為了在沒有網路的情況下也能即時辨識使用者的喚醒詞「Hey Siri」，工程師會將雲端訓練好的龐大語音模型進行 INT8 量化，使其能夠塞入手機極小的記憶體中，並在低功耗的情況下保持全天候的即時推論。",
           "在無人機的即時避障系統中，運算硬體受到嚴格的重量和電池容量限制。開發團隊利用模型量化技術壓縮目標偵測演算法，讓無人機機載的微型晶片能夠以每秒 60 幀的速度處理影像畫面，確保在高速飛行時有足夠的反應時間避開樹木與建築物。"
+        ],
+        "comparison": "模型量化（Model Quantization）與模型集成（Ensemble）在邊緣運算中扮演相反的角色。模型集成透過組合多個模型來提升準確率，但會成倍增加運算時間與記憶體消耗，這在受限的邊緣裝置（如工業相機、無人機）上是致命的。模型量化則是透過將 32 位元浮點數（FP32）壓縮為 8 位元整數（INT8），大幅縮減模型體積並利用硬體指令集加速推論。在追求極致低延遲且硬體資源受限的即時邊緣檢測場景中，量化能在幾乎不犧牲準確率的前提下，滿足苛刻的延遲要求。",
+        "keywords": [
+          "模型量化 (Model Quantization)",
+          "推論加速 (Inference Acceleration)",
+          "邊緣裝置 (Edge Device)",
+          "低延遲 (Low Latency)",
+          "FP32與INT8 (FP32 to INT8)"
+        ],
+        "extended_tech": [
+          {
+            "name": "模型剪枝 (Model Pruning)",
+            "desc": "移除神經網路中權重接近於零的冗餘神經元或連線，進一步縮小模型體積並加速運算，通常與模型量化搭配使用。"
+          },
+          {
+            "name": "知識蒸餾 (Knowledge Distillation)",
+            "desc": "將龐大且複雜的「教師模型」學到的知識，轉移教導給輕量級的「學生模型」，使其在邊緣裝置上能達到接近大型模型的效能。"
+          },
+          {
+            "name": "TensorRT / ONNX Runtime",
+            "desc": "專為深度學習推論優化的引擎與執行環境，提供層次融合、動態記憶體配置及底層硬體加速，是模型上線部署的核心套件。"
+          }
+        ],
+        "terminology": [
+          "Model Quantization",
+          "Edge Inference",
+          "INT8",
+          "FP32",
+          "Model Compression"
         ]
       },
       {
@@ -2548,6 +6591,35 @@ const EXAM_DATA = {
         "examples": [
           "在大型語言模型（如 ChatGPT）的線上服務中，全球有上百萬用戶同時輸入 prompt。伺服器不會針對每個使用者的請求單獨啟動一次 GPU 推論，而是透過 Dynamic Batching 排程器，將數十個長度相近的 prompt 打包在一起，一次進行注意力機制的矩陣乘法，大幅降低了每個 token 的生成成本。",
           "在智慧城市的交通監控中心，數千支監視器同時將畫面串流回總部。影像辨識系統的推論伺服器會將不同攝影機傳來的單幅影像暫存於緩衝區，每收集到 64 張影像便組合出一個 Batch 交給 GPU 進行車牌辨識，這種排程策略使一台 GPU 的處理量達到了單張推論的數十倍。"
+        ],
+        "comparison": "動態批次推論（Dynamic Batching）與提升併發執行緒數在解決 GPU 瓶頸時的原理不同。GPU 的強項在於海量核心的平行運算。如果請求都是單筆（Batch Size=1）送入，GPU 核心會大量閒置，且頻繁的 Context Switch 會造成極大延遲。動態批次處理在伺服器端將幾毫秒內的短暫請求累積成一個大 Batch 一次送入 GPU，完美契合了 GPU 高吞吐量的硬體特性。在大型語言模型（LLM）API 服務或高流量的即時影像辨識雲端平台中，這是最大化硬體利用率、平滑尖峰延遲的關鍵排程技術。",
+        "keywords": [
+          "動態批次推論 (Dynamic Batching)",
+          "GPU排程 (GPU Scheduling)",
+          "硬體效能利用率 (Hardware Utilization)",
+          "小批次執行 (Small Batch Execution)",
+          "推論延遲 (Inference Latency)"
+        ],
+        "extended_tech": [
+          {
+            "name": "TensorRT (NVIDIA)",
+            "desc": "提供深度學習推論最佳化，透過層融合與核心自動調校，能進一步配合動態批次處理發揮 GPU 運算極限。"
+          },
+          {
+            "name": "Triton Inference Server",
+            "desc": "NVIDIA 開源的模型服務伺服器，內建強大的動態批次排程與多模型並發管理功能，是業界部署大規模 AI 服務的標準架構。"
+          },
+          {
+            "name": "Continuous Batching (持續批次處理)",
+            "desc": "針對 LLM 生成文本長度不一的問題所設計的進階排程技術，能在單一 token 生成完成後即刻替換請求，大幅提升 LLM 吞吐量。"
+          }
+        ],
+        "terminology": [
+          "Dynamic Batching",
+          "GPU Kernel",
+          "Throughput",
+          "Context Switch",
+          "Inference Server"
         ]
       },
       {
@@ -2566,6 +6638,35 @@ const EXAM_DATA = {
         "examples": [
           "在銀行的信用卡信用評分系統中，雖然整體的違約預測準確率高達 90%，但風險管理團隊實施了分群監控，分別追蹤「社會新鮮人」與「資深客戶」的指標。結果發現新鮮人族群的預測準確率近期暴跌至 60%，及時促使團隊針對該特定族群重訓模型，避免了潛在的大量呆帳。",
           "在醫療 AI 的皮膚癌辨識應用中，模型整體的 AUC 表現極佳。但透過依照「患者膚色」建立分群監控儀表板，研究人員發現模型對於深色肌膚患者的偽陰性率異常偏高。這項發現促使開發團隊重新收集深色肌膚的訓練樣本，消除了潛在的演算法偏見。"
+        ],
+        "comparison": "分群監控（Subpopulation Monitoring）與全局監控（Global Monitoring）在 MLOps 中的價值截然不同。全局指標（如整體 RMSE）很容易被多數常規樣本的穩定表現所掩蓋，導致「平均值的迷思」。在金融理賠、信用評分或醫療診斷等業務中，高額案件或少數族裔的邊緣群體（Edge Cases）往往具有不成比例的高風險與高商業影響力。分群監控能針對這些關鍵特徵切片建立獨立警報，確保模型對各個族群的預測都具備公平性與穩定性，防止少數群體的災難被大數據所隱藏。",
+        "keywords": [
+          "模型分群監控 (Subpopulation Monitoring)",
+          "邊緣群體 (Edge Cases)",
+          "均方根誤差 (RMSE)",
+          "資料切片 (Data Slicing)",
+          "模型退化 (Model Degradation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "資料漂移監測 (Data Drift Detection)",
+            "desc": "追蹤線上生產環境的輸入特徵分佈是否偏離了訓練時的分佈，幫助及早發現因外部環境變化導致的模型失效風險。"
+          },
+          {
+            "name": "演算法公平性評估 (Algorithmic Fairness Assessment)",
+            "desc": "確保 AI 模型在不同性別、種族或社經地位的分群中，其預測準確率與錯誤率保持一致，避免產生嚴重的社會倫理偏見。"
+          },
+          {
+            "name": "影子模式 (Shadow Mode Deployment)",
+            "desc": "新版模型在後端默默接收真實流量並進行預測，但不影響最終用戶，維運團隊藉此在無風險環境下對比新舊模型的分群表現差異。"
+          }
+        ],
+        "terminology": [
+          "Subpopulation Monitoring",
+          "Segmented Monitoring",
+          "Data Slicing",
+          "Global Metric",
+          "Edge Cases"
         ]
       },
       {
@@ -2584,6 +6685,35 @@ const EXAM_DATA = {
         "examples": [
           "知名影音串流平台在更換首頁的電影推薦演算法時，會先將全球 2% 的用戶切換為新版演算法。經過一週的數據收集，確認這 2% 用戶的觀看總時數與點擊率確實有所提升，且伺服器負載穩定，才會決定將新版演算法推送給所有訂閱者。",
           "叫車服務 App 在推出新的動態定價 AI 模型時，為了避免新定價策略引發司機罷工或乘客流失，工程師會先在一個中型城市進行金絲雀發布。在確認該城市的供需平衡與營收指標都達到預期後，才逐步將新模型推廣至全國各個大都會區。"
+        ],
+        "comparison": "金絲雀發布（Canary Release）與影子模式（Shadow Mode）或離線回測的最大差異，在於它能取得「真實業務回饋」。影子模式雖然安全，但使用者的決策（點擊、購買）依然是基於舊模型，無法量化新模型的真實轉換率。金絲雀發布透過將極少比例（如 1-5%）的真實流量導向新模型，讓團隊在嚴格控制風險的範圍內，準確測量 CTR 或 CVR 等商業指標。這是電商推薦、動態定價等高度依賴使用者即時互動的 AI 產品，從研發邁向全面上線前不可或缺的驗證策略。",
+        "keywords": [
+          "金絲雀發布 (Canary Release)",
+          "漸進式部署 (Phased Rollout)",
+          "線上驗證 (Online Validation)",
+          "業務指標量化 (Business Metrics Quantification)",
+          "風險控制 (Risk Control)"
+        ],
+        "extended_tech": [
+          {
+            "name": "A/B 測試 (A/B Testing)",
+            "desc": "將使用者隨機分為實驗組與對照組，透過嚴格的統計顯著性檢定來證明新版演算法或 UI 是否能帶來真實的業務指標增長。"
+          },
+          {
+            "name": "影子模式 (Shadow Mode)",
+            "desc": "新舊模型同時運行，但不將新模型的結果展現給使用者，用於在零風險的情況下檢驗新模型的推論效能、穩定度與預測差異。"
+          },
+          {
+            "name": "藍綠部署 (Blue-Green Deployment)",
+            "desc": "準備兩套完全相同的生產環境，透過路由器瞬間切換流量，達到零停機時間發布，並能在發現問題時實現秒級回滾 (Rollback)。"
+          }
+        ],
+        "terminology": [
+          "Canary Release",
+          "A/B Testing",
+          "Shadow Mode",
+          "Click-Through Rate (CTR)",
+          "Conversion Rate (CVR)"
         ]
       },
       {
@@ -2602,6 +6732,35 @@ const EXAM_DATA = {
         "examples": [
           "在一款手機修圖 App 中，使用者選擇了一張高畫質風景照並點擊「AI 去除路人」功能。App 的前端會發送一個帶有 `multipart/form-data` 標頭的 HTTP POST 請求，將原始影像封包送至雲端的影像分割模型伺服器，伺服器處理完畢後再將處理好的圖片位元組流傳回手機。",
           "在醫療機構的自動化病歷系統中，掃描機掃出了一份高解析度的病理切片影像。系統透過 HTTP POST API 將這個高達數十 MB 的二進位檔案直接傳送到後端的癌症篩檢 AI 模型，並在 Payload 中夾帶了病患的匿名 ID 作為中繼資料，確保推論過程高效且符合標準 Web 協定。"
+        ],
+        "comparison": "在 RESTful API 設計中，使用 HTTP POST 傳輸二進位大檔案（如 multipart/form-data）與使用 GET 或 Base64 編碼有著天壤之別。GET 請求不僅不符合語意，其 URL 長度限制更會導致大檔案傳輸直接失敗。若將影像轉為 Base64 放入 JSON，不僅會膨脹 33% 的資料體積，更會大幅增加伺服器在序列化/反序列化時的 CPU 與記憶體負擔。針對電腦視覺、醫療影像等需要傳輸大型二進位資料的 AI 推論服務，直接在 Request Body 傳輸二進位流是確保高效與系統穩定的最佳實踐。",
+        "keywords": [
+          "AI推論API設計 (AI Inference API Design)",
+          "HTTP POST",
+          "二進位傳輸 (Binary Data Transfer)",
+          "RESTful API",
+          "大檔案處理 (Large File Handling)"
+        ],
+        "extended_tech": [
+          {
+            "name": "gRPC",
+            "desc": "基於 HTTP/2 的高效能遠端程序呼叫框架，使用 Protobuf 進行二進位序列化，傳輸速度與資源消耗遠優於傳統 RESTful JSON API。"
+          },
+          {
+            "name": "非同步推論 API (Asynchronous Inference API)",
+            "desc": "對於極度耗時的模型（如生成式 AI 或巨型影像分析），用戶發送請求後立即獲得 Job ID，後續再透過輪詢或 Webhook 獲取結果，避免連線逾時。"
+          },
+          {
+            "name": "API 閘道器 (API Gateway)",
+            "desc": "做為微服務的單一入口，提供流量控制 (Rate Limiting)、身分驗證與負載均衡等功能，是保護 AI 推論後端叢集的重要安全防線。"
+          }
+        ],
+        "terminology": [
+          "RESTful API",
+          "HTTP POST",
+          "multipart/form-data",
+          "application/octet-stream",
+          "Serialization"
         ]
       },
       {
@@ -2620,6 +6779,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧客服機器人系統中，主要依賴外部強大的 LLM API 來生成對話。若該外部 API 突然遭遇流量攻擊而延遲超過 10 秒，斷路器會立即啟動並攔截請求，系統將自動降級，改為輸出預設文字：「目前服務繁忙，請稍後再試，或留下您的聯絡方式」，避免整個客服網站當機。",
           "在即時新聞推薦聚合平台中，系統需要同時呼叫多個不同的 AI 標籤生成微服務。若其中一個「情緒分析 API」突然無回應，斷路器機制會阻斷對其的呼叫，並使主系統暫時跳過情緒分析環節，先將僅包含「主題標籤」的新聞推送給用戶，確保主要的新聞流功能不會中斷。"
+        ],
+        "comparison": "斷路器模式（Circuit Breaker）與單純增加執行緒池或取消逾時限制在系統防禦思維上完全不同。當外部 AI 服務發生嚴重延遲時，若只是增加執行緒，系統最終仍會被掛起的請求耗盡資源，導致主服務崩潰（雪崩效應）。斷路器模式則採用「快速失敗（Fail-fast）」與「降級（Fallback）」策略，一旦偵測到錯誤率超標便主動阻斷請求，保護主系統存活。在依賴大量第三方 API（如 LLM、語音辨識）的現代微服務架構中，這是確保系統韌性與維持基本用戶體驗的必備設計。",
+        "keywords": [
+          "斷路器模式 (Circuit Breaker)",
+          "連鎖故障 (Cascading Failure)",
+          "微服務架構 (Microservices Architecture)",
+          "服務降級 (Service Fallback)",
+          "系統韌性 (System Resilience)"
+        ],
+        "extended_tech": [
+          {
+            "name": "重試機制與指數退避 (Retry with Exponential Backoff)",
+            "desc": "當請求因網路瞬斷失敗時，自動延遲一段時間後重試，且每次重試間隔呈指數增長，避免瞬間龐大流量對剛恢復的服務造成二次打擊。"
+          },
+          {
+            "name": "服務網格 (Service Mesh, 如 Istio)",
+            "desc": "在基礎設施層統一管理微服務間的通訊，無須修改程式碼即可全面導入斷路器、流量加密、金絲雀發布與分佈式追蹤等進階功能。"
+          },
+          {
+            "name": "限流模式 (Rate Limiting)",
+            "desc": "在 API 入口處限制特定用戶或系統每秒的請求次數，防止惡意攻擊或突發性超大流量擊穿後端 AI 推論伺服器。"
+          }
+        ],
+        "terminology": [
+          "Circuit Breaker",
+          "Cascading Failure",
+          "Fallback",
+          "Microservices",
+          "Fail-fast"
         ]
       },
       {
@@ -2638,6 +6826,35 @@ const EXAM_DATA = {
         "examples": [
           "智慧型手機內建的輸入法鍵盤會使用聯邦學習來優化下一個字的預測能力。使用者的私人聊天紀錄永遠只留在自己的手機上進行在地訓練，手機只會在插著電且連上 Wi-Fi 時，將更新後的模型參數上傳給 Apple 或 Google 的伺服器，結合全球使用者的智慧來強化預測準確率，同時保障隱私。",
           "跨國銀行聯盟希望建立一套強大的跨國洗錢防制 AI 系統，但各國金融法規嚴禁將客戶交易資料匯出境外。透過部署聯邦學習架構，各家銀行在自己的資料中心內訓練辨識模型，並透過安全的加密網路分享模型參數，成功打造出能識別跨國犯罪模式的聯合防禦網。"
+        ],
+        "comparison": "聯邦學習（Federated Learning）與傳統集中式雲端訓練或簡單資料加密有著革命性的區別。資料加密上雲雖然傳輸安全，但模型在雲端訓練時仍須解密，無法滿足如醫療 HIPAA 或金融法規中「原始資料絕對不得離開地端」的嚴格限制。聯邦學習實踐了「資料不動、模型動」的核心理念，各節點僅在本地訓練，並只上傳加密的「參數梯度更新」至雲端聚合。這不僅完美解決了法規合規與隱私保護問題，更打破了跨國醫院或銀行間的資料孤島，實現共同訓練強大 AI 的目標。",
+        "keywords": [
+          "聯邦學習 (Federated Learning)",
+          "資料隱私 (Data Privacy)",
+          "合規性 (Compliance)",
+          "模型聚合 (Model Aggregation)",
+          "混合雲架構 (Hybrid Cloud Architecture)"
+        ],
+        "extended_tech": [
+          {
+            "name": "同態加密 (Homomorphic Encryption)",
+            "desc": "允許直接對密文進行數學運算，運算結果解密後與對明文操作的結果相同。雖然計算成本極高，但能提供終極的隱私保護推論服務。"
+          },
+          {
+            "name": "差分隱私 (Differential Privacy)",
+            "desc": "在資料集或模型梯度中加入受控的數學雜訊，確保任何單一個體的資料改變都不會顯著影響最終結果，防止駭客逆向還原訓練資料。"
+          },
+          {
+            "name": "機密運算 (Confidential Computing)",
+            "desc": "利用硬體層級的受信任執行環境 (TEE，如 Intel SGX) 將運算過程隔離在加密記憶體區塊中，即使是雲端服務商也無法窺探處理中的資料。"
+          }
+        ],
+        "terminology": [
+          "Federated Learning",
+          "HIPAA",
+          "Data Silos",
+          "Model Aggregation",
+          "Privacy-Preserving Machine Learning"
         ]
       },
       {
@@ -2656,6 +6873,35 @@ const EXAM_DATA = {
         "examples": [
           "社交媒體平台發布全新的基於圖神經網路（GNN）的好友推薦演算法。工程師將流量放行至 20% 時，發現伺服器 CPU 使用率飆升至 95%。他們隨即暫停發布計畫，利用性能分析工具（Profiler）發現瓶頸在於動態圖特徵的即時運算，於是導入了 Redis 快取機制，解決延遲問題後才將流量推進至 50%。",
           "雲端遊戲服務商上線了利用 AI 進行即時畫質升頻（Upscaling）的新功能。在漸進式發布的初期，僅讓少數玩家測試，發現雖然畫質變好，但影像封包傳輸延遲高達 100 毫秒。團隊凍結了發布範圍，針對網路傳輸協議與影片編解碼器進行底層優化，將延遲壓回 20 毫秒後，才開放給所有訂閱會員使用。"
+        ],
+        "comparison": "在漸進式部署中，遇到效能瓶頸（如延遲上升）時的處理策略，「暫停部署並分析」遠優於「直接還原」或「強推上線」。新模型在帶來業務指標（如轉換率）提升的同時，往往伴隨著更高的運算複雜度。若直接還原，等於抹殺了業務增長的機會；若盲目強推，則會引發全面的系統災難。暫停流量擴張並啟動效能調優（Performance Tuning），如優化資料庫查詢、增加快取或調整資源配置，是兼顧業務創新與系統穩定性的最佳 SRE 實踐。",
+        "keywords": [
+          "漸進式部署 (Phased Rollout)",
+          "效能調優 (Performance Tuning)",
+          "系統延遲 (System Latency)",
+          "監控與應對策略 (Monitoring and Response)",
+          "轉換率 (Conversion Rate)"
+        ],
+        "extended_tech": [
+          {
+            "name": "自動擴展 (Auto-scaling)",
+            "desc": "結合 Kubernetes 等容器編排工具，根據系統即時的 CPU 使用率或請求佇列長度，自動增減模型推論微服務的副本數量以應對突發流量。"
+          },
+          {
+            "name": "分散式追蹤 (Distributed Tracing, 如 Jaeger)",
+            "desc": "在複雜的微服務架構中，追蹤單一請求穿梭於各個服務間的完整路徑與各節點耗時，是快速定位系統延遲瓶頸的關鍵利器。"
+          },
+          {
+            "name": "特徵快取 (Feature Caching)",
+            "desc": "將頻繁查詢且不常變動的使用者特徵存放在 Redis 等記憶體資料庫中，避免每次推論都向底層資料庫發起慢查詢，大幅降低端到端延遲。"
+          }
+        ],
+        "terminology": [
+          "Phased Rollout",
+          "Latency",
+          "Root Cause Analysis (RCA)",
+          "Performance Tuning",
+          "Rollback"
         ]
       },
       {
@@ -2674,6 +6920,35 @@ const EXAM_DATA = {
         "examples": [
           "在網路安全領域的垃圾郵件攔截系統中，駭客不斷發明新的釣魚手法和規避關鍵字。原本模型認為包含「免費獲獎」和「點擊連結」的信件 99% 是垃圾郵件，但隨後商家行銷活動也大量採用類似的文案結構，導致原本的分類邊界失效，發生了嚴重的概念漂移，必須不斷更新模型的認知。",
           "在房地產估價模型中，模型過去學習到「靠近市區的微型公寓」因為通勤便利性具有極高的市場價值。然而，在經歷全球遠距工作（WFH）普及的趨勢後，人們更傾向在郊區購買具有書房的寬敞房屋，導致市區小公寓的實際成交價與模型預測出現巨大落差，這正是目標變數背後的邏輯發生了概念漂移。"
+        ],
+        "comparison": "概念漂移（Concept Drift）與資料漂移（Data Drift）是導致線上模型退化的兩大截然不同的元兇。資料漂移是「輸入的特徵長相變了」（例如：使用者突然都用某款新手機登入），但判斷邏輯不變；而概念漂移是更根本的「遊戲規則變了」，即特徵與標籤之間的映射關係發生變化。例如疫情改變了人們的生活模式，使得「深夜網購」不再是盜刷專屬特徵，而是成為常態。應對概念漂移，單靠調整閾值無濟於事，必須利用標註了最新真實世界結果的資料，對模型進行重新訓練。",
+        "keywords": [
+          "概念漂移 (Concept Drift)",
+          "資料漂移 (Data Drift)",
+          "模型退化 (Model Degradation)",
+          "特徵與標籤關聯 (Feature-Label Relationship)",
+          "使用者行為改變 (User Behavior Change)"
+        ],
+        "extended_tech": [
+          {
+            "name": "持續訓練管線 (Continuous Training Pipeline, CT)",
+            "desc": "MLOps 的核心自動化流程，當監控系統偵測到漂移警報或模型效能低於閾值時，自動觸發資料抓取、特徵工程與模型重訓的完整流程。"
+          },
+          {
+            "name": "主動學習 (Active Learning)",
+            "desc": "面對概念漂移時，為了快速應對新出現的模式，系統會自動挑選模型最不確定或最容易出錯的新樣本，優先交由人工審查與標註。"
+          },
+          {
+            "name": "族群穩定性指數 (PSI, Population Stability Index)",
+            "desc": "一種統計指標，用於量化訓練資料集與線上推論資料集在特定特徵上的分佈差異，是偵測資料漂移最常用的預警工具。"
+          }
+        ],
+        "terminology": [
+          "Concept Drift",
+          "Data Drift",
+          "Mapping Function",
+          "Retraining",
+          "Model Decay"
         ]
       },
       {
@@ -2692,6 +6967,35 @@ const EXAM_DATA = {
         "examples": [
           "資料科學團隊在開發新的自然語言處理模型時，會在雲端的實驗追蹤平台上，並排比較 50 次不同訓練嘗試的紀錄。他們仔細檢查 Dropout 比例、Batch Size 大小對最終驗證集準確率的影響，這完全是在離線環境下進行的研發工作，與線上用戶無關。",
           "銀行信用卡防詐系統上線後，SRE 團隊盯著控制中心的即時線上監控螢幕。如果螢幕上顯示 API 推論時間從平常的 50 毫秒暴增到 300 毫秒，或是輸入特徵中「跨國交易欄位」的缺失值比例突然飆升，監控系統會立刻發送 PagerDuty 警報到工程師的手機，要求即刻處理生產環境異常。"
+        ],
+        "comparison": "線上持續監控（Continuous Monitoring）與離線實驗追蹤（Experiment Tracking）管理著機器學習生命週期中完全不同的數據。學習率、超參數與 Epoch 損失曲線是資料科學家在離線開發環境尋找最佳模型時的實驗紀錄。一旦模型封裝上線，這些內部訓練參數便已固定，不具備任何線上維運價值。相反地，線上推論延遲（Latency）、API 吞吐量、資料特徵漂移指數（PSI）以及實際業務轉換率，才是 SRE 團隊與 MLOps 工程師在生產環境中確保系統穩定與效能無虞的關鍵監控標的。",
+        "keywords": [
+          "生命週期監控 (Lifecycle Monitoring)",
+          "線上持續監控 (Continuous Monitoring)",
+          "實驗追蹤 (Experiment Tracking)",
+          "推論延遲 (Inference Latency)",
+          "資料漂移 (Data Drift)"
+        ],
+        "extended_tech": [
+          {
+            "name": "模型實驗追蹤平台 (如 MLflow, Weights & Biases)",
+            "desc": "提供版本控制、超參數紀錄與模型打包功能，協助資料科學家在複雜的模型開發階段有條理地比較、重現並管理每一次的實驗結果。"
+          },
+          {
+            "name": "Prometheus 與 Grafana",
+            "desc": "業界標準的開源監控與視覺化組合，透過擷取 API 的即時日誌與系統 metrics，建立強大的線上儀表板，提供推論延遲與流量的即時警報。"
+          },
+          {
+            "name": "資料品質監控 (Data Quality Monitoring)",
+            "desc": "在資料管線 (Data Pipeline) 進入模型推論前，自動檢核缺失值比例、異常型別或格式錯誤，防止「Garbage In, Garbage Out」引發的線上災難。"
+          }
+        ],
+        "terminology": [
+          "Continuous Monitoring",
+          "Experiment Tracking",
+          "Population Stability Index (PSI)",
+          "Latency",
+          "Observability"
         ]
       },
       {
@@ -2710,6 +7014,35 @@ const EXAM_DATA = {
         "examples": [
           "在先進駕駛輔助系統（ADAS）中，車輛周遭的環境感知同時依賴攝影機鏡頭與毫米波雷達。採用晚期融合策略，攝影機 AI 與雷達 AI 各自獨立判斷前方是否有障礙物。在濃霧天氣中，攝影機 AI 可能無法得出結論，但雷達 AI 依然能準確偵測並發出煞車訊號，兩個系統的誤差在最後決策層被完美互補。",
           "在社群媒體的假新聞自動查核系統中，模型需要分析貼文的文字內容與附帶的圖片。晚期融合架構讓自然語言模型專注於辨識文字的邏輯謬誤，影像辨識模型專注於偵測圖片是否經過深偽（Deepfake）竄改。最後的決策模組會綜合兩者的危險分數，即使文字寫得極具說服力，只要圖片被判定為偽造，系統仍會將該貼文標記為假訊息。"
+        ],
+        "comparison": "晚期融合（Late Fusion）與早期融合（Early Fusion）在多模態架構上的選擇，取決於業務對穩定性與特徵關聯性的需求。早期融合在輸入端整合資料，能捕捉跨模態的細微互動，但若其中一個感測器（如麥克風雜音）品質惡化，會直接污染整個神經網路的特徵提取，導致全面崩潰。晚期融合讓各模態獨立運算並給出各自的信心分數，最後再進行整合。這種架構具有極強的容錯性與強健性，即使醫療問診紀錄品質不佳，影像模型依然能獨立發揮作用，確保系統整體的穩定輸出。",
+        "keywords": [
+          "晚期融合 (Late Fusion)",
+          "早期融合 (Early Fusion)",
+          "多模態學習 (Multimodal Learning)",
+          "系統強健性 (System Robustness)",
+          "獨立模型預測 (Independent Model Prediction)"
+        ],
+        "extended_tech": [
+          {
+            "name": "集成學習 (Ensemble Learning)",
+            "desc": "晚期融合的核心精神來源，透過結合多個弱分類器的預測結果（如隨機森林或 XGBoost），來建立一個泛化能力更強、誤差更低的強大分類系統。"
+          },
+          {
+            "name": "Cross-modal Attention (跨模態注意力機制)",
+            "desc": "融合了早期與晚期優點的進階神經網路架構，允許模型在深層特徵運算時，動態地根據影像的重要特徵來聚焦文本中相關的語意描述。"
+          },
+          {
+            "name": "Meta-classifier (元分類器)",
+            "desc": "在晚期融合架構中，除了簡單的投票或平均外，經常會訓練一個輕量級的分類器，專門用來學習如何根據各個獨立模型的預測分數給出最佳的最終決策。"
+          }
+        ],
+        "terminology": [
+          "Late Fusion",
+          "Early Fusion",
+          "Decision-level Fusion",
+          "Robustness",
+          "Modality"
         ]
       }
     ]
@@ -2733,6 +7066,35 @@ const EXAM_DATA = {
         "examples": [
           "在供應鏈管理中，企業可利用蒙地卡羅方法來模擬各種可能的需求波動和供應延遲情境，藉此評估不同庫存策略的風險，並決定最佳的安全庫存量以避免缺貨並降低營運成本。",
           "在大型基礎建設的專案管理領域，專案經理可透過此方法模擬各項子任務所需時間的不確定性，進而估算整個專案在特定日期前完工的機率，協助制定更穩健的進度排程與資源分配計畫。"
+        ],
+        "comparison": "蒙地卡羅方法透過隨機抽樣估算無法直接求解的分布，常用於金融風險與複雜系統模擬。相較之下，馬可夫鏈用於描述具狀態轉移的過程，常應用於語音辨識或天氣預測；梯度下降則是最佳化演算法，應用於深度學習模型訓練；貝氏推論用於根據新證據更新機率，常見於醫療診斷與垃圾郵件過濾。這些方法各自解決不同領域的不確定性與優化問題。",
+        "keywords": [
+          "蒙地卡羅方法 (Monte Carlo Method)",
+          "隨機模擬 (Stochastic Simulation)",
+          "風險值 (Value at Risk)",
+          "機率分布 (Probability Distribution)",
+          "數值近似 (Numerical Approximation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "拉丁超立方抽樣 (Latin Hypercube Sampling)",
+            "desc": "一種進階的分層隨機抽樣技術，能確保樣本在空間中更均勻分佈，有效減少蒙地卡羅模擬所需的計算次數，廣泛應用於高維度工程設計優化。"
+          },
+          {
+            "name": "馬可夫鏈蒙地卡羅法 (MCMC)",
+            "desc": "結合馬可夫鏈與蒙地卡羅法，用於從複雜的高維度機率分佈中進行抽樣，是現代貝氏統計分析與推論的核心演算法，常用於流行病學預測。"
+          },
+          {
+            "name": "粒子濾波器 (Particle Filter)",
+            "desc": "基於蒙地卡羅方法的遞迴濾波技術，專門處理非線性動態系統的狀態估計問題，在機器人定位、自駕車追蹤與雷達訊號處理中扮演關鍵角色。"
+          }
+        ],
+        "terminology": [
+          "解析解",
+          "大數法則",
+          "衍生性金融商品",
+          "期望值",
+          "隨機變數"
         ]
       },
       {
@@ -2751,6 +7113,35 @@ const EXAM_DATA = {
         "examples": [
           "在電力負載預測系統中，預測嚴重偏差可能導致電網崩潰或資源浪費。使用 MSE 作為損失函數，可迫使模型盡可能減少極端預測錯誤，確保在用電尖峰期能有最準確的備載容量規劃。",
           "在智慧工廠的機台壽命預估中，若將即將損壞的機台誤判為正常，會導致生產線無預警停機。使用 MSE 可針對這類嚴重高估壽命的大誤差進行嚴厲懲罰，提高維護預測的安全性。"
+        ],
+        "comparison": "均方誤差(MSE)對極端誤差施加平方懲罰，適用於必須嚴格控制大誤差的場景如電網負載預測。平均絕對誤差(MAE)則對所有誤差給予線性懲罰，常應用於房價或銷售量等需忽略極端離群值的穩健預測。Huber損失結合兩者優點，常用於對抗雜訊的穩健迴歸分析。交叉熵則專注於分類任務的機率分布，常見於圖像或文本分類。",
+        "keywords": [
+          "均方誤差 (MSE)",
+          "平均絕對誤差 (MAE)",
+          "Huber 損失 (Huber Loss)",
+          "損失函數 (Loss Function)",
+          "迴歸模型 (Regression Model)"
+        ],
+        "extended_tech": [
+          {
+            "name": "對數均方誤差 (RMSLE)",
+            "desc": "在計算MSE前先對預測值與真實值取對數，能懲罰相對誤差而非絕對誤差，常應用於預測值範圍跨度極大（如商品銷量預測）的業務場景。"
+          },
+          {
+            "name": "分位數迴歸損失 (Quantile Loss)",
+            "desc": "能對高估與低估給予不對稱的懲罰權重，適用於需要預測信賴區間的場景，例如預估電商庫存需求時寧可高估也不願低估造成缺貨。"
+          },
+          {
+            "name": "加權均方誤差 (Weighted MSE)",
+            "desc": "對不同樣本賦予不同權重再計算MSE，常應用於樣本重要性不均的情境，如金融信用評分中，對高資產客戶的預測誤差給予更高懲罰。"
+          }
+        ],
+        "terminology": [
+          "梯度更新",
+          "線性懲罰",
+          "離群值",
+          "連續數值",
+          "非線性懲罰"
         ]
       },
       {
@@ -2769,6 +7160,35 @@ const EXAM_DATA = {
         "examples": [
           "在即時電腦視覺應用中，相機捕捉到的高畫質影像會被轉換為包含像素值的巨大矩陣，系統透過專用的硬體加速器進行矩陣乘法來快速套用濾波器，以實現邊緣偵測與物體追蹤。",
           "在推薦系統中，使用者的歷史行為與商品特徵可被表示為龐大的稀疏矩陣。系統利用隱含語意模型（如矩陣分解）來計算使用者對未購買商品的潛在興趣分數，進而實現精準推薦。"
+        ],
+        "comparison": "矩陣乘法是深度學習的核心基礎運算，能有效利用GPU平行化處理，廣泛應用於神經網路的特徵投影與線性轉換。與純量運算或迴圈運算相比，矩陣化運算在處理海量特徵（如自然語言的詞嵌入或高解析度影像像素）時能展現壓倒性的計算速度優勢。在注意力機制中，矩陣運算負責將Query、Key、Value快速映射至不同維度空間以計算相似度。",
+        "keywords": [
+          "矩陣乘法 (Matrix Multiplication)",
+          "維度相容 (Dimension Compatibility)",
+          "張量運算 (Tensor Operation)",
+          "注意力層 (Attention Layer)",
+          "特徵投影 (Feature Projection)"
+        ],
+        "extended_tech": [
+          {
+            "name": "張量核心運算加速 (Tensor Core Acceleration)",
+            "desc": "NVIDIA GPU 專屬的硬體單元，專為混合精度矩陣乘加運算（MMA）設計，能以極高吞吐量加速深度學習模型的訓練與推論過程。"
+          },
+          {
+            "name": "稀疏矩陣運算 (Sparse Matrix Operations)",
+            "desc": "專門針對包含大量零元素的矩陣進行優化的運算技術，能大幅節省記憶體與計算資源，常應用於大型圖神經網路或推薦系統中。"
+          },
+          {
+            "name": "廣播機制 (Broadcasting)",
+            "desc": "一種在進行張量運算時自動擴展較小維度矩陣以匹配較大維度矩陣形狀的機制，避免了不必要的數據複製，廣泛應用於深度學習框架的底層實作。"
+          }
+        ],
+        "terminology": [
+          "張量",
+          "攤平",
+          "投影權重",
+          "平行計算",
+          "隱含語意"
         ]
       },
       {
@@ -2787,6 +7207,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧農業的病蟲害影像辨識中，農作物葉片可能從各種隨機角度被拍攝。透過旋轉與縮放等資料擴增技術，可讓模型在不同拍攝距離與視角下依然能穩定識別出病徵。",
           "在語音助理系統開發時，工程師會將原始乾淨的語音資料人為地加入不同種類的背景噪音（如街道聲、風扇聲），透過這種音訊擴增方式使語音辨識模型能在嘈雜環境中保持高準確率。"
+        ],
+        "comparison": "資料擴增透過空間轉換（如翻轉、縮放）增加樣本多樣性，常用於自然圖像的目標檢測與分類，能增強旋轉或縮放不變性。然而，對於具有方向性語意的領域（如光學字元辨識 OCR、醫學影像中的特定器官定位），不當的翻轉會破壞標籤的正確性。這與生成對抗網路(GAN)直接生成全新樣本的邏輯不同，擴增是基於既有樣本的物理轉換，必須嚴格遵守領域的語意限制。",
+        "keywords": [
+          "資料擴增 (Data Augmentation)",
+          "語意錯誤 (Semantic Inconsistency)",
+          "模型泛化 (Model Generalization)",
+          "影像辨識 (Image Recognition)",
+          "不變性特徵 (Invariant Features)"
+        ],
+        "extended_tech": [
+          {
+            "name": "CutMix 擴增技術",
+            "desc": "將兩張不同圖片的區塊進行隨機切割與拼接，並根據拼接比例混合真實標籤，能強迫模型學習物體的局部特徵而非過度依賴全局背景，常應用於提升影像分類模型的強健性。"
+          },
+          {
+            "name": "自動擴增搜尋 (AutoAugment)",
+            "desc": "利用強化學習演算法自動搜尋針對特定資料集最佳的資料擴增策略組合，避免人工試錯，在大型影像資料集（如ImageNet）訓練中能獲得極致的效能提升。"
+          },
+          {
+            "name": "幾何變換與仿射轉換 (Affine Transformation)",
+            "desc": "包含平移、旋轉、錯切等保持平行線關係的數學轉換矩陣操作，是實現空間級別資料擴增的底層核心技術，廣泛應用於醫學影像對齊與前處理。"
+          }
+        ],
+        "terminology": [
+          "正則化",
+          "過擬合",
+          "水平翻轉",
+          "泛化能力",
+          "特徵表示"
         ]
       },
       {
@@ -2805,6 +7254,35 @@ const EXAM_DATA = {
         "examples": [
           "在企業薪資結構分析中，隨著員工年資或職級的增加，薪資的差異範圍往往會變得越來越大（高階主管薪水落差極大）。這種隨基準值放大的誤差範圍，必須在模型中修正以確保公平性評估準確。",
           "在預測連鎖超市每日營收時，大型旗艦店的每日營收波動幅度遠大於小型便利店。若不處理這種異質變異性，模型對於大型店鋪的風險評估與補貨建議將會失去參考價值。"
+        ],
+        "comparison": "異質變異性破壞了迴歸模型誤差變異數恆定的基本假設，導致大數值區間的預測極不穩定，常見於金融數據或規模變數分析。相較之下，共線性(Collinearity)是指特徵間高度相關，會使係數估計失真，需透過VIF檢查，多見於包含大量相似特徵的經濟模型；自相關(Autocorrelation)則是殘差在時間上不獨立，常見於時間序列預測。這些問題皆需透過不同的診斷圖與統計檢定來確認。",
+        "keywords": [
+          "殘差圖 (Residual Plot)",
+          "異質變異性 (Heteroscedasticity)",
+          "多元線性迴歸 (Multiple Linear Regression)",
+          "變異數不一致 (Unequal Variance)",
+          "統計診斷 (Statistical Diagnostics)"
+        ],
+        "extended_tech": [
+          {
+            "name": "穩健標準誤 (Robust Standard Errors)",
+            "desc": "一種在存在異質變異性時，用來修正迴歸係數標準誤估計的統計技術，確保 t 檢定與 p 值的推論依然有效，是計量經濟學中極常使用的補救措施。"
+          },
+          {
+            "name": "加權最小平方法 (WLS)",
+            "desc": "針對不同變異數的樣本賦予不同的權重，變異數大的樣本給予較低權重，能有效修正異質變異性帶來的估計效率低下問題，常用於精算與保險定價模型。"
+          },
+          {
+            "name": "Box-Cox 轉換 (Box-Cox Transformation)",
+            "desc": "一種廣義的冪轉換方法，能自動尋找最佳的參數 lambda 來對依變數進行非線性轉換，藉此穩定變異數並使殘差更符合常態分佈，是特徵工程的重要工具。"
+          }
+        ],
+        "terminology": [
+          "殘差",
+          "共線性",
+          "自相關",
+          "同質變異性",
+          "顯著性檢定"
         ]
       },
       {
@@ -2823,6 +7301,35 @@ const EXAM_DATA = {
         "examples": [
           "在醫療基因體學研究中，研究人員會利用 t-SNE 將數萬種基因表現數據降至二維圖表，藉由視覺化觀察不同類型的癌症細胞樣本是否能在圖表上自動聚類成不同的群組。",
           "在信用卡的詐欺偵測系統開發中，工程師會先使用 PCA 將數百項交易特徵降維至較小的維度空間，以濾除雜訊並降低共線性，隨後再將這些主成分輸入至隨機森林模型中進行即時預測。"
+        ],
+        "comparison": "t-SNE為非線性降維技術，專注於保留高維空間中相鄰點的局部結構，是最強大的資料探索與視覺化工具，常用於NLP詞嵌入或基因數據視覺化。而PCA是線性降維技術，能有效捕捉資料全局變異數並生成確定的轉換矩陣，適合用於模型訓練前的特徵壓縮與去關聯。兩者經常互補使用，如先用PCA降維至50維，再用t-SNE降至2維以加速視覺化計算。",
+        "keywords": [
+          "降維 (Dimensionality Reduction)",
+          "t-SNE",
+          "主成分分析 (PCA)",
+          "資料視覺化 (Data Visualization)",
+          "特徵工程 (Feature Engineering)"
+        ],
+        "extended_tech": [
+          {
+            "name": "UMAP (Uniform Manifold Approximation and Projection)",
+            "desc": "一種新一代的非線性降維演算法，在保留局部結構的同時，比 t-SNE 更好地保留了全局拓樸結構，且計算速度大幅提升，現已成為資料視覺化的新標準。"
+          },
+          {
+            "name": "自編碼器 (Autoencoder)",
+            "desc": "基於神經網路的非監督式學習架構，透過編碼器將高維資料壓縮成低維潛在表示，再由解碼器還原，能學習高度非線性的特徵表示，常應用於異常檢測或圖像降噪。"
+          },
+          {
+            "name": "奇異值分解 (SVD)",
+            "desc": "一種強大的線性代數矩陣分解技術，是 PCA 演算法的底層運算核心，廣泛直接應用於推薦系統的協同過濾與自然語言處理的潛在語意分析 (LSA) 中。"
+          }
+        ],
+        "terminology": [
+          "流形結構",
+          "全局線性",
+          "局部鄰域",
+          "變異數",
+          "非參數映射"
         ]
       },
       {
@@ -2841,6 +7348,35 @@ const EXAM_DATA = {
         "examples": [
           "在基因微陣列分析中，研究人員面對數萬個基因表現量但只有數百個病患樣本時，會使用 L1 正則化模型自動挑選出少數真正與某種疾病相關的關鍵基因，以利後續的標靶藥物研發。",
           "在電子商務網站的個人化行銷模型中，面對使用者上千種細碎的瀏覽行為特徵，工程師採用 Lasso 迴歸來過濾掉多餘且無用的特徵，僅保留少數具決定性的行為指標，大幅降低推論延遲。"
+        ],
+        "comparison": "L1正則化(Lasso)透過產生稀疏權重來進行特徵選擇，在處理大量無用特徵的寬資料型態中極具優勢，但面對共線性時會隨機丟棄特徵導致解釋不穩定。相較之下，L2正則化(Ridge)會將相關特徵的權重平滑分攤，不具備特徵選擇能力但估計較穩定。彈性網(Elastic Net)則結合兩者，在進行特徵選擇的同時，能確保高度相關的特徵被一起保留或一起剔除，是金融風控等重視模型解釋性場景的最佳選擇。",
+        "keywords": [
+          "L1 正則化 (L1 Regularization)",
+          "Lasso 迴歸",
+          "特徵選擇 (Feature Selection)",
+          "共線性 (Collinearity)",
+          "模型解釋性 (Model Interpretability)"
+        ],
+        "extended_tech": [
+          {
+            "name": "彈性網迴歸 (Elastic Net)",
+            "desc": "同時結合了 L1 與 L2 正則化的懲罰項，既能發揮 L1 剔除無用特徵的稀疏性優勢，又能利用 L2 穩定共線性特徵的權重分配，在醫學與金融模型中廣泛使用。"
+          },
+          {
+            "name": "遞迴特徵消除 (RFE)",
+            "desc": "一種透過反覆訓練模型並逐步剔除最不重要特徵的封裝式特徵選擇演算法，能找出對模型預測最具貢獻的特徵子集，常搭配支持向量機或隨機森林使用。"
+          },
+          {
+            "name": "變異數膨脹因子 (VIF)",
+            "desc": "一種嚴格的統計檢定指標，用來量化多元線性迴歸模型中各個自變數之間共線性的嚴重程度，是特徵工程階段篩除高相關變數的標準工具。"
+          }
+        ],
+        "terminology": [
+          "稀疏解",
+          "冗餘變數",
+          "權重絕對值",
+          "特徵係數",
+          "過擬合"
         ]
       },
       {
@@ -2859,6 +7395,35 @@ const EXAM_DATA = {
         "examples": [
           "在訓練大型影像生成模型時，工程師會採用預熱（Warmup）策略，先以極小的學習率開始訓練以避免初期不穩定的梯度破壞模型結構，幾步之後才逐漸增加到預定的主要學習率。",
           "在工業自動化控制系統中，機器手臂的強化學習訓練過程若學習步長過大，會導致機械手臂在目標物周圍劇烈晃動無法準確夾取；適當降低學習率則能使其動作逐漸平滑並準確定位。"
+        ],
+        "comparison": "學習率過大會直接導致優化過程在損失谷底反覆震盪甚至發散，無法收斂；而學習率過小則會導致訓練極度緩慢或卡在局部最佳解。這與模型架構造成的梯度消失(深層網路信號微弱)或死亡ReLU(神經元永久失活)本質不同，後者是結構性缺陷，前者是優化策略失誤。至於過擬合則是模型過度記憶訓練資料雜訊，通常需透過正則化而非單純調整學習率來解決。",
+        "keywords": [
+          "學習率 (Learning Rate)",
+          "損失函數震盪 (Loss Oscillation)",
+          "超參數調校 (Hyperparameter Tuning)",
+          "梯度下降 (Gradient Descent)",
+          "收斂 (Convergence)"
+        ],
+        "extended_tech": [
+          {
+            "name": "餘弦退火學習率排程 (Cosine Annealing LR)",
+            "desc": "一種動態調整學習率的策略，讓學習率隨訓練週期呈現類似餘弦函數的波動下降，能幫助模型跳脫局部最佳解並在訓練後期精細收斂，廣泛用於現代 CNN 訓練。"
+          },
+          {
+            "name": "學習率預熱 (Learning Rate Warmup)",
+            "desc": "在模型訓練的最一開始幾個 Epoch，將學習率由零緩慢線性增加至預設值的技巧，能防止隨機初始化的權重在初期被過大的梯度破壞，是訓練 Transformer 的標準配置。"
+          },
+          {
+            "name": "自動學習率探索器 (LR Finder)",
+            "desc": "一種透過在短暫訓練過程中指數遞增學習率並記錄損失變化，來幫助工程師快速且視覺化地找出最佳初始學習率範圍的實用工具。"
+          }
+        ],
+        "terminology": [
+          "反向傳播",
+          "權重更新",
+          "局部最佳解",
+          "預熱策略",
+          "自適應優化器"
         ]
       },
       {
@@ -2877,6 +7442,35 @@ const EXAM_DATA = {
         "examples": [
           "在自然語言處理領域訓練 Transformer 模型時，由於詞彙表極大且許多字詞出現頻率極低（稀疏特徵），使用 Adam 優化器能自動為這些低頻詞分配較大的學習率，顯著加速模型訓練。",
           "在開發自駕車的行為預測模型時，感測器收集到的資料包含大量雜訊且場景複雜，Adam 優化器透過動量機制平滑了隨機抽樣帶來的梯度波動，確保模型在訓練過程中能穩定收斂至安全可靠的決策邊界。"
+        ],
+        "comparison": "Adam優化器結合了動量的慣性優勢與RMSProp的自適應學習率特性，是目前深度學習最通用的優化器，尤其適合處理稀疏梯度與複雜網路如Transformer。相較之下，傳統SGD（隨機梯度下降）收斂緩慢且容易震盪；而純Momentum雖能加速收斂，但缺乏自適應學習率調整，難以應對不同參數更新頻率差異極大的情境。然而，在某些影像分類任務中，精心調校的SGD+Momentum有時能獲得比Adam更好的最終泛化效能。",
+        "keywords": [
+          "Adam 優化器 (Adam Optimizer)",
+          "自適應學習率 (Adaptive Learning Rate)",
+          "一階動量 (Momentum)",
+          "梯度下降 (Gradient Descent)",
+          "指數移動平均 (Exponential Moving Average)"
+        ],
+        "extended_tech": [
+          {
+            "name": "AdamW 優化器",
+            "desc": "Adam 優化器的改良版本，將權重衰減 (Weight Decay) 的運算從梯度計算中分離出來直接套用於權重更新，有效解決了 Adam 在使用 L2 正則化時表現不佳的問題，是目前訓練大型語言模型的首選。"
+          },
+          {
+            "name": "RMSProp 優化器",
+            "desc": "一種透過計算梯度平方的指數移動平均來為每個參數自適應調整學習率的演算法，能有效處理 RNN 訓練過程中的梯度消失與爆炸問題，是 Adam 的重要前身技術。"
+          },
+          {
+            "name": "Nadam 優化器",
+            "desc": "將 Nesterov 加速梯度 (NAG) 的概念融入 Adam 演算法中，透過在計算當前梯度前先進行一次「未來位置」的預測，進一步提升了優化過程對梯度變化的靈敏度與收斂速度。"
+          }
+        ],
+        "terminology": [
+          "二階動量",
+          "非凸優化問題",
+          "稀疏資料",
+          "批次正規化",
+          "梯度裁剪"
         ]
       },
       {
@@ -2895,6 +7489,35 @@ const EXAM_DATA = {
         "examples": [
           "在影音串流平台的推薦系統中，系統會使用 MSE 來預測用戶可能對某部電影給出的評分星數，同時在判斷用戶是否會點擊某則廣告時，使用二元交叉熵來進行點擊率預測。",
           "在氣象預報系統中，預測明日降雨量的模型屬於連續迴歸問題，會採用 MSE 以盡可能縮小毫米單位的誤差；而預測明日是否發布颱風警報的模型則是分類問題，會採用交叉熵損失進行最佳化。"
+        ],
+        "comparison": "均方誤差(MSE)專注於測量連續數值預測值與真實值間的幾何距離，是迴歸任務(如預測時長、金額)的標準配備。二元交叉熵(BCE)則基於資訊熵理論，專門衡量預測機率分布與真實0/1標籤的散度，是二元分類(如流失預測、點擊預測)的核心。若在分類任務中誤用MSE，會導致損失函數成為非凸函數，使得模型極易陷入局部最佳解且梯度更新緩慢。正確的任務類型必須配對正確的損失函數。",
+        "keywords": [
+          "損失函數 (Loss Function)",
+          "均方誤差 (MSE)",
+          "二元交叉熵 (Binary Cross-Entropy)",
+          "迴歸分析 (Regression Analysis)",
+          "分類任務 (Classification Task)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Focal Loss",
+            "desc": "一種針對極度不平衡分類資料集所設計的損失函數，透過動態降低易分類樣本的權重，強迫模型專注於學習困難樣本，廣泛應用於物件偵測（如 RetinaNet）與醫療影像病灶篩檢。"
+          },
+          {
+            "name": "Triplet Loss",
+            "desc": "度量學習（Metric Learning）中常用的損失函數，透過讓同類別樣本在嵌入空間中互相靠近，不同類別樣本互相遠離，是人臉辨識系統與相似度檢索系統的核心優化目標。"
+          },
+          {
+            "name": "平滑L1損失 (Smooth L1 Loss)",
+            "desc": "結合了 MSE 與 MAE 的優點，在誤差較大時使用線性懲罰以抵抗離群值，在誤差極小時使用平方懲罰以利於精細收斂，是許多主流物件偵測模型（如 Faster R-CNN）用於預測邊界框座標的標準配置。"
+          }
+        ],
+        "terminology": [
+          "連續數值",
+          "機率分布",
+          "Hinge 損失",
+          "非凸函數",
+          "局部最佳解"
         ]
       },
       {
@@ -2913,6 +7536,35 @@ const EXAM_DATA = {
         "examples": [
           "在訓練智慧型手機上的人臉解鎖模型時，工程師會設定批次大小為 512，讓訓練伺服器的 GPU 能在每次更新時平行處理多張人臉影像，同時確保更新方向不會被單一錯誤的標籤影像嚴重干擾。",
           "在金融業開發信用卡盜刷即時阻擋模型時，利用小批次梯度下降可確保模型能快速吸收每天新產生的數十萬筆交易資料，並在維持硬體資源滿載運作的情況下，穩定地更新判斷規則。"
+        ],
+        "comparison": "小批次梯度下降(Mini-batch GD)是深度學習的業界標準，能在穩定梯度與極大化GPU平行吞吐量之間取得完美平衡。全批次梯度下降雖方向最準確，但計算過慢且記憶體極易溢出，只適用於極小資料集。純隨機梯度下降(SGD)每次只用一筆資料，無法發揮GPU矩陣加速效能且充滿雜訊。而牛頓法等二階方法需要計算龐大的Hessian矩陣反矩陣，在參數量動輒數億的現代神經網路中完全不切實際。",
+        "keywords": [
+          "小批次梯度下降 (Mini-batch GD)",
+          "平行運算 (Parallel Computing)",
+          "批次大小 (Batch Size)",
+          "GPU 吞吐量 (GPU Throughput)",
+          "梯度穩定性 (Gradient Stability)"
+        ],
+        "extended_tech": [
+          {
+            "name": "梯度累積 (Gradient Accumulation)",
+            "desc": "在受限於 GPU 記憶體無法使用大批次大小時，透過在多次前向傳播中累積梯度但不立即更新參數，直到累積相當於大批次數量的梯度後才執行一次更新，是訓練超大型模型的必備技巧。"
+          },
+          {
+            "name": "分散式資料平行 (Distributed Data Parallel, DDP)",
+            "desc": "將模型完整複製到多張 GPU 上，每張 GPU 處理不同的小批次資料，最後在反向傳播時透過網路通訊同步與平均所有 GPU 計算出的梯度，是目前叢集訓練的主流加速架構。"
+          },
+          {
+            "name": "學習率縮放法則 (Linear Scaling Rule)",
+            "desc": "當為了加速訓練而放大批次大小（如從 256 擴增至 1024）時，必須按比例同步放大初始學習率，以確保模型能維持原有的收斂速度與最終泛化效能的經驗法則。"
+          }
+        ],
+        "terminology": [
+          "全批次梯度下降",
+          "二階梯度法",
+          "Hessian 矩陣",
+          "曲率",
+          "泛化能力"
         ]
       },
       {
@@ -2931,6 +7583,35 @@ const EXAM_DATA = {
         "examples": [
           "在網路銀行的詐欺交易偵測系統中，超過 99.9% 的交易是合法的。團隊不會看重 Accuracy，而是專注於提升 Recall 來確保異常交易被攔截，並監控 Precision 以避免誤鎖過多正常客戶的帳戶。",
           "在製造業的產品瑕疵檢測流水線上，瑕疵品可能只佔總產量的 0.5%。品管部門會使用 F1-Score 或 PR 曲線來評估光學檢測 AI 的能力，確保即使犧牲部分良率，也不會讓任何不良品流入市面。"
+        ],
+        "comparison": "在類別極度不平衡的場景下，準確率(Accuracy)是一個極具欺騙性的指標，模型只要全部猜測多數類別就能獲得極高分數。相反地，召回率(Recall/敏感度)專注於評估模型找出所有真實目標的能力，對於醫療篩檢或安全警報等「寧可錯殺不可漏放」的場景至關重要。而精確度(Precision)則評估模型發出警報的準確性，適用於資源有限、誤報代價高昂的情境（如人工審核垃圾郵件）。F1-Score則是這兩者的調和平均數。",
+        "keywords": [
+          "準確率 (Accuracy)",
+          "類別不平衡 (Class Imbalance)",
+          "召回率 (Recall)",
+          "精確度 (Precision)",
+          "漏診風險 (False Negative Risk)"
+        ],
+        "extended_tech": [
+          {
+            "name": "合成少數群體過取樣技術 (SMOTE)",
+            "desc": "一種在特徵空間中透過內插法人工合成新少數類別樣本的技術，能有效緩解訓練資料極度不平衡的問題，強迫模型學習少數類別的決策邊界特徵。"
+          },
+          {
+            "name": "接收者操作特徵曲線 (ROC Curve) 與 AUC",
+            "desc": "透過繪製不同決策閾值下的真陽性率與偽陽性率曲線，並計算其曲線下面積(AUC)，提供一個不受單一閾值與類別比例影響的全局模型評估指標，是二元分類任務的金標準。"
+          },
+          {
+            "name": "精確度-召回率曲線 (PR Curve)",
+            "desc": "相比於 ROC 曲線，PR 曲線在面對極端不平衡資料集時（如負樣本數量是正樣本的數千倍），能更敏銳且誠實地反映模型在少數目標類別上的預測表現，是異常檢測領域的首選圖表。"
+          }
+        ],
+        "terminology": [
+          "正樣本",
+          "負樣本",
+          "真陽性率",
+          "偽陽性率",
+          "決策閾值"
         ]
       },
       {
@@ -2949,6 +7630,35 @@ const EXAM_DATA = {
         "examples": [
           "在房地產估價模型中，工程師加入 L2 正則化以防止模型過度依賴某些單一且極端特殊的特徵（如房屋是否有特定顏色的門），從而讓模型更平均地考量坪數、屋齡與地段等核心因素。",
           "在醫學影像病徵識別中，若訓練樣本較少，使用 L2 權重衰減可防止神經網路死記硬背特定幾張 X 光片上的儀器反光斑點，強迫網路去學習真正代表病理組織的一般性紋理特徵。"
+        ],
+        "comparison": "L2正則化(Weight Decay)透過在損失函數中加入對大權重的懲罰，強制模型保持平滑的決策邊界，是最經典且直接降低模型複雜度以抵抗過擬合的方法。相較之下，Dropout是透過隨機停用神經元來防止節點間過度依賴，提早停止(Early Stopping)則是透過監控驗證集來切斷過度訓練。增加Epoch或盲目引入雜訊特徵反而會讓模型過度記憶訓練資料，導致過擬合更加嚴重。移除驗證集更是危險的做法，會讓工程師徹底失去評估泛化能力的標準。",
+        "keywords": [
+          "過擬合 (Overfitting)",
+          "L2 正則化 (L2 Regularization)",
+          "權重衰減 (Weight Decay)",
+          "模型複雜度 (Model Complexity)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "丟棄法 (Dropout)",
+            "desc": "在神經網路訓練過程中，以一定機率隨機將部分神經元的輸出強制歸零，能有效打破神經元之間不必要的共適應（Co-adaptation），是訓練深層網路防止過擬合的最常用技術。"
+          },
+          {
+            "name": "提早停止 (Early Stopping)",
+            "desc": "在模型訓練過程中，持續監控獨立驗證集的損失或準確率指標。當發現驗證指標在連續數個週期內不再改善甚至開始惡化時，即自動終止訓練，防止模型過度記憶訓練集雜訊。"
+          },
+          {
+            "name": "標籤平滑 (Label Smoothing)",
+            "desc": "一種針對分類任務的正則化技巧，將絕對的 One-Hot 標籤（如 1.0 與 0.0）軟化為帶有微小不確定性的機率值（如 0.9 與 0.1），能防止模型對其預測過度自信，提升泛化表現。"
+          }
+        ],
+        "terminology": [
+          "權重平方和",
+          "有效容量",
+          "決策邊界",
+          "共適應",
+          "標籤平滑"
         ]
       },
       {
@@ -2967,6 +7677,35 @@ const EXAM_DATA = {
         "examples": [
           "在新聞網站的後台系統中，編輯團隊可利用樸素貝氏分類器快速掃描每天新湧入的數萬篇文章，根據文章中出現的詞彙機率，自動將其分類為「體育」、「政治」或「娛樂」等頻道板塊。",
           "在客戶服務管理系統中，利用該演算法分析客訴表單的文字內容，快速將抱怨運送延遲、產品質量或退款問題的信件自動分派給對應的處理部門，大幅提升客服中心的首回覆速度。"
+        ],
+        "comparison": "樸素貝氏分類器透過計算條件機率與先驗機率來進行推論，訓練速度極快，特別適合處理高維度但稀疏的文本資料（如詞袋模型）。相較之下，支持向量機(SVM)透過尋找最大邊界超平面來分類，雖能處理更複雜的非線性邊界但訓練較耗時；而神經網路雖能學習深層語意，但需要龐大運算資源與資料量。樸素貝氏的最大缺點是其「特徵獨立」的強烈假設，在處理特徵高度相關的情境下預測機率容易失真，且極度受訓練資料的特徵分佈影響。",
+        "keywords": [
+          "樸素貝氏分類器 (Naive Bayes)",
+          "條件機率 (Conditional Probability)",
+          "先驗機率 (Prior Probability)",
+          "特徵獨立假設 (Feature Independence)",
+          "文本分類 (Text Classification)"
+        ],
+        "extended_tech": [
+          {
+            "name": "拉普拉斯平滑 (Laplace Smoothing)",
+            "desc": "在樸素貝氏模型中，為了解決測試資料中出現訓練集中從未見過的詞彙（導致條件機率為零，進而使整個機率連乘積歸零）的問題，而人為在計算頻率時加入的一個微小常數。"
+          },
+          {
+            "name": "TF-IDF 權重技術",
+            "desc": "一種詞頻統計技術，能降低「的」、「是」等常見無意義停用詞的權重，並提升罕見關鍵字的影響力，常作為樸素貝氏分類器處理文本前的重要特徵轉換步驟。"
+          },
+          {
+            "name": "隱馬可夫模型 (HMM)",
+            "desc": "同樣基於貝氏定理與機率模型的演算法，但不同於樸素貝氏的獨立假設，HMM 專注於模擬序列資料中狀態轉移的機率關聯，廣泛應用於早期的語音辨識與詞性標注系統。"
+          }
+        ],
+        "terminology": [
+          "貝氏定理",
+          "先驗機率",
+          "條件獨立",
+          "特徵標準化",
+          "詞袋模型"
         ]
       },
       {
@@ -2985,6 +7724,35 @@ const EXAM_DATA = {
         "examples": [
           "在電信業的顧客生命週期管理中，行銷團隊利用 K-means 將數百萬用戶根據月租費、通話分鐘數與網路使用量等指標，快速劃分為高價值、潛力型與易流失等群體，以制定差異化方案。",
           "在影像處理技術中，K-means 常被用來進行影像壓縮與色彩量化。透過將影像中幾百萬個像素的顏色聚類為 16 或 32 個代表色群集，能顯著減小圖片檔案大小而保留大致的視覺效果。"
+        ],
+        "comparison": "K-means基於歐氏距離進行迭代，偏好劃分大小相似的球形群集，計算速度極快但嚴重受限於離群值與初始化，且無法處理半月形等非凸結構。相較之下，DBSCAN是一種基於密度的分群演算法，能自動發現任意形狀的群集且天生具備過濾離群雜訊的能力，適合處理空間座標資料；而高斯混合模型(GMM)則以機率分佈的角度進行軟分群，能處理橢圓形的群集結構，適用於需要評估歸屬機率的模糊邊界場景。",
+        "keywords": [
+          "K-means 分群 (K-means Clustering)",
+          "非凸結構 (Non-convex Structure)",
+          "離群值 (Outliers)",
+          "局部最佳解 (Local Optimum)",
+          "歐氏距離 (Euclidean Distance)"
+        ],
+        "extended_tech": [
+          {
+            "name": "K-means++ 初始化演算法",
+            "desc": "一種改良的中心點初始化策略，透過確保初始群集中心彼此之間的距離盡可能遙遠，有效降低了演算法陷入不良局部最佳解的機率，並顯著加速了整體的收斂速度。"
+          },
+          {
+            "name": "DBSCAN 密度分群法",
+            "desc": "基於資料點密度的非監督式演算法，不需要預先指定群集數量，能完美辨識出各種奇特形狀（如半月形或環形）的群集，並自動將密度過低的點標記為雜訊，常應用於地理空間資料分析。"
+          },
+          {
+            "name": "輪廓係數 (Silhouette Coefficient)",
+            "desc": "一種用來評估分群品質的內部指標，綜合衡量了群集內部的緊密度與不同群集之間的分離度，常被用來協助資料科學家客觀地決定 K-means 中的最佳 K 值。"
+          }
+        ],
+        "terminology": [
+          "非凸群集",
+          "球形群集",
+          "歐氏距離",
+          "局部最佳解",
+          "高斯混合模型"
         ]
       },
       {
@@ -3003,6 +7771,35 @@ const EXAM_DATA = {
         "examples": [
           "在 P2P 網路借貸平台中，風險控制部門利用 XGBoost 分析借款人的數百項歷史財務數據與行為特徵，精準預測其違約機率，並在維持極高準確率的同時提供每個特徵的重要程度報告。",
           "在智慧城市的交通流量預測系統中，模型需綜合考量天氣、星期、節慶與歷史車流量等多維度異質資料。XGBoost 憑藉其處理表格型資料的卓越能力，能快速輸出高精度的路況預警資訊。"
+        ],
+        "comparison": "XGBoost作為提升樹(Boosting)的巔峰之作，透過在目標函數內建樹複雜度懲罰項與二階泰勒展開，極大提升了模型的防過擬合能力與收斂精準度，是處理結構化表格資料的競賽王者。相較之下，隨機森林(Random Forest)屬於Bagging家族，透過平行建立大量深層樹並多數決來降低變異數，不易過擬合但精度通常略遜XGBoost。而神經網路雖能處理更複雜的非結構化資料，但在中小型表格數據上的表現與解釋性往往不及XGBoost。",
+        "keywords": [
+          "XGBoost",
+          "梯度提升決策樹 (GBDT)",
+          "正則化 (Regularization)",
+          "樹的複雜度 (Tree Complexity)",
+          "過擬合 (Overfitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "LightGBM",
+            "desc": "微軟開發的另一款極受歡迎的梯度提升框架，採用基於直方圖的演算法與單邊梯度取樣（GOSS）技術，在維持極高準確率的同時，訓練速度與記憶體消耗都遠優於傳統 XGBoost，適合處理海量資料。"
+          },
+          {
+            "name": "CatBoost",
+            "desc": "由 Yandex 開發的提升樹演算法，特別針對類別型特徵（Categorical Features）進行了底層演算法級別的優化，使用者無需進行繁瑣的 One-Hot 編碼，且內建對稱樹結構能極大加速推論速度。"
+          },
+          {
+            "name": "SHAP 值分析 (SHAP Values)",
+            "desc": "一種基於賽局理論的模型解釋技術，能精確量化 XGBoost 等複雜黑盒模型中，每一個特徵對於單一預測結果的貢獻程度與方向，是金融與醫療等高合規性產業必備的解釋工具。"
+          }
+        ],
+        "terminology": [
+          "目標函數",
+          "二階泰勒展開",
+          "缺失值",
+          "決策樹組合",
+          "葉節點權重"
         ]
       },
       {
@@ -3021,6 +7818,35 @@ const EXAM_DATA = {
         "examples": [
           "在無人機的即時地面目標辨識系統中，使用具有數百層架構的 ResNet 能讓模型學習到極度抽象且豐富的視覺特徵，精確區分出隱蔽在樹林間的車輛或人員，並維持系統的高度準確性。",
           "在現代智慧型手機的相機 AI 演算法中，殘差網路架構被廣泛應用於影像超解析度重建與夜間模式降噪。深層網路能有效提取細節紋理，而跳躍連接確保了運算過程的高效與穩定。"
+        ],
+        "comparison": "在訓練超深層神經網路時，梯度消失是最大的效能殺手。ResNet透過殘差連接(Skip Connection)創造梯度高速公路，完美解決了網路退化問題，使其能堆疊數百層以萃取深層特徵，成為現代電腦視覺的骨幹網路。相較之下，早期的VGG架構單純堆疊卷積層，深度超過十幾層後便難以收斂；而Inception架構則是在同一層內平行使用不同尺寸的卷積核來增加寬度，雖然提高了特徵多樣性，但對解決超深層的梯度消失幫助有限。",
+        "keywords": [
+          "殘差網路 (ResNet)",
+          "梯度消失 (Gradient Vanishing)",
+          "跳躍連接 (Skip Connection)",
+          "網路退化 (Network Degradation)",
+          "深度卷積神經網路 (Deep CNN)"
+        ],
+        "extended_tech": [
+          {
+            "name": "DenseNet (密集連接網路)",
+            "desc": "在 ResNet 概念上的進階發展，網路中的每一層都會直接接收前面所有層的特徵圖作為輸入，這種極端的特徵重複利用機制能進一步減緩梯度消失，且在較少參數下達到優異效能。"
+          },
+          {
+            "name": "批次正規化 (Batch Normalization)",
+            "desc": "在卷積層與激活函數之間插入的特殊處理層，透過將每一小批次資料的輸出強制標準化，能有效穩定深層網路的梯度分布，是配合 ResNet 訓練深層模型的必備利器。"
+          },
+          {
+            "name": "神經網路架構搜尋 (NAS)",
+            "desc": "利用強化學習或演化演算法，讓 AI 自己探索並設計出針對特定硬體平台與任務最佳化的神經網路架構（如 EfficientNet），逐漸取代了純人工設計網路的傳統方式。"
+          }
+        ],
+        "terminology": [
+          "連鎖律",
+          "網路退化",
+          "殘差",
+          "卷積濾波器",
+          "激活函數"
         ]
       },
       {
@@ -3039,6 +7865,35 @@ const EXAM_DATA = {
         "examples": [
           "在車牌自動辨識系統中，車輛駛過時攝影機拍下的車牌位置可能略有偏移。池化層能確保即使數字在影像中的像素位置發生了微小的平移，神經網路依然能穩定萃取出相同的數字特徵。",
           "在指紋辨識考勤機中，使用者每次按壓手指的角度與位置都略有不同。CNN 透過池化層的降採樣機制過濾掉微小的空間雜訊，專注於保留指紋的全局紋理特徵，提高身分比對的容錯率。"
+        ],
+        "comparison": "池化層(Pooling Layer)專職於對特徵圖進行降採樣，強制縮減空間維度以減少運算量，同時賦予模型對微小位移的平移不變性，是CNN的標準降維工具。相較之下，卷積層(Convolutional Layer)負責提取局部視覺特徵，會保留甚至擴展通道維度；全連結層(Fully Connected Layer)則負責整合所有全局特徵以進行最終的分類決策，但會消耗極其龐大的記憶體與參數。現代CNN設計甚至會用全域平均池化(GAP)完全取代後端龐大的全連結層。",
+        "keywords": [
+          "池化層 (Pooling Layer)",
+          "卷積神經網路 (CNN)",
+          "降採樣 (Down-sampling)",
+          "平移不變性 (Translation Invariance)",
+          "空間維度縮減 (Spatial Dimension Reduction)"
+        ],
+        "extended_tech": [
+          {
+            "name": "全域平均池化 (Global Average Pooling, GAP)",
+            "desc": "在 CNN 架構的最後端，直接對整張特徵圖計算平均值並輸出單一數值，藉此完全取代傳統龐大且容易過擬合的全連結層，廣泛應用於 ResNet 等現代網路設計中。"
+          },
+          {
+            "name": "空洞卷積 (Dilated Convolution)",
+            "desc": "一種在卷積核元素之間人為插入空洞的技術，能在不增加參數量與不縮小特徵圖解析度的情況下，大幅擴大神經元的感受野，常應用於對空間解析度要求極高的語意分割任務。"
+          },
+          {
+            "name": "空間金字塔池化 (Spatial Pyramid Pooling, SPP)",
+            "desc": "一種進階的池化技術，能接受任意尺寸的輸入影像，並透過多種不同尺度的池化操作產生固定長度的特徵向量，打破了傳統 CNN 必須輸入固定尺寸圖片的限制。"
+          }
+        ],
+        "terminology": [
+          "特徵圖",
+          "降採樣",
+          "全連結層",
+          "感受野",
+          "非線性表達能力"
         ]
       },
       {
@@ -3057,6 +7912,35 @@ const EXAM_DATA = {
         "examples": [
           "在跨國企業的即時語音與文本翻譯系統中，句子前方的名詞與句尾的動詞常有強烈關聯。Transformer 透過自注意力機制能瞬間精準捕捉這種長距離語法依賴，生成極度自然順暢的譯文。",
           "在生物資訊學的蛋白質折疊預測中（如 AlphaFold），科學家利用類似 Transformer 的架構將胺基酸序列視為文本，藉由注意力機制預測序列中相隔甚遠的胺基酸在三維空間中結合的可能性。"
+        ],
+        "comparison": "Transformer透過自注意力機制，讓序列中任意兩點直接建立關聯，無懼長距離依賴衰減，且完全平行化的特性使其成為處理超長文本與構建LLM的絕對王者。相較之下，LSTM等循環神經網路(RNN)必須依照時間步逐步傳遞資訊，不僅導致長距離語意容易遺失，且無法運用GPU進行序列方向的平行加速。不過，LSTM在處理極短期的即時感測器時間序列或資源受限的邊緣裝置上，仍保有輕量化的優勢。",
+        "keywords": [
+          "Transformer 架構",
+          "自注意力機制 (Self-Attention)",
+          "長距離依賴 (Long-term Dependency)",
+          "平行化計算 (Parallel Computation)",
+          "自然語言處理 (NLP)"
+        ],
+        "extended_tech": [
+          {
+            "name": "位置編碼 (Positional Encoding)",
+            "desc": "由於自注意力機制本身缺乏對序列順序的感知能力，Transformer 必須透過引入正弦與餘弦等數學函數產生的位置向量與詞嵌入相加，來賦予模型理解句子中字詞前後順序的能力。"
+          },
+          {
+            "name": "稀疏注意力機制 (Sparse Attention)",
+            "desc": "為了解決標準 Transformer 計算複雜度隨序列長度呈平方增長的問題，透過限制注意力矩陣只關注相鄰或特定跨度的 token，使得模型能處理長達數萬字甚至數百萬字的文件（如 Longformer）。"
+          },
+          {
+            "name": "多頭注意力機制 (Multi-Head Attention)",
+            "desc": "Transformer 的內部設計，將原本單一的注意力運算拆分為多個平行的「頭」，讓模型能同時從不同的表徵子空間（如同時關注語法結構與語意情感）來捕捉資訊，大幅增強表達能力。"
+          }
+        ],
+        "terminology": [
+          "隱藏狀態",
+          "序列化",
+          "位置編碼",
+          "矩陣計算",
+          "時序依賴"
         ]
       },
       {
@@ -3075,6 +7959,35 @@ const EXAM_DATA = {
         "examples": [
           "在自駕車的交通號誌辨識模組中，模型會將攝影機拍攝到的標誌輸入網路，最後輸出為「紅燈」、「綠燈」、「速限」等多種類別的 logits，再透過 Softmax 轉化為明確的信心機率供系統決策。",
           "在智慧醫療的皮膚病變檢測 APP 中，用戶上傳病徵照片後，系統後端會使用具有 Softmax 輸出的多分類神經網路，同時計算該病變屬於黑色素瘤、良性痣或其他皮膚疾病的機率百分比。"
+        ],
+        "comparison": "在多分類任務中，Softmax函數能將輸出轉換為總和為1的機率分佈，完美契合交叉熵損失的要求，是影像分類或語意分割的標準輸出設計。相較之下，Sigmoid函數會將每個輸出獨立壓縮至0到1，總和不為1，適用於「多標籤分類」任務（如一張圖片同時包含狗與車）。而ReLU則用作隱藏層的非線性激活，若置於輸出層會導致負數預測值被直接歸零，完全破壞機率推論的數學基礎。",
+        "keywords": [
+          "交叉熵損失 (CrossEntropyLoss)",
+          "Softmax 函數",
+          "Logits",
+          "多類別分類 (Multi-class Classification)",
+          "深度學習框架實作"
+        ],
+        "extended_tech": [
+          {
+            "name": "溫度縮放 (Temperature Scaling)",
+            "desc": "在計算 Softmax 前將 logits 除以一個被稱為溫度的超參數。調高溫度會使輸出的機率分布變得更平滑均勻，常應用於知識蒸餾中以提取教師模型的軟標籤（Soft Targets），或用於 LLM 的多樣性生成。"
+          },
+          {
+            "name": "多標籤分類損失 (BCEWithLogitsLoss)",
+            "desc": "當面對一張圖片可能同時具有多個標籤（如同時有「山」與「水」）的任務時，不應使用具備互斥性的 Softmax，而是對每個類別獨立使用 Sigmoid 轉換並計算二元交叉熵損失。"
+          },
+          {
+            "name": "對比損失 (Contrastive Loss)",
+            "desc": "一種不依賴 Softmax 機率輸出的損失函數，專注於優化樣本間在潛在空間的距離（讓同類靠近、異類遠離），廣泛應用於 Siamese Network 與現代的自監督式表徵學習（如 SimCLR）中。"
+          }
+        ],
+        "terminology": [
+          "正規化",
+          "負對數似然損失",
+          "指數正規化函數",
+          "溢位問題",
+          "One-Hot 編碼"
         ]
       },
       {
@@ -3093,6 +8006,35 @@ const EXAM_DATA = {
         "examples": [
           "在智慧型手機的即時語音轉文字功能中，廠商會將雲端訓練好的龐大語音模型進行 8-bit 量化，使其能夠完全載入手機本地記憶體，讓用戶即使在無網路連接的情況下也能順暢使用。",
           "在智慧家庭的保全攝影機中，由於設備運算資源極其匱乏，工程師必須將人臉辨識模型深度量化，使其能直接運行於低功耗的微控制器晶片上，實現全天候即時的異常闖入警報偵測。"
+        ],
+        "comparison": "模型量化透過降低權重數值精度(如FP32轉INT8)來縮減模型體積並加速邊緣推論，是硬體部署最直接的手段。相較之下，知識蒸餾(Knowledge Distillation)是讓小模型學習大模型的軟標籤，屬於訓練層面的知識轉移；權重剪枝(Pruning)則是直接歸零並移除微小的權重連線以創造稀疏矩陣；張量分解則是透過數學矩陣拆解降低維度。這四者經常在工業界混合使用，以打造極致輕量化的邊緣AI應用。",
+        "keywords": [
+          "模型量化 (Model Quantization)",
+          "邊緣運算 (Edge AI)",
+          "推論加速 (Inference Acceleration)",
+          "浮點數精度 (Floating-point Precision)",
+          "模型壓縮 (Model Compression)"
+        ],
+        "extended_tech": [
+          {
+            "name": "量化感知訓練 (Quantization-Aware Training, QAT)",
+            "desc": "在模型訓練階段就人為引入量化誤差的雜訊，讓模型在更新權重時提前適應低精度環境，這能讓最終量化後的模型幾乎不損失任何準確率，遠勝過訓練後才進行的後量化（PTQ）。"
+          },
+          {
+            "name": "知識蒸餾 (Knowledge Distillation)",
+            "desc": "一種訓練策略，將龐大且準確的「教師模型」輸出的軟標籤（Soft Targets）作為目標，用來訓練一個輕量級的「學生模型」，讓小模型能繼承大模型的泛化能力。"
+          },
+          {
+            "name": "權重剪枝 (Weight Pruning)",
+            "desc": "透過演算法找出神經網路中對最終輸出影響力極小（如接近零）的權重連線並將其刪除，藉此將稠密神經網路轉化為稀疏網路，以減少運算量與儲存空間。"
+          }
+        ],
+        "terminology": [
+          "微小梯度",
+          "浮點數",
+          "推論階段",
+          "邊緣部署",
+          "記憶體頻寬"
         ]
       },
       {
@@ -3111,6 +8053,35 @@ const EXAM_DATA = {
         "examples": [
           "在大型跨國電商平台的客服 AI 助手中，混合搜尋能確保用戶詢問「有沒有適合慢跑的鞋子」時找到語意相近的運動鞋，同時在用戶查詢「Air Max 97 黑色」時能精確比對到特定商品型號。",
           "在法律科技公司的判決書查詢系統裡，律師常輸入高度專業的法條編號與模糊的案情描述。混合搜尋能利用 BM25 精準鎖定特定法條，並透過向量搜尋找出與案情語意相似的過往判例。"
+        ],
+        "comparison": "在RAG架構中，混合搜尋(Hybrid Search)結合了向量搜尋的語意理解優勢與BM25關鍵字搜尋對專有名詞的精確比對能力，是最強大的檢索策略。相較之下，單純縮小切片大小(Chunking)雖能增加檢索粒度，但極易破壞長文本的連貫語意；調整相似度閾值僅能減少低品質結果的干擾，無法無中生有找出漏掉的精確文件。RRF排序融合則是扮演將兩套不同檢索系統的結果公平合併的關鍵演算法。",
+        "keywords": [
+          "混合搜尋 (Hybrid Search)",
+          "檢索增強生成 (RAG)",
+          "向量搜尋 (Vector Search)",
+          "BM25 關鍵字搜尋",
+          "倒數排名融合 (RRF)"
+        ],
+        "extended_tech": [
+          {
+            "name": "重新排序模型 (Re-ranker)",
+            "desc": "在初步檢索出數十篇候選文件後，使用一個專門訓練的交叉編碼器（Cross-encoder）神經網路對查詢句與每篇文件進行深度的語意比對打分並重新排序，能大幅提升最終提交給 LLM 的文件關聯度。"
+          },
+          {
+            "name": "查詢擴展與改寫 (Query Expansion / Rewriting)",
+            "desc": "在使用者輸入查詢後，先利用一個輕量級的 LLM 對原始查詢進行同義詞擴展或邏輯拆解改寫，再將改寫後的豐富查詢送入資料庫檢索，以提高找到相關冷門資料的機率。"
+          },
+          {
+            "name": "圖資料庫與知識圖譜 (Knowledge Graph RAG)",
+            "desc": "將傳統非結構化文件的 RAG 架構結合具有實體與關係鏈接的知識圖譜。在面對需要多重邏輯推理與關聯追蹤的問題時，圖資料庫能提供比向量搜尋更精確且具備解釋性的檢索結果。"
+          }
+        ],
+        "terminology": [
+          "切片大小",
+          "專有名詞",
+          "語意匹配",
+          "位置偏誤",
+          "倒數排名融合"
         ]
       },
       {
@@ -3129,6 +8100,35 @@ const EXAM_DATA = {
         "examples": [
           "在軟體工程領域廣受歡迎的 AI 程式碼助手（如 GitHub Copilot），底層即依賴自迴歸語言模型。當開發者寫下函式名稱與註解時，模型能根據前文邏輯，一行一行地自動補齊後續的程式碼。",
           "在創意行銷產業中，文案生成工具利用此技術協助社群小編。只要輸入簡短的活動主題與關鍵字，系統便能自動流暢地續寫出具有吸引力的宣傳短文或部落格文章草稿。"
+        ],
+        "comparison": "GPT系列基於Transformer解碼器(Decoder)，採用自迴歸機制由左至右逐字預測，是文本生成任務(如寫文章、寫程式)的霸主。相較之下，BERT基於編碼器(Encoder)，採用遮蔽語言模型(MLM)進行雙向語意理解，雖無法流暢生成連續文本，但在文本分類、情緒分析與實體辨識任務上擁有卓越的特徵萃取能力。兩者架構設計的出發點完全不同，必須依據業務場景(生成vs理解)選擇適合的預訓練模型。",
+        "keywords": [
+          "自迴歸模型 (Autoregressive Model)",
+          "文字生成 (Text Generation)",
+          "Transformer 解碼器 (Decoder)",
+          "BERT 架構",
+          "遮蔽語言模型 (Masked Language Modeling)"
+        ],
+        "extended_tech": [
+          {
+            "name": "T5 (Text-to-Text Transfer Transformer)",
+            "desc": "Google 提出的完整 Transformer（編碼器+解碼器）架構模型，將所有自然語言處理任務（無論是翻譯、分類還是摘要）統一視為「文本輸入轉文本輸出」的生成任務，極大統一了 NLP 的訓練框架。"
+          },
+          {
+            "name": "指令微調 (Instruction Tuning)",
+            "desc": "在預訓練好的自迴歸語言模型之上，使用大量人工撰寫的「指令-回答」對話資料進行二次訓練，讓模型學會理解人類意圖並遵循指示作答，是 ChatGPT 等現代對話 AI 的關鍵技術。"
+          },
+          {
+            "name": "束搜索 (Beam Search)",
+            "desc": "一種在自迴歸模型生成文本時採用的進階解碼演算法。有別於每次只挑選機率最高的單一詞彙，束搜索會同時保留多個高機率的候選句子路徑進行推演，以產出整體語意最通順的最終結果。"
+          }
+        ],
+        "terminology": [
+          "編碼器",
+          "雙向理解",
+          "條件機率",
+          "上下文序列",
+          "單向推演"
         ]
       },
       {
@@ -3147,6 +8147,35 @@ const EXAM_DATA = {
         "examples": [
           "在建立信用卡詐欺偵測模型時，對於客戶的「性別」、「婚姻狀況」或「消費國家（少數幾個主要國家）」等低基數類別特徵，工程師會安全地使用獨熱編碼將其轉換為模型可處理的特徵矩陣。",
           "在傳統的決策樹分類器中，若要將病患的「血型」（A、B、O、AB 型）輸入模型，利用獨熱編碼將其轉換為四個獨立的二元特徵，能避免模型誤將血型編碼的數字大小解讀為具備數學連續意義。"
+        ],
+        "comparison": "獨熱編碼(One-Hot)能徹底消除類別間的數學連續性，適用於少量類別（低基數）的特徵轉換；但面對高基數特徵（如數千種商品型號）會引發嚴重的維度爆炸與稀疏矩陣問題。相較之下，目標編碼(Target Encoding)根據目標變數的統計平均值替換類別，能將高基數轉換為單一數值特徵，但易引發資料洩漏；而Embedding層則是深度學習的專屬解法，透過訓練將高基數類別映射至低維稠密向量空間，能完美捕捉類別間的潛在關聯。",
+        "keywords": [
+          "獨熱編碼 (One-Hot Encoding)",
+          "高基數 (High Cardinality)",
+          "維度爆炸 (Dimensionality Explosion)",
+          "類別特徵 (Categorical Features)",
+          "稀疏矩陣 (Sparse Matrix)"
+        ],
+        "extended_tech": [
+          {
+            "name": "目標編碼 (Target Encoding)",
+            "desc": "將離散的類別標籤直接替換為該類別在目標變數（如轉換率、平均價格）上的歷史統計平均值，是一種在各大 Kaggle 競賽中處理高基數表格資料極為有效的降維編碼技巧。"
+          },
+          {
+            "name": "特徵雜湊 (Feature Hashing / Hashing Trick)",
+            "desc": "利用雜湊函數將無數個類別標籤強制映射到一個固定且較小的維度空間中。這是一種極度節省記憶體的編碼方式，特別適合處理串流資料或類別數量會隨時間不斷增長的推薦系統。"
+          },
+          {
+            "name": "實體嵌入 (Entity Embedding)",
+            "desc": "源自深度學習的概念，透過一個可訓練的 Embedding 層將每個類別映射為一個低維度且稠密的浮點數向量，這種向量能學習並保留類別之間潛在的語義或業務關聯，是現代深度推薦系統的核心。"
+          }
+        ],
+        "terminology": [
+          "標籤編碼",
+          "二元特徵",
+          "稀疏矩陣",
+          "連續意義",
+          "決策樹分類器"
         ]
       },
       {
@@ -3159,12 +8188,41 @@ const EXAM_DATA = {
           "D": "兩特徵須套用相同轉換，否則尺度不一致導致梯度不穩定"
         },
         "answer": "A",
-        "explanation": "選項 (A) 正確。特徵工程中進行對數轉換（Log Transformation）的主要目的是將嚴重右偏（長尾）的分布拉伸為更接近常態分布，或處理非線性的指數關係。如果「屋齡」本來就與「房價」呈現穩定的線性關係（例如每增加一年，房價固定減少 10 萬），強行套用非線性的對數轉換反而會扭曲並破壞這種單純的線性結構，導致線性或特定機器學習模型無法正確捕捉規律，進而使表現下降。其他選項的描述皆不符合統計與機器學習原理。",
+        "explanation": "選項 (A) 正確。特徵工程中進行對數轉換（Log Transformation）的主要目的是將嚴重右偏（長尾）的分布拉伸為更接近常態分布，或處理非線性的指數關係。如果「屋齡」本來就與「房價」本來就呈現穩定的線性關係（例如每增加一年，房價固定減少 10 萬），強行套用非線性的對數轉換反而會扭曲並破壞這種單純的線性結構，導致線性或特定機器學習模型無法正確捕捉規律，進而使表現下降。其他選項的描述皆不符合統計與機器學習原理。",
         "ml_method": "對數轉換 (Log Transformation)",
         "ml_method_explanation": "對數轉換是資料前處理與特徵工程中極為常見的數學轉換技術。它主要被用來處理高度偏態（尤其是嚴重右偏）的資料分布。在現實世界中，許多變數如財富、人口、網站流量等往往呈現指數增長，導致極少數樣本擁有極端大的數值（長尾效應）。對數轉換能透過非線性地大幅壓縮巨大數值，並相對拉伸微小數值，強制將原本的分布修正得更趨近於對稱的常態分布，這對於依賴常態假設的線性模型或對極端值敏感的演算法來說至關重要。",
         "examples": [
           "在銀行業的客戶財富管理分析中，客戶存款餘額通常呈現極端右偏分布（少數富豪擁有極高存款）。資料科學家會對存款餘額進行對數轉換，使模型能更均勻地學習大眾階層的行為模式。",
           "在電子商務網站的流量分析中，熱門商品的點擊次數可能是冷門商品的數萬倍。套用對數轉換後，工程師能將點擊量的數量級差距平滑化，避免推薦系統因極端數值而陷入富者越富的偏見迴圈。"
+        ],
+        "comparison": "對數轉換(Log Transform)專精於處理具長尾效應的右偏分佈(如金額、距離、點擊量)，能將極端大值平滑化，對抗雜訊並協助模型捕捉潛在模式。相較之下，標準化(StandardScaler)或正規化(MinMaxScaler)僅進行線性的尺度縮放，不改變資料分佈的偏態形狀，目的在於統一特徵尺度以加速梯度下降。若特徵與目標變數已具備良好的線性關聯，強行套用非線性的對數轉換反而會弄巧成拙，破壞原有的預測結構。",
+        "keywords": [
+          "對數轉換 (Log Transformation)",
+          "偏態分布 (Skewed Distribution)",
+          "特徵工程 (Feature Engineering)",
+          "長尾效應 (Long Tail Effect)",
+          "線性關係 (Linear Relationship)"
+        ],
+        "extended_tech": [
+          {
+            "name": "分箱離散化 (Binning / Discretization)",
+            "desc": "將連續型的數值變數（如年齡、收入）根據特定區間劃分為多個離散的類別區塊。這種轉換能賦予線性模型處理非線性關係的能力，同時極大地增強模型對極端離群值的抵抗力。"
+          },
+          {
+            "name": "Box-Cox 轉換",
+            "desc": "一種廣義的冪次轉換家族，透過最佳化演算法自動尋找一個參數 lambda，能將各種不同偏態程度的連續資料轉換為最接近標準常態分布的形狀，是對數轉換的終極進階版。"
+          },
+          {
+            "name": "分位數轉換 (Quantile Transformer)",
+            "desc": "一種強大的非線性轉換技術，透過將特徵的累積分配函數映射到均勻分布或常態分布上，能徹底消除任何形狀的偏態與極端離群值影響，在處理高度異常的感測器資料時十分有效。"
+          }
+        ],
+        "terminology": [
+          "右偏",
+          "常態分布",
+          "尺度縮放",
+          "指數增長",
+          "極端值"
         ]
       },
       {
@@ -3183,6 +8241,36 @@ const EXAM_DATA = {
         "examples": [
           "智慧電網的負載預測：電力公司收集每 15 分鐘的用電量數據，透過過去 24 小時（96 個時間點）的滑動窗口產生滯後特徵，訓練模型預測未來 1 小時的用電尖峰，以預先調度發電機組。",
           "線上遊戲伺服器流量監控：運維團隊利用滑動窗口技術，收集過去 30 分鐘內每分鐘的玩家登入數與頻寬消耗，建立機器學習模型預測下 5 分鐘的流量變化，提前進行伺服器自動擴容，確保遊戲連線順暢。"
+        ],
+        "comparison": "滑動窗口（Sliding Window）主要用於將具有時間相依性的連續資料轉換為監督式學習所需的滯後特徵，讓傳統機器學習模型能處理時序資料；相比之下，資料增強（Data Augmentation）多用於影像或自然語言處理中，透過旋轉、翻轉或同義詞替換來擴充訓練樣本，不改變資料特徵維度；而移動平均（Moving Average）雖也使用窗口概念，但其目的是平滑化時序資料以消除短期波動雜訊，並非建立新特徵。滑動窗口常用於金融預測、庫存管理等需依賴歷史數據預測未來的業務場景。",
+        "keywords": [
+          "滑動窗口 (Sliding Window)",
+          "滯後特徵 (Lag Features)",
+          "時間序列 (Time Series)",
+          "特徵工程 (Feature Engineering)",
+          "監督式學習 (Supervised Learning)",
+          "表格資料 (Tabular Data)"
+        ],
+        "extended_tech": [
+          {
+            "name": "長短期記憶網路 (Long Short-Term Memory, LSTM)",
+            "desc": "一種擅長處理時間序列與長距離依賴的遞迴神經網路架構，廣泛應用於股價預測、自然語言翻譯及語音辨識等需要記憶歷史資訊的複雜業務場景中。"
+          },
+          {
+            "name": "自迴歸積分滑動平均模型 (ARIMA)",
+            "desc": "經典的時間序列預測統計模型，透過結合自迴歸、差分與移動平均來捕捉資料的線性趨勢與週期性，常用於銷售量預測與總體經濟指標分析。"
+          },
+          {
+            "name": "時間卷積網路 (Temporal Convolutional Network, TCN)",
+            "desc": "利用因果卷積與擴張卷積處理時序資料的神經網路架構，具有平行運算優勢與更長的記憶長度，適用於高頻交易數據分析及感測器訊號處理。"
+          }
+        ],
+        "terminology": [
+          "Lag Features",
+          "Time Series Analysis",
+          "Feature Engineering",
+          "Tabular Data",
+          "Moving Average"
         ]
       },
       {
@@ -3201,6 +8289,36 @@ const EXAM_DATA = {
         "examples": [
           "電子商務平台的商品推薦系統：隨著季節與流行趨勢改變，使用者的購買偏好也會改變。系統每天都會利用滾動窗口驗證策略，以過去 30 天的點擊與購買紀錄重新訓練模型，並在當天的新訪客上進行測試，確保推薦結果始終符合最新潮流。",
           "共享單車需求預測系統：車輛調度團隊建立預測模型來分配單車。因為天氣和假日的影響，需求模式會隨季節轉變。開發團隊採用滾動窗口驗證，每週以過去三個月的騎乘數據重新訓練模型，並驗證未來一週的預測準確率，以決定最佳的調度策略。"
+        ],
+        "comparison": "滾動窗口驗證（Rolling Window Validation）嚴格保持時間序列的先後順序，適用於金融預測、銷量預測等具備時間相依性及容易產生概念漂移的場景，以避免資料洩漏；相對於傳統的 K-fold 交叉驗證（K-fold Cross-Validation）和分層 K-fold（Stratified K-fold），這兩者在切分資料時會隨機打亂樣本順序，適合用於截面資料（Cross-sectional Data）如影像分類或無時序關聯的客戶流失預測，若誤用於時序資料則會導致模型利用未來資訊預測過去，產生不實的極高準確率。",
+        "keywords": [
+          "滾動窗口驗證 (Rolling Window Validation)",
+          "時間序列交叉驗證 (Time Series Split)",
+          "概念漂移 (Concept Drift)",
+          "資料洩漏 (Data Leakage)",
+          "驗證策略 (Validation Strategy)",
+          "交叉驗證 (Cross-Validation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "概念漂移檢測 (Concept Drift Detection)",
+            "desc": "持續監控線上資料分佈與模型預測表現的技術，當發現資料特徵或目標關係隨時間發生顯著變化時，自動觸發模型重新訓練機制，廣泛應用於詐欺偵測與推薦系統。"
+          },
+          {
+            "name": "增量學習 (Incremental Learning)",
+            "desc": "一種讓機器學習模型能夠持續從新進資料中學習並更新權重，而不需要使用完整歷史資料重新訓練的技術，適合用於串流數據處理及資源受限的邊緣運算設備。"
+          },
+          {
+            "name": "回溯測試 (Backtesting)",
+            "desc": "在量化金融交易中廣泛使用的評估方法，利用歷史數據重構過去的市場環境，測試交易策略或預測模型在過去一段時間內的實際獲利能力與風險承受度。"
+          }
+        ],
+        "terminology": [
+          "Concept Drift",
+          "Data Leakage",
+          "K-fold Cross-Validation",
+          "Stratified K-fold",
+          "Time Series Split"
         ]
       },
       {
@@ -3219,6 +8337,36 @@ const EXAM_DATA = {
         "examples": [
           "製造業的良率預測系統：工廠在晶片生產過程中收集了數百個機台參數（溫度、壓力、氣體流量等）。工程師使用隨機森林迴歸模型預測最終產品的良率，並透過輸出的特徵重要性報表，向產線主管指出哪三個關鍵溫度參數對良率波動影響最大，以便優先進行設備校正。",
           "物流公司的配送時間預測：物流系統需要預測包裹從集散中心送達客戶手中的時間。系統考量了距離、司機年資、天氣狀況、即時路況等多種特徵。透過隨機森林迴歸模型，不僅能給出精準的預計到達時間，營運團隊還能透過特徵重要性得知，在下雨天時「即時路況」特徵的權重會大幅提升，進而調整派車策略。"
+        ],
+        "comparison": "隨機森林迴歸（Random Forest Regression）憑藉其基於多棵決策樹的集成學習機制，非常擅長處理非線性特徵並天然提供直觀的全局特徵重要性，因此廣泛應用於房價預測、風險評分等需高度業務解釋性的場景；相反地，支持向量迴歸（SVR）雖透過核函數強大地捕捉非線性特徵，但由於其將資料映射至難以直觀理解的高維空間，難以萃取直接的特徵重要性；而羅吉斯迴歸（Logistic Regression）雖解釋性極佳，但僅能處理線性關係且為分類模型，面對複雜非線性業務需求時常顯得力有未逮。",
+        "keywords": [
+          "隨機森林迴歸 (Random Forest Regression)",
+          "非線性關係 (Non-linear Relationship)",
+          "特徵重要性 (Feature Importance)",
+          "集成學習 (Ensemble Learning)",
+          "裝袋法 (Bagging)",
+          "模型可解釋性 (Model Interpretability)"
+        ],
+        "extended_tech": [
+          {
+            "name": "極端梯度提升 (XGBoost)",
+            "desc": "基於提升法（Boosting）的樹狀集成演算法，相較於隨機森林能更精細地逐步修正前一棵樹的預測誤差，在許多 Kaggle 數據科學競賽的表格資料任務中表現極為優異。"
+          },
+          {
+            "name": "排列特徵重要性 (Permutation Feature Importance)",
+            "desc": "一種模型無關的可解釋性技術，透過隨機打亂單一特徵的資料順序並觀察模型預測準確率的下降幅度，來客觀評估該特徵對整體預測效能的真實貢獻度。"
+          },
+          {
+            "name": "部分依賴圖 (Partial Dependence Plot, PDP)",
+            "desc": "一種視覺化技術，用於展示單一或兩個特徵在邊際上對機器學習模型預測結果的具體影響趨勢，幫助業務人員了解變數間的非線性關係與交互作用。"
+          }
+        ],
+        "terminology": [
+          "Feature Importance",
+          "Random Forest",
+          "Logistic Regression",
+          "Support Vector Regression (SVR)",
+          "Kernel Function"
         ]
       },
       {
@@ -3237,6 +8385,36 @@ const EXAM_DATA = {
         "examples": [
           "銀行信用卡的盜刷防範系統：由於新的盜刷手法層出不窮，銀行難以收集到所有種類的盜刷樣本。系統改為對每位客戶長期的「正常消費行為」（如消費金額、地點、頻率）建立半監督異常偵測模型，一旦某筆交易的特徵嚴重偏離該客戶的正常基線（例如突然在海外大額消費），系統便會立刻觸發警報並凍結交易。",
           "IT 基礎設施的網路入侵偵測：企業內網每天有海量的正常連線流量，而駭客攻擊的特徵往往是未知的。資安團隊使用 Autoencoder 模型學習正常辦公時段的網路封包特徵，當遇到未知的零日攻擊（Zero-day attack）導致網路行為模式改變時，模型會因為無法順利重建封包特徵而產生高誤差，進而向管理員發出遭受攻擊的警告。"
+        ],
+        "comparison": "半監督異常偵測（Semi-supervised Anomaly Detection）專門處理只有大量正常資料而極度缺乏異常標籤的場景，透過學習正常狀態的邊界來識別未知偏差，常應用於工業機台預測性維護、罕見網路攻擊偵測等領域；相對而言，監督式二元分類（Supervised Binary Classification）則需要包含正常與異常兩類大量且均衡的明確標籤資料才能訓練，這在真實工業環境中往往難以達成；自監督學習（Self-supervised Learning）雖也不需人工標籤，但其主要目的是利用資料本身的結構學習通用的特徵表徵以輔助下游任務，而非直接用於判斷資料是否為異常點。",
+        "keywords": [
+          "半監督異常偵測 (Semi-supervised Anomaly Detection)",
+          "非監督學習 (Unsupervised Learning)",
+          "基線模型 (Baseline Model)",
+          "重建誤差 (Reconstruction Error)",
+          "資料不平衡 (Data Imbalance)",
+          "設備監測 (Equipment Monitoring)"
+        ],
+        "extended_tech": [
+          {
+            "name": "單類支持向量機 (One-Class SVM)",
+            "desc": "一種經典的半監督異常偵測演算法，利用核函數將正常資料映射到高維特徵空間，並尋找一個能將所有正常樣本包絡在內的最小超球面邊界，邊界外即視為異常。"
+          },
+          {
+            "name": "孤立森林 (Isolation Forest)",
+            "desc": "基於樹狀結構的集成演算法，透過隨機選擇特徵與切分點來孤立樣本。因為異常樣本數量少且特徵獨特，它們會在決策樹的較淺層被快速孤立出來，從而實現高效的異常偵測。"
+          },
+          {
+            "name": "自編碼器 (Autoencoder)",
+            "desc": "一種無監督的神經網路架構，透過先將輸入資料壓縮降維再嘗試重建還原。當模型只用正常資料訓練後，遇到異常資料時會因為難以壓縮而產生極高的重建誤差，藉此判定異常。"
+          }
+        ],
+        "terminology": [
+          "Supervised Binary Classification",
+          "Unsupervised Anomaly Detection",
+          "Self-supervised Learning",
+          "Reconstruction Error",
+          "One-Class SVM"
         ]
       },
       {
@@ -3255,6 +8433,36 @@ const EXAM_DATA = {
         "examples": [
           "醫學影像的罕見疾病診斷：一個深度極深的卷積神經網路被用來辨識罕見的視網膜病變。因為病變樣本極少，模型在訓練集達到了 99% 的準確率，但醫生發現只要稍微改變圖片的亮暗或旋轉角度，模型就會給出完全不同的診斷結果，顯示模型具有極高的變異，缺乏臨床實用性。",
           "房地產市場的精準定價系統：一位房仲使用了一棵沒有限制深度的決策樹來預測房價，特徵包含房屋的經緯度精確到小數點後六位。模型在訓練資料上的預測誤差幾乎為零，但將模型部署到新開發的社區時，預測價格忽高忽低極度不合理。團隊後來發現，模型過度記住了舊社區每棟房子的確切位置（高變異），而沒有學到影響房價的通用特徵。"
+        ],
+        "comparison": "高變異（High Variance）代表模型過度複雜，極端捕捉了訓練集內的特例雜訊，導致預測極度不穩定，對新資料泛化能力差，常見於過擬合的深層決策樹或參數過多的神經網路，需藉由正則化技術來修補；相對地，高偏差（High Bias）代表模型過於簡單（如用線性迴歸預測複雜非線性現象），根本無法有效學習資料中的特徵規律，導致訓練與驗證表現都極差，此時需要增加特徵或選擇更強大的演算法。資料漂移（Data Drift）則是指隨著時間推移，真實世界資料分佈發生改變而導致模型效能衰退，與交叉驗證期間的高變異現象在本質上有顯著差異。",
+        "keywords": [
+          "高變異 (High Variance)",
+          "過度擬合 (Overfitting)",
+          "偏差-變異權衡 (Bias-Variance Tradeoff)",
+          "交叉驗證 (Cross-Validation)",
+          "模型穩定度 (Model Stability)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "正則化技術 (Regularization Techniques)",
+            "desc": "在模型的損失函數中加入對權重大小的懲罰項（如 L1 Lasso 或 L2 Ridge），以抑制模型過度依賴特定特徵，強迫模型學習更平滑、抗雜訊的規律，是降低高變異的有效手段。"
+          },
+          {
+            "name": "裝袋法集成學習 (Bagging Ensemble)",
+            "desc": "如隨機森林演算法，透過結合多個獨立且在隨機子集上訓練的基底模型預測結果進行平均，能有效抵消單一模型的高變異波動，大幅提升預測的穩定性與泛化能力。"
+          },
+          {
+            "name": "學習曲線分析 (Learning Curve Analysis)",
+            "desc": "透過視覺化繪製模型在不同資料量下訓練誤差與驗證誤差的變化趨勢圖，幫助資料科學家直觀診斷當前模型是處於高變異（兩曲線差距大）還是高偏差（兩曲線收斂但誤差皆高）的狀態。"
+          }
+        ],
+        "terminology": [
+          "High Variance",
+          "High Bias",
+          "Overfitting",
+          "Data Drift",
+          "Bias-Variance Tradeoff"
         ]
       },
       {
@@ -3273,6 +8481,36 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛汽車的行為訓練：如果設計師僅設定「前進一公尺得 1 分」的獎勵，AI 汽車可能會學會在安全的路段無限繞圈子以獲取無限分數。工程師必須進行獎勵塑形，將獎勵改為「安全抵達目的地」給予大獎勵，並對「行駛時間」與「違規行為」給予扣分懲罰，引導其安全直達目標。",
           "遊戲 NPC 的戰鬥 AI 開發：在射擊遊戲中，若給予 NPC 「每次擊中玩家得 10 分」的獎勵，NPC 為了最大化分數，可能會故意不擊殺玩家，而是使用低傷害武器不斷射擊玩家的手腳來反覆刷分。開發團隊必須修改獎勵塑形，改為「成功擊敗玩家」才給予高分，從而訓練出具有真實戰術思維的敵人。"
+        ],
+        "comparison": "獎勵塑形（Reward Shaping）專注於透過重新設計環境的回饋機制來避免 AI 產生「獎勵作弊（Reward Hacking）」，促使智能體達成人類期望的最終目標，是強化學習在機器人控制與遊戲 AI 中不可或缺的技術；相對而言，信用分配問題（Credit Assignment Problem）探討的是在長期的決策過程中，如何正確評估哪一個早期行動對最終的勝利或失敗有決定性影響；而災難性遺忘（Catastrophic Forgetting）則是指神經網路在學習新任務時，瞬間忘記舊任務知識的問題，通常需依賴經驗回放等架構層面技術解決，與獎勵機制的設計不當截然不同。",
+        "keywords": [
+          "獎勵塑形 (Reward Shaping)",
+          "強化學習 (Reinforcement Learning)",
+          "獎勵作弊 (Reward Hacking)",
+          "價值對齊 (Value Alignment)",
+          "稀疏獎勵 (Sparse Reward)",
+          "智能體 (Agent)"
+        ],
+        "extended_tech": [
+          {
+            "name": "基於位能的獎勵塑形 (Potential-based Reward Shaping)",
+            "desc": "一種在數學上被證明能保證不改變最優策略（Optimal Policy）的獎勵調整技術，透過為每個狀態定義一個潛在價值位能，引導 AI 快速探索有效路徑而不會學到作弊行為。"
+          },
+          {
+            "name": "逆向強化學習 (Inverse Reinforcement Learning, IRL)",
+            "desc": "當設計完美的獎勵函數極度困難時，直接讓 AI 觀察人類專家的行為示範，並從這些示範數據中反向推導出潛在的獎勵函數，廣泛應用於複雜的自動駕駛軌跡學習。"
+          },
+          {
+            "name": "人類回饋強化學習 (RLHF)",
+            "desc": "大型語言模型（如 ChatGPT）對齊人類價值觀的核心技術，先利用人類標註員對模型輸出的回答進行品質排序，訓練出一個獎勵模型，再利用此模型指導 LLM 的微調訓練。"
+          }
+        ],
+        "terminology": [
+          "Reward Shaping",
+          "Reward Hacking",
+          "Credit Assignment Problem",
+          "Catastrophic Forgetting",
+          "Reinforcement Learning"
         ]
       },
       {
@@ -3291,6 +8529,36 @@ const EXAM_DATA = {
         "examples": [
           "工廠生產線的瑕疵品檢測：若只追求高 Recall，會把許多正常品誤判為瑕疵，增加人工複檢成本；若只追求高 Precision，則會漏放真正的瑕疵品出廠，引發客訴。工程師使用 F1-score 作為核心指標來微調模型的決策門檻，找出攔截瑕疵與降低誤判之間最具成本效益的平衡點。",
           "垃圾郵件過濾系統：如果系統為了保證完全不漏掉任何垃圾信（高 Recall），可能會把大量重要工作郵件也丟進垃圾桶，這對使用者的傷害遠大於漏信。開發團隊會利用 F1-score 或更偏重 Precision 的 F-beta score 來評估系統效能，確保在有效攔截垃圾郵件的同時，極力避免正常信件被誤殺的情況。"
+        ],
+        "comparison": "F1-score 透過調和平均（Harmonic Mean）同時兼顧精確率（Precision）與召回率（Recall），強烈懲罰偏科極端的預測結果，是評估信用卡盜刷、醫療罕病偵測等高度不平衡資料（Imbalanced Data）的黃金指標；相比之下，傳統的準確率（Accuracy）在不平衡資料中會被多數類別的預測結果嚴重誤導，例如一個全猜「無病」的模型在罕病資料中仍有 99% 的準確率，但毫無醫療價值；而 ROC AUC 雖也能評估不平衡資料，但 F1-score 更直接關注在少數的「正樣本」上的綜合決策品質，適合當正樣本極具商業價值時作為優化目標。",
+        "keywords": [
+          "F1-score",
+          "精確率 (Precision)",
+          "召回率 (Recall)",
+          "調和平均 (Harmonic Mean)",
+          "資料不平衡 (Imbalanced Data)",
+          "權衡 (Trade-off)"
+        ],
+        "extended_tech": [
+          {
+            "name": "F-beta 分數 (F-beta Score)",
+            "desc": "F1-score 的廣義變體，允許使用者透過調整 beta 值來給予 Precision 或 Recall 不同的權重。例如在癌症篩檢中，漏診代價極高，便可設定 beta > 1 以賦予 Recall 更大的權重評估模型效能。"
+          },
+          {
+            "name": "精確-召回曲線 (Precision-Recall Curve, PR Curve)",
+            "desc": "在不同的分類閾值下繪製 Precision 與 Recall 關係變化的圖表，在面對極度不平衡的資料集時，分析 PR 曲線下的面積（AUC-PR）比傳統 ROC 曲線更能真實反映模型的優劣。"
+          },
+          {
+            "name": "最佳決策閾值搜尋 (Threshold Optimization)",
+            "desc": "在模型給出預測機率後，根據業務場景的具體成本（如誤報成本與漏報損失），利用 F1-score 或自定義成本函數，動態尋找最符合商業利益的分類判定門檻（Threshold）。"
+          }
+        ],
+        "terminology": [
+          "F1-score",
+          "Precision",
+          "Recall",
+          "Harmonic Mean",
+          "Precision-Recall Tradeoff"
         ]
       },
       {
@@ -3309,6 +8577,36 @@ const EXAM_DATA = {
         "examples": [
           "宏觀經濟預測模型：經濟學家建立模型預測明年 GDP 成長率，輸入了「失業率」、「消費者物價指數(CPI)」、「核心通膨率」等數十個總體經濟指標。這些指標之間具有強烈的連動與高度相關性（共線性）。使用 Ridge 迴歸可以穩定模型參數，避免某個單一指標權重暴增，並保留所有指標在經濟報告中的解釋力。",
           "行銷通路成效歸因分析：一家零售商在 Facebook、Instagram、Google Search、聯播網等多個渠道投放廣告，由於廣告往往是同步啟動，各渠道的曝光量高度相關。資料科學家使用 Ridge 迴歸來評估各渠道對最終銷售額的貢獻度，不僅能防止模型因為共線性而給出極端的負貢獻，還能確保每個有花費的渠道都能獲得合理的投資報酬率（ROI）權重估計。"
+        ],
+        "comparison": "Ridge 迴歸（L2 正則化）透過平方懲罰縮小模型權重，專注於解決特徵間的多重共線性問題，且保留所有特徵以供後續業務解釋，非常適合變數間高度相關的經濟學與行銷分析；與之相對的 Lasso 迴歸（L1 正則化）則透過絕對值懲罰產生「稀疏解」，會強迫將不重要或高度相關特徵群中的某些係數直接歸零，內建了自動化特徵選擇的功能，適用於生物基因數據中找出關鍵少數因子的場景；而 Elastic Net 則是兩者的折衷方案，同時保留了特徵選擇與共線性穩定處理的優點，但依然會讓部分係數歸零，不符合保留所有特徵的需求。",
+        "keywords": [
+          "Ridge迴歸 (Ridge Regression)",
+          "L2正則化 (L2 Regularization)",
+          "多重共線性 (Multicollinearity)",
+          "過度擬合 (Overfitting)",
+          "權重衰減 (Weight Decay)",
+          "線性迴歸 (Linear Regression)"
+        ],
+        "extended_tech": [
+          {
+            "name": "套索迴歸 (Lasso Regression / L1 Regularization)",
+            "desc": "在損失函數中加入權重絕對值和的懲罰項，促使模型演算法在訓練過程中將許多不重要特徵的係數壓縮至完全為零，是一種極度強大且內建的特徵選擇技術。"
+          },
+          {
+            "name": "彈性網迴歸 (Elastic Net)",
+            "desc": "巧妙結合 L1 與 L2 正則化懲罰項的演算法，既能像 Lasso 一樣過濾掉無用特徵產生稀疏矩陣，又具備 Ridge 處理高度相關特徵群時的穩定性，實務應用彈性極高。"
+          },
+          {
+            "name": "變異數膨脹因子檢定 (Variance Inflation Factor, VIF)",
+            "desc": "在建立迴歸模型前的關鍵統計前處理步驟，用來量化檢測各個自變數之間是否存在嚴重多重共線性。當特定變數的 VIF 值過高時，分析師可決定將其剔除或改用 Ridge 迴歸處理。"
+          }
+        ],
+        "terminology": [
+          "Lasso Regression",
+          "Ridge Regression",
+          "Elastic Net",
+          "L1 Regularization",
+          "L2 Regularization"
         ]
       },
       {
@@ -3327,6 +8625,36 @@ const EXAM_DATA = {
         "examples": [
           "基因體數據的癌症亞型分類：生物資訊研究員使用支持向量機（SVM）分類不同癌症亞型。為了達到最高準確率，他們利用網格搜尋窮舉測試不同的核函數（Kernel）、正則化參數（C）與核係數（Gamma），並透過交叉驗證確保模型在稀有的基因特徵上不會過擬合，最終找到最穩定的診斷參數。",
           "演算法交易策略回測：量化交易員在開發均線交叉策略時，需要決定「短期均線天數」和「長期均線天數」的最佳設定。他們透過網格搜尋，將短均線設為 5 到 20 天，長均線設為 60 到 120 天，對過去十年的歷史股價進行窮舉回測，找出在歷史資料中夏普值（Sharpe Ratio）最高的參數組合上線交易。"
+        ],
+        "comparison": "網格搜尋（Grid Search）是透過窮舉所有參數組合來尋找全局最佳超參數的策略，優勢是保證不遺漏定義空間內的任何可能性，但當參數空間維度增加時會面臨指數級的運算災難；與之相對，隨機搜尋（Random Search）在巨大參數空間中隨機挑選有限組合作測試，在實務上往往能以極小的計算成本找到足夠優秀甚至接近最佳解的配置，適用於高維度深度學習調參；而更先進的貝氏最佳化（Bayesian Optimization）則是利用歷史評估結果建立代理模型，智慧地推測下一個最值得測試的參數點，大幅降低了昂貴的模型訓練次數。",
+        "keywords": [
+          "網格搜尋 (Grid Search)",
+          "超參數最佳化 (Hyperparameter Optimization)",
+          "交叉驗證 (Cross-Validation)",
+          "窮舉法 (Exhaustive Search)",
+          "運算成本 (Computational Cost)",
+          "維度詛咒 (Curse of Dimensionality)"
+        ],
+        "extended_tech": [
+          {
+            "name": "隨機搜尋最佳化 (Random Search Optimization)",
+            "desc": "在預先定義的超參數分佈空間中，隨機抽取指定次數的參數組合進行訓練與評估，已被證實當部分超參數對模型影響微弱時，能比網格搜尋更有效率地探索關鍵超參數空間。"
+          },
+          {
+            "name": "貝氏最佳化 (Bayesian Optimization)",
+            "desc": "一種基於機率模型的智慧調參技術，利用高斯過程（Gaussian Process）分析過去參數組合的表現，計算出期望改善度（Expected Improvement），有策略地挑選下一次訓練參數，大幅節省算力。"
+          },
+          {
+            "name": "Hyperband 自動調參演算法",
+            "desc": "結合隨機搜尋與提早停止（Early Stopping）機制的高階資源分配演算法。它會同時訓練大量隨機參數配置，但在極短的迭代後淘汰表現最差的一半，將算力集中於最有潛力的模型參數上。"
+          }
+        ],
+        "terminology": [
+          "Grid Search",
+          "Random Search",
+          "Bayesian Optimization",
+          "Hyperparameter Tuning",
+          "K-Fold Cross-Validation"
         ]
       },
       {
@@ -3345,6 +8673,36 @@ const EXAM_DATA = {
         "examples": [
           "企業專屬客服機器人開發：一家中小企業希望將開源的 Llama 模型改造成具備其公司產品知識的客服助理。由於缺乏昂貴的 GPU 叢集，工程師採用 LoRA 技術，僅微調模型中約 1% 的參數，就在單張 RTX 4090 顯示卡上成功讓模型學會了公司產品規格與客氣的回覆語氣。",
           "醫療病歷輔助生成系統：醫院希望開發能自動將醫生口述轉換為標準結構化病歷的 AI。考量到病患隱私，資料無法送上雲端，只能在醫院內部的邊緣伺服器運算。技術團隊使用 LoRA 技術在有限的硬體資源下，針對醫學專有名詞與特定格式對開源模型進行微調，快速部署了符合法規的內部輔助系統。"
+        ],
+        "comparison": "LoRA 是一種參數高效微調技術，透過凍結主模型權重並附加低秩矩陣進行訓練，在維持原有模型知識的同時，極大化地減少了微調 LLM 所需的 GPU 記憶體，非常適合資源受限的企業部署特定領域任務；相反地，完整微調（Full Fine-tuning）需更新所有龐大參數，動輒需要高階資料中心叢集，雖學習細節最為透徹但成本驚人且容易發生災難性遺忘。另有 P-Tuning 或 Prompt Tuning，是在輸入層加入可訓練的連續提示詞向量，這類方法記憶體耗用更低，但在處理極度複雜的邏輯推演（如長篇法律摘要）時，其表現上限與泛化能力往往不如 LoRA 的架構層次調整。",
+        "keywords": [
+          "低秩適應 (LoRA)",
+          "參數高效微調 (PEFT)",
+          "大型語言模型 (LLM)",
+          "GPU顯存 (VRAM)",
+          "矩陣分解 (Matrix Factorization)",
+          "微調 (Fine-tuning)"
+        ],
+        "extended_tech": [
+          {
+            "name": "QLoRA (Quantized LoRA)",
+            "desc": "將 LoRA 技術與極限的 4-bit 模型量化技術相結合，進一步將預訓練模型的記憶體佔用壓縮至極致，讓開發者甚至能在筆記型電腦上微調高達百億參數的開源大語言模型。"
+          },
+          {
+            "name": "前綴微調 (Prefix-Tuning)",
+            "desc": "另一種輕量級的 PEFT 技術，不修改模型的內部權重，而是在 Transformer 的每一層注意力機制前面注入一小段可訓練的虛擬 Token 向量，引導模型產出特定風格的回答。"
+          },
+          {
+            "name": "檢索增強生成 (Retrieval-Augmented Generation, RAG)",
+            "desc": "不更動模型內部權重，而是在推論階段即時從外部企業知識庫檢索相關文件，並將這些資訊作為上下文提示提供給大語言模型，以解決模型幻覺與知識無法更新的問題。"
+          }
+        ],
+        "terminology": [
+          "LoRA (Low-Rank Adaptation)",
+          "PEFT (Parameter-Efficient Fine-Tuning)",
+          "Full Fine-tuning",
+          "Rank (Matrix Rank)",
+          "Transformer"
         ]
       },
       {
@@ -3363,6 +8721,36 @@ const EXAM_DATA = {
         "examples": [
           "基因序列分析與疾病預測：個人基因資料極度敏感，若外洩將造成嚴重隱私問題。醫療機構可以將病患的基因定序資料以同態加密處理後，傳送給國外的頂尖 AI 醫療生技公司。生技公司的 AI 模型直接對密文進行運算，找出潛在的遺傳疾病風險並回傳密文結果。過程中生技公司完全無法得知病患真實的基因序列。",
           "跨國企業的薪資防護雲端計算：一家跨國集團使用第三方的雲端人資系統來計算每月員工的獎金與稅務。為了防止雲端供應商窺探高階主管的薪水，企業使用同態加密將薪資數據加密上傳。雲端系統的演算法直接在密文上執行複雜的稅率計算與分紅加總，確保了企業核心財務數據的絕對機密。"
+        ],
+        "comparison": "同態加密（Homomorphic Encryption）允許直接對密文進行運算，解決了單一雲端環境下「資料使用中」的絕對隱私問題，適用於高機密的金融評分或基因分析；聯邦學習（Federated Learning）則側重於不共享原始資料的情況下，讓多個終端設備（如手機）在本地獨立訓練模型並匯總梯度，解決的是「分散式訓練」的數據孤島困境；差分隱私（Differential Privacy）透過在資料庫或模型輸出中注入數學干擾雜訊，確保外部攻擊者無法反推個別資料是否存在，但這無法避免雲端服務商看到明文；安全多方計算（MPC）則需要多個節點共同參與秘密分享與運算，架構與「交給單一雲端運算」的需求不符。",
+        "keywords": [
+          "同態加密 (Homomorphic Encryption)",
+          "隱私保護計算 (Privacy-Preserving Computation)",
+          "密文運算 (Ciphertext Computation)",
+          "零信任 (Zero Trust)",
+          "資料安全 (Data Security)",
+          "雲端推論 (Cloud Inference)"
+        ],
+        "extended_tech": [
+          {
+            "name": "機密運算硬體環境 (Trusted Execution Environment, TEE)",
+            "desc": "基於 CPU 晶片硬體級別的安全隔離區（如 Intel SGX），確保即使是雲端作業系統管理員也無法窺探或竄改隔離區內正在執行中（Data in Use）的 AI 模型運算記憶體與資料。"
+          },
+          {
+            "name": "差分隱私 (Differential Privacy)",
+            "desc": "在數據集或神經網路梯度中嚴格注入數學界定的隨機雜訊，確保統計結果極具參考價值的同時，任何外部攻擊者都無法透過分析結果反向推斷出特定個人資料是否存在於資料集中。"
+          },
+          {
+            "name": "聯邦學習 (Federated Learning)",
+            "desc": "一種去中心化的 AI 訓練架構。各家醫院或金融機構不需將機密數據上傳雲端，而是各自在本地端訓練模型，僅將更新的「權重梯度」上傳至中央伺服器進行聚合，達成群智學習。"
+          }
+        ],
+        "terminology": [
+          "Homomorphic Encryption",
+          "Federated Learning",
+          "Differential Privacy",
+          "Secure Multi-Party Computation",
+          "Ciphertext"
         ]
       },
       {
@@ -3381,6 +8769,36 @@ const EXAM_DATA = {
         "examples": [
           "精準醫療的藥物反應預測：AI 模型預測某位癌症病患對特定化療藥物的反應極差。醫師透過 SHAP 分析圖表，清楚看到是因為該病患的「某特定基因突變」與「肝功能指數偏高」這兩個特徵，產生了巨大的負向貢獻值。這份局部解釋幫助醫師說服病患與家屬更改治療方案。",
           "客戶流失預測與挽留策略：電信公司的模型標記一位 VIP 客戶下個月有 85% 的機率會退租。行銷人員點開該客戶的 SHAP 分析圖，發現推高流失機率的主要因素是「上個月客服通話時間極長」以及「合約即將到期」。行銷人員據此設計了高度客製化的挽留話術，成功留住該客戶。"
+        ],
+        "comparison": "SHAP 提供了嚴謹的「局部可解釋性（Local Explainability）」，能針對每一筆單獨的預測精確量化各個特徵的貢獻度，特別適合信貸審核、醫療診斷等要求合規與個別案例解釋的高風險領域；相比之下，決策樹自帶的「全域特徵重要性（Global Feature Importance）」只能描述模型在所有樣本上的平均偏好，對於向單一被拒貸客戶解釋原因時毫無用處；而 LIME（局部可解釋模型無關解釋）雖然也是局部解釋技術，但其藉由在單一樣本附近建立簡單線性模型來逼近複雜模型的做法，在穩定性與數學嚴謹度上不如基於博弈論的 SHAP 值；至於 Grad-CAM 則是專門用來產生影像辨識「熱力圖」的視覺化解釋工具，完全無法處理表格數據。",
+        "keywords": [
+          "局部可解釋性 (Local Explainability)",
+          "SHAP值 (SHapley Additive exPlanations)",
+          "博弈論 (Game Theory)",
+          "特徵貢獻度 (Feature Contribution)",
+          "黑盒子模型 (Black Box Model)",
+          "模型透明度 (Model Transparency)"
+        ],
+        "extended_tech": [
+          {
+            "name": "局部可解釋模型無關解釋 (LIME)",
+            "desc": "一種靈活的模型解釋技術，當針對某筆特定預測進行解釋時，LIME 會在該資料點的鄰近區域產生隨機擾動樣本，並用一個簡單好懂的線性模型去擬合原本黑盒子的局部邊界，藉此找出關鍵影響特徵。"
+          },
+          {
+            "name": "類別活化映射熱力圖 (Grad-CAM)",
+            "desc": "專門用於卷積神經網路（CNN）的視覺化解釋技術。它利用目標類別在最後一層卷積層上的梯度反向傳播，繪製出影像中哪些區域的像素強烈影響了模型的判斷，廣泛用於醫療影像輔助判讀。"
+          },
+          {
+            "name": "反事實解釋 (Counterfactual Explanations)",
+            "desc": "一種極具行動指導意義的解釋方法。與其告訴客戶為何被拒貸，不如回答「客戶需要改變什麼特徵（如將月收入增加五千或降低負債比 10%），模型才會將拒絕轉為核准預測」。"
+          }
+        ],
+        "terminology": [
+          "SHAP",
+          "Local Explainability",
+          "Global Feature Importance",
+          "Grad-CAM",
+          "Game Theory"
         ]
       },
       {
@@ -3399,6 +8817,36 @@ const EXAM_DATA = {
         "examples": [
           "銀行信用卡額度核發系統：銀行的 AI 模型被發現給予少數族裔申請者的平均核卡額度遠低於白人申請者。為了符合政府反歧視法規，AI 團隊對演算法施加了統計均等的約束條件，確保不同種族背景的客戶在收入相近的情況下，獲得高額度信用卡的機率必須保持一致，避免系統性的金融歧視。",
           "大學入學 AI 評估系統：某理工大學開發 AI 系統自動篩選入學申請。由於歷史資料中理工科系的男性錄取者佔多數，模型自動學會了偏好男性。為促進校園多元化，校方要求模型必須滿足統計均等指標，強迫系統調整預測權重，使得男女申請者被推薦錄取的比例必須達到 50:50 才能上線使用。"
+        ],
+        "comparison": "統計均等（Statistical Parity）強制要求所有群體獲得正向預測的總體比例必須相等，不論其背景能力差異，此指標最適合用於徹底糾正長期系統性歧視或配合多元招聘政策的場景；相反地，均等賠率（Equalized Odds）則是要求模型在「真實合格」的人群中，各群體被模型挑中的機率（真陽性率）相等，在「真實不合格」的人群中被誤判的機率（假陽性率）也相等，此指標更兼顧了個人的實際表現與模型準確度，是金融核貸與司法風險評估中較為平衡的公平性標準。",
+        "keywords": [
+          "統計均等 (Statistical Parity)",
+          "演算法公平性 (Algorithmic Fairness)",
+          "敏感特徵 (Sensitive Attribute)",
+          "代理變數 (Proxy Variable)",
+          "人口統計均等 (Demographic Parity)",
+          "偏見緩解 (Bias Mitigation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "均等賠率公平指標 (Equalized Odds)",
+            "desc": "一種更為細緻的公平性指標。它不強求總體錄取率相等，而是要求對於那些「真正有能力償還貸款」的人而言，不論其種族或性別，模型將其預測為核貸（真陽性）的機率必須完全一致。"
+          },
+          {
+            "name": "代理變數檢測 (Proxy Variable Detection)",
+            "desc": "在移除如「種族」等敏感特徵後，模型仍可能透過居住郵遞區號、就讀學校等看似中立的「代理變數」學到歧視性規律。工程師需透過相關性分析與因果推論找出並處理這些隱性偏見根源。"
+          },
+          {
+            "name": "對抗性去偏網路 (Adversarial Debiasing)",
+            "desc": "一種基於對抗式生成架構（GAN）思想的深度學習訓練方法。模型在預測目標任務的同時，被迫無法讓另一個附屬的神經網路猜出樣本的性別或種族，從而在特徵層面徹底抹除歧視性資訊。"
+          }
+        ],
+        "terminology": [
+          "Statistical Parity",
+          "Demographic Parity",
+          "Algorithmic Fairness",
+          "Proxy Variable",
+          "Equalized Odds"
         ]
       },
       {
@@ -3417,6 +8865,36 @@ const EXAM_DATA = {
         "examples": [
           "人資招募 AI 薪資核定系統：企業開發 AI 根據員工的經歷與技能建議起薪。為了避免模型承襲歷史資料中男女性別薪資不平等的現象，團隊在訓練神經網路時加入了對抗性分支。這確保了模型提取的技能特徵中不帶有性別暗示，使得最終上線的模型在推論時不需輸入性別，也能給出男女同工同酬的建議。",
           "警政系統的犯罪風險預測：警方使用 AI 預測各地區的犯罪風險。為了避免模型對特定低收入少數族裔社區產生系統性偏見，開發者在演算法訓練過程中引入公平性懲罰函數。模型在優化預測準確率的同時，被強制要求各個社區的「假陽性率（誤報率）」必須保持一致，從而避免過度派遣警力導致對特定族群的過度執法。"
+        ],
+        "comparison": "訓練中去偏（In-processing Fairness Mitigation）是在算法內部透過損失函數懲罰來拔除歧視特徵，訓練出的模型在推論時完全不需輸入敏感特徵即可保持中立，非常適合法規禁止推論時使用個資的信貸或徵才場景；相對地，後處理去偏（Post-processing）是事後對不同族群設定不同的決策門檻以達到統計均衡，這代表在實務部署時系統必須即時取得使用者的性別或種族數據，常引發法律與隱私爭議；而前處理去偏（Pre-processing）雖然也符合法規限制，但僅靠對歷史資料的重抽樣或清洗，有時無法根除深度神經網路在複雜高維特徵中自行學習到的隱性代理歧視變數。",
+        "keywords": [
+          "訓練中去偏 (In-processing Debiasing)",
+          "對抗性去偏 (Adversarial Debiasing)",
+          "公平性懲罰項 (Fairness Penalty)",
+          "前處理去偏 (Pre-processing)",
+          "後處理去偏 (Post-processing)",
+          "代理變數 (Proxy Variables)"
+        ],
+        "extended_tech": [
+          {
+            "name": "重抽樣前處理去偏 (Resampling Pre-processing)",
+            "desc": "在訓練模型之前，透過對訓練資料集中的弱勢群體進行過採樣（Oversampling）或對優勢群體進行欠採樣（Undersampling），人為創造一個無偏見的理想數據集來訓練模型。"
+          },
+          {
+            "name": "公平性後處理門檻調整 (Post-processing Thresholding)",
+            "desc": "不更動已訓練好的黑盒子模型，而是根據不同群體（如不同性別）在驗證集上的誤差分佈，設定不同的分類閾值。例如對弱勢群體稍微放寬預測門檻，以事後強制達成均等賠率。"
+          },
+          {
+            "name": "多任務對抗學習 (Multi-task Adversarial Learning)",
+            "desc": "深度神經網路架構設計，主網路致力於最小化主任務（如預測信用風險）的誤差，而對抗子網路則致力於從隱藏層特徵中預測敏感屬性，透過梯度反轉層（GRL）迫使主網路遺忘歧視資訊。"
+          }
+        ],
+        "terminology": [
+          "In-processing Fairness",
+          "Adversarial Debiasing",
+          "Pre-processing",
+          "Post-processing",
+          "False Negative Rate"
         ]
       },
       {
@@ -3435,6 +8913,36 @@ const EXAM_DATA = {
         "examples": [
           "醫療病理切片分類系統：AI 系統需要將癌症切片影像分類為「正常」、「良性腫瘤」、「第一期」、「第二期」、「第三期」共五種互斥的類別。網路最後一層使用 5 個神經元搭配 Softmax 激活，輸出各期別的機率，並透過 Categorical Crossentropy 優化權重，幫助醫生快速判斷最可能的病理分期。",
           "新聞文章自動標籤系統：新聞媒體網站每天產出大量文章，工程師開發了一個 NLP 模型將新聞分類到「政治」、「體育」、「財經」、「娛樂」等專屬版面（一篇文章只屬一版）。模型架構結尾使用 Softmax 確保每個版面獲得適當的機率值，讓自動分發系統能精確的將文章派送到機率最高的首頁區塊。"
+        ],
+        "comparison": "在神經網路多類別且樣本互斥的單標籤分類任務中，Softmax 結合 Categorical Crossentropy 能強制所有類別機率總和為 1，產生清晰的單一最佳預測，適用於影像數字辨識或單一專欄的文章分類；相反地，若任務是「多標籤分類（Multi-label Classification）」（如一張照片同時有狗與貓），則必須在輸出層改用獨立運作的 Sigmoid 激活函數搭配 Binary Crossentropy 損失，允許各類別機率獨立介於 0 到 1 之間；而均方誤差（MSE）則僅適用於輸出連續數值的迴歸問題（如預測房價），不適合用於機率分類。",
+        "keywords": [
+          "Softmax激活函數 (Softmax Activation)",
+          "分類交叉熵 (Categorical Crossentropy)",
+          "獨熱編碼 (One-Hot Encoding)",
+          "多層感知機 (MLP)",
+          "多類別分類 (Multi-class Classification)",
+          "損失函數 (Loss Function)"
+        ],
+        "extended_tech": [
+          {
+            "name": "稀疏分類交叉熵 (Sparse Categorical Crossentropy)",
+            "desc": "在處理擁有成千上萬個類別（如詞彙表分類）的任務時，不需要先將標籤轉換為極度消耗記憶體的 One-Hot 編碼，可直接輸入整數類別標籤並計算損失的優化技術。"
+          },
+          {
+            "name": "標籤平滑正則化 (Label Smoothing Regularization)",
+            "desc": "為了解決 Softmax 容易產生過度自信導致過度擬合的問題，將 One-Hot 編碼的絕對 1 替換成 0.9，剩餘的 0.1 平均分配給其他類別，迫使模型保留不確定性，提升泛化能力。"
+          },
+          {
+            "name": "焦點損失函數 (Focal Loss)",
+            "desc": "為了解決交叉熵在極度不平衡資料中容易被大量「易分類負樣本」主導的問題，Focal Loss 動態降低高信心樣本的權重，讓神經網路專注於學習難以區分的關鍵特徵邊界。"
+          }
+        ],
+        "terminology": [
+          "Softmax",
+          "Categorical Crossentropy",
+          "One-Hot Encoding",
+          "Sigmoid",
+          "Sparse Categorical Crossentropy"
         ]
       },
       {
@@ -3453,6 +8961,36 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛系統的交通號誌辨識：工程師為了增加資料量，對收集到的交通號誌圖片使用了水平翻轉增強。結果導致模型在實際上路時，將「向左急轉彎」的號誌錯誤辨識為「向右急轉彎」，引發嚴重的安全隱患。團隊事後緊急修復，在交通號誌辨識任務中移除了翻轉增強策略。",
           "工廠自動化金屬件表面瑕疵檢測：金屬零件在輸送帶上可能以任何角度出現。為了讓 AI 適應這種情況，工程師使用了 360 度隨機旋轉（RandomRotation）與隨機裁切（RandomCrop）作為資料增強策略。因為「刮痕」或「凹洞」的瑕疵定義不會因為零件的旋轉角度而改變，這項增強成功地讓模型在極少瑕疵樣本的情況下達到了 99% 的檢出率。"
+        ],
+        "comparison": "資料增強必須嚴格遵守「語義一致性（Semantic Consistency）」。水平翻轉（RandomHorizontalFlip）非常適合用於不具備方向依賴性的任務，例如貓狗分類或風景圖片辨識，能以零成本有效加倍訓練資料並抵抗過擬合；但若應用在 OCR 字元辨識、交通左右轉號誌辨識、或是依賴不對稱病理特徵的醫學影像診斷時，翻轉會徹底摧毀標籤的正確性，導致模型崩潰。針對這類具備方向特徵的任務，應改用顏色擾動（ColorJitter）、微小高斯噪聲注入或小角度旋轉等不影響幾何語義的增強策略。",
+        "keywords": [
+          "資料增強 (Data Augmentation)",
+          "語義一致性 (Semantic Consistency)",
+          "光學字元辨識 (OCR)",
+          "水平翻轉 (RandomHorizontalFlip)",
+          "錯誤標籤 (Noisy Labels)",
+          "過擬合防制 (Overfitting Prevention)"
+        ],
+        "extended_tech": [
+          {
+            "name": "混合圖片資料增強 (Mixup / CutMix)",
+            "desc": "進階的深度學習影像增強技術。透過將兩張完全不同的圖片（及其 One-Hot 標籤）以線性比例混合疊加或拼貼，強迫模型學習更為平滑的決策邊界，極大提升模型的抗干擾與泛化能力。"
+          },
+          {
+            "name": "生成對抗網路資料擴充 (GAN-based Augmentation)",
+            "desc": "在罕見疾病影像或極度缺乏正樣本的瑕疵檢測任務中，傳統的旋轉翻轉無法憑空創造新特徵。此時可利用 GAN 網路無中生有地生成高度逼真的全新假樣本，大幅擴充訓練集規模。"
+          },
+          {
+            "name": "文字資料隨機替換與回譯 (Text Augmentation & Back Translation)",
+            "desc": "自然語言處理中的增強技術。透過隨機遮蔽詞彙、同義詞替換，或是將文本先翻譯成外語再翻譯回原語言，能在不改變原文核心語義的前提下，為 NLP 模型製造豐富的句型變化。"
+          }
+        ],
+        "terminology": [
+          "Data Augmentation",
+          "Semantic Consistency",
+          "RandomHorizontalFlip",
+          "Validation Loss",
+          "Noisy Labels"
         ]
       },
       {
@@ -3471,6 +9009,36 @@ const EXAM_DATA = {
         "examples": [
           "野生動物保育影像分類：研究團隊只有數百張罕見台灣黑熊與石虎的照片。他們下載了 Google 在千萬張圖片上預訓練好的 EfficientNet 模型，將其主體凍結作為特徵萃取器，只重新訓練最後一層。在不到 10 分鐘的訓練後，就得到了一個極高準確率的保育動物辨識模型。",
           "生產線小批量產品瑕疵檢測：工廠剛推出一款新產品，產線上的瑕疵圖片不到 50 張，根本無法從頭訓練深度學習模型。AI 工程師利用在通用物件上預訓練好的 ResNet-50 進行特徵萃取，成功將新產品的微小刮痕與撞傷特徵分離出來，快速部署了第一版自動光學檢測（AOI）系統。"
+        ],
+        "comparison": "特徵萃取（Feature Extraction）藉由凍結預訓練模型龐大的主體網路，僅訓練最後的分類層，非常適合下游任務數據量極小且與來源領域特徵相似的情境，能用極少算力防範過擬合；而全面微調（Full Fine-tuning）則是解凍所有層級的權重讓其一起更新，適用於下游任務擁有龐大數據量且業務場景與原始預訓練資料差異較大時，雖然效果更為極致但計算成本與過擬合風險也大幅上升；至於零樣本學習（Zero-shot Learning）完全不需更新權重，依賴超大模型（如 CLIP 或 GPT-4）原生的強大泛化能力直接進行預測，在無標籤場景極具優勢，但準確度通常不如有監督的微調。",
+        "keywords": [
+          "遷移學習 (Transfer Learning)",
+          "特徵萃取 (Feature Extraction)",
+          "權重凍結 (Weight Freezing)",
+          "預訓練模型 (Pre-trained Model)",
+          "全面微調 (Full Fine-Tuning)",
+          "反向傳播 (Backpropagation)"
+        ],
+        "extended_tech": [
+          {
+            "name": "全面微調 (Full Fine-tuning)",
+            "desc": "在遷移學習中，不僅替換最後一層分類器，更使用極小的學習率解凍並更新預訓練模型中所有的神經網路層參數，使得模型特徵表示能夠深度適應全新的領域資料。"
+          },
+          {
+            "name": "零樣本學習 (Zero-shot Learning)",
+            "desc": "利用在海量多模態資料上預訓練的基礎模型（Foundation Model，如 OpenAI 的 CLIP），在完全不經過任何特定任務數據微調的情況下，直接透過提示詞完成新類別的影像辨識或文本分類任務。"
+          },
+          {
+            "name": "知識蒸餾 (Knowledge Distillation)",
+            "desc": "一種模型壓縮技術。先訓練一個龐大精確的「教師模型」，再利用教師模型的輸出機率分佈（Soft Labels）去教導一個結構簡單、運算極快的「學生模型」，使其在輕量級硬體上發揮強大效能。"
+          }
+        ],
+        "terminology": [
+          "Transfer Learning",
+          "Feature Extraction",
+          "Zero-shot Learning",
+          "Knowledge Distillation",
+          "Requires_grad"
         ]
       },
       {
@@ -3489,6 +9057,36 @@ const EXAM_DATA = {
         "examples": [
           "醫學 X 光肺炎診斷模型：工程師取得了一個在自然風景與人物照片上預訓練的 CNN 模型。為了讓它適應黑白且紋理極為相似的 X 光片，工程師解凍了所有神經網路層，並設定了 1e-5 的極小學習率進行微調。這讓模型在保留辨識輪廓能力的同時，緩慢適應了肺部浸潤病灶的微小特徵。",
           "專業法學領域的 LLM 開發：一間律師事務所利用開源的大型語言模型（如 Llama 3）作為基底，餵入大量的法庭判決書與合約進行微調。為了確保模型在學習專業法律術語與嚴謹邏輯的同時，不會喪失原本流暢對話與常識推理的能力，開發團隊採用了極微小的學習率與嚴格的預熱排程（Warmup Scheduler）進行訓練。"
+        ],
+        "comparison": "在遷移學習中設置極小的學習率（Learning Rate）是為了保護預訓練模型中已確立的高階語義特徵不被新資料的巨大梯度瞬間摧毀，這對於適應領域差異極大或資料量稀缺的任務至關重要；相反地，如果是從零開始隨機初始化訓練一個新模型（Training from Scratch），工程師初期會採用較大（如 1e-2）或甚至使用學習率預熱（Warmup）策略，以幫助模型快速跳出初始的平坦區並跨越局部的次佳解。因此，優化器的學習率設定必須完全配合模型目前的狀態（預訓練低谷 vs 隨機初始化山峰）而調整。",
+        "keywords": [
+          "微調 (Fine-Tuning)",
+          "學習率 (Learning Rate)",
+          "遷移學習 (Transfer Learning)",
+          "災難性遺忘 (Catastrophic Forgetting)",
+          "特徵表示 (Feature Representation)",
+          "梯度更新 (Gradient Update)"
+        ],
+        "extended_tech": [
+          {
+            "name": "分層學習率設定 (Discriminative Learning Rates)",
+            "desc": "在神經網路微調時的一種精細策略。由於底層網路負責萃取邊緣等通用特徵，會給予極小的學習率；而高層網路負責複雜語義，需要適應新任務，則給予相對較大的學習率。"
+          },
+          {
+            "name": "餘弦退火學習率排程 (Cosine Annealing LR Scheduler)",
+            "desc": "一種訓練優化技巧，在訓練過程中讓學習率依循餘弦函數的曲線緩慢下降。這能幫助模型在初期快速收斂，並在訓練末期以極小的步伐精確滑入損失函數地形的最優最低點。"
+          },
+          {
+            "name": "逐步解凍訓練法 (Gradual Unfreezing)",
+            "desc": "在微調超大型預訓練模型時，先凍結大部分網路層僅訓練分類頭，隨後由上往下，逐層解凍並搭配極小學習率進行微調，能最大程度避免預訓練知識被破壞並防止過度擬合。"
+          }
+        ],
+        "terminology": [
+          "Fine-Tuning",
+          "Learning Rate",
+          "Catastrophic Forgetting",
+          "Loss Landscape",
+          "Discriminative Learning Rates"
         ]
       },
       {
@@ -3507,6 +9105,36 @@ const EXAM_DATA = {
         "examples": [
           "信用卡違約預測的特徵標準化：一位新手資料科學家在切分資料前，對所有客戶的「年收入」特徵進行了 Z-score 標準化。結果在驗證集中，模型其實已經隱性地利用了全局的收入平均值。系統上線後，遇到整體經濟環境改變帶來的新收入分佈，模型的違約預測準確率大幅崩跌。",
           "基因微陣列的特徵選擇洩漏：在預測癌症存活率的任務中，由於基因特徵多達幾萬個，研究員先用整個資料集的標籤（包含測試病患的存活結果）篩選出最相關的 50 個基因，然後才進行交叉驗證。這導致模型表現出完美的預測能力，但在實際臨床盲測中卻完全無效，浪費了大量的研發時間與成本。"
+        ],
+        "comparison": "使用 Pipeline 進行交叉驗證與特徵工程，是為了徹底杜絕資料洩漏（Data Leakage）。如果在切分訓練集與測試集之前就對全域資料執行 LDA 降維或 Z-score 標準化，演算法會偷窺到未來測試集的統計分佈與標籤特徵，導致實驗室測出的準確率虛高；相對地，正確的 Pipeline 架構強迫系統在交叉驗證的每一折（Fold）中，都必須先將資料切分，然後僅利用「訓練子集」計算轉換矩陣與平均值，再套用到未知的「驗證子集」上，這樣才能真實模擬系統上線後面對全新未知資料的嚴苛考驗。",
+        "keywords": [
+          "資料洩漏 (Data Leakage)",
+          "交叉驗證 (Cross-Validation)",
+          "線性判別分析 (LDA)",
+          "特徵降維 (Dimensionality Reduction)",
+          "Pipeline管線架構 (Pipeline Architecture)",
+          "泛化能力 (Generalization)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Scikit-Learn Pipeline 工具",
+            "desc": "Python 機器學習庫中用來串接資料前處理、特徵降維與最終預測模型的標準化封裝工具，確保交叉驗證與網格搜尋中每個步驟嚴格遵守訓練集與測試集的數據隔離邊界。"
+          },
+          {
+            "name": "主成分分析降維 (Principal Component Analysis, PCA)",
+            "desc": "最廣泛使用的非監督式特徵降維技術，透過正交變換將可能相關的高維變數轉換為少數線性無關的主成分，大幅去除資料雜訊，通常作為模型訓練前的資料前處理步驟。"
+          },
+          {
+            "name": "特徵選擇洩漏預防 (Feature Selection without Leakage)",
+            "desc": "在處理高維度資料（如基因或文本）時，特徵篩選（如 SelectKBest）必須在交叉驗證的每一個訓練 Fold 內部獨立執行，絕對不能在全域資料上看過測試標籤後才挑選變數。"
+          }
+        ],
+        "terminology": [
+          "Data Leakage",
+          "Cross-Validation",
+          "LDA",
+          "Scikit-Learn Pipeline",
+          "Over-optimistic Performance"
         ]
       },
       {
@@ -3525,6 +9153,36 @@ const EXAM_DATA = {
         "examples": [
           "電子郵件釣魚攻擊偵測：在百萬封企業郵件中，真正的釣魚信件僅佔 0.5%。資安工程師使用 Stratified K-Fold 來評估過濾模型的表現，確保在交叉驗證的 10 個循環中，每一次的訓練集和測試集都精確保留了這 0.5% 的極端不平衡比例，精準反映模型在真實環境攔截釣魚信的能力。",
           "製造業的多種類瑕疵分類：AOI 系統需要辨識晶圓上的「刮傷」、「微塵」與「裂痕」三種瑕疵。其中「裂痕」非常罕見，僅有數十張照片。透過分層交叉驗證，演算法能確保每一折驗證集中都平均包含了少數幾張「裂痕」照片，避免在某次驗證中因為完全沒遇到裂痕瑕疵，而產生模型準確率異常偏高的假象。"
+        ],
+        "comparison": "分層 K 折交叉驗證（Stratified K-Fold）利用統計分層抽樣，強迫每一折的資料集在類別比例上與原始母體完全一致，這在處理詐欺偵測、罕病篩檢等「類別極度不平衡」的分類任務中，是維持模型訓練與驗證穩定性的必備手段；相對而言，標準的 K-Fold 交叉驗證僅進行純隨機切分，雖適用於資料量巨大且分佈均勻的迴歸問題（如預測房價），但在罕見分類問題上會因為隨機性導致某些 Fold 缺乏關鍵的少數樣本，使得模型評估產生劇烈震盪與偏差。因此，在任何分類競賽與實務應用中，Stratified K-Fold 幾乎是不可取代的黃金標準。",
+        "keywords": [
+          "分層抽樣 (Stratified Sampling)",
+          "交叉驗證 (Cross-Validation)",
+          "類別不平衡 (Imbalanced Classes)",
+          "Stratified K-Fold",
+          "模型驗證 (Model Validation)",
+          "資料切分 (Data Splitting)"
+        ],
+        "extended_tech": [
+          {
+            "name": "SMOTE 過度採樣技術 (Synthetic Minority Over-sampling Technique)",
+            "desc": "面對極度不平衡的資料集時，除了使用分層驗證外，可在訓練資料中使用 SMOTE 演算法，透過在少數類別的相鄰資料點之間插值來生成合成新樣本，幫助模型學習清晰邊界。"
+          },
+          {
+            "name": "分層打亂分割 (Stratified Shuffle Split)",
+            "desc": "結合了隨機重抽樣與分層抽樣特性的驗證切分技術，允許開發者自定義訓練與測試集的精確比例，並可進行任意次數的隨機抽樣評估，非常適合資料集規模較小的不平衡分類任務。"
+          },
+          {
+            "name": "類別權重調整 (Class Weight Adjustment)",
+            "desc": "在無法取得更多少數樣本時，直接在演算法的損失函數中給予少數類別（如詐欺案例）數倍於多數類別的懲罰權重，強迫模型在訓練時必須高度重視罕見但關鍵的樣本判斷。"
+          }
+        ],
+        "terminology": [
+          "Stratified K-Fold",
+          "Cross-Validation",
+          "Imbalanced Classes",
+          "KFold",
+          "cross_val_score"
         ]
       },
       {
@@ -3543,6 +9201,36 @@ const EXAM_DATA = {
         "examples": [
           "語音識別的音頻特徵處理：在處理語音訊號的梅爾頻率倒譜係數（MFCC）時，不同頻段的能量值差異巨大。工程師必須先進行特徵縮放，將所有特徵拉到同一尺度，否則神經網路的學習會完全被能量值最大的低頻訊號主導，而忽略了包含關鍵語音資訊的高頻細節。",
           "自然語言處理的文字分類模型：在分析電商評論的感情極性時，工程師將評論分為「極好」、「普通」、「極差」三類。為了避免模型將「普通」當作「極好」與「極差」的數學平均值，工程師使用 One-Hot Encoding 將這三種類別轉換為獨立的向量表示，幫助模型清晰區分不同語義群體。"
+        ],
+        "comparison": "在深度學習的特徵縮放中，最大最小化縮放（Min-Max Scaling，如影像除以 255）能快速將數值強制壓縮至 [0, 1] 區間，對維持圖片像素邊界或處理已知上下限的感測器資料非常直觀有效，且不會破壞資料的原始稀疏性；相比之下，Z-score 標準化（Standardization）則減去平均值並除以標準差，將資料轉化為符合常態分佈且均值為 0 的狀態，這種方法對極端異常值（Outliers）的抵抗力更強，通常應用於金融財務特徵或數值分佈極度不規則的表格型資料前處理中。",
+        "keywords": [
+          "資料前處理 (Data Preprocessing)",
+          "特徵縮放 (Feature Scaling)",
+          "最大最小縮放 (Min-Max Scaling)",
+          "獨熱編碼 (One-Hot Encoding)",
+          "梯度下降 (Gradient Descent)",
+          "梯度爆炸 (Exploding Gradients)"
+        ],
+        "extended_tech": [
+          {
+            "name": "Z-Score 標準化 (Standardization)",
+            "desc": "將特徵數據減去群體平均值後除以標準差，把資料轉換為平均數為 0、標準差為 1 的分佈型態。對於受極端異常值影響較大或符合常態分佈假設的表格資料，此方法比簡單的 Min-Max 縮放更為穩健。"
+          },
+          {
+            "name": "標籤編碼 (Label Encoding)",
+            "desc": "將類別型資料（如紅、綠、藍）直接轉換為連續的整數數值（0, 1, 2）。雖然對於神經網路可能造成數值大小的誤導，但對於基於樹狀結構的演算法（如隨機森林、XGBoost），這是一種高效且節省記憶體的編碼選擇。"
+          },
+          {
+            "name": "穩健縮放器 (Robust Scaler)",
+            "desc": "專門應對含有大量離群值（Outliers）的資料集設計的縮放技術。它利用資料的中位數與四分位距（IQR）來進行縮放，避免了平均數與標準差被少數極端值嚴重扭曲的問題。"
+          }
+        ],
+        "terminology": [
+          "Min-Max Scaling",
+          "One-Hot Encoding",
+          "Gradient Explosion",
+          "Softmax",
+          "Z-score Standardization"
         ]
       },
       {
@@ -3561,6 +9249,36 @@ const EXAM_DATA = {
         "examples": [
           "自動駕駛汽車的光學雷達（LiDAR）點雲分析：工程師使用 3D CNN 分析雷達數據以辨識周圍的行人與車輛。為了加速複雜 3D 卷積的收斂時間並穩定訓練動態，他們在每一個卷積層後都加入了 Batch Normalization，將模型訓練時間從一週縮短至三天。",
           "無人機農田病蟲害空拍辨識：由於能收集到的病蟲害農田照片數量有限，CNN 模型極易出現過度擬合，在測試集上準確率很低。AI 團隊在網路的全連結層與高階卷積層中加入了高比例（例如 0.5）的 Dropout 機制。這成功迫使模型放棄死背特定的泥土背景，轉而專注於學習葉片上真實的病斑紋理。"
+        ],
+        "comparison": "Batch Normalization 與 Dropout 都是深層神經網路中極具代表性的優化元件，但目的截然不同。Batch Normalization 旨在解決「內部協變量偏移」，透過標準化隱藏層的數值分佈來加速收斂、穩定梯度並允許更大的學習率，猶如為深度學習的引擎加上潤滑油；而 Dropout 則是一種強烈的正則化（Regularization）手段，透過隨機癱瘓神經元迫使模型在不完整的資訊下學習冗餘與強健的特徵，專門用來對抗過擬合（Overfitting），猶如在訓練士兵時隨機遮蔽視線以鍛鍊直覺。兩者在現代 CNN 架構中常被交替或組合使用以發揮最大綜效。",
+        "keywords": [
+          "批次正規化 (Batch Normalization)",
+          "丟棄法 (Dropout)",
+          "內部協變量偏移 (Internal Covariate Shift)",
+          "卷積神經網路 (CNN)",
+          "正則化 (Regularization)",
+          "過擬合防制 (Overfitting Prevention)"
+        ],
+        "extended_tech": [
+          {
+            "name": "層正規化 (Layer Normalization)",
+            "desc": "在 RNN 或 Transformer 模型中取代 Batch Normalization 的核心技術。它不依賴批次（Batch）大小，而是對單一訓練樣本內的所有隱藏層特徵進行標準化計算，非常適合處理變長度的自然語言序列。"
+          },
+          {
+            "name": "空間丟棄法 (Spatial Dropout)",
+            "desc": "專為卷積神經網路（CNN）改良的 Dropout 版本。因為相鄰像素具有高度相關性，隨機丟棄單個像素效果不彰，Spatial Dropout 會一次性丟棄整個 2D 特徵圖（Feature Map），逼迫網路依賴其他通道的特徵學習。"
+          },
+          {
+            "name": "權重衰減正則化 (Weight Decay / L2 Regularization)",
+            "desc": "在深度學習的優化器（如 AdamW、SGD）層級中，對網路中所有的權重參數施加一個持續縮小的懲罰力道，防止網路為擬合雜訊而生成極端巨大的參數值，與 Dropout 相輔相成。"
+          }
+        ],
+        "terminology": [
+          "Batch Normalization",
+          "Dropout",
+          "Flatten",
+          "Internal Covariate Shift",
+          "Dense Layer"
         ]
       },
       {
@@ -3579,6 +9297,36 @@ const EXAM_DATA = {
         "examples": [
           "股市預測模型的開發：量化交易員使用一個包含數十萬個參數的 LSTM 神經網路來預測特定股票的明日漲跌。模型在過去五年的歷史資料（訓練集）上達到了 95% 的驚人勝率，但一用在今年初的新資料（驗證集）上，勝率卻暴跌至 40%。這代表模型發生了嚴重的過度擬合，死背了過去五年的歷史波段，而無法應對市場的新變化。",
           "智慧音箱的語音喚醒功能：初版語音模型在實驗室的安靜環境下（訓練集）收集的指令錄音中，辨識率高達 99%。但放入真實家庭環境測試時（驗證集），因為背景充滿了電視聲與冷氣運轉聲，喚醒成功率大幅下降。開發團隊察覺到過度擬合現象後，隨即在訓練資料中混入各種環境噪音進行資料增強，成功提升了模型的泛化抗干擾能力。"
+        ],
+        "comparison": "在分析學習曲線時，過擬合（Overfitting）表現為訓練準確率持續上升但驗證準確率停滯甚至下降的「兩線開口喇叭狀」，代表模型記憶力過剩而泛化失敗，需依賴正則化、提早停止或資料增強來踩剎車；相反地，低度擬合（Underfitting）則是訓練與驗證準確率雙雙低迷且難以提升，代表模型能力太弱根本無法捕捉資料規律，此時必須增加神經網路層數、改用更複雜演算法或降低正則化懲罰。若學習率太低，學習曲線則會呈現極度緩慢且平滑的龜速上升，不會出現兩線巨大差距的反差現象。",
+        "keywords": [
+          "過擬合 (Overfitting)",
+          "學習曲線 (Learning Curves)",
+          "泛化能力 (Generalization Ability)",
+          "訓練準確率 (Train Accuracy)",
+          "驗證準確率 (Validation Accuracy)",
+          "提早停止 (Early Stopping)"
+        ],
+        "extended_tech": [
+          {
+            "name": "提早停止訓練 (Early Stopping)",
+            "desc": "深度學習中對抗過擬合最實用且直觀的技巧。在訓練迴圈中持續監控驗證集損失（Validation Loss），當發現驗證損失連續 N 個 Epoch 不降反升時，系統自動中斷訓練並倒退回損失最低的最佳模型權重點。"
+          },
+          {
+            "name": "交叉驗證整合 (Ensemble with Cross-Validation)",
+            "desc": "為了進一步確保模型不受特定資料切分產生的過擬合干擾，將 K-Fold 訓練出的 K 個模型，在推論階段進行軟投票（Soft Voting）平均，透過集體智慧進一步提升對未知的泛化穩定度。"
+          },
+          {
+            "name": "主動學習資料擴充 (Active Learning)",
+            "desc": "當模型發生過度擬合且標註成本極高時，利用 AI 模型主動挑選出其預測「最沒信心」或「不確定性最高」的無標籤邊緣樣本交由人類標註，以最少的標籤成本快速填補模型的知識盲區。"
+          }
+        ],
+        "terminology": [
+          "Overfitting",
+          "Underfitting",
+          "Learning Curve",
+          "Validation Loss",
+          "Generalization"
         ]
       },
       {
@@ -3597,6 +9345,37 @@ const EXAM_DATA = {
         "examples": [
           "衛星雲圖的極端氣候預測：氣象局的超級電腦利用上百層的深層神經網路來捕捉大氣流體力學的微小變化特徵，以預測颱風路徑。因為網路極深，工程師採用了 ResNet 架構，利用其殘差連接確保最底層處理原始雲圖像素的神經元，能夠順利收到來自頂層預測誤差的更新梯度，精準調整學習方向。",
           "高階醫學核磁共振（MRI）影像重建：為了從低解析度的掃描訊號中重建出高清晰度的器官 3D 模型，系統需要極度複雜深邃的非線性轉換。研究團隊運用帶有殘差連接結構的 3D-ResNet 網路，不僅讓 150 層深的模型順利收斂，殘差捷徑還保護了原始 MRI 影像的粗略輪廓資訊不會在深層傳遞中丟失。"
+        ],
+        "comparison": "ResNet 透過革命性的殘差連接（Skip Connection）完美解決了超過 50 層甚至上百層超深網路的「梯度消失」痛點，成為現代複雜影像特徵捕捉的工業標準架構；相較之下，早期的 VGG 架構僅依賴暴力堆疊 3x3 卷積，一旦超過 20 層便難以收斂且計算成本過於臃腫；GoogLeNet 則透過 Inception 多尺度模組專注於拓寬神經網路的寬度與特徵捕捉廣度，雖有輔助分類器協助，但其在追求極端深度的擴展性上仍不如 ResNet 簡潔優雅；而 Vision Transformer (ViT) 雖捨棄卷積改用自注意力機制捕捉全局依賴，但在極深架構下同樣依賴殘差連接才能穩定訓練。",
+        "keywords": [
+          "殘差網路 (ResNet)",
+          "殘差連接 (Residual Connection / Skip Connection)",
+          "梯度消失 (Vanishing Gradient)",
+          "深度卷積神經網路 (Deep CNN)",
+          "反向傳播 (Backpropagation)",
+          "退化問題 (Degradation Problem)"
+        ],
+        "extended_tech": [
+          {
+            "name": "高效率卷積網路 (EfficientNet)",
+            "desc": "Google 提出的網路縮放架構。它透過神經架構搜尋（NAS）技術，在網路的深度、寬度以及影像解析度三個維度間找到最佳的平衡點，能在參數極少的情況下超越傳統 ResNet 的效能。"
+          },
+          {
+            "name": "密集連接卷積網路 (DenseNet)",
+            "desc": "殘差網路的極致進階版。它不是單純將前後層相加，而是讓每一層都直接接收前面「所有層」的輸出作為輸入。這種高密度的特徵重用（Feature Reuse）進一步強化了梯度流動並節省了參數量。"
+          },
+          {
+            "name": "視覺變換器 (Vision Transformer, ViT)",
+            "desc": "近年來挑戰 CNN 霸主地位的革命性架構。將圖片切割成一個個區塊（Patches）並視為文字序列，利用 Transformer 的全局自注意力機制處理，在擁有海量訓練資料時展現出無與倫比的效能。"
+          }
+        ],
+        "terminology": [
+          "ResNet",
+          "Residual Connection",
+          "Vanishing Gradient",
+          "VGG",
+          "GoogLeNet",
+          "Skip Connection"
         ]
       },
       {
@@ -3615,6 +9394,36 @@ const EXAM_DATA = {
         "examples": [
           "即時股市高頻交易演算法訓練：量化團隊使用 LSTM 模型分析長達數萬步的 tick 級別逐筆交易資料。因為時間序列過長，模型在反向傳播時極易發生梯度爆炸導致訓練崩潰當機。工程師在訓練迴圈中加入了梯度裁剪機制，強迫把異常巨大的梯度向量削平，終於讓模型穩定的收斂並學習到規律。",
           "多模態大型語言模型的微調：一家 AI 公司在同時輸入高解析度圖片與超長文本來微調多模態大模型時，發現偶爾會遇到髒資料（如損壞的圖片），導致該批次計算出極度巨大的損失誤差與梯度，直接將原本優良的權重破壞成 NaN。工程師引入梯度裁剪作為安全閥，成功防止了個別劣質資料毀滅整個訓練進程。"
+        ],
+        "comparison": "梯度裁剪（Gradient Clipping）針對的是深層或時間序列網路中因為連續矩陣相乘引發的「梯度爆炸（Exploding Gradients）」，透過強行削平異常巨大的梯度向量來避免更新步幅失控與數值 NaN，是 RNN 與 Transformer 訓練的必備安全閥；相比之下，Batch Normalization 旨在處理「內部協變量偏移」，透過層與層之間的資料分佈標準化來穩定資訊流動；而 L2 正則化（Weight Decay）雖然也限制了數值膨脹，但它作用在權重本身而非動態的梯度上，主要用於防止模型記憶雜訊造成過擬合。三者雖都能提升訓練穩定性，但解決的痛點維度完全不同。",
+        "keywords": [
+          "梯度裁剪 (Gradient Clipping)",
+          "梯度爆炸 (Exploding Gradients)",
+          "反向傳播 (Backpropagation)",
+          "訓練穩定性 (Training Stability)",
+          "非數值崩潰 (NaN Loss)",
+          "PyTorch訓練迴圈 (Training Loop)"
+        ],
+        "extended_tech": [
+          {
+            "name": "混合精度訓練 (Mixed Precision Training)",
+            "desc": "在神經網路訓練中同時使用 FP16 與 FP32 數值格式的技術。能大幅減少記憶體佔用並加速運算，但因為 FP16 的數值範圍極小，非常容易產生梯度下溢或爆炸，必須搭配梯度縮放（Gradient Scaling）與裁剪共同使用。"
+          },
+          {
+            "name": "梯度累積 (Gradient Accumulation)",
+            "desc": "當受限於 GPU 顯存無法使用大 Batch Size 時，在多個小批次的前向與反向傳播中持續累加（但不更新）梯度，直到達到目標累積步數後才執行一次 optimizer.step()，以此模擬大 Batch Size 的平滑訓練效果。"
+          },
+          {
+            "name": "學習率預熱與衰減 (Warmup and Decay)",
+            "desc": "優化器策略。在訓練初期極易發生梯度爆炸不穩定的階段，使用極小的學習率進行熱身（Warmup），待模型權重適應分佈後再拉高學習率，隨後緩慢衰減以收斂至最低點，常與梯度裁剪搭配穩定 Transformer 模型。"
+          }
+        ],
+        "terminology": [
+          "Gradient Clipping",
+          "Exploding Gradients",
+          "NaN (Not a Number)",
+          "loss.backward()",
+          "optimizer.step()"
         ]
       }
     ]
