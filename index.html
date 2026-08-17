@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 應用規劃師(中級) 考古題學習系統</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- MathJax for rendering LaTeX formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -19,13 +22,15 @@
             </div>
             
             <div class="header-actions">
-                <label class="switch-container">
+                <label class="switch-container" id="mode-toggle-wrapper">
                     <span>背題模式</span>
                     <div class="switch">
                         <input type="checkbox" id="mode-toggle">
                         <span class="slider"></span>
                     </div>
                 </label>
+                
+                <button class="btn btn-secondary" id="btn-toggle-view">📚 技術百科</button>
                 
                 <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換主題">
                     <!-- Sun Icon (Light) -->
@@ -149,6 +154,13 @@
                         <div class="options-list" id="options-list">
                             <!-- Options (A) (B) (C) (D) -->
                         </div>
+
+                        <!-- Link to Wiki Algorithm page -->
+                        <div id="algo-wiki-link-container" style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed var(--border-color); display: none;">
+                            <a id="algo-wiki-link" style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                📖 補充網頁：深入了解 <span id="algo-wiki-name">PCA</span> 演算法詳細原理 &gt;
+                            </a>
+                        </div>
                         
                         <!-- Nav buttons below options (before answer show) -->
                         <div class="nav-actions">
@@ -238,21 +250,67 @@
                     </div>
                 </div>
             </section>
+
+            <!-- WIKI CONTAINER (ALGORITHM ENCYCLOPEDIA) -->
+            <section class="practice-container" id="wiki-container" style="display: none;">
+                <!-- Wiki Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title">📚 技術百科目錄</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">收錄本考科涉及的核心人工智慧與機器學習演算法，提供深度原理解析與商業應用說明。</p>
+                    </div>
+                    <div class="questions-grid-wrapper" style="padding-top: 0.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="wiki-menu-list">
+                            <!-- Wiki buttons dynamically loaded -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Wiki workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb">
+                        <a id="wiki-breadcrumb-home">首頁</a> &gt; <span>技術百科</span> &gt; <span id="wiki-breadcrumb-algo" style="color: var(--primary); font-weight: 600;">演算法名稱</span>
+                    </div>
+                    
+                    <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
+                        <h2 id="wiki-title" style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--primary);">演算法名稱</h2>
+                        <p id="wiki-summary" style="font-size: 1rem; color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); padding-left: 0.75rem;">演算法摘要...</p>
+                        
+                        <div class="section-divider" style="margin: 1.5rem 0;"></div>
+                        
+                        <!-- Rich HTML body -->
+                        <div id="wiki-content" class="explanation-text" style="font-size: 1rem; color: var(--text-primary); line-height: 1.7;">
+                            讀取中...
+                        </div>
+                        
+                        <div class="section-divider" style="margin: 2rem 0;"></div>
+                        
+                        <!-- Back-links to related questions -->
+                        <h3 class="panel-title" style="color: var(--accent); margin-bottom: 1.25rem;">💡 本考科有使用到此技術的題目</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="wiki-related-questions">
+                            <!-- Related questions links dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 
     <!-- Script imports -->
     <script src="questions_data.js"></script>
+    <script src="wiki_data.js"></script>
     <script>
         // Web Application Application Logic
         document.addEventListener("DOMContentLoaded", () => {
             // State
+            let currentView = "landing"; // 'landing', 'practice', 'wiki'
             let currentSubject = null;
             let currentQuestionIdx = 0; // 0-based
             let filterMode = "all"; // 'all' or 'wrong'
             let searchKeyword = "";
             let userProgress = {}; // subjectKey -> { questionId -> { userAnswer, isCorrect } }
             let studyMode = false; // true = 背題模式 (直接看答案)
+            let activeWikiKey = "Monte Carlo"; // Default active wiki page
 
             // LocalStorage loading
             if (localStorage.getItem("ai_exam_user_progress")) {
@@ -289,6 +347,7 @@
             // UI Elements
             const landingPanel = document.getElementById("landing-panel");
             const practiceContainer = document.getElementById("practice-container");
+            const wikiContainer = document.getElementById("wiki-container");
             const btnBackLanding = document.getElementById("btn-back-landing");
             const sidebarSubjectTitle = document.getElementById("sidebar-subject-title");
             const questionsGrid = document.getElementById("questions-grid");
@@ -311,11 +370,15 @@
             const btnNextQ = document.getElementById("btn-next-q");
             const breadcrumbSubject = document.getElementById("breadcrumb-subject");
             const modeToggle = document.getElementById("mode-toggle");
+            const modeToggleWrapper = document.getElementById("mode-toggle-wrapper");
             const searchInput = document.getElementById("search-input");
             const btnFilterAll = document.getElementById("btn-filter-all");
             const btnFilterWrong = document.getElementById("btn-filter-wrong");
             const btnResetCurrent = document.getElementById("btn-reset-current");
             const btnClearAll = document.getElementById("btn-clear-all");
+            
+            // View toggle button
+            const btnToggleView = document.getElementById("btn-toggle-view");
 
             // Subject Cards Init progress status on Landing Panel
             const updateLandingProgress = () => {
@@ -349,17 +412,65 @@
                 renderQuestion();
             });
 
-            // Back to main landing
-            const showLanding = () => {
+            // View Management Functions
+            const switchToLandingView = () => {
+                currentView = "landing";
                 landingPanel.classList.remove("hidden");
                 practiceContainer.style.display = "none";
+                wikiContainer.style.display = "none";
                 btnBackLanding.classList.add("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
                 currentSubject = null;
                 updateLandingProgress();
             };
-            document.getElementById("btn-home").addEventListener("click", showLanding);
-            btnBackLanding.addEventListener("click", showLanding);
-            document.getElementById("breadcrumb-home").addEventListener("click", showLanding);
+
+            const switchToPracticeView = () => {
+                currentView = "practice";
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "flex";
+                wikiContainer.style.display = "none";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
+            };
+
+            const switchToWikiView = (wikiKey = "Monte Carlo") => {
+                currentView = "wiki";
+                activeWikiKey = wikiKey;
+                
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "none";
+                wikiContainer.style.display = "flex";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.add("hidden"); // Hide test mode switch in wiki
+                
+                btnToggleView.textContent = "📝 考古題練習";
+                btnToggleView.className = "btn btn-primary";
+                
+                renderWikiMenu();
+                renderWikiArticle(activeWikiKey);
+            };
+
+            // Toggle view button event
+            btnToggleView.addEventListener("click", () => {
+                if (currentView === "wiki") {
+                    if (currentSubject) {
+                        switchToPracticeView();
+                    } else {
+                        switchToLandingView();
+                    }
+                } else {
+                    switchToWikiView(activeWikiKey);
+                }
+            });
+
+            document.getElementById("btn-home").addEventListener("click", switchToLandingView);
+            btnBackLanding.addEventListener("click", switchToLandingView);
+            document.getElementById("breadcrumb-home").addEventListener("click", switchToLandingView);
+            document.getElementById("wiki-breadcrumb-home").addEventListener("click", switchToLandingView);
 
             // Subject Select
             document.querySelectorAll(".subject-card").forEach(card => {
@@ -395,10 +506,7 @@
                 sidebarSubjectTitle.textContent = EXAM_DATA[currentSubject].title;
                 breadcrumbSubject.textContent = EXAM_DATA[currentSubject].title.split(" - ")[0];
                 
-                landingPanel.classList.add("hidden");
-                practiceContainer.style.display = "flex";
-                btnBackLanding.classList.remove("hidden");
-
+                switchToPracticeView();
                 renderSidebarGrid();
                 renderQuestion();
                 updateStats();
@@ -519,24 +627,57 @@
                     
                     // Style options depending on answer states
                     if (studyMode) {
-                        // In study mode, show the correct answer immediately
                         if (letter === q.answer) {
                             optionItem.classList.add("correct");
                         }
                     } else if (isAnswered) {
-                        // User already answered
                         if (letter === q.answer) {
-                            optionItem.classList.add("correct"); // green for correct
+                            optionItem.classList.add("correct");
                         } else if (letter === userChoice) {
-                            optionItem.classList.add("incorrect"); // red for selected wrong
+                            optionItem.classList.add("incorrect");
                         }
                     } else {
-                        // Interactive select event
                         optionItem.addEventListener("click", () => handleSelectOption(letter));
                     }
                     
                     optionsList.appendChild(optionItem);
                 });
+
+                // Bidirectional Link to Wiki
+                const wikiLinkContainer = document.getElementById("algo-wiki-link-container");
+                const wikiLink = document.getElementById("algo-wiki-link");
+                const wikiName = document.getElementById("algo-wiki-name");
+                
+                let matchedWikiKey = null;
+                if (q.ml_method && typeof WIKI_DATA !== 'undefined') {
+                    const method = q.ml_method.trim();
+                    if (WIKI_DATA[method]) {
+                        matchedWikiKey = method;
+                    } else {
+                        // Fallback substring matching
+                        for (let k in WIKI_DATA) {
+                            if (method.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(method.toLowerCase())) {
+                                matchedWikiKey = k;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                if (matchedWikiKey) {
+                    wikiLinkContainer.style.display = "block";
+                    wikiName.textContent = WIKI_DATA[matchedWikiKey].title.split(" (")[0];
+                    
+                    // Replace to remove previous event listeners
+                    const newWikiLink = wikiLink.cloneNode(true);
+                    wikiLink.parentNode.replaceChild(newWikiLink, wikiLink);
+                    
+                    newWikiLink.addEventListener("click", () => {
+                        switchToWikiView(matchedWikiKey);
+                    });
+                } else {
+                    wikiLinkContainer.style.display = "none";
+                }
 
                 // Render Explanation Panel
                 if (studyMode || isAnswered) {
@@ -550,7 +691,6 @@
                         resultIcon.textContent = isCorrect ? "✓" : "✗";
                         resultText.textContent = isCorrect ? "回答正確！" : `回答錯誤！正確答案是 (${q.answer})`;
                     } else {
-                        // Study mode or pure display
                         resultBanner.className = "result-banner correct";
                         resultIcon.textContent = "★";
                         resultText.textContent = `參考答案是 (${q.answer})`;
@@ -709,6 +849,115 @@
                     alert("已清除所有練習紀錄。");
                 }
             });
+
+            // ==========================================
+            // WIKI ENCYCLOPEDIA LOGIC
+            // ==========================================
+            const wikiMenuList = document.getElementById("wiki-menu-list");
+            const wikiTitle = document.getElementById("wiki-title");
+            const wikiSummary = document.getElementById("wiki-summary");
+            const wikiContent = document.getElementById("wiki-content");
+            const wikiBreadcrumbAlgo = document.getElementById("wiki-breadcrumb-algo");
+            const wikiRelatedQuestions = document.getElementById("wiki-related-questions");
+
+            const renderWikiMenu = () => {
+                wikiMenuList.innerHTML = "";
+                if (typeof WIKI_DATA === 'undefined') return;
+                
+                Object.keys(WIKI_DATA).forEach(key => {
+                    const btn = document.createElement("button");
+                    btn.className = "wiki-menu-btn";
+                    if (key === activeWikiKey) btn.classList.add("active");
+                    
+                    btn.innerHTML = `<span>${WIKI_DATA[key].title}</span> <span>&gt;</span>`;
+                    btn.addEventListener("click", () => {
+                        document.querySelectorAll(".wiki-menu-btn").forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        renderWikiArticle(key);
+                    });
+                    
+                    wikiMenuList.appendChild(btn);
+                });
+            };
+
+            const renderWikiArticle = (wikiKey) => {
+                activeWikiKey = wikiKey;
+                const algo = WIKI_DATA[wikiKey];
+                
+                wikiTitle.textContent = algo.title;
+                wikiSummary.textContent = algo.summary;
+                wikiContent.innerHTML = algo.content;
+                wikiBreadcrumbAlgo.textContent = algo.title.split(" (")[0];
+                
+                // Triggers MathJax to re-render formulas
+                if (typeof MathJax !== 'undefined' && MathJax.typeset) {
+                    MathJax.typeset();
+                }
+
+                // Render back-links to questions
+                renderRelatedQuestions(wikiKey);
+            };
+
+            const renderRelatedQuestions = (wikiKey) => {
+                wikiRelatedQuestions.innerHTML = "";
+                let foundAny = false;
+                
+                const subjShortNames = {
+                    "114_2_1": "114年第二次 - 第一科",
+                    "114_2_3": "114年第二次 - 第三科",
+                    "115_1_1": "115年第一次 - 第一科",
+                    "115_1_3": "115年第一次 - 第三科"
+                };
+
+                for (let subjKey in EXAM_DATA) {
+                    const subj = EXAM_DATA[subjKey];
+                    subj.questions.forEach((question, index) => {
+                        let isMatch = false;
+                        if (question.ml_method) {
+                            const method = question.ml_method.trim().toLowerCase();
+                            const key = wikiKey.toLowerCase();
+                            
+                            // Check exact or substring mapping
+                            if (method === key || method.includes(key) || key.includes(method)) {
+                                isMatch = true;
+                            }
+                        }
+                        
+                        if (isMatch) {
+                            foundAny = true;
+                            
+                            const qLink = document.createElement("a");
+                            qLink.style.cssText = "color: var(--primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; cursor: pointer; display: block; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); transition: all 0.2s;";
+                            
+                            qLink.innerHTML = `✏️ <b>${subjShortNames[subjKey]}</b> - 第 ${question.id} 題 <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; margin-left: 0.5rem; display: block; margin-top: 0.25rem;">${question.question.substring(0, 90)}...</span>`;
+                            
+                            qLink.addEventListener("mouseenter", () => {
+                                qLink.style.borderColor = "var(--primary)";
+                                qLink.style.backgroundColor = "var(--primary-light)";
+                            });
+                            qLink.addEventListener("mouseleave", () => {
+                                qLink.style.borderColor = "var(--border-color)";
+                                qLink.style.backgroundColor = "var(--bg-main)";
+                            });
+                            
+                            qLink.addEventListener("click", () => {
+                                // Jump directly to this question
+                                loadSubject(subjKey);
+                                currentQuestionIdx = index;
+                                renderSidebarGrid();
+                                renderQuestion();
+                                updateStats();
+                            });
+                            
+                            wikiRelatedQuestions.appendChild(qLink);
+                        }
+                    });
+                }
+
+                if (!foundAny) {
+                    wikiRelatedQuestions.innerHTML = "<span style='color: var(--text-muted); font-size: 0.9rem;'>此演算法目前在 200 題考古題中尚無直接對應的題目。</span>";
+                }
+            };
         });
     </script>
 </body>

@@ -860,3 +860,33 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(1.2rem);
 }
+
+/* Wiki Menu List Buttons */
+.wiki-menu-btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wiki-menu-btn:hover {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.wiki-menu-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
