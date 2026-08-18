@@ -1062,3 +1062,47 @@ header label, header span {
 [data-theme="dark"] #wiki-summary {
     color: #94a3b8 !important;
 }
+
+/* Wiki Content List Style Refinement to match the concept mockup */
+#wiki-content ul {
+    list-style-type: none !important;
+    padding-left: 0.5rem !important;
+    margin: 0.75rem 0 1.25rem 0 !important;
+}
+
+#wiki-content ul li {
+    position: relative !important;
+    padding-left: 1.25rem !important;
+    margin-bottom: 0.65rem !important;
+    color: var(--text-primary) !important;
+    font-size: 0.95rem !important;
+}
+
+#wiki-content ul li::before {
+    content: "•" !important;
+    color: #2563eb !important; /* Premium Blue Bullet */
+    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+    position: absolute !important;
+    left: 0.1rem !important;
+    top: -0.15rem !important;
+}
+
+#wiki-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.85rem !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Custom styles for the exam analysis cards list items to match individual category colors */
+div[style*="border-left: 4px solid var(--accent)"] ul li::before {
+    color: var(--accent) !important;
+}
+
+div[style*="border-left: 4px solid var(--success)"] ul li::before {
+    color: var(--success) !important;
+}
+
+div[style*="border-left: 4px solid #8e44ad"] ul li::before {
+    color: #8e44ad !important;
+}

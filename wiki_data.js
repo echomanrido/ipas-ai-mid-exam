@@ -228,94 +228,73 @@ const WIKI_DATA = {
     </li>
 </ul>`
     },
-        "MLMethodology": {
-        "title": "機器學習方法論",
+            "MLMethodology": {
+        "title": "機器學習方法論 (ML Methodology)",
         "summary": "介紹監督式學習、非監督式學習與強化學習三大機器學習核心方法論之原理、常見演算法與實務應用，並結合 400 題官方考古題進行考點分析。",
-        "content": `<h3>一、 監督式學習 (Supervised Learning)</h3>
-<p><b>基本原理：</b> 這是機器學習中最成熟且應用最廣泛的方法，以<b>「有標記的數據（Labeled Data）」</b>為基礎。模型透過學習輸入特徵與輸出標籤之間的映射關係，來建立預測規則，以提高對未知數據的預測準確度。</p>
+        "content": `<h3>一、 監督式學習 (Supervised Learning) 🦾 📦</h3>
+<p><b>定義：</b> 監督式學習是一種基於已知輸入和對應輸出標籤來訓練模型的學習方法，旨在學習出最佳的映射函數。</p>
 <ul>
-    <li><b>分類 (Classification)：</b> 當標籤為離散型類別時，模型需判斷輸入樣本屬於哪一個類別。
-        <ul>
-            <li><b>常見演算法：</b> 決策樹 (Decision Tree)、隨機森林 (Random Forest)、支持向量機 (SVM)、K 最近鄰 (KNN)、邏輯迴歸 (Logistic Regression) 以及梯度提升樹 (Gradient Boosting)。</li>
-            <li><b>應用場景：</b> 垃圾郵件過濾、疾病診斷、客戶流失預測、金融風險與信用評估。</li>
-        </ul>
-    </li>
-    <li><b>迴歸 (Regression)：</b> 當標籤為連續型數值時，模型旨在學習輸入變數與連續數值之間的映射關係。
-        <ul>
-            <li><b>常見演算法：</b> 線性迴歸 (Linear Regression)、支持向量迴歸 (SVR) 等。</li>
-            <li><b>應用場景：</b> 房價預測、銷售額/銷售量預測、使用者滿意度評分。</li>
-        </ul>
-    </li>
+    <li><b>特徵：</b> 使用帶有標籤的訓練數據集，例如 \((x_i, y_i)\) 的配對，用以擬合模型。</li>
+    <li><b>常用算法：</b> 例如線性迴歸 (Linear Regression)、決策樹 (Decision Trees)、支持向量機 (SVM) 等經典演算法。</li>
+    <li><b>應用場景：</b> 適用於表格數據分析、圖像分類、情感分析、金融風控等業務場景。</li>
 </ul>
 <div style="background-color: var(--card-bg); border-left: 4px solid var(--primary); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
     <h4 style="margin-top: 0; color: var(--primary); font-size: 1rem; font-weight: bold;">💡 監督式學習 - 考古題典型考點分析</h4>
-    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem;">
-        <li><b>L1 與 L2 正規化 (Lasso vs Ridge)：</b> 考古題常考兩者特性的對比。L1 正規化（LASSO）能使特徵權重壓縮至 0，具備特徵選擇特性；而 L2 正規化（Ridge）僅能限制其接近 0 以解決共線性（如<i>中級 114年第二次第一科第26題</i>）。</li>
-        <li><b>分類評估指標 F1-Score：</b> 調和精準率（Precision）與召回率（Recall）的指標，常考在不平衡數據集中的應用（如<i>中級 114年第二次第一科第10題</i>）。</li>
-        <li><b>過擬合與交叉驗證：</b> 考古題重點考查「交叉驗證（Cross-Validation）」是為了評估模型泛化能力、防止模型過度學習雜訊以避免過擬合（如<i>初級 115年第一次第一科第29題</i>）。</li>
+    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem; list-style-type: disc;">
+        <li style="color: var(--primary); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>L1 與 L2 正規化 (Lasso vs Ridge)：</b> 差異、選擇時機、權重稀疏性。</span></li>
+        <li style="color: var(--primary); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>過度擬合 (Overfitting)：</b> 成因（複雜度、雜訊）、解決方案（正規化、交叉驗證、增加數據）。</span></li>
+        <li style="color: var(--primary); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>決策樹與隨機森林：</b> 原理、優缺點、參數調優（樹深、葉節點）。</span></li>
+        <li style="color: var(--primary); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>支持向量機 (SVM)：</b> 核函數 (Kernel Trick)、邊際最大化、參數 C 的影響。</span></li>
+        <li style="color: var(--primary); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>神經網絡基礎：</b> 激活函數 (ReLU, Sigmoid)、損失函數 (MSE, Cross-Entropy)。</span></li>
     </ul>
 </div>
 
-<h3>二、 非監督式學習 (Unsupervised Learning)</h3>
-<p><b>基本原理：</b> 處理<b>「無標註資料」</b>（即無明確答案或類別）的學習方法。其核心在於「自主探索與發現」，從原始資料中發掘潛在的內在結構、群集或分佈規律，而不需要人工標記。常用於資料探索、降維與建模前的預處理。</p>
+<h3>二、 非監督式學習 (Unsupervised Learning) 🔍 🌐</h3>
+<p><b>定義：</b> 在沒有明確標籤的數據下，模型自主探索並發現數據潛在結構的學習方法。</p>
 <ul>
-    <li><b>聚類/分群 (Clustering)：</b> 根據相似性將資料自動劃分為若干個群組，使同群內樣本彼此相似，群間差異明顯。
-        <ul>
-            <li><b>常見演算法：</b> K-means (K 均值聚類)、DBSCAN (密度聚類)。</li>
-            <li><b>應用場景：</b> 客戶分群與市場區隔、社群偵測、異常行為與威脅偵測。</li>
-        </ul>
-    </li>
-    <li><b>降維 (Dimensionality Reduction)：</b> 將高維資料投影至低維空間，保留重要結構，能有效減少數據冗餘並輔助視覺化。
-        <ul>
-            <li><b>常見演算法：</b> 主成分分析 (PCA)。</li>
-            <li><b>應用場景：</b> 圖像壓縮、基因特徵提取。</li>
-        </ul>
-    </li>
-    <li><b>關聯規則學習 (Association Rule Learning)：</b> 從大量資料中找出項目之間的關聯性或共現規律（例如著名的「買尿布的通常也會買啤酒」銷售機會分析）。</li>
+    <li><b>特徵：</b> 使用無標籤數據，側重於數據內部的相似性、關聯度或分佈規律。</li>
+    <li><b>常用算法：</b> K-means 聚類、DBSCAN 密度分群、主成分分析 (PCA) 降維。</li>
+    <li><b>應用場景：</b> 客戶分群與市場區隔、社群偵測、圖像壓縮、異常行為偵測。</li>
 </ul>
 <div style="background-color: var(--card-bg); border-left: 4px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
     <h4 style="margin-top: 0; color: var(--accent); font-size: 1rem; font-weight: bold;">💡 非監督式學習 - 考古題典型考點分析</h4>
-    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem;">
-        <li><b>主成分分析 (PCA) 與多重共線性：</b> 線性迴歸中若自變數高度相關，使用 PCA 將原始特徵投影至彼此正交（相關係數為 0）的主成分空間可有效解決共線性並降低過擬合風險（如<i>中級 114年第二次第一科第12、45題</i>）。</li>
-        <li><b>DBSCAN 與雜訊點識別：</b> DBSCAN 基於密度分群，能辨識任意形狀的群集。不符合核心點或邊界點半徑鄰域要求的孤立樣本，將會被直接標記為「雜訊點 (Noise Point)」（如<i>中級 114年第二次第三科第4題</i>）。</li>
-        <li><b>KD-Tree/Ball Tree 距離索引：</b> 當 DBSCAN 處理大數據集計算效率低下時，實務上常透過建立 KD-Tree 等距離索引結構來加速鄰域內點數搜索（如<i>中級 114年第二次第一科第48題</i>）。</li>
+    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem; list-style-type: disc;">
+        <li style="color: var(--accent); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>主成分分析 (PCA) 降維：</b> 協方差矩陣、正交投影、變異量保留與多重共線性消除。</span></li>
+        <li style="color: var(--accent); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>DBSCAN 與分群特性：</b> Epsilon 鄰域半徑、MinPts 最小點數定義、核心點/邊界點/雜訊點識別。</span></li>
+        <li style="color: var(--accent); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>大數據查詢優化：</b> KD-Tree / Ball Tree 距離索引結構，加速空間鄰近點搜索。</span></li>
+        <li style="color: var(--accent); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>關聯規則 (Association Rules)：</b> 支持度 (Support)、信賴度 (Confidence)、提升度 (Lift) 及購物籃應用。</span></li>
     </ul>
 </div>
 
-<h3>三、 強化式學習 (Reinforcement Learning, RL)</h3>
-<p><b>基本原理：</b> 是一種基於<b>「試誤學習（Trial-and-Error）」與「回饋（反饋）機制」</b>的決策學習方法。代理人（Agent）透過與環境（Environment）互動，執行動作、觀察狀態改變，並根據環境返回的獎勵或懲罰（Reward）調整策略，最終學會達成任務目標的最大累積報酬。</p>
+<h3>三、 強化式學習 (Reinforcement Learning, RL) 🕹️ 🎯</h3>
+<p><b>定義：</b> 是一種基於「試誤學習 (Trial-and-Error)」與環境互動回饋的決策學習方法，旨在最大化長期累積回報。</p>
 <ul>
-    <li><b>核心組成要素：</b> 代理人 (Agent)、環境 (Environment)、狀態 (State)、動作 (Action)、報酬 (Reward)、策略 (Policy)、價值函數 (Value Function)。</li>
-    <li><b>常見演算法：</b>
-        <ul>
-            <li><b>Q-learning：</b> 基於值函數的方法，透過表格或近似函數學習每個狀態-行為對的長期回報（Q 值）。</li>
-            <li><b>Deep Q Network (DQN)：</b> 結合深度學習與 Q-learning，使用深度神經網路克服傳統 Q-learning 在高維度環境中的限制。</li>
-        </ul>
-    </li>
-    <li><b>應用場景：</b> 遊戲 AI（如 AlphaGo）、自駕車與路徑規劃、機器人/機械臂控制與自動化生產、即時廣告推薦系統與金融投資策略。</li>
+    <li><b>特徵：</b> 代理人與環境互動，執行動作並觀察狀態改變，無即時標籤但有延遲的獎勵或懲罰。</li>
+    <li><b>常用算法：</b> Q-learning、深度 Q 網路 (DQN)、策略梯度 (Policy Gradient)。</li>
+    <li><b>應用場景：</b> 遊戲 AI (如 AlphaGo)、自駕車路徑規劃、自動化生產、金融投資策略。</li>
 </ul>
 <div style="background-color: var(--card-bg); border-left: 4px solid var(--success); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
     <h4 style="margin-top: 0; color: var(--success); font-size: 1rem; font-weight: bold;">💡 強化式學習 - 考古題典型考點分析</h4>
-    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem;">
-        <li><b>基於試誤 (Trial-and-Error) 的最佳決策：</b> 考查自駕車等控制系統在環境中透過回饋（獎懲分數）自我修正策略的技術（如<i>初級 115年第一次第一科第45題</i>）。</li>
-        <li><b>DQN 克服狀態爆炸：</b> 考查傳統 Q-learning 無法應對大型高維狀態空間，導入深度神經網路近似擬合估計 Q 值的算法即為 DQN（如<i>中級 115年第一次第一科第23題</i>）。</li>
-        <li><b>元素定義 (Policy)：</b> 考查各基本概念的定義。如策略 (Policy) 代表代理人在特定狀態下執行對應動作的映射規則（如<i>中級 115年第一次第三科第28題</i>）。</li>
+    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem; list-style-type: disc;">
+        <li style="color: var(--success); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>核心組成要素：</b> 代理人 (Agent)、環境 (Environment)、狀態 (State)、動作 (Action)、報酬 (Reward)、策略 (Policy)。</span></li>
+        <li style="color: var(--success); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>DQN 深度 Q 網路：</b> Q-Table 的侷限、利用深度學習擬合估計 Q 函數以克服維度災難。</span></li>
+        <li style="color: var(--success); margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>探索與利用 (Exploration vs Exploitation)：</b> 貪婪策略 (\(\epsilon\)-Greedy) 平衡即時與長期最優解。</span></li>
     </ul>
 </div>
 
-<h3>四、 💡 關鍵子領域：深度學習 (Deep Learning, DL)</h3>
-<p>深度學習是機器學習的一個子領域，它模仿人腦神經元的運作方式，透過多層次的人工神經網路（Neural Networks）自動從大量文字、語音、影像等數據中自動學習特徵，不需依賴人類專家手動設計特徵。</p>
+<h3>四、 💡 關鍵子領域：深度學習 (Deep Learning, DL) 🧠 ⚡</h3>
+<p><b>定義：</b> 機器學習的子領域，透過多層人工神經網路模仿人腦運作方式，自動從海量高維數據中提取特徵。</p>
 <ul>
-    <li><b>卷積神經網路 (CNN)：</b> 擅長處理影像、語音等具空間或時間結構的資料，如醫療影像診斷、自駕車感知。</li>
-    <li><b>循環神經網路 (RNN / LSTM)：</b> 專門處理時序與序列資料，如金融交易預測與風險判別。</li>
-    <li><b>Transformer 架構：</b> 用來捕捉輸入序列不同位置間依賴關係的核心注意力（Attention）機制，廣泛應用於自然語言處理與智慧客服中。</li>
+    <li><b>特徵：</b> 端到端學習 (End-to-End)、免除手動特徵工程、高度依賴算力與數據規模。</li>
+    <li><b>常用架構：</b> 卷積神經網路 (CNN)、循環神經網路 (RNN/LSTM)、Transformer 架構。</li>
+    <li><b>應用場景：</b> 大預訓練語言模型 (LLM)、機器翻譯、語音識別、自動駕駛。</li>
 </ul>
 <div style="background-color: var(--card-bg); border-left: 4px solid #8e44ad; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
     <h4 style="margin-top: 0; color: #8e44ad; font-size: 1rem; font-weight: bold;">💡 深度學習 - 考古題典型考點分析</h4>
-    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem;">
-        <li><b>Transformer 自注意力機制 (Self-Attention)：</b> 考查 Transformer 架構能並行訓練且極佳捕捉長距離文本依賴的靈魂設計在於「自注意力機制」（如<i>中級 114年第二次第一科第2題</i>）。</li>
-        <li><b>BERT 遮罩任務 (Masked Language Model)：</b> 考查 BERT 如何進行雙向上下文預訓練。其透過 MLM 任務，隨機在輸入句中遮蔽 15% 詞彙，令模型推測被遮蔽詞（如<i>中級 114年第二次第一科第3題</i>）。</li>
-        <li><b>CNN 與圖像特徵提取：</b> 考查影像自動特徵（如邊緣特徵、高維特徵）提取最適合使用 CNN 的卷積與池化層結構（如<i>初級 115年第一次第二科第33題</i>）。</li>
+    <ul style="margin-bottom: 0; padding-left: 1.2rem; font-size: 0.9rem; list-style-type: disc;">
+        <li style="color: #8e44ad; margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>Transformer 自注意力機制：</b> Self-Attention 計算（Query, Key, Value）、縮放點積、並行訓練優勢。</span></li>
+        <li style="color: #8e44ad; margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>BERT 雙向預訓練：</b> 遮罩語言模型 (MLM)、下一句預測 (NSP)、雙向上下文 (Bidirectional Context) 理解。</span></li>
+        <li style="color: #8e44ad; margin-bottom: 0.25rem;"><span style="color: var(--text-primary);"><b>卷積神經網路 (CNN)：</b> 卷積核 (Kernel) 特徵提取、池化層 (Pooling) 降維、影像特徵工程自動化。</span></li>
     </ul>
 </div>`
     }
