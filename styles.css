@@ -890,3 +890,175 @@ input:checked + .slider:before {
     color: white;
     border-color: var(--primary);
 }
+
+/* ==========================================================================
+   PREMIUM GRAPHICS & CONCEPT LAYOUT OVERRIDES (AI LEARNING KING VIBE)
+   ========================================================================== */
+
+/* Dark Premium Navigation Bar */
+header {
+    background: linear-gradient(135deg, #0b1528 0%, #112240 100%) !important;
+    border-bottom: 1px solid #1d2d47 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+header .logo-text h1 {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #ffffff, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header .logo-text p {
+    color: #94a3b8 !important;
+}
+
+header .logo-icon {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+    color: white !important;
+    border: 1.5px solid rgba(255,255,255,0.2);
+}
+
+header label, header span {
+    color: #e2e8f0 !important;
+}
+
+/* Light border / text for buttons in Dark Header */
+#btn-back-landing {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #f1f5f9 !important;
+}
+#btn-back-landing:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+}
+
+#btn-toggle-view {
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Sidebar Styling Optimization (Wiki Selector) */
+#wiki-container .question-sidebar {
+    background-color: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="dark"] #wiki-container .question-sidebar {
+    background-color: #0f172a !important;
+    border-right: 1px solid #1e293b !important;
+}
+
+/* Sidebar Title header */
+#wiki-container .sidebar-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+[data-theme="dark"] #wiki-container .sidebar-title {
+    color: #f8fafc;
+}
+
+/* Ultra Clean Wiki Selector Buttons (Flat Accordion Vibe) */
+.wiki-menu-btn {
+    background-color: #f8fafc !important;
+    border: 1px solid #f1f5f9 !important;
+    border-radius: 10px !important;
+    padding: 0.9rem 1.25rem !important;
+    font-size: 0.9rem !important;
+    color: #334155 !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.01) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-theme="dark"] .wiki-menu-btn {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+.wiki-menu-btn:hover {
+    background-color: #eff6ff !important;
+    border-color: #bfdbfe !important;
+    color: #2563eb !important;
+    transform: translateY(-1px);
+}
+
+[data-theme="dark"] .wiki-menu-btn:hover {
+    background-color: #0f172a !important;
+    border-color: #3b82f6 !important;
+    color: #60a5fa !important;
+}
+
+.wiki-menu-btn.active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+    font-weight: 600 !important;
+}
+
+/* Technology Dot-Grid Background in Wiki Workspace Area */
+#wiki-container .workspace-area {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px) !important;
+    background-size: 24px 24px !important;
+    padding: 2.5rem !important;
+}
+
+[data-theme="dark"] #wiki-container .workspace-area {
+    background-color: #0b0f19;
+    background-image: radial-gradient(#1e293b 1.5px, transparent 1.5px) !important;
+}
+
+/* Elegant Wiki Main Card styling */
+#wiki-container .card {
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+    border-radius: 16px !important;
+    background-color: #ffffff !important;
+}
+[data-theme="dark"] #wiki-container .card {
+    border: 1px solid #1e293b !important;
+    background-color: #131e35 !important;
+}
+
+/* Title Centered Vibe */
+#wiki-title {
+    text-align: center;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem !important;
+    background: linear-gradient(to right, #0f172a, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+[data-theme="dark"] #wiki-title {
+    background: linear-gradient(to right, #ffffff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#wiki-summary {
+    text-align: center;
+    border-left: none !important;
+    padding-left: 0 !important;
+    color: #64748b !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 2rem !important;
+}
+[data-theme="dark"] #wiki-summary {
+    color: #94a3b8 !important;
+}
