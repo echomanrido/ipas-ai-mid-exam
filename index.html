@@ -493,6 +493,21 @@
                 renderWikiArticle(activeWikiKey);
             };
 
+            // Global helper to jump to a question from wiki links
+            window.jumpToQuestion = (subjKey, questionId) => {
+                if (typeof EXAM_DATA === 'undefined') return;
+                const subj = EXAM_DATA[subjKey];
+                if (!subj) return;
+                const index = subj.questions.findIndex(q => q.id === questionId);
+                if (index !== -1) {
+                    loadSubject(subjKey);
+                    currentQuestionIdx = index;
+                    renderSidebarGrid();
+                    renderQuestion();
+                    switchToPracticeView();
+                }
+            };
+
             // Toggle view button event
             btnToggleView.addEventListener("click", () => {
                 if (currentView === "wiki") {
