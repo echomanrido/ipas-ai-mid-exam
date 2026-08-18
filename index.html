@@ -939,6 +939,10 @@
 
             const renderRelatedQuestions = (wikiKey) => {
                 wikiRelatedQuestions.innerHTML = "";
+                if (wikiKey === "ExamSyllabus" || wikiKey === "MLMethodology") {
+                    wikiRelatedQuestions.innerHTML = "<p style='color: var(--text-muted); font-size: 0.95rem; font-style: italic; margin-top: 1rem;'>💡 此條目為官方能力鑑定學習大綱與方法論指引，不針對單一考題進行關聯跳轉。</p>";
+                    return;
+                }
                 let foundAny = false;
                 
                 const subjShortNames = {
