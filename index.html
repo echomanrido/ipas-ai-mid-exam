@@ -49,9 +49,12 @@
         <main class="main-wrapper">
             <!-- SUBJECT SELECTOR (LANDING PAGE) -->
             <section class="landing-panel" id="landing-panel">
-                <h2 class="landing-title">AI 應用規劃師中級能力鑑定考古題</h2>
-                <p class="landing-desc">本系統收錄 114 年與 115 年能力鑑定考試科目之官方試題。針對每一題提供詳細的解答、解題邏輯與技術背景，並針對涉及的機器學習與人工智慧方法提供運作原理說明與生活/業務應用實例，幫助您深度掌握核心技術點。</p>
+                <h2 class="landing-title">AI 應用規劃師能力鑑定考古題系統</h2>
+                <p class="landing-desc">本系統收錄 AI 應用規劃師「中級」與「初級」能力鑑定考試之官方試題。為每道題目提供詳細解答、解題邏輯與技術背景，並針對涉及的機器學習與人工智慧方法提供詳細的技術百科與應用實例，協助您深度掌握核心技術觀念。</p>
                 
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 1.5rem 0 1rem 0; border-left: 4px solid var(--primary); padding-left: 0.75rem; color: var(--text-primary);">
+                    ⚙️ 中級能力鑑定考古題 (四科)
+                </h3>
                 <div class="subjects-grid">
                     <div class="subject-card" data-subject="114_2_1">
                         <span class="subject-tag">第一科</span>
@@ -83,6 +86,44 @@
                         <div class="subject-info">
                             <span>共 50 題</span>
                             <span class="subj-progress-status" data-subj="115_1_3">未開始</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 2rem 0 1rem 0; border-left: 4px solid var(--accent); padding-left: 0.75rem; color: var(--text-primary);">
+                    🎓 初級能力鑑定考古題 (四科)
+                </h3>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="primary_115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_1_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第一次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_2">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第二次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第二次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_2">未開始</span>
                         </div>
                     </div>
                 </div>
@@ -904,7 +945,11 @@
                     "114_2_1": "114年第二次 - 第一科",
                     "114_2_3": "114年第二次 - 第三科",
                     "115_1_1": "115年第一次 - 第一科",
-                    "115_1_3": "115年第一次 - 第三科"
+                    "115_1_3": "115年第一次 - 第三科",
+                    "primary_115_1_1": "115年第一次初級 - 第一科",
+                    "primary_115_1_2": "115年第一次初級 - 第二科",
+                    "primary_115_2_1": "115年第二次初級 - 第一科",
+                    "primary_115_2_2": "115年第二次初級 - 第二科"
                 };
 
                 for (let subjKey in EXAM_DATA) {
