@@ -954,21 +954,117 @@
                 });
             }
 
+            const getWikiStats = () => {
+                const stats = [];
+                Object.keys(WIKI_DATA).forEach(key => {
+                    if (key === "ExamSyllabus" || key === "MLMethodology") return;
+                    
+                    let count = 0;
+                    const keywords = WIKI_DATA[key].keywords || [key];
+                    
+                    for (let subjKey in EXAM_DATA) {
+                        const subj = EXAM_DATA[subjKey];
+                        subj.questions.forEach(question => {
+                            if (question.ml_method) {
+                                const method = question.ml_method.trim().toLowerCase();
+                                const isMatch = keywords.some(kw => {
+                                    const kwLow = kw.toLowerCase();
+                                    return method.includes(kwLow) || kwLow.includes(method);
+                                });
+                                if (isMatch) count++;
+                            }
+                        });
+                    }
+                    
+                    stats.push({
+                        key: key,
+                        title: WIKI_DATA[key].title,
+                        count: count
+                    });
+                });
+                
+                return stats.sort((a, b) => b.count - a.count).slice(0, 30);
+            };
+
             const renderWikiArticle = (wikiKey) => {
                 activeWikiKey = wikiKey;
                 const algo = WIKI_DATA[wikiKey];
                 
                 wikiTitle.textContent = algo.title;
                 wikiSummary.textContent = algo.summary;
-                wikiContent.innerHTML = algo.content;
+                
+                if (wikiKey === "ExamSyllabus") {
+                    const dashboardHtml = `
+                        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                            <h4 style="margin-top: 0; margin-bottom: 1rem; color: var(--primary); font-weight: bold; display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                                📊 考點熱度排行榜 (400 題考古題高頻考點 Top 30)
+                            </h4>
+                            <div id="wiki-dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; margin-bottom: 0.5rem;">
+                                <!-- Dynamic statistics items -->
+                            </div>
+                        </div>
+                    `;
+                    wikiContent.innerHTML = dashboardHtml + algo.content;
+                    
+                    const grid = document.getElementById("wiki-dashboard-grid");
+                    if (grid) {
+                        const top30 = getWikiStats();
+                        top30.forEach((item, index) => {
+                            const card = document.createElement("div");
+                            card.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); cursor: pointer; transition: all 0.2s; box-sizing: border-box;";
+                            
+                            let badgeColor = "#ffffff";
+                            let badgeBg = "var(--text-muted)";
+                            if (index === 0) { badgeBg = "#ef4444"; }
+                            else if (index === 1) { badgeBg = "#f97316"; }
+                            else if (index === 2) { badgeBg = "#eab308"; }
+                            else { badgeColor = "var(--text-muted)"; badgeBg = "rgba(0,0,0,0.05)"; }
+                            
+                            let displayTitle = item.title.split(" (")[0];
+                            if (displayTitle.length > 12) {
+                                displayTitle = displayTitle.substring(0, 11) + "...";
+                            }
+                            
+                            card.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 0.4rem; overflow: hidden;">
+                                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 1.2rem; height: 1.2rem; border-radius: 50%; font-size: 0.7rem; font-weight: bold; background-color: ${badgeBg}; color: ${badgeColor}; flex-shrink: 0;">${index + 1}</span>
+                                    <span style="font-weight: 500; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${item.title}">${displayTitle}</span>
+                                </div>
+                                <span style="font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.35rem; border-radius: 10px; background-color: var(--primary-light); color: var(--primary); flex-shrink: 0;">${item.count} 題</span>
+                            `;
+                            
+                            card.addEventListener("mouseenter", () => {
+                                card.style.borderColor = "var(--primary)";
+                                card.style.transform = "translateY(-1px)";
+                                card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.04)";
+                            });
+                            card.addEventListener("mouseleave", () => {
+                                card.style.borderColor = "var(--border-color)";
+                                card.style.transform = "none";
+                                card.style.boxShadow = "none";
+                            });
+                            
+                            card.addEventListener("click", () => {
+                                activeWikiKey = item.key;
+                                const searchVal = document.getElementById("wiki-search-input") ? document.getElementById("wiki-search-input").value : "";
+                                renderWikiMenu(searchVal);
+                                renderWikiArticle(item.key);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            });
+                            
+                            grid.appendChild(card);
+                        });
+                    }
+                } else {
+                    wikiContent.innerHTML = algo.content;
+                }
+                
                 wikiBreadcrumbAlgo.textContent = algo.title.split(" (")[0];
                 
-                // Triggers MathJax to re-render formulas
                 if (typeof MathJax !== 'undefined' && MathJax.typeset) {
                     MathJax.typeset();
                 }
-
-                // Render back-links to questions
+                
                 renderRelatedQuestions(wikiKey);
             };
 
