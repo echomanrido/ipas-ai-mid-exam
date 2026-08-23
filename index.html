@@ -299,6 +299,7 @@
                         <p style="font-size: 0.75rem; color: var(--text-muted);">收錄本考科涉及的核心人工智慧與機器學習演算法，提供深度原理解析與商業應用說明。</p>
                     </div>
                     <div class="questions-grid-wrapper" style="padding-top: 0.5rem;">
+                        <input type="text" id="wiki-search-input" placeholder="🔍 搜尋考綱與項目..." style="width: 100%; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.8rem; box-sizing: border-box; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
                         <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="wiki-menu-list">
                             <!-- Wiki buttons dynamically loaded -->
                         </div>
@@ -349,7 +350,7 @@
             let searchKeyword = "";
             let userProgress = {}; // subjectKey -> { questionId -> { userAnswer, isCorrect } }
             let studyMode = false; // true = 背題模式 (直接看答案)
-            let activeWikiKey = "Monte Carlo"; // Default active wiki page
+            let activeWikiKey = "ExamSyllabus"; // Default active wiki page
 
             // LocalStorage loading
             if (localStorage.getItem("ai_exam_user_progress")) {
@@ -476,7 +477,7 @@
                 btnToggleView.className = "btn btn-secondary";
             };
 
-            const switchToWikiView = (wikiKey = "Monte Carlo") => {
+            const switchToWikiView = (wikiKey = "ExamSyllabus") => {
                 currentView = "wiki";
                 activeWikiKey = wikiKey;
                 
@@ -914,16 +915,28 @@
             const wikiBreadcrumbAlgo = document.getElementById("wiki-breadcrumb-algo");
             const wikiRelatedQuestions = document.getElementById("wiki-related-questions");
 
-            const renderWikiMenu = () => {
+            const renderWikiMenu = (filterKeyword = "") => {
                 wikiMenuList.innerHTML = "";
                 if (typeof WIKI_DATA === 'undefined') return;
                 
+                const kw = filterKeyword.trim().toLowerCase();
+                
                 Object.keys(WIKI_DATA).forEach(key => {
+                    const algo = WIKI_DATA[key];
+                    const isSyllabus = key === "ExamSyllabus";
+                    const matches = isSyllabus || 
+                        key.toLowerCase().includes(kw) || 
+                        algo.title.toLowerCase().includes(kw) || 
+                        (algo.summary && algo.summary.toLowerCase().includes(kw)) ||
+                        (algo.keywords && algo.keywords.some(k => k.toLowerCase().includes(kw)));
+                        
+                    if (!matches) return;
+                    
                     const btn = document.createElement("button");
                     btn.className = "wiki-menu-btn";
                     if (key === activeWikiKey) btn.classList.add("active");
                     
-                    btn.innerHTML = `<span>${WIKI_DATA[key].title}</span> <span>&gt;</span>`;
+                    btn.innerHTML = `<span>${algo.title}</span> <span>&gt;</span>`;
                     btn.addEventListener("click", () => {
                         document.querySelectorAll(".wiki-menu-btn").forEach(b => b.classList.remove("active"));
                         btn.classList.add("active");
@@ -933,6 +946,13 @@
                     wikiMenuList.appendChild(btn);
                 });
             };
+
+            const wikiSearchInput = document.getElementById("wiki-search-input");
+            if (wikiSearchInput) {
+                wikiSearchInput.addEventListener("input", (e) => {
+                    renderWikiMenu(e.target.value);
+                });
+            }
 
             const renderWikiArticle = (wikiKey) => {
                 activeWikiKey = wikiKey;
@@ -978,11 +998,13 @@
                         if (question.ml_method) {
                             const method = question.ml_method.trim().toLowerCase();
                             const key = wikiKey.toLowerCase();
+                            const keywords = (WIKI_DATA[wikiKey] && WIKI_DATA[wikiKey].keywords) ? WIKI_DATA[wikiKey].keywords : [wikiKey];
                             
-                            // Check exact or substring mapping
-                            if (method === key || method.includes(key) || key.includes(method)) {
-                                isMatch = true;
-                            }
+                            // Check keywords mapping
+                            isMatch = keywords.some(kw => {
+                                const kwLow = kw.toLowerCase();
+                                return method.includes(kwLow) || kwLow.includes(method);
+                            });
                         }
                         
                         if (isMatch) {
