@@ -1208,6 +1208,201 @@ div[style*="border-left: 4px solid #8e44ad"] ul li::before {
     transition: color 0.2s;
     user-select: none;
 }
+    background-size: 24px 24px !important;
+    padding: 2.5rem !important;
+}
+
+[data-theme="dark"] #wiki-container .workspace-area {
+    background-color: #0b0f19;
+    background-image: radial-gradient(#1e293b 1.5px, transparent 1.5px) !important;
+}
+
+/* Elegant Wiki Main Card styling */
+#wiki-container .card {
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+    border-radius: 16px !important;
+    background-color: #ffffff !important;
+}
+[data-theme="dark"] #wiki-container .card {
+    border: 1px solid #1e293b !important;
+    background-color: #131e35 !important;
+}
+
+/* Title Centered Vibe */
+#wiki-title {
+    text-align: center;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem !important;
+    background: linear-gradient(to right, #0f172a, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+[data-theme="dark"] #wiki-title {
+    background: linear-gradient(to right, #ffffff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#wiki-summary {
+    text-align: center;
+    border-left: none !important;
+    padding-left: 0 !important;
+    color: #64748b !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 2rem !important;
+}
+[data-theme="dark"] #wiki-summary {
+    color: #94a3b8 !important;
+}
+
+/* Wiki Content List Style Refinement to match the concept mockup */
+#wiki-content ul {
+    list-style-type: none !important;
+    padding-left: 0.5rem !important;
+    margin: 0.75rem 0 1.25rem 0 !important;
+}
+
+#wiki-content ul li {
+    position: relative !important;
+    padding-left: 1.25rem !important;
+    margin-bottom: 0.65rem !important;
+    color: var(--text-primary) !important;
+    font-size: 0.95rem !important;
+}
+
+#wiki-content ul li::before {
+    content: "•" !important;
+    color: #2563eb !important; /* Premium Blue Bullet */
+    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+    position: absolute !important;
+    left: 0.1rem !important;
+    top: -0.15rem !important;
+}
+
+#wiki-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.85rem !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Custom styles for the exam analysis cards list items to match individual category colors */
+div[style*="border-left: 4px solid var(--accent)"] ul li::before {
+    color: var(--accent) !important;
+}
+
+div[style*="border-left: 4px solid var(--success)"] ul li::before {
+    color: var(--success) !important;
+}
+
+div[style*="border-left: 4px solid #8e44ad"] ul li::before {
+    color: #8e44ad !important;
+}
+
+/* ==========================================================================
+   QUESTION ATTACHED IMAGES & LIGHTBOX MODAL
+   ========================================================================== */
+.question-image-wrapper {
+    margin: 1.25rem 0 1.75rem 0;
+    padding: 1rem;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.question-image-wrapper:hover {
+    border-color: var(--primary);
+}
+
+.question-img {
+    max-width: 100%;
+    max-height: 480px;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    cursor: zoom-in;
+    background-color: #ffffff;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.question-img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.question-img-hint {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    user-select: none;
+}
+
+/* Lightbox Modal */
+.image-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-modal-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    padding: 6px;
+    cursor: default;
+    animation: modalZoomIn 0.25s ease-out;
+}
+
+@keyframes modalZoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+    user-select: none;
+}
 
 .image-modal-close:hover {
     color: #ef4444;
@@ -1219,4 +1414,47 @@ div[style*="border-left: 4px solid #8e44ad"] ul li::before {
     font-size: 0.9rem;
     text-align: center;
     user-select: none;
+}
+
+/* Wiki Category Filter Tabs */
+.wiki-category-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+}
+
+.wiki-cat-tab {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--transition-fast);
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wiki-cat-tab:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+.wiki-cat-tab.active {
+    background-color: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+[data-theme="dark"] .wiki-cat-tab.active {
+    background-color: #2563eb;
+    color: #ffffff;
 }

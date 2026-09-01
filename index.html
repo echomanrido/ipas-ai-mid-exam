@@ -305,7 +305,16 @@
                         <p style="font-size: 0.75rem; color: var(--text-muted);">收錄本考科涉及的核心人工智慧與機器學習演算法，提供深度原理解析與商業應用說明。</p>
                     </div>
                     <div class="questions-grid-wrapper" style="padding-top: 0.5rem;">
-                        <input type="text" id="wiki-search-input" placeholder="🔍 搜尋考綱與項目..." style="width: 100%; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.8rem; box-sizing: border-box; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+                        <input type="text" id="wiki-search-input" placeholder="🔍 搜尋考綱與項目..." style="width: 100%; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.6rem; box-sizing: border-box; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+                        
+                        <!-- Wiki Category Filter Tabs -->
+                        <div class="wiki-category-tabs" id="wiki-category-tabs">
+                            <button class="wiki-cat-tab active" data-category="all">全部</button>
+                            <button class="wiki-cat-tab" data-category="code">💻 程式相關</button>
+                            <button class="wiki-cat-tab" data-category="theory">📚 理論專題</button>
+                            <button class="wiki-cat-tab" data-category="syllabus">👑 考綱大綱</button>
+                        </div>
+
                         <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="wiki-menu-list">
                             <!-- Wiki buttons dynamically loaded -->
                         </div>
@@ -933,7 +942,9 @@
             const wikiBreadcrumbAlgo = document.getElementById("wiki-breadcrumb-algo");
             const wikiRelatedQuestions = document.getElementById("wiki-related-questions");
 
-            const renderWikiMenu = (filterKeyword = "") => {
+            let activeWikiCategory = "all";
+
+            const renderWikiMenu = (filterKeyword = "", category = activeWikiCategory) => {
                 wikiMenuList.innerHTML = "";
                 if (typeof WIKI_DATA === 'undefined') return;
                 
@@ -941,6 +952,13 @@
                 
                 Object.keys(WIKI_DATA).forEach(key => {
                     const algo = WIKI_DATA[key];
+                    const itemCat = algo.category || (key === "ExamSyllabus" ? "syllabus" : "theory");
+                    
+                    // Category filter
+                    if (category !== "all" && itemCat !== category) {
+                        return;
+                    }
+                    
                     const isSyllabus = key === "ExamSyllabus";
                     const matches = isSyllabus || 
                         key.toLowerCase().includes(kw) || 
@@ -968,9 +986,21 @@
             const wikiSearchInput = document.getElementById("wiki-search-input");
             if (wikiSearchInput) {
                 wikiSearchInput.addEventListener("input", (e) => {
-                    renderWikiMenu(e.target.value);
+                    renderWikiMenu(e.target.value, activeWikiCategory);
                 });
             }
+
+            // Wiki Category Tabs Event Listeners
+            const wikiCatTabs = document.querySelectorAll(".wiki-cat-tab");
+            wikiCatTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    wikiCatTabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    activeWikiCategory = tab.dataset.category;
+                    const searchVal = wikiSearchInput ? wikiSearchInput.value : "";
+                    renderWikiMenu(searchVal, activeWikiCategory);
+                });
+            });
 
             const getWikiStats = () => {
                 const stats = [];
