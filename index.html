@@ -190,6 +190,12 @@
                             讀取中...
                         </div>
                         
+                        <!-- Question Attached Image / Diagram -->
+                        <div class="question-image-wrapper" id="question-image-wrapper" style="display: none;">
+                            <img id="question-img-element" class="question-img" src="" alt="題目附圖">
+                            <div class="question-img-hint">🔍 點擊圖片可放大查看</div>
+                        </div>
+                        
                         <div class="options-list" id="options-list">
                             <!-- Options (A) (B) (C) (D) -->
                         </div>
@@ -394,6 +400,8 @@
             const questionNumberBadge = document.getElementById("question-number-badge");
             const questionMlBadge = document.getElementById("question-ml-method-badge");
             const questionText = document.getElementById("question-text");
+            const questionImageWrapper = document.getElementById("question-image-wrapper");
+            const questionImgElement = document.getElementById("question-img-element");
             const optionsList = document.getElementById("options-list");
             const explanationPanel = document.getElementById("explanation-panel");
             const explanationText = document.getElementById("explanation-text");
@@ -658,6 +666,16 @@
                     questionMlBadge.style.display = "inline-block";
                 } else {
                     questionMlBadge.style.display = "none";
+                }
+
+                // Render Attached Image if exists
+                if (q.image) {
+                    questionImgElement.src = q.image;
+                    questionImgElement.onclick = () => openImageModal(q.image);
+                    questionImageWrapper.style.display = "flex";
+                } else {
+                    questionImageWrapper.style.display = "none";
+                    questionImgElement.src = "";
                 }
 
                 // Render Options
@@ -1139,6 +1157,39 @@
                 }
             };
         });
+
+        // Global Image Modal (Lightbox) Functions
+        function openImageModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-image");
+            if (modal && modalImg) {
+                modalImg.src = src;
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeImageModal();
+            }
+        });
     </script>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal" style="display: none;" onclick="closeImageModal()">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img class="image-modal-content" id="modal-image" src="" alt="放大附圖" onclick="event.stopPropagation()">
+        <div id="image-modal-caption" class="image-modal-caption">點擊背景或右上角 &times; 關閉</div>
+    </div>
 </body>
 </html>

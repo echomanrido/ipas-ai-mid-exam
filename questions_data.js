@@ -1,3 +1,4 @@
+// Exam Questions Database
 const EXAM_DATA = {
   "114_2_1": {
     "title": "114 年第二次 - 第一科：人工智慧技術應用與規劃",
@@ -4128,7 +4129,8 @@ const EXAM_DATA = {
           "損失函數 (Loss Function)",
           "離群值 (Outlier)",
           "梯度下降 (Gradient Descent)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q38.png"
       },
       {
         "id": 39,
@@ -4174,7 +4176,8 @@ const EXAM_DATA = {
           "共適應性 (Co-adaptation)",
           "正則化 (Regularization)",
           "前向傳播 (Forward Propagation)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q39.png"
       },
       {
         "id": 40,
@@ -4220,7 +4223,8 @@ const EXAM_DATA = {
           "線性代數 (Linear Algebra)",
           "特徵向量 (Eigenvector)",
           "純量 (Scalar)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q40.png"
       },
       {
         "id": 41,
@@ -4266,7 +4270,8 @@ const EXAM_DATA = {
           "大數法則 (Law of Large Numbers)",
           "條件機率 (Conditional Probability)",
           "隨機抽樣 (Random Sampling)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q41.png"
       },
       {
         "id": 42,
@@ -4450,7 +4455,8 @@ const EXAM_DATA = {
           "參數凍結 (Freezing Layers)",
           "預訓練模型 (Pre-trained Model)",
           "梯度更新 (Gradient Update)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q45.png"
       },
       {
         "id": 46,
@@ -4496,7 +4502,8 @@ const EXAM_DATA = {
           "逆轉換 (Inverse Transform)",
           "主成分 (Principal Component)",
           "變異量 (Variance)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q46.png"
       },
       {
         "id": 47,
@@ -4542,7 +4549,8 @@ const EXAM_DATA = {
           "交叉驗證 (Cross-Validation)",
           "距離度量 (Distance Metric)",
           "超參數調校 (Hyperparameter Tuning)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q47.png"
       },
       {
         "id": 48,
@@ -4588,7 +4596,8 @@ const EXAM_DATA = {
           "標準化 (Standardization)",
           "梯度爆炸 (Gradient Exploding)",
           "常態分佈 (Normal Distribution)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q48.png"
       },
       {
         "id": 49,
@@ -4634,7 +4643,8 @@ const EXAM_DATA = {
           "全連接層 (Fully Connected Layer)",
           "參數量 (Parameter Count)",
           "偏差 (Bias)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q49.png"
       },
       {
         "id": 50,
@@ -4680,7 +4690,8 @@ const EXAM_DATA = {
           "訓練損失 (Training Loss)",
           "驗證損失 (Validation Loss)",
           "超參數調校 (Hyperparameter Tuning)"
-        ]
+        ],
+        "image": "images/questions/114_2_3_q50.png"
       }
     ]
   },
@@ -5578,7 +5589,8 @@ const EXAM_DATA = {
           "A/B Testing",
           "CTR",
           "AUC"
-        ]
+        ],
+        "image": "images/questions/115_1_1_q19.png"
       },
       {
         "id": 20,
@@ -8943,7 +8955,8 @@ const EXAM_DATA = {
           "One-Hot Encoding",
           "Sigmoid",
           "Sparse Categorical Crossentropy"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q40.png"
       },
       {
         "id": 41,
@@ -8991,7 +9004,8 @@ const EXAM_DATA = {
           "RandomHorizontalFlip",
           "Validation Loss",
           "Noisy Labels"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q41.png"
       },
       {
         "id": 42,
@@ -9039,7 +9053,8 @@ const EXAM_DATA = {
           "Zero-shot Learning",
           "Knowledge Distillation",
           "Requires_grad"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q42.png"
       },
       {
         "id": 43,
@@ -9087,7 +9102,8 @@ const EXAM_DATA = {
           "Catastrophic Forgetting",
           "Loss Landscape",
           "Discriminative Learning Rates"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q43.png"
       },
       {
         "id": 44,
@@ -9135,7 +9151,8 @@ const EXAM_DATA = {
           "LDA",
           "Scikit-Learn Pipeline",
           "Over-optimistic Performance"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q44.png"
       },
       {
         "id": 45,
@@ -9183,7 +9200,8 @@ const EXAM_DATA = {
           "Imbalanced Classes",
           "KFold",
           "cross_val_score"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q45.png"
       },
       {
         "id": 46,
@@ -9231,7 +9249,8 @@ const EXAM_DATA = {
           "Gradient Explosion",
           "Softmax",
           "Z-score Standardization"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q46.png"
       },
       {
         "id": 47,
@@ -9279,7 +9298,8 @@ const EXAM_DATA = {
           "Flatten",
           "Internal Covariate Shift",
           "Dense Layer"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q47.png"
       },
       {
         "id": 48,
@@ -9327,7 +9347,8 @@ const EXAM_DATA = {
           "Learning Curve",
           "Validation Loss",
           "Generalization"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q48.png"
       },
       {
         "id": 49,
@@ -9424,7 +9445,8 @@ const EXAM_DATA = {
           "NaN (Not a Number)",
           "loss.backward()",
           "optimizer.step()"
-        ]
+        ],
+        "image": "images/questions/115_1_3_q50.png"
       }
     ]
   },

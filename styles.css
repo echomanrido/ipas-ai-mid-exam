@@ -1106,3 +1106,117 @@ div[style*="border-left: 4px solid var(--success)"] ul li::before {
 div[style*="border-left: 4px solid #8e44ad"] ul li::before {
     color: #8e44ad !important;
 }
+
+/* ==========================================================================
+   QUESTION ATTACHED IMAGES & LIGHTBOX MODAL
+   ========================================================================== */
+.question-image-wrapper {
+    margin: 1.25rem 0 1.75rem 0;
+    padding: 1rem;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.question-image-wrapper:hover {
+    border-color: var(--primary);
+}
+
+.question-img {
+    max-width: 100%;
+    max-height: 480px;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    cursor: zoom-in;
+    background-color: #ffffff;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.question-img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.question-img-hint {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    user-select: none;
+}
+
+/* Lightbox Modal */
+.image-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-modal-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    padding: 6px;
+    cursor: default;
+    animation: modalZoomIn 0.25s ease-out;
+}
+
+@keyframes modalZoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.image-modal-close:hover {
+    color: #ef4444;
+}
+
+.image-modal-caption {
+    margin-top: 1rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    text-align: center;
+    user-select: none;
+}
