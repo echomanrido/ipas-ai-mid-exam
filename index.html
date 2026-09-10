@@ -192,8 +192,15 @@
 
                 <!-- Workspace content -->
                 <div class="workspace-area">
-                    <div class="nav-breadcrumb">
-                        <a id="breadcrumb-home">首頁</a> &gt; <span id="breadcrumb-subject">當前學科</span> &gt; <span>第 <span id="current-q-index">1</span> 題</span>
+                    <div class="nav-breadcrumb-wrapper">
+                        <div class="nav-breadcrumb">
+                            <a id="breadcrumb-home">首頁</a> &gt; <span id="breadcrumb-subject">當前學科</span> &gt; <span>第 <span id="current-q-index">1</span> 題</span>
+                        </div>
+                        <div class="quick-jump-container">
+                            <label for="jump-question-select" class="quick-jump-label">🎯 跳至：</label>
+                            <select id="jump-question-select" class="jump-select" aria-label="選擇題目跳轉"></select>
+                            <button class="btn btn-secondary btn-mobile-sheet" id="btn-mobile-sheet-toggle" title="開啟題號清單">📋 題號清單</button>
+                        </div>
                     </div>
                     
                     <!-- Question Card -->
@@ -225,8 +232,13 @@
                         
                         <!-- Nav buttons below options (before answer show) -->
                         <div class="nav-actions">
-                            <button class="btn btn-secondary" id="btn-prev-q">上一題</button>
-                            <button class="btn btn-primary" id="btn-next-q">下一題</button>
+                            <button class="btn btn-secondary" id="btn-prev-q">⬅️ 上一題</button>
+                            <div class="nav-jump-center">
+                                <span>第</span>
+                                <select id="nav-jump-select" class="nav-jump-select" aria-label="切換題號"></select>
+                                <span>/ <span id="nav-total-q">50</span> 題</span>
+                            </div>
+                            <button class="btn btn-primary" id="btn-next-q">下一題 ➡️</button>
                         </div>
                     </div>
 
@@ -453,6 +465,16 @@
             // View toggle button
             const btnToggleView = document.getElementById("btn-toggle-view");
 
+            // Quick Jump UI Elements
+            const jumpQuestionSelect = document.getElementById("jump-question-select");
+            const navJumpSelect = document.getElementById("nav-jump-select");
+            const navTotalQ = document.getElementById("nav-total-q");
+            const btnMobileSheetToggle = document.getElementById("btn-mobile-sheet-toggle");
+            const mobileSheetModal = document.getElementById("mobile-sheet-modal");
+            const mobileSheetBackdrop = document.getElementById("mobile-sheet-backdrop");
+            const btnCloseMobileSheet = document.getElementById("btn-close-mobile-sheet");
+            const mobileQuestionsGrid = document.getElementById("mobile-questions-grid");
+
             // Subject Cards Init progress status on Landing Panel
             const updateLandingProgress = () => {
                 document.querySelectorAll(".subj-progress-status").forEach(span => {
@@ -627,6 +649,102 @@
                 searchKeyword = e.target.value.toLowerCase();
                 renderSidebarGrid();
             });
+
+            // Dropdown jump selectors update
+            const updateJumpSelects = () => {
+                if (!currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                const subject = EXAM_DATA[currentSubject];
+                const questions = subject.questions;
+                if (!questions || questions.length === 0) return;
+
+                if (navTotalQ) {
+                    navTotalQ.textContent = questions.length;
+                }
+
+                // Populate Top Jump Select
+                if (jumpQuestionSelect) {
+                    jumpQuestionSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        let qSnippet = q.question.replace(/\s+/g, ' ').trim();
+                        if (qSnippet.length > 28) {
+                            qSnippet = qSnippet.substring(0, 28) + "...";
+                        }
+                        const methodTag = q.ml_method ? ` [${q.ml_method}]` : "";
+                        opt.textContent = `${statusIcon} 第 ${q.id} 題：${qSnippet}${methodTag}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        jumpQuestionSelect.appendChild(opt);
+                    });
+                    jumpQuestionSelect.value = currentQuestionIdx;
+                }
+
+                // Populate Bottom Nav Jump Select
+                if (navJumpSelect) {
+                    navJumpSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        opt.textContent = `${q.id} ${statusIcon}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        navJumpSelect.appendChild(opt);
+                    });
+                    navJumpSelect.value = currentQuestionIdx;
+                }
+            };
+
+            // Mobile Question Sheet rendering
+            const renderMobileSheetGrid = () => {
+                if (!mobileQuestionsGrid || !currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                mobileQuestionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject] ? userProgress[currentSubject][qId] : null;
+                    
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        renderSidebarGrid();
+                        renderQuestion();
+                        if (mobileSheetModal) {
+                            mobileSheetModal.classList.add("hidden");
+                        }
+                    });
+                    
+                    mobileQuestionsGrid.appendChild(qBtn);
+                });
+            };
 
             // Sidebar Grid rendering
             const renderSidebarGrid = () => {
@@ -871,6 +989,9 @@
                 // Update prev / next buttons
                 btnPrevQ.disabled = currentQuestionIdx === 0;
                 btnNextQ.disabled = currentQuestionIdx === subject.questions.length - 1;
+
+                // Sync Jump Dropdowns
+                updateJumpSelects();
             };
 
             const handleSelectOption = (letter) => {
@@ -928,6 +1049,55 @@
                     renderQuestion();
                 }
             });
+
+            // Quick jump dropdown change events
+            if (jumpQuestionSelect) {
+                jumpQuestionSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            if (navJumpSelect) {
+                navJumpSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            // Mobile Sheet Modal events
+            if (btnMobileSheetToggle) {
+                btnMobileSheetToggle.addEventListener("click", () => {
+                    renderMobileSheetGrid();
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.remove("hidden");
+                    }
+                });
+            }
+
+            if (btnCloseMobileSheet) {
+                btnCloseMobileSheet.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
+
+            if (mobileSheetBackdrop) {
+                mobileSheetBackdrop.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
 
             // Reset current subject history
             btnResetCurrent.addEventListener("click", () => {
@@ -1232,6 +1402,24 @@
             }
         });
     </script>
+
+    <!-- Mobile Question Sheet Drawer / Modal -->
+    <div class="mobile-sheet-modal hidden" id="mobile-sheet-modal">
+        <div class="mobile-sheet-backdrop" id="mobile-sheet-backdrop"></div>
+        <div class="mobile-sheet-content">
+            <div class="mobile-sheet-header">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>📋</span> 題目清單快速跳轉
+                </h3>
+                <button class="modal-close" id="btn-close-mobile-sheet" aria-label="關閉">&times;</button>
+            </div>
+            <div class="questions-grid-wrapper" style="max-height: 60vh; padding: 0.5rem 0;">
+                <div class="questions-grid" id="mobile-questions-grid">
+                    <!-- Dynamically populated 1-50 buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Image Lightbox Modal -->
     <div id="image-modal" class="image-modal" style="display: none;" onclick="closeImageModal()">
