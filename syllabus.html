@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 應用規劃師能力鑑定 - 考試科目與評鑑內容規範對照表</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .syllabus-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem 1.5rem;
+        }
+        
+        .syllabus-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            transition: all var(--transition-fast);
+        }
+
+        .back-home-btn:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .syllabus-header-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .syllabus-header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--success));
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .page-main-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .page-sub-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 900px;
+        }
+
+        .toc-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .toc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+        }
+
+        .toc-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .table-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .tag-pill {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .tag-pill.mid {
+            background: #eff6ff;
+            color: #2563eb;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+        }
+
+        .tag-pill.primary {
+            background: #fffbeb;
+            color: #d97706;
+            border: 1px solid rgba(217, 119, 6, 0.25);
+        }
+
+        /* Responsive Table */
+        .table-responsive {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .spec-table th {
+            background: var(--bg-main);
+            color: var(--text-primary);
+            padding: 1rem 1.25rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .spec-table th:last-child {
+            border-right: none;
+        }
+
+        .spec-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            vertical-align: middle;
+            line-height: 1.6;
+        }
+
+        .spec-table td:last-child {
+            border-right: none;
+        }
+
+        .spec-table tr:hover td {
+            background-color: rgba(37, 99, 235, 0.02);
+        }
+
+        .code-badge {
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-right: 0.35rem;
+        }
+
+        .subject-col-content {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .theme-col-content {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Image Display Box */
+        .official-img-box {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .official-img-box-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .official-img-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            cursor: zoom-in;
+            display: block;
+            margin: 0 auto;
+            transition: transform var(--transition-fast);
+        }
+
+        .official-img-preview:hover {
+            transform: scale(1.01);
+        }
+
+        .img-hint-text {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .syllabus-container {
+                padding: 1rem 1rem 3rem 1rem;
+            }
+            .syllabus-header-card {
+                padding: 1.5rem;
+            }
+            .page-main-title {
+                font-size: 1.5rem;
+            }
+            .table-section {
+                padding: 1.25rem;
+            }
+            .spec-table th, .spec-table td {
+                padding: 0.75rem 0.85rem;
+                font-size: 0.88rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-section" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>👑 AI 學習王</h1>
+                    <p>考試科目與評鑑內容對照規範</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <a href="index.html" class="btn btn-secondary">🏠 返回考古題首頁</a>
+                <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換主題">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 12h4.5M9.75 3.75h4.5m-4.5 16.5h4.5M2.25 12h19.5M3.75 9.75v4.5m16.5-4.5v4.5m-15-7.5l1.06-1.06m13.78 13.78l-1.06 1.06m-13.78 0l1.06 1.06m13.78-13.78l-1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="syllabus-container">
+            <!-- Nav Breadcrumb -->
+            <div class="syllabus-nav-bar">
+                <a href="index.html" class="back-home-btn">
+                    <span>⬅️</span> 返回考古題系統首頁
+                </a>
+                <div style="font-size: 0.88rem; color: var(--text-muted);">
+                    資料來源：經濟部 iPAS 產業人才能力鑑定官方大綱規範
+                </div>
+            </div>
+
+            <!-- Page Header Card -->
+            <div class="syllabus-header-card">
+                <span class="page-badge">第一章 考試科目與評鑑內容</span>
+                <h1 class="page-main-title">AI 應用規劃師能力鑑定規範對照表</h1>
+                <p class="page-sub-desc">
+                    本頁完整整理經濟部 iPAS「AI 應用規劃師」能力鑑定官方評鑑大綱表格（涵蓋<b>初級兩大科目</b>與<b>中級三大科目</b>）。
+                    您可透過結構化表格清楚掌握每個評鑑主題的代碼、評鑑核心項目，並可放大檢視官方公告之標準試題規範原圖。
+                </p>
+                <div class="toc-bar">
+                    <a href="#table-primary" class="toc-link">📌 初級評鑑內容對照表</a>
+                    <a href="#table-mid" class="toc-link">📌 中級評鑑內容對照表</a>
+                </div>
+            </div>
+
+            <!-- SECTION 1: 初級考試科目與評鑑內容 -->
+            <section class="table-section" id="table-primary">
+                <div class="section-headline">
+                    <div class="section-title">
+                        <span>🎒</span> 初級能力鑑定：考試科目與評鑑內容
+                    </div>
+                    <span class="tag-pill primary">共 2 大科目・8 大評鑑主題・16 項評鑑內容</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">科目</th>
+                                <th style="width: 32%;">評鑑主題</th>
+                                <th style="width: 43%;">評鑑內容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 科目一 -->
+                            <tr>
+                                <td rowspan="8" class="subject-col-content" style="background-color: rgba(37, 99, 235, 0.02);">
+                                    科目一：<br>人工智慧基礎概論
+                                </td>
+                                <td rowspan="2" class="theme-col-content">人工智慧概念</td>
+                                <td>AI 的定義與分類</td>
+                            </tr>
+                            <tr>
+                                <td>AI 治理概念</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">資料處理與分析概念</td>
+                                <td>資料基本概念與來源</td>
+                            </tr>
+                            <tr>
+                                <td>資料整理與分析流程</td>
+                            </tr>
+                            <tr>
+                                <td>資料隱私與安全</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="theme-col-content">機器學習概念</td>
+                                <td>機器學習基本原理</td>
+                            </tr>
+                            <tr>
+                                <td>常見的機器學習模型</td>
+                            </tr>
+                            <tr>
+                                <td class="theme-col-content">鑑別式 AI 與生成式 AI 概念</td>
+                                <td>鑑別式 AI 與生成式 AI 的基本原理</td>
+                            </tr>
+
+                            <!-- 科目二 -->
+                            <tr>
+                                <td rowspan="8" class="subject-col-content" style="background-color: rgba(245, 158, 11, 0.02);">
+                                    科目二：<br>生成式 AI 應用與規劃
+                                </td>
+                                <td rowspan="1" class="theme-col-content">鑑別式 AI 與生成式 AI 概念</td>
+                                <td>鑑別式 AI 與生成式 AI 的整合應用</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="theme-col-content">No code / Low code 概念</td>
+                                <td>No Code / Low Code 的基本概念</td>
+                            </tr>
+                            <tr>
+                                <td>No Code / Low Code 的優勢與限制</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="theme-col-content">生成式 AI 應用領域與工具使用</td>
+                                <td>生成式 AI 應用領域與常見工具</td>
+                            </tr>
+                            <tr>
+                                <td>如何善用生成式 AI 工具</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">生成式 AI 導入評估規劃</td>
+                                <td>生成式 AI 導入評估</td>
+                            </tr>
+                            <tr>
+                                <td>生成式 AI 導入規劃</td>
+                            </tr>
+                            <tr>
+                                <td>生成式 AI 風險管理</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 官方大綱附圖 -->
+                <div class="official-img-box">
+                    <div class="official-img-box-header">
+                        <span>🖼️ 初級官方評鑑大綱規範表格（原圖）</span>
+                        <span style="font-size: 0.8rem;">點擊圖片可放大檢視</span>
+                    </div>
+                    <img src="images/syllabus_primary.png" alt="初級考試科目與評鑑內容官方圖表" class="official-img-preview" onclick="openImageModal(this.src)">
+                    <div class="img-hint-text">🔍 點選圖片開啟高解析度放大檢視視窗</div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: 中級考試科目與評鑑內容 -->
+            <section class="table-section" id="table-mid">
+                <div class="section-headline">
+                    <div class="section-title">
+                        <span>🎓</span> 中級能力鑑定：考試科目與評鑑內容
+                    </div>
+                    <span class="tag-pill mid">共 3 大科目・9 大評鑑主題・26 項評鑑細部內容</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">科目</th>
+                                <th style="width: 35%;">評鑑主題</th>
+                                <th style="width: 40%;">評鑑內容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- L21 -->
+                            <tr>
+                                <td rowspan="9" class="subject-col-content" style="background-color: rgba(37, 99, 235, 0.02);">
+                                    <span class="code-badge">L21</span><br>人工智慧技術應用與規劃
+                                </td>
+                                <td rowspan="4" class="theme-col-content">
+                                    <span class="code-badge">L211</span> AI 相關技術應用
+                                </td>
+                                <td><span class="code-badge">L21101</span> 自然語言處理技術與應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21102</span> 電腦視覺技術與應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21103</span> 生成式 AI 技術與應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21104</span> 多模態人工智慧應用</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L212</span> AI 導入評估規劃
+                                </td>
+                                <td><span class="code-badge">L21201</span> AI 導入評估</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21202</span> AI 導入規劃</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21203</span> AI 風險管理</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="theme-col-content">
+                                    <span class="code-badge">L213</span> AI 技術應用與系統部署
+                                </td>
+                                <td><span class="code-badge">L21301</span> 數據準備與模型選擇</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L21302</span> AI 技術系統集成與部署</td>
+                            </tr>
+
+                            <!-- L22 -->
+                            <tr>
+                                <td rowspan="10" class="subject-col-content" style="background-color: rgba(16, 185, 129, 0.02);">
+                                    <span class="code-badge">L22</span><br>大數據處理分析與應用
+                                </td>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L221</span> 機率統計基礎
+                                </td>
+                                <td><span class="code-badge">L22101</span> 敘述性統計與資料摘要技術</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22102</span> 機率分佈與資料分佈模型</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22103</span> 假設檢定與統計推論</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L222</span> 大數據處理技術
+                                </td>
+                                <td><span class="code-badge">L22201</span> 數據收集與清理</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22202</span> 數據儲存與管理</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22203</span> 數據處理技術與工具</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L223</span> 大數據分析方法與工具
+                                </td>
+                                <td><span class="code-badge">L22301</span> 統計學在大數據中的應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22302</span> 常見的大數據分析方法</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L22303</span> 數據可視化工具</td>
+                            </tr>
+                            <tr>
+                                <td class="theme-col-content">
+                                    <span class="code-badge">L224</span> 大數據在人工智慧之應用
+                                </td>
+                                <td>
+                                    <span class="code-badge">L22401</span> 大數據與機器學習<br>
+                                    <span class="code-badge">L22402</span> 大數據在鑑別式 AI 中的應用<br>
+                                    <span class="code-badge">L22403</span> 大數據在生成式 AI 中的應用<br>
+                                    <span class="code-badge">L22404</span> 大數據隱私保護、安全與合規
+                                </td>
+                            </tr>
+
+                            <!-- L23 -->
+                            <tr>
+                                <td rowspan="12" class="subject-col-content" style="background-color: rgba(245, 158, 11, 0.02);">
+                                    <span class="code-badge">L23</span><br>機器學習技術與應用
+                                </td>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L231</span> 機器學習基礎數學
+                                </td>
+                                <td><span class="code-badge">L23101</span> 機率/統計之機器學習基礎應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23102</span> 線性代數之機器學習基礎應用</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23103</span> 數值優化技術與方法</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="theme-col-content">
+                                    <span class="code-badge">L232</span> 機器學習與深度學習
+                                </td>
+                                <td><span class="code-badge">L23201</span> 機器學習原理與技術</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23202</span> 常見機器學習演算法</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23203</span> 深度學習原理與框架</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" class="theme-col-content">
+                                    <span class="code-badge">L233</span> 機器學習建模與參數調校
+                                </td>
+                                <td><span class="code-badge">L23301</span> 數據準備與特徵工程</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23302</span> 模型選擇與架構設計</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23303</span> 模型訓練、評估與驗證</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23304</span> 模型調整與優化</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="theme-col-content">
+                                    <span class="code-badge">L234</span> 機器學習治理
+                                </td>
+                                <td><span class="code-badge">L23401</span> 數據隱私、安全與合規</td>
+                            </tr>
+                            <tr>
+                                <td><span class="code-badge">L23402</span> 演算法偏見與公平性</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 官方大綱附圖 -->
+                <div class="official-img-box">
+                    <div class="official-img-box-header">
+                        <span>🖼️ 中級官方評鑑大綱規範表格（原圖）</span>
+                        <span style="font-size: 0.8rem;">點擊圖片可放大檢視</span>
+                    </div>
+                    <img src="images/syllabus_mid.jpg" alt="中級考試科目與評鑑內容官方圖表" class="official-img-preview" onclick="openImageModal(this.src)">
+                    <div class="img-hint-text">🔍 點選圖片開啟高解析度放大檢視視窗</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal" style="display: none;" onclick="closeImageModal()">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img class="image-modal-content" id="modal-image" src="" alt="放大檢視" onclick="event.stopPropagation()">
+        <div id="image-modal-caption" class="image-modal-caption">點擊背景或右上角 &times; 關閉</div>
+    </div>
+
+    <script>
+        // Theme Management
+        const getPreferredTheme = () => {
+            return localStorage.getItem("theme") || "light";
+        };
+        
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            if (theme === "dark") {
+                document.getElementById("sun-icon").classList.remove("hidden");
+                document.getElementById("moon-icon").classList.add("hidden");
+            } else {
+                document.getElementById("sun-icon").classList.add("hidden");
+                document.getElementById("moon-icon").classList.remove("hidden");
+            }
+        };
+
+        setTheme(getPreferredTheme());
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            setTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+
+        // Global Image Lightbox Functions
+        function openImageModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-image");
+            if (modal && modalImg) {
+                modalImg.src = src;
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeImageModal();
+            }
+        });
+    </script>
+</body>
+</html>
