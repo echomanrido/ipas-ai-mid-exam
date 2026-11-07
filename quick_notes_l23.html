@@ -626,17 +626,23 @@
             <span class="notes-subject-badge">科目3（L23）：機器學習技術與應用</span>
         </div>
         <div class="header-actions">
-            <a href="index.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.85rem;">🏠 考古題首頁</a>
-            <a href="syllabus.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.85rem;">📋 評鑑大綱對照</a>
-            <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換深色/淺色主題">
-                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden" style="width: 1.15rem; height: 1.15rem;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 12h4.5M9.75 3.75h4.5m-4.5 16.5h4.5M2.25 12h19.5M3.75 9.75v4.5m16.5-4.5v4.5m-15-7.5l1.06-1.06m13.78 13.78l-1.06 1.06m-13.78 0l1.06 1.06m13.78-13.78l-1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
-                </svg>
-                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 1.15rem; height: 1.15rem;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
-            </button>
-        </div>
+                <a href="index.html" class="nav-btn-link" title="返回考古題測驗">
+                    <span>🏠</span> 首頁
+                </a>
+                <a href="quick_notes_l21.html" class="nav-btn-link" title="科目1考點速記">
+                    <span>⚡</span> 考點速記 (L21)
+                </a>
+                <a href="quick_notes_l23.html" class="nav-btn-link active" title="科目3考點速記" style="background-color: var(--primary); color: white; border-color: var(--primary);">
+                    <span>⚡</span> 考點速記 (L23)
+                </a>
+                <a href="syllabus.html" class="nav-btn-link" title="考試評鑑大綱對照表">
+                    <span>📋</span> 大綱對照
+                </a>
+                <button id="theme-toggle" class="theme-toggle-btn" title="切換深淺色模式">
+                    <span id="sun-icon">☀️</span>
+                    <span id="moon-icon" class="hidden">🌙</span>
+                </button>
+            </div>
     </header>
 
     <!-- Main Container -->
