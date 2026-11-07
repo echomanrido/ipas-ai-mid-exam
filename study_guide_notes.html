@@ -5,6 +5,2148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 核心考點速記 - iPAS 中級官方學習指引核心精華</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- MathJax 3 Configuration for $...$, \(...\), and $...$ -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['
+    <style>
+        :root {
+            --card-border: #e2e8f0;
+            --card-hover-border: #cbd5e1;
+            --badge-blue-bg: #eff6ff;
+            --badge-blue-text: #2563eb;
+            --badge-green-bg: #ecfdf5;
+            --badge-green-text: #059669;
+            --badge-purple-bg: #f5f3ff;
+            --badge-purple-text: #7c3aed;
+            --badge-errata-bg: #fef2f2;
+            --badge-errata-text: #dc2626;
+            --warning-bg: #fffbeb;
+            --warning-border: #fef3c7;
+            --warning-text: #b45309;
+            --warning-title: #d97706;
+        }
+
+        [data-theme="dark"] {
+            --card-border: #1e293b;
+            --card-hover-border: #334155;
+            --badge-blue-bg: #172554;
+            --badge-blue-text: #60a5fa;
+            --badge-green-bg: #064e3b;
+            --badge-green-text: #34d399;
+            --badge-purple-bg: #2e1065;
+            --badge-purple-text: #c084fc;
+            --badge-errata-bg: #450a0a;
+            --badge-errata-text: #f87171;
+            --warning-bg: #291e0a;
+            --warning-border: #451a03;
+            --warning-text: #fcd34d;
+            --warning-title: #fbbf24;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* Top Header */
+        .notes-header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .notes-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notes-title-main {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .notes-subject-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #7c3aed;
+            background-color: #f5f3ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Container */
+        .notes-main-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 4rem 1.5rem;
+        }
+
+        /* Search & Filter Bar */
+        .control-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .notes-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            outline: none;
+            transition: all var(--transition-fast);
+        }
+
+        .notes-search-input:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+            background-color: var(--bg-card);
+        }
+
+        .btn-clear-search {
+            position: absolute;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .filter-tags-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pills-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 0.4rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .filter-pill:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .filter-pill.active {
+            background-color: #7c3aed;
+            border-color: #7c3aed;
+            color: white;
+        }
+
+        .filter-pill.warning-pill.active {
+            background-color: var(--warning-title);
+            border-color: var(--warning-title);
+            color: white;
+        }
+
+        .filter-pill.errata-pill {
+            border-color: rgba(220, 38, 38, 0.3);
+            color: #dc2626;
+        }
+
+        .filter-pill.errata-pill.active {
+            background-color: #dc2626;
+            border-color: #dc2626;
+            color: white;
+        }
+
+        .filter-pill.exam-pill.active {
+            background-color: var(--badge-green-text);
+            border-color: var(--badge-green-text);
+            color: white;
+        }
+
+        .stats-counter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .progress-pill-bar {
+            width: 90px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-pill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .total-counter-text {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* 3-Column Responsive Grid */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 1200px) {
+            .notes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            .notes-header-sticky {
+                padding: 0.75rem 1rem;
+            }
+            .notes-main-container {
+                padding: 1rem 1rem 3rem 1rem;
+            }
+        }
+
+        /* Individual Card */
+        .note-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--transition-normal);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .note-card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .note-card.mastered {
+            opacity: 0.85;
+            background-color: rgba(245, 243, 255, 0.4);
+            border-color: rgba(124, 58, 237, 0.25);
+        }
+
+        .note-card.is-errata-card {
+            border-left: 4px solid #dc2626;
+        }
+
+        .card-top-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .title-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            flex: 1;
+        }
+
+        .master-checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            cursor: pointer;
+            margin-top: 0.2rem;
+            accent-color: #7c3aed;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin: 0 0 0.35rem 0;
+        }
+
+        .badge-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-code-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--badge-blue-text);
+            background-color: var(--badge-blue-bg);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+        }
+
+        .badge-errata {
+            background-color: var(--badge-errata-bg);
+            color: var(--badge-errata-text);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .exam-status-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--badge-green-text);
+            background-color: var(--badge-green-bg);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            cursor: pointer;
+            border: 1px solid rgba(5, 150, 105, 0.25);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .exam-status-tag:hover {
+            background-color: #059669;
+            color: white;
+        }
+
+        .card-summary-text {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.85rem;
+        }
+
+        .formula-box {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.88rem;
+            overflow-x: auto;
+        }
+
+        .confusing-alert-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .confusing-alert-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--warning-title);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .confusing-list {
+            margin: 0;
+            padding-left: 1.15rem;
+            font-size: 0.84rem;
+            color: var(--warning-text);
+            line-height: 1.5;
+        }
+
+        .confusing-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .confusing-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-footer-keywords {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .keyword-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background-color: var(--bg-main);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Empty state */
+        .empty-results-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Modal Preview */
+        .exam-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .exam-modal.hidden {
+            display: none !important;
+        }
+
+        .exam-modal-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .modal-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-subject-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #7c3aed;
+            background-color: #f5f3ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-option-item {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            background-color: var(--bg-main);
+        }
+
+        .modal-option-item.correct {
+            border-color: #059669;
+            background-color: #ecfdf5;
+            color: #065f46;
+            font-weight: 700;
+        }
+
+        .explanation-card {
+            background-color: var(--bg-main);
+            border-left: 4px solid #7c3aed;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .nav-btn-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all var(--transition-fast);
+        }
+
+        .nav-btn-link:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .nav-btn-link.active {
+            background-color: #7c3aed;
+            color: white;
+            border-color: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Sticky Header -->
+    <header class="notes-header-sticky">
+        <div class="notes-title-group">
+            <h1 class="notes-title-main">
+                <span>📖</span> 官方學習指引核心精華
+            </h1>
+            <span class="notes-subject-badge">中級 三大考科 + 勘誤特輯</span>
+        </div>
+        <div class="header-actions">
+            <a href="index.html" class="nav-btn-link" title="回首頁模擬測驗">
+                <span>🏠</span> 首頁
+            </a>
+            <a href="study_guide_notes.html" class="nav-btn-link active" title="學習指引一頁式重點速記">
+                <span>📖</span> 學習指引精華
+            </a>
+            <a href="quick_notes_l21.html" class="nav-btn-link" title="中級科目1考點速記">
+                <span>⚡</span> 考點 (L21)
+            </a>
+            <a href="quick_notes_l22.html" class="nav-btn-link" title="中級科目2考點速記">
+                <span>⚡</span> 考點 (L22)
+            </a>
+            <a href="quick_notes_l23.html" class="nav-btn-link" title="中級科目3考點速記">
+                <span>⚡</span> 考點 (L23)
+            </a>
+            <a href="quick_notes_l11.html" class="nav-btn-link" title="初級科目一考點速記">
+                <span>⚡</span> 初級一
+            </a>
+            <a href="quick_notes_l12.html" class="nav-btn-link" title="初級科目二考點速記">
+                <span>⚡</span> 初級二
+            </a>
+            <a href="syllabus.html" class="nav-btn-link" title="考試評鑑大綱對照表">
+                <span>📋</span> 評鑑大綱
+            </a>
+            <button id="theme-toggle" class="theme-toggle-btn" title="切換深淺色外觀">
+                <span id="sun-icon">☀️</span>
+                <span id="moon-icon" class="hidden">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="notes-main-container">
+        <!-- Control Filter Box -->
+        <div class="control-panel">
+            <div class="search-row">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="keyword-search-input" class="notes-search-input" placeholder="搜尋學習指引章節、關鍵字（例：TF-IDF、Recall、PDPA、NMF、PCA、Spark、辛普森悖論、SHAP...）...">
+                <button class="btn-clear-search" id="btn-clear-search" title="清除搜尋">&times;</button>
+            </div>
+
+            <div class="filter-tags-row">
+                <div class="pills-group">
+                    <button class="filter-pill active" data-category="all">全部考點</button>
+                    <button class="filter-pill" data-category="subject1">📘 科目1：AI技術規劃 (L21)</button>
+                    <button class="filter-pill" data-category="subject2">📊 科目2：大數據處理 (L22)</button>
+                    <button class="filter-pill" data-category="subject3">🧠 科目3：機器學習 (L23)</button>
+                    <button class="filter-pill errata-pill" data-category="errata">🚨 官方勘誤特輯</button>
+                    <button class="filter-pill warning-pill" data-category="confusing">⚠️ 重要提醒</button>
+                    <button class="filter-pill exam-pill" data-category="has_exam">🎯 有考古題</button>
+                    <button class="filter-pill" data-category="unmastered">⏳ 待複習</button>
+                    <button class="filter-pill" data-category="mastered">✅ 已掌握</button>
+                </div>
+
+                <div class="stats-counter-group">
+                    <div class="progress-indicator">
+                        <span>複習進度:</span>
+                        <div class="progress-pill-bar">
+                            <div class="progress-pill-fill" id="progress-bar-fill"></div>
+                        </div>
+                        <span id="mastered-count-text">0/0 (0%)</span>
+                    </div>
+                    <div class="total-counter-text" id="total-visible-counter">共 0 個指引核心考點</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note Cards Grid -->
+        <div class="notes-grid" id="notes-grid">
+            <!-- Dynamically populated from JavaScript -->
+        </div>
+    </main>
+
+    <!-- Question Preview Modal -->
+    <div class="exam-modal hidden" id="exam-preview-modal">
+        <div class="exam-modal-card">
+            <div class="modal-header-row">
+                <div>
+                    <span class="modal-subject-tag" id="modal-exam-subj">歷屆試題真題</span>
+                    <span style="font-weight: 700; margin-left: 0.5rem;" id="modal-exam-qid">第 1 題</span>
+                </div>
+                <button class="modal-close-btn" id="btn-close-exam-modal">&times;</button>
+            </div>
+            
+            <p id="modal-q-text" style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 1.25rem;">
+                題目載入中...
+            </p>
+
+            <div id="modal-options-list">
+                <!-- Options populated dynamically -->
+            </div>
+
+            <div class="explanation-card" id="modal-explanation-box">
+                <div style="font-weight: 800; color: #7c3aed; margin-bottom: 0.35rem;">💡 官方學習指引解析與考點連結：</div>
+                <div id="modal-explanation-text">解析載入中...</div>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: right;">
+                <button class="btn btn-primary" id="btn-goto-practice" style="background:#7c3aed; border-color:#7c3aed;">🚀 前往考古題系統完整練習</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script imports -->
+    <script src="questions_data.js"></script>
+    <script src="study_guide_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme setup
+            const getPreferredTheme = () => localStorage.getItem("theme") || "light";
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                const sun = document.getElementById("sun-icon");
+                const moon = document.getElementById("moon-icon");
+                if (theme === "dark") {
+                    sun.classList.remove("hidden");
+                    moon.classList.add("hidden");
+                } else {
+                    sun.classList.add("hidden");
+                    moon.classList.remove("hidden");
+                }
+            };
+            setTheme(getPreferredTheme());
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const current = document.documentElement.getAttribute("data-theme");
+                setTheme(current === "dark" ? "light" : "dark");
+            });
+
+            // Mastered LocalStorage Management
+            const STORAGE_KEY = "study_guide_mastered";
+            const loadMastered = () => {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+                } catch {
+                    return {};
+                }
+            };
+            let masteredMap = loadMastered();
+
+            const saveMastered = () => {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(masteredMap));
+                updateProgressUI();
+            };
+
+            // UI Elements
+            const searchInput = document.getElementById("keyword-search-input");
+            const btnClearSearch = document.getElementById("btn-clear-search");
+            const filterPills = document.querySelectorAll(".filter-pill");
+            const notesGrid = document.getElementById("notes-grid");
+            const progressBarFill = document.getElementById("progress-bar-fill");
+            const masteredCountText = document.getElementById("mastered-count-text");
+            const totalCounter = document.getElementById("total-visible-counter");
+
+            let activeCategory = "all";
+            let searchKeyword = "";
+
+            // Update Progress Bar
+            const updateProgressUI = () => {
+                const total = STUDY_GUIDE_DATA.length;
+                let masteredCount = 0;
+                STUDY_GUIDE_DATA.forEach(item => {
+                    if (masteredMap[item.id]) masteredCount++;
+                });
+                const pct = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
+                progressBarFill.style.width = `${pct}%`;
+                masteredCountText.textContent = `${masteredCount}/${total} (${pct}%)`;
+            };
+
+            // Render Cards
+            const renderCards = () => {
+                notesGrid.innerHTML = "";
+                let visibleCount = 0;
+
+                const filtered = STUDY_GUIDE_DATA.filter(item => {
+                    // Category filter
+                    if (activeCategory === "subject1" && item.subject !== "subject1") return false;
+                    if (activeCategory === "subject2" && item.subject !== "subject2") return false;
+                    if (activeCategory === "subject3" && item.subject !== "subject3") return false;
+                    if (activeCategory === "errata" && !item.isErrata) return false;
+                    if (activeCategory === "confusing" && (!item.confusing || item.confusing.length === 0)) return false;
+                    if (activeCategory === "has_exam" && (!item.examRefs || item.examRefs.length === 0)) return false;
+                    if (activeCategory === "mastered" && !masteredMap[item.id]) return false;
+                    if (activeCategory === "unmastered" && masteredMap[item.id]) return false;
+
+                    // Search filter
+                    if (searchKeyword) {
+                        const kw = searchKeyword.toLowerCase();
+                        const matchTitle = item.title.toLowerCase().includes(kw);
+                        const matchSummary = item.summary.toLowerCase().includes(kw);
+                        const matchChapter = (item.chapter || "").toLowerCase().includes(kw);
+                        const matchSection = (item.section || "").toLowerCase().includes(kw);
+                        const matchCode = (item.code || "").toLowerCase().includes(kw);
+                        const matchKeywords = (item.keywords || []).some(k => k.toLowerCase().includes(kw));
+                        const matchConfusing = (item.confusing || []).some(c => c.toLowerCase().includes(kw));
+                        return matchTitle || matchSummary || matchChapter || matchSection || matchCode || matchKeywords || matchConfusing;
+                    }
+
+                    return true;
+                });
+
+                visibleCount = filtered.length;
+                totalCounter.textContent = `共 ${visibleCount} 個指引核心考點`;
+
+                if (filtered.length === 0) {
+                    notesGrid.innerHTML = `
+                        <div class="empty-results-box">
+                            <div class="empty-icon">🔎</div>
+                            <h3 style="margin-bottom:0.5rem;">未找到符合條件的學習指引考點</h3>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">請嘗試更換關鍵字或點選「全部考點」過濾標籤</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filtered.forEach(item => {
+                    const card = document.createElement("div");
+                    const isMastered = !!masteredMap[item.id];
+                    card.className = `note-card ${isMastered ? "mastered" : ""} ${item.isErrata ? "is-errata-card" : ""}`;
+                    card.id = `card-${item.id}`;
+
+                    const topRow = document.createElement("div");
+                    topRow.className = "card-top-row";
+
+                    const titleBlock = document.createElement("div");
+                    titleBlock.className = "title-block";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.className = "master-checkbox";
+                    checkbox.checked = isMastered;
+                    checkbox.title = "標記為已掌握";
+                    checkbox.addEventListener("change", (e) => {
+                        if (e.target.checked) {
+                            masteredMap[item.id] = true;
+                            card.classList.add("mastered");
+                        } else {
+                            delete masteredMap[item.id];
+                            card.classList.remove("mastered");
+                        }
+                        saveMastered();
+                        if (activeCategory === "mastered" || activeCategory === "unmastered") {
+                            renderCards();
+                        }
+                    });
+
+                    const titleInfo = document.createElement("div");
+                    const titleHeading = document.createElement("h3");
+                    titleHeading.className = "card-title";
+                    titleHeading.textContent = item.title;
+
+                    const badgeRow = document.createElement("div");
+                    badgeRow.className = "badge-row";
+
+                    if (item.isErrata) {
+                        const errataTag = document.createElement("span");
+                        errataTag.className = "badge-errata";
+                        errataTag.textContent = "🚨 官方勘誤修正";
+                        badgeRow.appendChild(errataTag);
+                    }
+
+                    const codeTag = document.createElement("span");
+                    codeTag.className = "category-code-tag";
+                    codeTag.textContent = `${item.section || item.chapter} (${item.code})`;
+                    badgeRow.appendChild(codeTag);
+
+                    titleInfo.appendChild(titleHeading);
+                    titleInfo.appendChild(badgeRow);
+
+                    titleBlock.appendChild(checkbox);
+                    titleBlock.appendChild(titleInfo);
+
+                    topRow.appendChild(titleBlock);
+
+                    // Exam reference button
+                    if (item.examRefs && item.examRefs.length > 0) {
+                        const examBadge = document.createElement("button");
+                        examBadge.className = "exam-status-tag";
+                        examBadge.innerHTML = `🎯 有考古題 (${item.examRefs.length})`;
+                        examBadge.addEventListener("click", () => openExamModal(item.examRefs[0]));
+                        topRow.appendChild(examBadge);
+                    }
+
+                    card.appendChild(topRow);
+
+                    // Summary
+                    const summary = document.createElement("div");
+                    summary.className = "card-summary-text";
+                    summary.innerHTML = item.summary;
+                    card.appendChild(summary);
+
+                    // Formula Box if exists
+                    if (item.formulas) {
+                        const fBox = document.createElement("div");
+                        fBox.className = "formula-box";
+                        fBox.innerHTML = `<b>📐 指引公式：</b> <div style="margin-top:0.4rem; overflow-x:auto; text-align:center;">$$${item.formulas}$$</div>`;
+                        card.appendChild(fBox);
+                    }
+
+                    // Confusing points if exists
+                    if (item.confusing && item.confusing.length > 0) {
+                        const alertBox = document.createElement("div");
+                        alertBox.className = "confusing-alert-box";
+
+                        const alertTitle = document.createElement("div");
+                        alertTitle.className = "confusing-alert-title";
+                        alertTitle.innerHTML = `<span>⚠️</span> 學習指引核心提醒 / 易混淆考點：`;
+                        alertBox.appendChild(alertTitle);
+
+                        const list = document.createElement("ul");
+                        list.className = "confusing-list";
+                        item.confusing.forEach(c => {
+                            const li = document.createElement("li");
+                            li.textContent = c;
+                            list.appendChild(li);
+                        });
+                        alertBox.appendChild(list);
+                        card.appendChild(alertBox);
+                    }
+
+                    // Visual HTML if exists
+                    if (item.visualHtml) {
+                        const vWrap = document.createElement("div");
+                        vWrap.innerHTML = item.visualHtml;
+                        card.appendChild(vWrap);
+                    }
+
+                    // Keywords footer
+                    if (item.keywords && item.keywords.length > 0) {
+                        const kwFooter = document.createElement("div");
+                        kwFooter.className = "card-footer-keywords";
+                        item.keywords.forEach(kw => {
+                            const tag = document.createElement("span");
+                            tag.className = "keyword-tag";
+                            tag.textContent = `#${kw}`;
+                            kwFooter.appendChild(tag);
+                        });
+                        card.appendChild(kwFooter);
+                    }
+
+                    notesGrid.appendChild(card);
+                });
+
+                // Trigger MathJax re-render
+                window.typesetMath([notesGrid]);
+            };
+
+            // Global robust MathJax typeset function
+            let mathJaxRunning = false;
+            let mathJaxPending = false;
+            window.typesetMath = (elements) => {
+                if (!window.MathJax || !window.MathJax.typesetPromise) return;
+                if (mathJaxRunning) {
+                    mathJaxPending = true;
+                    return;
+                }
+                mathJaxRunning = true;
+                const targets = elements || [document.getElementById("notes-grid") || document.body];
+                if (window.MathJax.typesetClear) {
+                    try { window.MathJax.typesetClear(targets); } catch (e) {}
+                }
+                window.MathJax.typesetPromise(targets)
+                    .catch((err) => console.warn("MathJax error:", err))
+                    .finally(() => {
+                        mathJaxRunning = false;
+                        if (mathJaxPending) {
+                            mathJaxPending = false;
+                            window.typesetMath(elements);
+                        }
+                    });
+            };
+
+            // Filter Pills Event
+            filterPills.forEach(pill => {
+                pill.addEventListener("click", () => {
+                    filterPills.forEach(p => p.classList.remove("active"));
+                    pill.classList.add("active");
+                    activeCategory = pill.getAttribute("data-category");
+                    renderCards();
+                });
+            });
+
+            // Search Event
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.trim();
+                btnClearSearch.style.display = searchKeyword ? "block" : "none";
+                renderCards();
+            });
+
+            btnClearSearch.addEventListener("click", () => {
+                searchInput.value = "";
+                searchKeyword = "";
+                btnClearSearch.style.display = "none";
+                renderCards();
+            });
+
+            // Question Modal
+            const examModal = document.getElementById("exam-preview-modal");
+            const btnCloseExamModal = document.getElementById("btn-close-exam-modal");
+            const modalSubj = document.getElementById("modal-exam-subj");
+            const modalQId = document.getElementById("modal-exam-qid");
+            const modalQText = document.getElementById("modal-q-text");
+            const modalOptionsList = document.getElementById("modal-options-list");
+            const modalExplanationText = document.getElementById("modal-explanation-text");
+            const btnGotoPractice = document.getElementById("btn-goto-practice");
+
+            let currentModalRef = null;
+
+            const openExamModal = (ref) => {
+                currentModalRef = ref;
+                const examObj = EXAM_DATA[ref.subj];
+                if (!examObj) return;
+                const q = examObj.questions.find(item => item.id === ref.qId);
+                if (!q) return;
+
+                modalSubj.textContent = examObj.title;
+                modalQId.textContent = `第 ${q.id} 題`;
+                modalQText.textContent = q.question;
+
+                modalOptionsList.innerHTML = "";
+                const optKeys = ["A", "B", "C", "D"];
+                optKeys.forEach(k => {
+                    if (!q.options[k]) return;
+                    const optDiv = document.createElement("div");
+                    const isCorrect = (q.answer === k);
+                    optDiv.className = `modal-option-item ${isCorrect ? "correct" : ""}`;
+                    optDiv.innerHTML = `<b>(${k})</b> ${q.options[k]} ${isCorrect ? " ✓ (正確答案)" : ""}`;
+                    modalOptionsList.appendChild(optDiv);
+                });
+
+                modalExplanationText.innerHTML = (q.explanation || "詳解撰寫中...") + 
+                    (ref.note ? `<div style="margin-top:0.6rem; color:#7c3aed; font-weight:700;">📌 學習指引對應重點：${ref.note}</div>` : "");
+
+                examModal.classList.remove("hidden");
+                window.typesetMath([examModal]);
+            };
+
+            btnCloseExamModal.addEventListener("click", () => {
+                examModal.classList.add("hidden");
+            });
+
+            examModal.addEventListener("click", (e) => {
+                if (e.target === examModal) examModal.classList.add("hidden");
+            });
+
+            btnGotoPractice.addEventListener("click", () => {
+                if (currentModalRef) {
+                    window.location.href = `index.html?exam=${currentModalRef.subj}&qid=${currentModalRef.qId}`;
+                } else {
+                    window.location.href = "index.html";
+                }
+            });
+
+            // Initial Render
+            updateProgressUI();
+            renderCards();
+        });
+    </script>
+</body>
+</html>
+, '
+    <style>
+        :root {
+            --card-border: #e2e8f0;
+            --card-hover-border: #cbd5e1;
+            --badge-blue-bg: #eff6ff;
+            --badge-blue-text: #2563eb;
+            --badge-green-bg: #ecfdf5;
+            --badge-green-text: #059669;
+            --badge-purple-bg: #f5f3ff;
+            --badge-purple-text: #7c3aed;
+            --badge-errata-bg: #fef2f2;
+            --badge-errata-text: #dc2626;
+            --warning-bg: #fffbeb;
+            --warning-border: #fef3c7;
+            --warning-text: #b45309;
+            --warning-title: #d97706;
+        }
+
+        [data-theme="dark"] {
+            --card-border: #1e293b;
+            --card-hover-border: #334155;
+            --badge-blue-bg: #172554;
+            --badge-blue-text: #60a5fa;
+            --badge-green-bg: #064e3b;
+            --badge-green-text: #34d399;
+            --badge-purple-bg: #2e1065;
+            --badge-purple-text: #c084fc;
+            --badge-errata-bg: #450a0a;
+            --badge-errata-text: #f87171;
+            --warning-bg: #291e0a;
+            --warning-border: #451a03;
+            --warning-text: #fcd34d;
+            --warning-title: #fbbf24;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* Top Header */
+        .notes-header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .notes-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notes-title-main {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .notes-subject-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #7c3aed;
+            background-color: #f5f3ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Container */
+        .notes-main-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 4rem 1.5rem;
+        }
+
+        /* Search & Filter Bar */
+        .control-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .notes-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            outline: none;
+            transition: all var(--transition-fast);
+        }
+
+        .notes-search-input:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+            background-color: var(--bg-card);
+        }
+
+        .btn-clear-search {
+            position: absolute;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .filter-tags-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pills-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 0.4rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .filter-pill:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .filter-pill.active {
+            background-color: #7c3aed;
+            border-color: #7c3aed;
+            color: white;
+        }
+
+        .filter-pill.warning-pill.active {
+            background-color: var(--warning-title);
+            border-color: var(--warning-title);
+            color: white;
+        }
+
+        .filter-pill.errata-pill {
+            border-color: rgba(220, 38, 38, 0.3);
+            color: #dc2626;
+        }
+
+        .filter-pill.errata-pill.active {
+            background-color: #dc2626;
+            border-color: #dc2626;
+            color: white;
+        }
+
+        .filter-pill.exam-pill.active {
+            background-color: var(--badge-green-text);
+            border-color: var(--badge-green-text);
+            color: white;
+        }
+
+        .stats-counter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .progress-pill-bar {
+            width: 90px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-pill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .total-counter-text {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* 3-Column Responsive Grid */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 1200px) {
+            .notes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            .notes-header-sticky {
+                padding: 0.75rem 1rem;
+            }
+            .notes-main-container {
+                padding: 1rem 1rem 3rem 1rem;
+            }
+        }
+
+        /* Individual Card */
+        .note-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--transition-normal);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .note-card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .note-card.mastered {
+            opacity: 0.85;
+            background-color: rgba(245, 243, 255, 0.4);
+            border-color: rgba(124, 58, 237, 0.25);
+        }
+
+        .note-card.is-errata-card {
+            border-left: 4px solid #dc2626;
+        }
+
+        .card-top-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .title-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            flex: 1;
+        }
+
+        .master-checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            cursor: pointer;
+            margin-top: 0.2rem;
+            accent-color: #7c3aed;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin: 0 0 0.35rem 0;
+        }
+
+        .badge-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-code-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--badge-blue-text);
+            background-color: var(--badge-blue-bg);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+        }
+
+        .badge-errata {
+            background-color: var(--badge-errata-bg);
+            color: var(--badge-errata-text);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .exam-status-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--badge-green-text);
+            background-color: var(--badge-green-bg);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            cursor: pointer;
+            border: 1px solid rgba(5, 150, 105, 0.25);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .exam-status-tag:hover {
+            background-color: #059669;
+            color: white;
+        }
+
+        .card-summary-text {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.85rem;
+        }
+
+        .formula-box {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.88rem;
+            overflow-x: auto;
+        }
+
+        .confusing-alert-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .confusing-alert-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--warning-title);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .confusing-list {
+            margin: 0;
+            padding-left: 1.15rem;
+            font-size: 0.84rem;
+            color: var(--warning-text);
+            line-height: 1.5;
+        }
+
+        .confusing-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .confusing-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-footer-keywords {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .keyword-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background-color: var(--bg-main);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Empty state */
+        .empty-results-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Modal Preview */
+        .exam-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .exam-modal.hidden {
+            display: none !important;
+        }
+
+        .exam-modal-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .modal-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-subject-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #7c3aed;
+            background-color: #f5f3ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-option-item {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            background-color: var(--bg-main);
+        }
+
+        .modal-option-item.correct {
+            border-color: #059669;
+            background-color: #ecfdf5;
+            color: #065f46;
+            font-weight: 700;
+        }
+
+        .explanation-card {
+            background-color: var(--bg-main);
+            border-left: 4px solid #7c3aed;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .nav-btn-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all var(--transition-fast);
+        }
+
+        .nav-btn-link:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .nav-btn-link.active {
+            background-color: #7c3aed;
+            color: white;
+            border-color: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Sticky Header -->
+    <header class="notes-header-sticky">
+        <div class="notes-title-group">
+            <h1 class="notes-title-main">
+                <span>📖</span> 官方學習指引核心精華
+            </h1>
+            <span class="notes-subject-badge">中級 三大考科 + 勘誤特輯</span>
+        </div>
+        <div class="header-actions">
+            <a href="index.html" class="nav-btn-link" title="回首頁模擬測驗">
+                <span>🏠</span> 首頁
+            </a>
+            <a href="study_guide_notes.html" class="nav-btn-link active" title="學習指引一頁式重點速記">
+                <span>📖</span> 學習指引精華
+            </a>
+            <a href="quick_notes_l21.html" class="nav-btn-link" title="中級科目1考點速記">
+                <span>⚡</span> 考點 (L21)
+            </a>
+            <a href="quick_notes_l22.html" class="nav-btn-link" title="中級科目2考點速記">
+                <span>⚡</span> 考點 (L22)
+            </a>
+            <a href="quick_notes_l23.html" class="nav-btn-link" title="中級科目3考點速記">
+                <span>⚡</span> 考點 (L23)
+            </a>
+            <a href="quick_notes_l11.html" class="nav-btn-link" title="初級科目一考點速記">
+                <span>⚡</span> 初級一
+            </a>
+            <a href="quick_notes_l12.html" class="nav-btn-link" title="初級科目二考點速記">
+                <span>⚡</span> 初級二
+            </a>
+            <a href="syllabus.html" class="nav-btn-link" title="考試評鑑大綱對照表">
+                <span>📋</span> 評鑑大綱
+            </a>
+            <button id="theme-toggle" class="theme-toggle-btn" title="切換深淺色外觀">
+                <span id="sun-icon">☀️</span>
+                <span id="moon-icon" class="hidden">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="notes-main-container">
+        <!-- Control Filter Box -->
+        <div class="control-panel">
+            <div class="search-row">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="keyword-search-input" class="notes-search-input" placeholder="搜尋學習指引章節、關鍵字（例：TF-IDF、Recall、PDPA、NMF、PCA、Spark、辛普森悖論、SHAP...）...">
+                <button class="btn-clear-search" id="btn-clear-search" title="清除搜尋">&times;</button>
+            </div>
+
+            <div class="filter-tags-row">
+                <div class="pills-group">
+                    <button class="filter-pill active" data-category="all">全部考點</button>
+                    <button class="filter-pill" data-category="subject1">📘 科目1：AI技術規劃 (L21)</button>
+                    <button class="filter-pill" data-category="subject2">📊 科目2：大數據處理 (L22)</button>
+                    <button class="filter-pill" data-category="subject3">🧠 科目3：機器學習 (L23)</button>
+                    <button class="filter-pill errata-pill" data-category="errata">🚨 官方勘誤特輯</button>
+                    <button class="filter-pill warning-pill" data-category="confusing">⚠️ 重要提醒</button>
+                    <button class="filter-pill exam-pill" data-category="has_exam">🎯 有考古題</button>
+                    <button class="filter-pill" data-category="unmastered">⏳ 待複習</button>
+                    <button class="filter-pill" data-category="mastered">✅ 已掌握</button>
+                </div>
+
+                <div class="stats-counter-group">
+                    <div class="progress-indicator">
+                        <span>複習進度:</span>
+                        <div class="progress-pill-bar">
+                            <div class="progress-pill-fill" id="progress-bar-fill"></div>
+                        </div>
+                        <span id="mastered-count-text">0/0 (0%)</span>
+                    </div>
+                    <div class="total-counter-text" id="total-visible-counter">共 0 個指引核心考點</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note Cards Grid -->
+        <div class="notes-grid" id="notes-grid">
+            <!-- Dynamically populated from JavaScript -->
+        </div>
+    </main>
+
+    <!-- Question Preview Modal -->
+    <div class="exam-modal hidden" id="exam-preview-modal">
+        <div class="exam-modal-card">
+            <div class="modal-header-row">
+                <div>
+                    <span class="modal-subject-tag" id="modal-exam-subj">歷屆試題真題</span>
+                    <span style="font-weight: 700; margin-left: 0.5rem;" id="modal-exam-qid">第 1 題</span>
+                </div>
+                <button class="modal-close-btn" id="btn-close-exam-modal">&times;</button>
+            </div>
+            
+            <p id="modal-q-text" style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 1.25rem;">
+                題目載入中...
+            </p>
+
+            <div id="modal-options-list">
+                <!-- Options populated dynamically -->
+            </div>
+
+            <div class="explanation-card" id="modal-explanation-box">
+                <div style="font-weight: 800; color: #7c3aed; margin-bottom: 0.35rem;">💡 官方學習指引解析與考點連結：</div>
+                <div id="modal-explanation-text">解析載入中...</div>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: right;">
+                <button class="btn btn-primary" id="btn-goto-practice" style="background:#7c3aed; border-color:#7c3aed;">🚀 前往考古題系統完整練習</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script imports -->
+    <script src="questions_data.js"></script>
+    <script src="study_guide_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme setup
+            const getPreferredTheme = () => localStorage.getItem("theme") || "light";
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                const sun = document.getElementById("sun-icon");
+                const moon = document.getElementById("moon-icon");
+                if (theme === "dark") {
+                    sun.classList.remove("hidden");
+                    moon.classList.add("hidden");
+                } else {
+                    sun.classList.add("hidden");
+                    moon.classList.remove("hidden");
+                }
+            };
+            setTheme(getPreferredTheme());
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const current = document.documentElement.getAttribute("data-theme");
+                setTheme(current === "dark" ? "light" : "dark");
+            });
+
+            // Mastered LocalStorage Management
+            const STORAGE_KEY = "study_guide_mastered";
+            const loadMastered = () => {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+                } catch {
+                    return {};
+                }
+            };
+            let masteredMap = loadMastered();
+
+            const saveMastered = () => {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(masteredMap));
+                updateProgressUI();
+            };
+
+            // UI Elements
+            const searchInput = document.getElementById("keyword-search-input");
+            const btnClearSearch = document.getElementById("btn-clear-search");
+            const filterPills = document.querySelectorAll(".filter-pill");
+            const notesGrid = document.getElementById("notes-grid");
+            const progressBarFill = document.getElementById("progress-bar-fill");
+            const masteredCountText = document.getElementById("mastered-count-text");
+            const totalCounter = document.getElementById("total-visible-counter");
+
+            let activeCategory = "all";
+            let searchKeyword = "";
+
+            // Update Progress Bar
+            const updateProgressUI = () => {
+                const total = STUDY_GUIDE_DATA.length;
+                let masteredCount = 0;
+                STUDY_GUIDE_DATA.forEach(item => {
+                    if (masteredMap[item.id]) masteredCount++;
+                });
+                const pct = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
+                progressBarFill.style.width = `${pct}%`;
+                masteredCountText.textContent = `${masteredCount}/${total} (${pct}%)`;
+            };
+
+            // Render Cards
+            const renderCards = () => {
+                notesGrid.innerHTML = "";
+                let visibleCount = 0;
+
+                const filtered = STUDY_GUIDE_DATA.filter(item => {
+                    // Category filter
+                    if (activeCategory === "subject1" && item.subject !== "subject1") return false;
+                    if (activeCategory === "subject2" && item.subject !== "subject2") return false;
+                    if (activeCategory === "subject3" && item.subject !== "subject3") return false;
+                    if (activeCategory === "errata" && !item.isErrata) return false;
+                    if (activeCategory === "confusing" && (!item.confusing || item.confusing.length === 0)) return false;
+                    if (activeCategory === "has_exam" && (!item.examRefs || item.examRefs.length === 0)) return false;
+                    if (activeCategory === "mastered" && !masteredMap[item.id]) return false;
+                    if (activeCategory === "unmastered" && masteredMap[item.id]) return false;
+
+                    // Search filter
+                    if (searchKeyword) {
+                        const kw = searchKeyword.toLowerCase();
+                        const matchTitle = item.title.toLowerCase().includes(kw);
+                        const matchSummary = item.summary.toLowerCase().includes(kw);
+                        const matchChapter = (item.chapter || "").toLowerCase().includes(kw);
+                        const matchSection = (item.section || "").toLowerCase().includes(kw);
+                        const matchCode = (item.code || "").toLowerCase().includes(kw);
+                        const matchKeywords = (item.keywords || []).some(k => k.toLowerCase().includes(kw));
+                        const matchConfusing = (item.confusing || []).some(c => c.toLowerCase().includes(kw));
+                        return matchTitle || matchSummary || matchChapter || matchSection || matchCode || matchKeywords || matchConfusing;
+                    }
+
+                    return true;
+                });
+
+                visibleCount = filtered.length;
+                totalCounter.textContent = `共 ${visibleCount} 個指引核心考點`;
+
+                if (filtered.length === 0) {
+                    notesGrid.innerHTML = `
+                        <div class="empty-results-box">
+                            <div class="empty-icon">🔎</div>
+                            <h3 style="margin-bottom:0.5rem;">未找到符合條件的學習指引考點</h3>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">請嘗試更換關鍵字或點選「全部考點」過濾標籤</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filtered.forEach(item => {
+                    const card = document.createElement("div");
+                    const isMastered = !!masteredMap[item.id];
+                    card.className = `note-card ${isMastered ? "mastered" : ""} ${item.isErrata ? "is-errata-card" : ""}`;
+                    card.id = `card-${item.id}`;
+
+                    const topRow = document.createElement("div");
+                    topRow.className = "card-top-row";
+
+                    const titleBlock = document.createElement("div");
+                    titleBlock.className = "title-block";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.className = "master-checkbox";
+                    checkbox.checked = isMastered;
+                    checkbox.title = "標記為已掌握";
+                    checkbox.addEventListener("change", (e) => {
+                        if (e.target.checked) {
+                            masteredMap[item.id] = true;
+                            card.classList.add("mastered");
+                        } else {
+                            delete masteredMap[item.id];
+                            card.classList.remove("mastered");
+                        }
+                        saveMastered();
+                        if (activeCategory === "mastered" || activeCategory === "unmastered") {
+                            renderCards();
+                        }
+                    });
+
+                    const titleInfo = document.createElement("div");
+                    const titleHeading = document.createElement("h3");
+                    titleHeading.className = "card-title";
+                    titleHeading.textContent = item.title;
+
+                    const badgeRow = document.createElement("div");
+                    badgeRow.className = "badge-row";
+
+                    if (item.isErrata) {
+                        const errataTag = document.createElement("span");
+                        errataTag.className = "badge-errata";
+                        errataTag.textContent = "🚨 官方勘誤修正";
+                        badgeRow.appendChild(errataTag);
+                    }
+
+                    const codeTag = document.createElement("span");
+                    codeTag.className = "category-code-tag";
+                    codeTag.textContent = `${item.section || item.chapter} (${item.code})`;
+                    badgeRow.appendChild(codeTag);
+
+                    titleInfo.appendChild(titleHeading);
+                    titleInfo.appendChild(badgeRow);
+
+                    titleBlock.appendChild(checkbox);
+                    titleBlock.appendChild(titleInfo);
+
+                    topRow.appendChild(titleBlock);
+
+                    // Exam reference button
+                    if (item.examRefs && item.examRefs.length > 0) {
+                        const examBadge = document.createElement("button");
+                        examBadge.className = "exam-status-tag";
+                        examBadge.innerHTML = `🎯 有考古題 (${item.examRefs.length})`;
+                        examBadge.addEventListener("click", () => openExamModal(item.examRefs[0]));
+                        topRow.appendChild(examBadge);
+                    }
+
+                    card.appendChild(topRow);
+
+                    // Summary
+                    const summary = document.createElement("div");
+                    summary.className = "card-summary-text";
+                    summary.innerHTML = item.summary;
+                    card.appendChild(summary);
+
+                    // Formula Box if exists
+                    if (item.formulas) {
+                        const fBox = document.createElement("div");
+                        fBox.className = "formula-box";
+                        fBox.innerHTML = `<b>📐 指引公式：</b> <div style="margin-top:0.4rem; overflow-x:auto; text-align:center;">$$${item.formulas}$$</div>`;
+                        card.appendChild(fBox);
+                    }
+
+                    // Confusing points if exists
+                    if (item.confusing && item.confusing.length > 0) {
+                        const alertBox = document.createElement("div");
+                        alertBox.className = "confusing-alert-box";
+
+                        const alertTitle = document.createElement("div");
+                        alertTitle.className = "confusing-alert-title";
+                        alertTitle.innerHTML = `<span>⚠️</span> 學習指引核心提醒 / 易混淆考點：`;
+                        alertBox.appendChild(alertTitle);
+
+                        const list = document.createElement("ul");
+                        list.className = "confusing-list";
+                        item.confusing.forEach(c => {
+                            const li = document.createElement("li");
+                            li.textContent = c;
+                            list.appendChild(li);
+                        });
+                        alertBox.appendChild(list);
+                        card.appendChild(alertBox);
+                    }
+
+                    // Visual HTML if exists
+                    if (item.visualHtml) {
+                        const vWrap = document.createElement("div");
+                        vWrap.innerHTML = item.visualHtml;
+                        card.appendChild(vWrap);
+                    }
+
+                    // Keywords footer
+                    if (item.keywords && item.keywords.length > 0) {
+                        const kwFooter = document.createElement("div");
+                        kwFooter.className = "card-footer-keywords";
+                        item.keywords.forEach(kw => {
+                            const tag = document.createElement("span");
+                            tag.className = "keyword-tag";
+                            tag.textContent = `#${kw}`;
+                            kwFooter.appendChild(tag);
+                        });
+                        card.appendChild(kwFooter);
+                    }
+
+                    notesGrid.appendChild(card);
+                });
+
+                // Trigger MathJax re-render
+                window.typesetMath([notesGrid]);
+            };
+
+            // Global robust MathJax typeset function
+            let mathJaxRunning = false;
+            let mathJaxPending = false;
+            window.typesetMath = (elements) => {
+                if (!window.MathJax || !window.MathJax.typesetPromise) return;
+                if (mathJaxRunning) {
+                    mathJaxPending = true;
+                    return;
+                }
+                mathJaxRunning = true;
+                const targets = elements || [document.getElementById("notes-grid") || document.body];
+                if (window.MathJax.typesetClear) {
+                    try { window.MathJax.typesetClear(targets); } catch (e) {}
+                }
+                window.MathJax.typesetPromise(targets)
+                    .catch((err) => console.warn("MathJax error:", err))
+                    .finally(() => {
+                        mathJaxRunning = false;
+                        if (mathJaxPending) {
+                            mathJaxPending = false;
+                            window.typesetMath(elements);
+                        }
+                    });
+            };
+
+            // Filter Pills Event
+            filterPills.forEach(pill => {
+                pill.addEventListener("click", () => {
+                    filterPills.forEach(p => p.classList.remove("active"));
+                    pill.classList.add("active");
+                    activeCategory = pill.getAttribute("data-category");
+                    renderCards();
+                });
+            });
+
+            // Search Event
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.trim();
+                btnClearSearch.style.display = searchKeyword ? "block" : "none";
+                renderCards();
+            });
+
+            btnClearSearch.addEventListener("click", () => {
+                searchInput.value = "";
+                searchKeyword = "";
+                btnClearSearch.style.display = "none";
+                renderCards();
+            });
+
+            // Question Modal
+            const examModal = document.getElementById("exam-preview-modal");
+            const btnCloseExamModal = document.getElementById("btn-close-exam-modal");
+            const modalSubj = document.getElementById("modal-exam-subj");
+            const modalQId = document.getElementById("modal-exam-qid");
+            const modalQText = document.getElementById("modal-q-text");
+            const modalOptionsList = document.getElementById("modal-options-list");
+            const modalExplanationText = document.getElementById("modal-explanation-text");
+            const btnGotoPractice = document.getElementById("btn-goto-practice");
+
+            let currentModalRef = null;
+
+            const openExamModal = (ref) => {
+                currentModalRef = ref;
+                const examObj = EXAM_DATA[ref.subj];
+                if (!examObj) return;
+                const q = examObj.questions.find(item => item.id === ref.qId);
+                if (!q) return;
+
+                modalSubj.textContent = examObj.title;
+                modalQId.textContent = `第 ${q.id} 題`;
+                modalQText.textContent = q.question;
+
+                modalOptionsList.innerHTML = "";
+                const optKeys = ["A", "B", "C", "D"];
+                optKeys.forEach(k => {
+                    if (!q.options[k]) return;
+                    const optDiv = document.createElement("div");
+                    const isCorrect = (q.answer === k);
+                    optDiv.className = `modal-option-item ${isCorrect ? "correct" : ""}`;
+                    optDiv.innerHTML = `<b>(${k})</b> ${q.options[k]} ${isCorrect ? " ✓ (正確答案)" : ""}`;
+                    modalOptionsList.appendChild(optDiv);
+                });
+
+                modalExplanationText.innerHTML = (q.explanation || "詳解撰寫中...") + 
+                    (ref.note ? `<div style="margin-top:0.6rem; color:#7c3aed; font-weight:700;">📌 學習指引對應重點：${ref.note}</div>` : "");
+
+                examModal.classList.remove("hidden");
+                window.typesetMath([examModal]);
+            };
+
+            btnCloseExamModal.addEventListener("click", () => {
+                examModal.classList.add("hidden");
+            });
+
+            examModal.addEventListener("click", (e) => {
+                if (e.target === examModal) examModal.classList.add("hidden");
+            });
+
+            btnGotoPractice.addEventListener("click", () => {
+                if (currentModalRef) {
+                    window.location.href = `index.html?exam=${currentModalRef.subj}&qid=${currentModalRef.qId}`;
+                } else {
+                    window.location.href = "index.html";
+                }
+            });
+
+            // Initial Render
+            updateProgressUI();
+            renderCards();
+        });
+    </script>
+</body>
+</html>
+], ['\\(', '\\)']],
+                displayMath: [['$', '$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                    MathJax.startup.promise.then(() => {
+                        if (window.typesetMath) {
+                            window.typesetMath();
+                        }
+                    });
+                }
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
@@ -899,7 +3041,7 @@
                     if (item.formulas) {
                         const fBox = document.createElement("div");
                         fBox.className = "formula-box";
-                        fBox.innerHTML = `<b>📐 指引公式：</b> \\(${item.formulas}\\)`;
+                        fBox.innerHTML = `<b>📐 指引公式：</b> <div style="margin-top:0.4rem; overflow-x:auto; text-align:center;">$$${item.formulas}$$</div>`;
                         card.appendChild(fBox);
                     }
 
@@ -948,9 +3090,32 @@
                 });
 
                 // Trigger MathJax re-render
-                if (window.MathJax && window.MathJax.typesetPromise) {
-                    window.MathJax.typesetPromise([notesGrid]).catch(() => {});
+                window.typesetMath([notesGrid]);
+            };
+
+            // Global robust MathJax typeset function
+            let mathJaxRunning = false;
+            let mathJaxPending = false;
+            window.typesetMath = (elements) => {
+                if (!window.MathJax || !window.MathJax.typesetPromise) return;
+                if (mathJaxRunning) {
+                    mathJaxPending = true;
+                    return;
                 }
+                mathJaxRunning = true;
+                const targets = elements || [document.getElementById("notes-grid") || document.body];
+                if (window.MathJax.typesetClear) {
+                    try { window.MathJax.typesetClear(targets); } catch (e) {}
+                }
+                window.MathJax.typesetPromise(targets)
+                    .catch((err) => console.warn("MathJax error:", err))
+                    .finally(() => {
+                        mathJaxRunning = false;
+                        if (mathJaxPending) {
+                            mathJaxPending = false;
+                            window.typesetMath(elements);
+                        }
+                    });
             };
 
             // Filter Pills Event
@@ -1015,6 +3180,7 @@
                     (ref.note ? `<div style="margin-top:0.6rem; color:#7c3aed; font-weight:700;">📌 學習指引對應重點：${ref.note}</div>` : "");
 
                 examModal.classList.remove("hidden");
+                window.typesetMath([examModal]);
             };
 
             btnCloseExamModal.addEventListener("click", () => {

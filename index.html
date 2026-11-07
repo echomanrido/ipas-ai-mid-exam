@@ -5,6 +5,3195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 應用規劃師(中級) 考古題學習系統</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- MathJax 3 Configuration for $...$, \(...\), and $...$ -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-section" id="btn-home">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>👑 AI 學習王</h1>
+                    <p>互動式考古題研習系統</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <label class="switch-container" id="mode-toggle-wrapper">
+                    <span>背題模式</span>
+                    <div class="switch">
+                        <input type="checkbox" id="mode-toggle">
+                        <span class="slider"></span>
+                    </div>
+                </label>
+                
+                <a href="quick_notes_l11.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #8b5cf6; font-weight: 700;">⚡ 考點速記 (初級一)</a>
+                <a href="quick_notes_l12.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #ec4899; font-weight: 700;">⚡ 考點速記 (初級二)</a>
+                <a href="quick_notes_l21.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #2563eb; font-weight: 700;">⚡ 考點速記 (L21)</a>
+                <a href="quick_notes_l22.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #059669; font-weight: 700;">⚡ 考點速記 (L22)</a>
+                <a href="quick_notes_l23.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #d97706; font-weight: 700;">⚡ 考點速記 (L23)</a>
+                <a href="study_guide_notes.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #7c3aed; font-weight: 700;">📖 學習指引精華</a>
+                <button class="btn btn-secondary" id="btn-toggle-view">📚 技術百科</button>
+                <a href="syllabus.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">📋 評鑑內容對照表</a>
+                
+                <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換主題">
+                    <!-- Sun Icon (Light) -->
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 12h4.5M9.75 3.75h4.5m-4.5 16.5h4.5M2.25 12h19.5M3.75 9.75v4.5m16.5-4.5v4.5m-15-7.5l1.06-1.06m13.78 13.78l-1.06 1.06m-13.78 0l1.06 1.06m13.78-13.78l-1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                    </svg>
+                    <!-- Moon Icon (Dark) -->
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-secondary hidden" id="btn-back-landing">返回大綱</button>
+            </div>
+        </header>
+
+        <!-- Main Wrapper -->
+        <main class="main-wrapper">
+            <!-- SUBJECT SELECTOR (LANDING PAGE) -->
+            <section class="landing-panel" id="landing-panel">
+                <h2 class="landing-title">AI 應用規劃師能力鑑定考古題系統</h2>
+                <p class="landing-desc">本系統收錄 AI 應用規劃師「中級」與「初級」能力鑑定考試之官方試題。為每道題目提供詳細解答、解題邏輯與技術背景，並針對涉及的機器學習與人工智慧方法提供詳細的技術百科與應用實例，協助您深度掌握核心技術觀念。</p>
+                
+                <!-- Quick Tools Feature Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; width: 100%; margin-bottom: 2rem;">
+                    
+                    <!-- Official Study Guide Cheat Sheet Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #7c3aed; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>📖</span> 官方學習指引：中級全科目精華速記
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                深度提煉自「學習指引」官方教材三冊與勘誤表。涵蓋 TF-IDF 勘誤、Recall 公式修正、PDPA 事前告知、NMF、PCA、Spark、辛普森悖論、SHAP 等權威考點。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="study_guide_notes.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #7c3aed; border-color: #7c3aed; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入學習指引速記 ➔
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- L21 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #2563eb; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目1（L21 人工智慧技術應用）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 48 個核心考點、黃仁勳物理 AI、歐盟 AI 法案四級風險金字塔、NLP/CV/GenAI、直擊 100 題真題與掌握進度記憶。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l21.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #2563eb; border-color: #2563eb; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L21 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L22 Quick Notes Card (重點加強) -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #059669; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目2（L22 大數據處理分析）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 40 個核心考點、辛普森悖論、Spark/Hadoop、Lakehouse、假名化 vs 匿名化、差分隱私、聯邦學習與掌握進度記憶。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l22.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #059669; border-color: #059669; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L22 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L23 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid var(--accent); text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目3（L23 機器學習技術）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 54 個核心考點、梯度下降推導、過擬合正則化、ML/DL演算法、直擊 100 題真題與複習勾選清單。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l23.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: var(--accent); border-color: var(--accent); display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L23 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L11 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #8b5cf6; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：初級 科目一（L11 人工智慧概論）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 32 個核心考點、黃仁勳物理 AI、圖靈測試口訣、ML三大範式、No Code優缺點、直擊初級 150 題真題。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l11.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #8b5cf6; border-color: #8b5cf6; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入初級一考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L12 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #ec4899; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：初級 科目二（L12 生成式 AI 規劃）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 20 個核心考點、提示詞工程 RTFC、Token 計費、RAG vs 微調、Webhook 事件驅動、影子 IT 與供應商鎖定。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l12.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #ec4899; border-color: #ec4899; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入初級二考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Syllabus Table Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary); text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>📋</span> 官方評鑑規範：大綱與評鑑內容
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                查閱經濟部 iPAS 官方初級（2 科）與中級（3 科）標準評鑑單元、代碼對照表與高解析度規範大綱圖表。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="syllabus.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                查看對照表 ➔
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 1.5rem 0 1rem 0; border-left: 4px solid var(--primary); padding-left: 0.75rem; color: var(--text-primary);">
+                    ⚙️ 中級能力鑑定考古題 (四科)
+                </h3>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="114_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">114 年第二次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="114_2_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">114 年第二次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_3">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">115 年第一次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_3">未開始</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 2rem 0 1rem 0; border-left: 4px solid var(--accent); padding-left: 0.75rem; color: var(--text-primary);">
+                    🎓 初級能力鑑定考古題 (六科)
+                </h3>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="primary_115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_1_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第一次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_2">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第二次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第二次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_2">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_3_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第三次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_3_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_3_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第三次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_3_2">未開始</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" id="btn-clear-all" style="margin-top: 1.5rem; color: var(--error)">
+                    🗑️ 清除所有答題紀錄
+                </button>
+            </section>
+
+            <!-- PRACTICE CONTAINER -->
+            <section class="practice-container" id="practice-container">
+                <!-- Question Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title" id="sidebar-subject-title">學科名稱</h3>
+                        <div class="progress-container">
+                            <div class="stats-row" style="margin-bottom: 0.25rem;">
+                                <span>測驗進度</span>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progress-bar"></div>
+                            </div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stats-item">答對: <span id="stat-correct" style="color: var(--success)">0</span></div>
+                            <div class="stats-item">答錯: <span id="stat-incorrect" style="color: var(--error)">0</span></div>
+                            <div class="stats-item">未答: <span id="stat-unanswered">50</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-header" style="padding-bottom: 0.5rem; border-bottom: none;">
+                        <input type="text" class="search-input" id="search-input" placeholder="搜尋題目或ML方法...">
+                        <div class="filter-row">
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-all" title="顯示所有題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: var(--primary-light); color: var(--primary); border-color: var(--primary);">全部</button>
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-wrong" title="僅顯示答錯題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem;">僅錯題</button>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-grid-wrapper">
+                        <div class="questions-grid" id="questions-grid">
+                            <!-- Dynamically populated numbers 1-50 -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-footer">
+                        <button class="btn btn-secondary" id="btn-reset-current" style="width: 100%; font-size: 0.8rem;">重置本科目紀錄</button>
+                    </div>
+                </aside>
+
+                <!-- Workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb-wrapper">
+                        <div class="nav-breadcrumb">
+                            <a id="breadcrumb-home">首頁</a> &gt; <span id="breadcrumb-subject">當前學科</span> &gt; <span>第 <span id="current-q-index">1</span> 題</span>
+                        </div>
+                        <div class="quick-jump-container">
+                            <label for="jump-question-select" class="quick-jump-label">🎯 跳至：</label>
+                            <select id="jump-question-select" class="jump-select" aria-label="選擇題目跳轉"></select>
+                            <button class="btn btn-secondary btn-mobile-sheet" id="btn-mobile-sheet-toggle" title="開啟題號清單">📋 題號清單</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question Card -->
+                    <div class="card">
+                        <div class="question-header">
+                            <span class="q-badge" id="question-number-badge">Question 1</span>
+                            <span class="q-badge" id="question-ml-method-badge" style="background-color: var(--primary-light); color: var(--primary); display: none;">TF-IDF</span>
+                        </div>
+                        <div class="question-text" id="question-text">
+                            讀取中...
+                        </div>
+                        
+                        <!-- Question Attached Image / Diagram -->
+                        <div class="question-image-wrapper" id="question-image-wrapper" style="display: none;">
+                            <img id="question-img-element" class="question-img" src="" alt="題目附圖">
+                            <div class="question-img-hint">🔍 點擊圖片可放大查看</div>
+                        </div>
+                        
+                        <div class="options-list" id="options-list">
+                            <!-- Options (A) (B) (C) (D) -->
+                        </div>
+
+                        <!-- Link to Wiki Algorithm page -->
+                        <div id="algo-wiki-link-container" style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed var(--border-color); display: none;">
+                            <a id="algo-wiki-link" style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                📖 補充網頁：深入了解 <span id="algo-wiki-name">PCA</span> 演算法詳細原理 &gt;
+                            </a>
+                        </div>
+                        
+                        <!-- Nav buttons below options (before answer show) -->
+                        <div class="nav-actions">
+                            <button class="btn btn-secondary" id="btn-prev-q">⬅️ 上一題</button>
+                            <div class="nav-jump-center">
+                                <span>第</span>
+                                <select id="nav-jump-select" class="nav-jump-select" aria-label="切換題號"></select>
+                                <span>/ <span id="nav-total-q">50</span> 題</span>
+                            </div>
+                            <button class="btn btn-primary" id="btn-next-q">下一題 ➡️</button>
+                        </div>
+                    </div>
+
+                    <!-- Explanation Panel -->
+                    <div class="explanation-panel" id="explanation-panel">
+                        <div class="result-banner" id="result-banner">
+                            <span id="result-icon">✓</span> <span id="result-text">回答正確！</span>
+                        </div>
+                        
+                        <h3 class="panel-title">💡 答案與解析</h3>
+                        <div class="explanation-text" id="explanation-text">
+                            詳細的解題邏輯與錯誤選項分析...
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <!-- Machine Learning Method Details -->
+                        <div class="method-box">
+                            <div class="method-header">
+                                <span class="method-name" id="method-name">DBSCAN</span>
+                                <span class="q-badge" style="background-color: var(--primary); color: white;">核心 ML 技術</span>
+                            </div>
+                            <div class="method-explanation" id="method-explanation">
+                                DBSCAN 是基於密度的分群方法...
+                            </div>
+                        </div>
+
+                        <!-- Method Comparison Section -->
+                        <div class="method-box" id="comparison-box" style="background-color: var(--accent-light); border-left-color: var(--accent);">
+                            <div class="method-header">
+                                <span class="method-name" style="color: var(--accent);">⚙️ 技術對比與應用領域</span>
+                                <span class="q-badge" style="background-color: var(--accent); color: white;">方法比較</span>
+                            </div>
+                            <div class="method-explanation" id="comparison-explanation" style="white-space: pre-wrap;">
+                                比較正確答案與其他方法的應用差異...
+                            </div>
+                        </div>
+
+                        <!-- Knowledge Card Section -->
+                        <h3 class="panel-title">📚 知識擴充圖卡</h3>
+                        <div class="card" style="padding: 1.75rem; margin-bottom: 2rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--primary); display: flex; align-items: center; gap: 0.25rem;">
+                                    🏷️ 核心關鍵字 (Keywords)
+                                </h4>
+                                <div class="tag-container" id="keywords-tags">
+                                    <!-- Keyword tags -->
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: #7c3aed; display: flex; align-items: center; gap: 0.25rem;">
+                                    🧠 延伸應用與技術 (Extended Applications)
+                                </h4>
+                                <div id="extended-tech-list">
+                                    <!-- Extended tech list -->
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent); display: flex; align-items: center; gap: 0.25rem;">
+                                    📖 相關領域術語 (Terminology)
+                                </h4>
+                                <div class="tag-container" id="terminology-tags">
+                                    <!-- Terminology tags -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Examples section -->
+                        <h3 class="panel-title">🚀 生活與業務應用場景實例</h3>
+                        <div class="examples-grid" id="examples-grid">
+                            <div class="example-card">
+                                <h4 class="example-title" id="example1-title">實例一</h4>
+                                <p class="example-content" id="example1-content">實例內容描述...</p>
+                            </div>
+                            <div class="example-card">
+                                <h4 class="example-title" id="example2-title">實例二</h4>
+                                <p class="example-content" id="example2-content">實例內容描述...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WIKI CONTAINER (ALGORITHM ENCYCLOPEDIA) -->
+            <section class="practice-container" id="wiki-container" style="display: none;">
+                <!-- Wiki Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title">📚 技術百科目錄</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">收錄本考科涉及的核心人工智慧與機器學習演算法，提供深度原理解析與商業應用說明。</p>
+                    </div>
+                    <div class="questions-grid-wrapper" style="padding-top: 0.5rem;">
+                        <input type="text" id="wiki-search-input" placeholder="🔍 搜尋考綱與項目..." style="width: 100%; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.6rem; box-sizing: border-box; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+                        
+                        <!-- Wiki Category Filter Tabs -->
+                        <div class="wiki-category-tabs" id="wiki-category-tabs">
+                            <button class="wiki-cat-tab active" data-category="all">全部</button>
+                            <button class="wiki-cat-tab" data-category="code">💻 程式相關</button>
+                            <button class="wiki-cat-tab" data-category="theory">📚 理論專題</button>
+                            <button class="wiki-cat-tab" data-category="syllabus">👑 考綱大綱</button>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="wiki-menu-list">
+                            <!-- Wiki buttons dynamically loaded -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Wiki workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb">
+                        <a id="wiki-breadcrumb-home">首頁</a> &gt; <span>技術百科</span> &gt; <span id="wiki-breadcrumb-algo" style="color: var(--primary); font-weight: 600;">演算法名稱</span>
+                    </div>
+                    
+                    <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
+                        <h2 id="wiki-title" style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--primary);">演算法名稱</h2>
+                        <p id="wiki-summary" style="font-size: 1rem; color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); padding-left: 0.75rem;">演算法摘要...</p>
+                        
+                        <div class="section-divider" style="margin: 1.5rem 0;"></div>
+                        
+                        <!-- Rich HTML body -->
+                        <div id="wiki-content" class="explanation-text" style="font-size: 1rem; color: var(--text-primary); line-height: 1.7;">
+                            讀取中...
+                        </div>
+                        
+                        <div class="section-divider" style="margin: 2rem 0;"></div>
+                        
+                        <!-- Back-links to related questions -->
+                        <h3 class="panel-title" style="color: var(--accent); margin-bottom: 1.25rem;">💡 本考科有使用到此技術的題目</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="wiki-related-questions">
+                            <!-- Related questions links dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script imports -->
+    <script src="questions_data.js"></script>
+    <script src="wiki_data.js"></script>
+    <script>
+        // Web Application Application Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            // Robust MathJax Typeset Helper
+            let mathJaxRunning = false;
+            let mathJaxPending = false;
+            window.typesetMath = (elements) => {
+                if (!window.MathJax || !window.MathJax.typesetPromise) return;
+                if (mathJaxRunning) {
+                    mathJaxPending = true;
+                    return;
+                }
+                mathJaxRunning = true;
+                const targets = elements || [document.body];
+                if (window.MathJax.typesetClear) {
+                    try { window.MathJax.typesetClear(targets); } catch (e) {}
+                }
+                window.MathJax.typesetPromise(targets)
+                    .catch((err) => console.warn("MathJax error:", err))
+                    .finally(() => {
+                        mathJaxRunning = false;
+                        if (mathJaxPending) {
+                            mathJaxPending = false;
+                            window.typesetMath(elements);
+                        }
+                    });
+            };
+
+            // State
+            let currentView = "landing"; // 'landing', 'practice', 'wiki'
+            let currentSubject = null;
+            let currentQuestionIdx = 0; // 0-based
+            let filterMode = "all"; // 'all' or 'wrong'
+            let searchKeyword = "";
+            let userProgress = {}; // subjectKey -> { questionId -> { userAnswer, isCorrect } }
+            let studyMode = false; // true = 背題模式 (直接看答案)
+            let activeWikiKey = "ExamSyllabus"; // Default active wiki page
+
+            // LocalStorage loading
+            if (localStorage.getItem("ai_exam_user_progress")) {
+                try {
+                    userProgress = JSON.parse(localStorage.getItem("ai_exam_user_progress"));
+                } catch(e) {
+                    userProgress = {};
+                }
+            }
+
+            // Theme Management
+            const getPreferredTheme = () => {
+                return localStorage.getItem("theme") || "light";
+            };
+            
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                if (theme === "dark") {
+                    document.getElementById("sun-icon").classList.remove("hidden");
+                    document.getElementById("moon-icon").classList.add("hidden");
+                } else {
+                    document.getElementById("sun-icon").classList.add("hidden");
+                    document.getElementById("moon-icon").classList.remove("hidden");
+                }
+            };
+
+            setTheme(getPreferredTheme());
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                setTheme(currentTheme === "dark" ? "light" : "dark");
+            });
+
+            // UI Elements
+            const landingPanel = document.getElementById("landing-panel");
+            const practiceContainer = document.getElementById("practice-container");
+            const wikiContainer = document.getElementById("wiki-container");
+            const btnBackLanding = document.getElementById("btn-back-landing");
+            const sidebarSubjectTitle = document.getElementById("sidebar-subject-title");
+            const questionsGrid = document.getElementById("questions-grid");
+            const questionNumberBadge = document.getElementById("question-number-badge");
+            const questionMlBadge = document.getElementById("question-ml-method-badge");
+            const questionText = document.getElementById("question-text");
+            const questionImageWrapper = document.getElementById("question-image-wrapper");
+            const questionImgElement = document.getElementById("question-img-element");
+            const optionsList = document.getElementById("options-list");
+            const explanationPanel = document.getElementById("explanation-panel");
+            const explanationText = document.getElementById("explanation-text");
+            const resultBanner = document.getElementById("result-banner");
+            const resultIcon = document.getElementById("result-icon");
+            const resultText = document.getElementById("result-text");
+            const methodName = document.getElementById("method-name");
+            const methodExplanation = document.getElementById("method-explanation");
+            const example1Title = document.getElementById("example1-title");
+            const example1Content = document.getElementById("example1-content");
+            const example2Title = document.getElementById("example2-title");
+            const example2Content = document.getElementById("example2-content");
+            const btnPrevQ = document.getElementById("btn-prev-q");
+            const btnNextQ = document.getElementById("btn-next-q");
+            const breadcrumbSubject = document.getElementById("breadcrumb-subject");
+            const modeToggle = document.getElementById("mode-toggle");
+            const modeToggleWrapper = document.getElementById("mode-toggle-wrapper");
+            const searchInput = document.getElementById("search-input");
+            const btnFilterAll = document.getElementById("btn-filter-all");
+            const btnFilterWrong = document.getElementById("btn-filter-wrong");
+            const btnResetCurrent = document.getElementById("btn-reset-current");
+            const btnClearAll = document.getElementById("btn-clear-all");
+            
+            // View toggle button
+            const btnToggleView = document.getElementById("btn-toggle-view");
+
+            // Quick Jump UI Elements
+            const jumpQuestionSelect = document.getElementById("jump-question-select");
+            const navJumpSelect = document.getElementById("nav-jump-select");
+            const navTotalQ = document.getElementById("nav-total-q");
+            const btnMobileSheetToggle = document.getElementById("btn-mobile-sheet-toggle");
+            const mobileSheetModal = document.getElementById("mobile-sheet-modal");
+            const mobileSheetBackdrop = document.getElementById("mobile-sheet-backdrop");
+            const btnCloseMobileSheet = document.getElementById("btn-close-mobile-sheet");
+            const mobileQuestionsGrid = document.getElementById("mobile-questions-grid");
+
+            // Subject Cards Init progress status on Landing Panel
+            const updateLandingProgress = () => {
+                document.querySelectorAll(".subj-progress-status").forEach(span => {
+                    const key = span.getAttribute("data-subj");
+                    if (userProgress[key]) {
+                        const total = 50;
+                        const answered = Object.keys(userProgress[key]).length;
+                        const correct = Object.values(userProgress[key]).filter(v => v.isCorrect).length;
+                        if (answered === 0) {
+                            span.textContent = "未開始";
+                            span.style.color = "var(--text-muted)";
+                        } else if (answered === total) {
+                            span.textContent = `已完成 (得分率: ${Math.round(correct/total*100)}%)`;
+                            span.style.color = "var(--success)";
+                        } else {
+                            span.textContent = `答題中 (${answered}/${total})`;
+                            span.style.color = "var(--primary)";
+                        }
+                    } else {
+                        span.textContent = "未開始";
+                        span.style.color = "var(--text-muted)";
+                    }
+                });
+            };
+            updateLandingProgress();
+
+            // Mode Toggle
+            modeToggle.addEventListener("change", (e) => {
+                studyMode = e.target.checked;
+                renderQuestion();
+            });
+
+            // View Management Functions
+            const switchToLandingView = () => {
+                currentView = "landing";
+                landingPanel.classList.remove("hidden");
+                practiceContainer.style.display = "none";
+                wikiContainer.style.display = "none";
+                btnBackLanding.classList.add("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
+                currentSubject = null;
+                updateLandingProgress();
+            };
+
+            const switchToPracticeView = () => {
+                currentView = "practice";
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "flex";
+                wikiContainer.style.display = "none";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
+            };
+
+            const switchToWikiView = (wikiKey = "ExamSyllabus") => {
+                currentView = "wiki";
+                activeWikiKey = wikiKey;
+                
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "none";
+                wikiContainer.style.display = "flex";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.add("hidden"); // Hide test mode switch in wiki
+                
+                btnToggleView.textContent = "📝 考古題練習";
+                btnToggleView.className = "btn btn-primary";
+                
+                renderWikiMenu();
+                renderWikiArticle(activeWikiKey);
+            };
+
+            // Global helper to jump to a question from wiki links
+            window.jumpToQuestion = (subjKey, questionId) => {
+                if (typeof EXAM_DATA === 'undefined') return;
+                const subj = EXAM_DATA[subjKey];
+                if (!subj) return;
+                const index = subj.questions.findIndex(q => q.id === questionId);
+                if (index !== -1) {
+                    loadSubject(subjKey);
+                    currentQuestionIdx = index;
+                    renderSidebarGrid();
+                    renderQuestion();
+                    switchToPracticeView();
+                }
+            };
+
+            // Toggle view button event
+            btnToggleView.addEventListener("click", () => {
+                if (currentView === "wiki") {
+                    if (currentSubject) {
+                        switchToPracticeView();
+                    } else {
+                        switchToLandingView();
+                    }
+                } else {
+                    switchToWikiView(activeWikiKey);
+                }
+            });
+
+            document.getElementById("btn-home").addEventListener("click", switchToLandingView);
+            btnBackLanding.addEventListener("click", switchToLandingView);
+            document.getElementById("breadcrumb-home").addEventListener("click", switchToLandingView);
+            document.getElementById("wiki-breadcrumb-home").addEventListener("click", switchToLandingView);
+
+            // Subject Select
+            document.querySelectorAll(".subject-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    const subjKey = card.getAttribute("data-subject");
+                    if (typeof EXAM_DATA !== 'undefined' && EXAM_DATA[subjKey]) {
+                        loadSubject(subjKey);
+                    } else {
+                        alert("尚未加載此考古題資料。");
+                    }
+                });
+            });
+
+            const loadSubject = (subjKey) => {
+                currentSubject = subjKey;
+                currentQuestionIdx = 0;
+                filterMode = "all";
+                searchKeyword = "";
+                searchInput.value = "";
+                
+                // Toggle active button style
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+
+                if (!userProgress[currentSubject]) {
+                    userProgress[currentSubject] = {};
+                }
+
+                sidebarSubjectTitle.textContent = EXAM_DATA[currentSubject].title;
+                breadcrumbSubject.textContent = EXAM_DATA[currentSubject].title.split(" - ")[0];
+                
+                switchToPracticeView();
+                renderSidebarGrid();
+                renderQuestion();
+                updateStats();
+            };
+
+            // Sidebar Filtering
+            btnFilterAll.addEventListener("click", () => {
+                filterMode = "all";
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            btnFilterWrong.addEventListener("click", () => {
+                filterMode = "wrong";
+                btnFilterWrong.style.backgroundColor = "var(--error-light)";
+                btnFilterWrong.style.color = "var(--error)";
+                btnFilterWrong.style.borderColor = "var(--error)";
+                btnFilterAll.style.backgroundColor = "transparent";
+                btnFilterAll.style.color = "var(--text-secondary)";
+                btnFilterAll.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.toLowerCase();
+                renderSidebarGrid();
+            });
+
+            // Dropdown jump selectors update
+            const updateJumpSelects = () => {
+                if (!currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                const subject = EXAM_DATA[currentSubject];
+                const questions = subject.questions;
+                if (!questions || questions.length === 0) return;
+
+                if (navTotalQ) {
+                    navTotalQ.textContent = questions.length;
+                }
+
+                // Populate Top Jump Select
+                if (jumpQuestionSelect) {
+                    jumpQuestionSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        let qSnippet = q.question.replace(/\s+/g, ' ').trim();
+                        if (qSnippet.length > 28) {
+                            qSnippet = qSnippet.substring(0, 28) + "...";
+                        }
+                        const methodTag = q.ml_method ? ` [${q.ml_method}]` : "";
+                        opt.textContent = `${statusIcon} 第 ${q.id} 題：${qSnippet}${methodTag}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        jumpQuestionSelect.appendChild(opt);
+                    });
+                    jumpQuestionSelect.value = currentQuestionIdx;
+                }
+
+                // Populate Bottom Nav Jump Select
+                if (navJumpSelect) {
+                    navJumpSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        opt.textContent = `${q.id} ${statusIcon}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        navJumpSelect.appendChild(opt);
+                    });
+                    navJumpSelect.value = currentQuestionIdx;
+                }
+            };
+
+            // Mobile Question Sheet rendering
+            const renderMobileSheetGrid = () => {
+                if (!mobileQuestionsGrid || !currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                mobileQuestionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject] ? userProgress[currentSubject][qId] : null;
+                    
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        renderSidebarGrid();
+                        renderQuestion();
+                        if (mobileSheetModal) {
+                            mobileSheetModal.classList.add("hidden");
+                        }
+                    });
+                    
+                    mobileQuestionsGrid.appendChild(qBtn);
+                });
+            };
+
+            // Sidebar Grid rendering
+            const renderSidebarGrid = () => {
+                questionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject][qId];
+                    
+                    // Match Filters
+                    if (filterMode === "wrong") {
+                        if (!progress || progress.isCorrect) return;
+                    }
+                    
+                    if (searchKeyword) {
+                        const questionMatch = q.question.toLowerCase().includes(searchKeyword);
+                        const methodMatch = q.ml_method && q.ml_method.toLowerCase().includes(searchKeyword);
+                        if (!questionMatch && !methodMatch) return;
+                    }
+
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    // Style by answer state
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        // Update active state in UI
+                        document.querySelectorAll(".q-btn").forEach(b => b.classList.remove("active"));
+                        qBtn.classList.add("active");
+                        renderQuestion();
+                    });
+                    
+                    questionsGrid.appendChild(qBtn);
+                });
+            };
+
+            // Main Area rendering
+            const renderQuestion = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const q = subject.questions[currentQuestionIdx];
+                
+                document.getElementById("current-q-index").textContent = q.id;
+                questionNumberBadge.textContent = `Question ${q.id}`;
+                questionText.textContent = q.question;
+                
+                if (q.ml_method) {
+                    questionMlBadge.textContent = q.ml_method;
+                    questionMlBadge.style.display = "inline-block";
+                } else {
+                    questionMlBadge.style.display = "none";
+                }
+
+                // Render Attached Image if exists
+                if (q.image) {
+                    questionImgElement.src = q.image;
+                    questionImgElement.onclick = () => openImageModal(q.image);
+                    questionImageWrapper.style.display = "flex";
+                } else {
+                    questionImageWrapper.style.display = "none";
+                    questionImgElement.src = "";
+                }
+
+                // Render Options
+                optionsList.innerHTML = "";
+                const userChoice = userProgress[currentSubject][q.id]?.userAnswer;
+                const isAnswered = userChoice !== undefined;
+                
+                Object.keys(q.options).forEach(letter => {
+                    const optionItem = document.createElement("div");
+                    optionItem.className = "option-item";
+                    
+                    const optionLetter = document.createElement("span");
+                    optionLetter.className = "option-letter";
+                    optionLetter.textContent = letter;
+                    
+                    const optionTextSpan = document.createElement("span");
+                    optionTextSpan.className = "option-text";
+                    optionTextSpan.textContent = q.options[letter];
+                    
+                    optionItem.appendChild(optionLetter);
+                    optionItem.appendChild(optionTextSpan);
+                    
+                    // Style options depending on answer states
+                    if (studyMode) {
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct");
+                        }
+                    } else if (isAnswered) {
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct");
+                        } else if (letter === userChoice) {
+                            optionItem.classList.add("incorrect");
+                        }
+                    } else {
+                        optionItem.addEventListener("click", () => handleSelectOption(letter));
+                    }
+                    
+                    optionsList.appendChild(optionItem);
+                });
+
+                // Bidirectional Link to Wiki
+                const wikiLinkContainer = document.getElementById("algo-wiki-link-container");
+                const wikiLink = document.getElementById("algo-wiki-link");
+                const wikiName = document.getElementById("algo-wiki-name");
+                
+                let matchedWikiKey = null;
+                if (q.ml_method && typeof WIKI_DATA !== 'undefined') {
+                    const method = q.ml_method.trim();
+                    if (WIKI_DATA[method]) {
+                        matchedWikiKey = method;
+                    } else {
+                        // Fallback substring matching
+                        for (let k in WIKI_DATA) {
+                            if (method.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(method.toLowerCase())) {
+                                matchedWikiKey = k;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                if (matchedWikiKey) {
+                    wikiLinkContainer.style.display = "block";
+                    wikiName.textContent = WIKI_DATA[matchedWikiKey].title.split(" (")[0];
+                    
+                    // Replace to remove previous event listeners
+                    const newWikiLink = wikiLink.cloneNode(true);
+                    wikiLink.parentNode.replaceChild(newWikiLink, wikiLink);
+                    
+                    newWikiLink.addEventListener("click", () => {
+                        switchToWikiView(matchedWikiKey);
+                    });
+                } else {
+                    wikiLinkContainer.style.display = "none";
+                }
+
+                // Render Explanation Panel
+                if (studyMode || isAnswered) {
+                    explanationPanel.style.display = "block";
+                    explanationText.textContent = q.explanation;
+                    
+                    // Show correct/incorrect indicator if answered in test mode
+                    if (isAnswered && !studyMode) {
+                        const isCorrect = userProgress[currentSubject][q.id].isCorrect;
+                        resultBanner.className = isCorrect ? "result-banner correct" : "result-banner incorrect";
+                        resultIcon.textContent = isCorrect ? "✓" : "✗";
+                        resultText.textContent = isCorrect ? "回答正確！" : `回答錯誤！正確答案是 (${q.answer})`;
+                    } else {
+                        resultBanner.className = "result-banner correct";
+                        resultIcon.textContent = "★";
+                        resultText.textContent = `參考答案是 (${q.answer})`;
+                    }
+
+                    // Render ML info
+                    methodName.textContent = q.ml_method || "相關 AI 技術";
+                    methodExplanation.textContent = q.ml_method_explanation || "此題目涉及特定的機器學習架構或評估指標。";
+                    
+                    // Render comparison
+                    const comparisonBox = document.getElementById("comparison-box");
+                    const comparisonExplanation = document.getElementById("comparison-explanation");
+                    if (q.comparison) {
+                        comparisonBox.style.display = "block";
+                        comparisonExplanation.textContent = q.comparison;
+                    } else {
+                        comparisonBox.style.display = "none";
+                    }
+
+                    // Render keywords (Tags)
+                    const keywordsTags = document.getElementById("keywords-tags");
+                    keywordsTags.innerHTML = "";
+                    if (q.keywords && q.keywords.length > 0) {
+                        q.keywords.forEach(kw => {
+                            const tag = document.createElement("span");
+                            tag.className = "keyword-tag";
+                            tag.textContent = kw;
+                            keywordsTags.appendChild(tag);
+                        });
+                    } else {
+                        keywordsTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無關鍵字資訊</span>";
+                    }
+
+                    // Render extended tech list
+                    const extTechList = document.getElementById("extended-tech-list");
+                    extTechList.innerHTML = "";
+                    if (q.extended_tech && q.extended_tech.length > 0) {
+                        q.extended_tech.forEach(tech => {
+                            const item = document.createElement("div");
+                            item.className = "extended-tech-item";
+                            
+                            const nameSpan = document.createElement("div");
+                            nameSpan.className = "extended-tech-name";
+                            nameSpan.textContent = tech.name;
+                            
+                            const descSpan = document.createElement("div");
+                            descSpan.className = "extended-tech-desc";
+                            descSpan.textContent = tech.desc;
+                            
+                            item.appendChild(nameSpan);
+                            item.appendChild(descSpan);
+                            extTechList.appendChild(item);
+                        });
+                    } else {
+                        extTechList.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無延伸應用技術</span>";
+                    }
+
+                    // Render terminology (Tags)
+                    const termTags = document.getElementById("terminology-tags");
+                    termTags.innerHTML = "";
+                    if (q.terminology && q.terminology.length > 0) {
+                        q.terminology.forEach(term => {
+                            const tag = document.createElement("span");
+                            tag.className = "term-tag";
+                            tag.textContent = term;
+                            termTags.appendChild(tag);
+                        });
+                    } else {
+                        termTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無領域術語資訊</span>";
+                    }
+                    
+                    example1Title.textContent = "應用情境一";
+                    example1Content.textContent = q.examples && q.examples[0] ? q.examples[0] : "生活應用例子一";
+                    example2Title.textContent = "應用情境二";
+                    example2Content.textContent = q.examples && q.examples[1] ? q.examples[1] : "生活應用例子二";
+                } else {
+                    explanationPanel.style.display = "none";
+                }
+
+                // Update prev / next buttons
+                btnPrevQ.disabled = currentQuestionIdx === 0;
+                btnNextQ.disabled = currentQuestionIdx === subject.questions.length - 1;
+
+                // Sync Jump Dropdowns
+                updateJumpSelects();
+                // Typeset question and options math
+                window.typesetMath([document.getElementById("practice-container") || document.body]);
+            };
+
+            const handleSelectOption = (letter) => {
+                const q = EXAM_DATA[currentSubject].questions[currentQuestionIdx];
+                const isCorrect = letter === q.answer;
+                
+                userProgress[currentSubject][q.id] = {
+                    userAnswer: letter,
+                    isCorrect: isCorrect
+                };
+                
+                // Save to local storage
+                localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                
+                // Re-render
+                renderQuestion();
+                renderSidebarGrid();
+                updateStats();
+            };
+
+            // Stats Update
+            const updateStats = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const total = subject.questions.length;
+                const progressObj = userProgress[currentSubject];
+                
+                const answered = Object.keys(progressObj).length;
+                const correct = Object.values(progressObj).filter(v => v.isCorrect).length;
+                const incorrect = answered - correct;
+                const unanswered = total - answered;
+                
+                const pct = Math.round((answered / total) * 100);
+                
+                document.getElementById("progress-percent").textContent = `${pct}%`;
+                document.getElementById("progress-bar").style.width = `${pct}%`;
+                document.getElementById("stat-correct").textContent = correct;
+                document.getElementById("stat-incorrect").textContent = incorrect;
+                document.getElementById("stat-unanswered").textContent = unanswered;
+            };
+
+            // Previous / Next button controls
+            btnPrevQ.addEventListener("click", () => {
+                if (currentQuestionIdx > 0) {
+                    currentQuestionIdx--;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            btnNextQ.addEventListener("click", () => {
+                const subject = EXAM_DATA[currentSubject];
+                if (currentQuestionIdx < subject.questions.length - 1) {
+                    currentQuestionIdx++;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            // Quick jump dropdown change events
+            if (jumpQuestionSelect) {
+                jumpQuestionSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            if (navJumpSelect) {
+                navJumpSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            // Mobile Sheet Modal events
+            if (btnMobileSheetToggle) {
+                btnMobileSheetToggle.addEventListener("click", () => {
+                    renderMobileSheetGrid();
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.remove("hidden");
+                    }
+                });
+            }
+
+            if (btnCloseMobileSheet) {
+                btnCloseMobileSheet.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
+
+            if (mobileSheetBackdrop) {
+                mobileSheetBackdrop.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
+
+            // Reset current subject history
+            btnResetCurrent.addEventListener("click", () => {
+                if (confirm("確定要重置本科目的所有答題紀錄嗎？此動作無法復原。")) {
+                    userProgress[currentSubject] = {};
+                    localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                    loadSubject(currentSubject);
+                }
+            });
+
+            // Clear all database history
+            btnClearAll.addEventListener("click", () => {
+                if (confirm("確定要清除本系統中的所有科目練習紀錄嗎？")) {
+                    userProgress = {};
+                    localStorage.removeItem("ai_exam_user_progress");
+                    updateLandingProgress();
+                    alert("已清除所有練習紀錄。");
+                }
+            });
+
+            // ==========================================
+            // WIKI ENCYCLOPEDIA LOGIC
+            // ==========================================
+            const wikiMenuList = document.getElementById("wiki-menu-list");
+            const wikiTitle = document.getElementById("wiki-title");
+            const wikiSummary = document.getElementById("wiki-summary");
+            const wikiContent = document.getElementById("wiki-content");
+            const wikiBreadcrumbAlgo = document.getElementById("wiki-breadcrumb-algo");
+            const wikiRelatedQuestions = document.getElementById("wiki-related-questions");
+
+            let activeWikiCategory = "all";
+
+            const renderWikiMenu = (filterKeyword = "", category = activeWikiCategory) => {
+                wikiMenuList.innerHTML = "";
+                if (typeof WIKI_DATA === 'undefined') return;
+                
+                const kw = filterKeyword.trim().toLowerCase();
+                
+                Object.keys(WIKI_DATA).forEach(key => {
+                    const algo = WIKI_DATA[key];
+                    const itemCat = algo.category || (key === "ExamSyllabus" ? "syllabus" : "theory");
+                    
+                    // Category filter
+                    if (category !== "all" && itemCat !== category) {
+                        return;
+                    }
+                    
+                    const isSyllabus = key === "ExamSyllabus";
+                    const matches = isSyllabus || 
+                        key.toLowerCase().includes(kw) || 
+                        algo.title.toLowerCase().includes(kw) || 
+                        (algo.summary && algo.summary.toLowerCase().includes(kw)) ||
+                        (algo.keywords && algo.keywords.some(k => k.toLowerCase().includes(kw)));
+                        
+                    if (!matches) return;
+                    
+                    const btn = document.createElement("button");
+                    btn.className = "wiki-menu-btn";
+                    if (key === activeWikiKey) btn.classList.add("active");
+                    
+                    btn.innerHTML = `<span>${algo.title}</span> <span>&gt;</span>`;
+                    btn.addEventListener("click", () => {
+                        document.querySelectorAll(".wiki-menu-btn").forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        renderWikiArticle(key);
+                    });
+                    
+                    wikiMenuList.appendChild(btn);
+                });
+            };
+
+            const wikiSearchInput = document.getElementById("wiki-search-input");
+            if (wikiSearchInput) {
+                wikiSearchInput.addEventListener("input", (e) => {
+                    renderWikiMenu(e.target.value, activeWikiCategory);
+                });
+            }
+
+            // Wiki Category Tabs Event Listeners
+            const wikiCatTabs = document.querySelectorAll(".wiki-cat-tab");
+            wikiCatTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    wikiCatTabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    activeWikiCategory = tab.dataset.category;
+                    const searchVal = wikiSearchInput ? wikiSearchInput.value : "";
+                    renderWikiMenu(searchVal, activeWikiCategory);
+                });
+            });
+
+            const getWikiStats = () => {
+                const stats = [];
+                Object.keys(WIKI_DATA).forEach(key => {
+                    if (key === "ExamSyllabus" || key === "MLMethodology") return;
+                    
+                    let count = 0;
+                    const keywords = WIKI_DATA[key].keywords || [key];
+                    
+                    for (let subjKey in EXAM_DATA) {
+                        const subj = EXAM_DATA[subjKey];
+                        subj.questions.forEach(question => {
+                            if (question.ml_method) {
+                                const method = question.ml_method.trim().toLowerCase();
+                                const isMatch = keywords.some(kw => {
+                                    const kwLow = kw.toLowerCase();
+                                    return method.includes(kwLow) || kwLow.includes(method);
+                                });
+                                if (isMatch) count++;
+                            }
+                        });
+                    }
+                    
+                    stats.push({
+                        key: key,
+                        title: WIKI_DATA[key].title,
+                        count: count
+                    });
+                });
+                
+                return stats.sort((a, b) => b.count - a.count).slice(0, 30);
+            };
+
+            const renderWikiArticle = (wikiKey) => {
+                activeWikiKey = wikiKey;
+                const algo = WIKI_DATA[wikiKey];
+                
+                wikiTitle.textContent = algo.title;
+                wikiSummary.textContent = algo.summary;
+                
+                if (wikiKey === "ExamSyllabus") {
+                    const dashboardHtml = `
+                        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                            <h4 style="margin-top: 0; margin-bottom: 1rem; color: var(--primary); font-weight: bold; display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                                📊 考點熱度排行榜 (400 題考古題高頻考點 Top 30)
+                            </h4>
+                            <div id="wiki-dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; margin-bottom: 0.5rem;">
+                                <!-- Dynamic statistics items -->
+                            </div>
+                        </div>
+                    `;
+                    wikiContent.innerHTML = dashboardHtml + algo.content;
+                    
+                    const grid = document.getElementById("wiki-dashboard-grid");
+                    if (grid) {
+                        const top30 = getWikiStats();
+                        top30.forEach((item, index) => {
+                            const card = document.createElement("div");
+                            card.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); cursor: pointer; transition: all 0.2s; box-sizing: border-box;";
+                            
+                            let badgeColor = "#ffffff";
+                            let badgeBg = "var(--text-muted)";
+                            if (index === 0) { badgeBg = "#ef4444"; }
+                            else if (index === 1) { badgeBg = "#f97316"; }
+                            else if (index === 2) { badgeBg = "#eab308"; }
+                            else { badgeColor = "var(--text-muted)"; badgeBg = "rgba(0,0,0,0.05)"; }
+                            
+                            let displayTitle = item.title.split(" (")[0];
+                            if (displayTitle.length > 12) {
+                                displayTitle = displayTitle.substring(0, 11) + "...";
+                            }
+                            
+                            card.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 0.4rem; overflow: hidden;">
+                                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 1.2rem; height: 1.2rem; border-radius: 50%; font-size: 0.7rem; font-weight: bold; background-color: ${badgeBg}; color: ${badgeColor}; flex-shrink: 0;">${index + 1}</span>
+                                    <span style="font-weight: 500; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${item.title}">${displayTitle}</span>
+                                </div>
+                                <span style="font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.35rem; border-radius: 10px; background-color: var(--primary-light); color: var(--primary); flex-shrink: 0;">${item.count} 題</span>
+                            `;
+                            
+                            card.addEventListener("mouseenter", () => {
+                                card.style.borderColor = "var(--primary)";
+                                card.style.transform = "translateY(-1px)";
+                                card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.04)";
+                            });
+                            card.addEventListener("mouseleave", () => {
+                                card.style.borderColor = "var(--border-color)";
+                                card.style.transform = "none";
+                                card.style.boxShadow = "none";
+                            });
+                            
+                            card.addEventListener("click", () => {
+                                activeWikiKey = item.key;
+                                const searchVal = document.getElementById("wiki-search-input") ? document.getElementById("wiki-search-input").value : "";
+                                renderWikiMenu(searchVal);
+                                renderWikiArticle(item.key);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            });
+                            
+                            grid.appendChild(card);
+                        });
+                    }
+                } else {
+                    wikiContent.innerHTML = algo.content;
+                }
+                
+                wikiBreadcrumbAlgo.textContent = algo.title.split(" (")[0];
+                
+                window.typesetMath([document.getElementById("wiki-article-body") || wikiContent]);
+                
+                renderRelatedQuestions(wikiKey);
+            };
+
+            const renderRelatedQuestions = (wikiKey) => {
+                wikiRelatedQuestions.innerHTML = "";
+                if (wikiKey === "ExamSyllabus" || wikiKey === "MLMethodology") {
+                    wikiRelatedQuestions.innerHTML = "<p style='color: var(--text-muted); font-size: 0.95rem; font-style: italic; margin-top: 1rem;'>💡 此條目為官方能力鑑定學習大綱與方法論指引，不針對單一考題進行關聯跳轉。</p>";
+                    return;
+                }
+                let foundAny = false;
+                
+                const subjShortNames = {
+                    "114_2_1": "114年第二次 - 第一科",
+                    "114_2_3": "114年第二次 - 第三科",
+                    "115_1_1": "115年第一次 - 第一科",
+                    "115_1_3": "115年第一次 - 第三科",
+                    "primary_115_1_1": "115年第一次初級 - 第一科",
+                    "primary_115_1_2": "115年第一次初級 - 第二科",
+                    "primary_115_2_1": "115年第二次初級 - 第一科",
+                    "primary_115_2_2": "115年第二次初級 - 第二科",
+                    "primary_115_3_1": "115年第三次初級 - 第一科",
+                    "primary_115_3_2": "115年第三次初級 - 第二科"
+                };
+
+                for (let subjKey in EXAM_DATA) {
+                    const subj = EXAM_DATA[subjKey];
+                    subj.questions.forEach((question, index) => {
+                        let isMatch = false;
+                        if (question.ml_method) {
+                            const method = question.ml_method.trim().toLowerCase();
+                            const key = wikiKey.toLowerCase();
+                            const keywords = (WIKI_DATA[wikiKey] && WIKI_DATA[wikiKey].keywords) ? WIKI_DATA[wikiKey].keywords : [wikiKey];
+                            
+                            // Check keywords mapping
+                            isMatch = keywords.some(kw => {
+                                const kwLow = kw.toLowerCase();
+                                return method.includes(kwLow) || kwLow.includes(method);
+                            });
+                        }
+                        
+                        if (isMatch) {
+                            foundAny = true;
+                            
+                            const qLink = document.createElement("a");
+                            qLink.style.cssText = "color: var(--primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; cursor: pointer; display: block; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); transition: all 0.2s;";
+                            
+                            qLink.innerHTML = `✏️ <b>${subjShortNames[subjKey]}</b> - 第 ${question.id} 題 <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; margin-left: 0.5rem; display: block; margin-top: 0.25rem;">${question.question.substring(0, 90)}...</span>`;
+                            
+                            qLink.addEventListener("mouseenter", () => {
+                                qLink.style.borderColor = "var(--primary)";
+                                qLink.style.backgroundColor = "var(--primary-light)";
+                            });
+                            qLink.addEventListener("mouseleave", () => {
+                                qLink.style.borderColor = "var(--border-color)";
+                                qLink.style.backgroundColor = "var(--bg-main)";
+                            });
+                            
+                            qLink.addEventListener("click", () => {
+                                // Jump directly to this question
+                                loadSubject(subjKey);
+                                currentQuestionIdx = index;
+                                renderSidebarGrid();
+                                renderQuestion();
+                                updateStats();
+                            });
+                            
+                            wikiRelatedQuestions.appendChild(qLink);
+                        }
+                    });
+                }
+
+                if (!foundAny) {
+                    wikiRelatedQuestions.innerHTML = "<span style='color: var(--text-muted); font-size: 0.9rem;'>此演算法目前在 200 題考古題中尚無直接對應的題目。</span>";
+                }
+            };
+
+            // URL Deep Linking (?subj=xxx&qid=yyy)
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetSubj = urlParams.get("subj");
+            const targetQid = parseInt(urlParams.get("qid"), 10);
+            if (targetSubj && typeof EXAM_DATA !== 'undefined' && EXAM_DATA[targetSubj]) {
+                loadSubject(targetSubj);
+                if (!isNaN(targetQid)) {
+                    const qIdx = EXAM_DATA[targetSubj].questions.findIndex(q => q.id === targetQid);
+                    if (qIdx !== -1) {
+                        currentQuestionIdx = qIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                        updateStats();
+                    }
+                }
+            }
+        });
+
+        // Global Image Modal (Lightbox) Functions
+        function openImageModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-image");
+            if (modal && modalImg) {
+                modalImg.src = src;
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeImageModal();
+            }
+        });
+    </script>
+
+    <!-- Mobile Question Sheet Drawer / Modal -->
+    <div class="mobile-sheet-modal hidden" id="mobile-sheet-modal">
+        <div class="mobile-sheet-backdrop" id="mobile-sheet-backdrop"></div>
+        <div class="mobile-sheet-content">
+            <div class="mobile-sheet-header">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>📋</span> 題目清單快速跳轉
+                </h3>
+                <button class="modal-close" id="btn-close-mobile-sheet" aria-label="關閉">&times;</button>
+            </div>
+            <div class="questions-grid-wrapper" style="max-height: 60vh; padding: 0.5rem 0;">
+                <div class="questions-grid" id="mobile-questions-grid">
+                    <!-- Dynamically populated 1-50 buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal" style="display: none;" onclick="closeImageModal()">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img class="image-modal-content" id="modal-image" src="" alt="放大附圖" onclick="event.stopPropagation()">
+        <div id="image-modal-caption" class="image-modal-caption">點擊背景或右上角 &times; 關閉</div>
+    </div>
+</body>
+</html>
+, '
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-section" id="btn-home">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>👑 AI 學習王</h1>
+                    <p>互動式考古題研習系統</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <label class="switch-container" id="mode-toggle-wrapper">
+                    <span>背題模式</span>
+                    <div class="switch">
+                        <input type="checkbox" id="mode-toggle">
+                        <span class="slider"></span>
+                    </div>
+                </label>
+                
+                <a href="quick_notes_l11.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #8b5cf6; font-weight: 700;">⚡ 考點速記 (初級一)</a>
+                <a href="quick_notes_l12.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #ec4899; font-weight: 700;">⚡ 考點速記 (初級二)</a>
+                <a href="quick_notes_l21.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #2563eb; font-weight: 700;">⚡ 考點速記 (L21)</a>
+                <a href="quick_notes_l22.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #059669; font-weight: 700;">⚡ 考點速記 (L22)</a>
+                <a href="quick_notes_l23.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #d97706; font-weight: 700;">⚡ 考點速記 (L23)</a>
+                <a href="study_guide_notes.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #7c3aed; font-weight: 700;">📖 學習指引精華</a>
+                <button class="btn btn-secondary" id="btn-toggle-view">📚 技術百科</button>
+                <a href="syllabus.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">📋 評鑑內容對照表</a>
+                
+                <button class="btn btn-icon theme-toggle" id="theme-toggle" title="切換主題">
+                    <!-- Sun Icon (Light) -->
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M9.75 12h4.5M9.75 3.75h4.5m-4.5 16.5h4.5M2.25 12h19.5M3.75 9.75v4.5m16.5-4.5v4.5m-15-7.5l1.06-1.06m13.78 13.78l-1.06 1.06m-13.78 0l1.06 1.06m13.78-13.78l-1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                    </svg>
+                    <!-- Moon Icon (Dark) -->
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-secondary hidden" id="btn-back-landing">返回大綱</button>
+            </div>
+        </header>
+
+        <!-- Main Wrapper -->
+        <main class="main-wrapper">
+            <!-- SUBJECT SELECTOR (LANDING PAGE) -->
+            <section class="landing-panel" id="landing-panel">
+                <h2 class="landing-title">AI 應用規劃師能力鑑定考古題系統</h2>
+                <p class="landing-desc">本系統收錄 AI 應用規劃師「中級」與「初級」能力鑑定考試之官方試題。為每道題目提供詳細解答、解題邏輯與技術背景，並針對涉及的機器學習與人工智慧方法提供詳細的技術百科與應用實例，協助您深度掌握核心技術觀念。</p>
+                
+                <!-- Quick Tools Feature Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; width: 100%; margin-bottom: 2rem;">
+                    
+                    <!-- Official Study Guide Cheat Sheet Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #7c3aed; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>📖</span> 官方學習指引：中級全科目精華速記
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                深度提煉自「學習指引」官方教材三冊與勘誤表。涵蓋 TF-IDF 勘誤、Recall 公式修正、PDPA 事前告知、NMF、PCA、Spark、辛普森悖論、SHAP 等權威考點。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="study_guide_notes.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #7c3aed; border-color: #7c3aed; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入學習指引速記 ➔
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- L21 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #2563eb; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目1（L21 人工智慧技術應用）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 48 個核心考點、黃仁勳物理 AI、歐盟 AI 法案四級風險金字塔、NLP/CV/GenAI、直擊 100 題真題與掌握進度記憶。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l21.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #2563eb; border-color: #2563eb; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L21 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L22 Quick Notes Card (重點加強) -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #059669; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目2（L22 大數據處理分析）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 40 個核心考點、辛普森悖論、Spark/Hadoop、Lakehouse、假名化 vs 匿名化、差分隱私、聯邦學習與掌握進度記憶。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l22.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #059669; border-color: #059669; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L22 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L23 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid var(--accent); text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：中級 科目3（L23 機器學習技術）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 54 個核心考點、梯度下降推導、過擬合正則化、ML/DL演算法、直擊 100 題真題與複習勾選清單。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l23.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: var(--accent); border-color: var(--accent); display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入 L23 考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L11 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #8b5cf6; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：初級 科目一（L11 人工智慧概論）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 32 個核心考點、黃仁勳物理 AI、圖靈測試口訣、ML三大範式、No Code優缺點、直擊初級 150 題真題。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l11.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #8b5cf6; border-color: #8b5cf6; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入初級一考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- L12 Quick Notes Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid #ec4899; text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>⚡</span> AI 核心考點速記：初級 科目二（L12 生成式 AI 規劃）
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                涵蓋 20 個核心考點、提示詞工程 RTFC、Token 計費、RAG vs 微調、Webhook 事件驅動、影子 IT 與供應商鎖定。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="quick_notes_l12.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; background: #ec4899; border-color: #ec4899; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                進入初級二考點速記 ➔
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Syllabus Table Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary); text-align: left;">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                <span>📋</span> 官方評鑑規範：大綱與評鑑內容
+                            </div>
+                            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                查閱經濟部 iPAS 官方初級（2 科）與中級（3 科）標準評鑑單元、代碼對照表與高解析度規範大綱圖表。
+                            </div>
+                        </div>
+                        <div style="text-align: right; margin-top: 0.25rem;">
+                            <a href="syllabus.html" class="btn btn-primary" style="text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1.15rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                查看對照表 ➔
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 1.5rem 0 1rem 0; border-left: 4px solid var(--primary); padding-left: 0.75rem; color: var(--text-primary);">
+                    ⚙️ 中級能力鑑定考古題 (四科)
+                </h3>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="114_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">114 年第二次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="114_2_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">114 年第二次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="114_2_3">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧技術應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="115_1_3">
+                        <span class="subject-tag ml-tag">第三科</span>
+                        <h3 class="subject-name">115 年第一次 機器學習技術與應用</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="115_1_3">未開始</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.35rem; font-weight: 700; text-align: left; width: 100%; margin: 2rem 0 1rem 0; border-left: 4px solid var(--accent); padding-left: 0.75rem; color: var(--text-primary);">
+                    🎓 初級能力鑑定考古題 (六科)
+                </h3>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="primary_115_1_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第一次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_1_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第一次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_1_2">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第二次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_2_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第二次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_2_2">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_3_1">
+                        <span class="subject-tag">第一科</span>
+                        <h3 class="subject-name">115 年第三次 人工智慧基礎概論</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_3_1">未開始</span>
+                        </div>
+                    </div>
+                    <div class="subject-card" data-subject="primary_115_3_2">
+                        <span class="subject-tag ml-tag">第二科</span>
+                        <h3 class="subject-name">115 年第三次 生成式 AI 應用與規劃</h3>
+                        <div class="subject-info">
+                            <span>共 50 題</span>
+                            <span class="subj-progress-status" data-subj="primary_115_3_2">未開始</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" id="btn-clear-all" style="margin-top: 1.5rem; color: var(--error)">
+                    🗑️ 清除所有答題紀錄
+                </button>
+            </section>
+
+            <!-- PRACTICE CONTAINER -->
+            <section class="practice-container" id="practice-container">
+                <!-- Question Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title" id="sidebar-subject-title">學科名稱</h3>
+                        <div class="progress-container">
+                            <div class="stats-row" style="margin-bottom: 0.25rem;">
+                                <span>測驗進度</span>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progress-bar"></div>
+                            </div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stats-item">答對: <span id="stat-correct" style="color: var(--success)">0</span></div>
+                            <div class="stats-item">答錯: <span id="stat-incorrect" style="color: var(--error)">0</span></div>
+                            <div class="stats-item">未答: <span id="stat-unanswered">50</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-header" style="padding-bottom: 0.5rem; border-bottom: none;">
+                        <input type="text" class="search-input" id="search-input" placeholder="搜尋題目或ML方法...">
+                        <div class="filter-row">
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-all" title="顯示所有題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem; background-color: var(--primary-light); color: var(--primary); border-color: var(--primary);">全部</button>
+                            <button class="btn btn-secondary btn-icon" id="btn-filter-wrong" title="僅顯示答錯題目" style="flex: 1; padding: 0.25rem 0.5rem; font-size: 0.75rem;">僅錯題</button>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-grid-wrapper">
+                        <div class="questions-grid" id="questions-grid">
+                            <!-- Dynamically populated numbers 1-50 -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-footer">
+                        <button class="btn btn-secondary" id="btn-reset-current" style="width: 100%; font-size: 0.8rem;">重置本科目紀錄</button>
+                    </div>
+                </aside>
+
+                <!-- Workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb-wrapper">
+                        <div class="nav-breadcrumb">
+                            <a id="breadcrumb-home">首頁</a> &gt; <span id="breadcrumb-subject">當前學科</span> &gt; <span>第 <span id="current-q-index">1</span> 題</span>
+                        </div>
+                        <div class="quick-jump-container">
+                            <label for="jump-question-select" class="quick-jump-label">🎯 跳至：</label>
+                            <select id="jump-question-select" class="jump-select" aria-label="選擇題目跳轉"></select>
+                            <button class="btn btn-secondary btn-mobile-sheet" id="btn-mobile-sheet-toggle" title="開啟題號清單">📋 題號清單</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question Card -->
+                    <div class="card">
+                        <div class="question-header">
+                            <span class="q-badge" id="question-number-badge">Question 1</span>
+                            <span class="q-badge" id="question-ml-method-badge" style="background-color: var(--primary-light); color: var(--primary); display: none;">TF-IDF</span>
+                        </div>
+                        <div class="question-text" id="question-text">
+                            讀取中...
+                        </div>
+                        
+                        <!-- Question Attached Image / Diagram -->
+                        <div class="question-image-wrapper" id="question-image-wrapper" style="display: none;">
+                            <img id="question-img-element" class="question-img" src="" alt="題目附圖">
+                            <div class="question-img-hint">🔍 點擊圖片可放大查看</div>
+                        </div>
+                        
+                        <div class="options-list" id="options-list">
+                            <!-- Options (A) (B) (C) (D) -->
+                        </div>
+
+                        <!-- Link to Wiki Algorithm page -->
+                        <div id="algo-wiki-link-container" style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed var(--border-color); display: none;">
+                            <a id="algo-wiki-link" style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
+                                📖 補充網頁：深入了解 <span id="algo-wiki-name">PCA</span> 演算法詳細原理 &gt;
+                            </a>
+                        </div>
+                        
+                        <!-- Nav buttons below options (before answer show) -->
+                        <div class="nav-actions">
+                            <button class="btn btn-secondary" id="btn-prev-q">⬅️ 上一題</button>
+                            <div class="nav-jump-center">
+                                <span>第</span>
+                                <select id="nav-jump-select" class="nav-jump-select" aria-label="切換題號"></select>
+                                <span>/ <span id="nav-total-q">50</span> 題</span>
+                            </div>
+                            <button class="btn btn-primary" id="btn-next-q">下一題 ➡️</button>
+                        </div>
+                    </div>
+
+                    <!-- Explanation Panel -->
+                    <div class="explanation-panel" id="explanation-panel">
+                        <div class="result-banner" id="result-banner">
+                            <span id="result-icon">✓</span> <span id="result-text">回答正確！</span>
+                        </div>
+                        
+                        <h3 class="panel-title">💡 答案與解析</h3>
+                        <div class="explanation-text" id="explanation-text">
+                            詳細的解題邏輯與錯誤選項分析...
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <!-- Machine Learning Method Details -->
+                        <div class="method-box">
+                            <div class="method-header">
+                                <span class="method-name" id="method-name">DBSCAN</span>
+                                <span class="q-badge" style="background-color: var(--primary); color: white;">核心 ML 技術</span>
+                            </div>
+                            <div class="method-explanation" id="method-explanation">
+                                DBSCAN 是基於密度的分群方法...
+                            </div>
+                        </div>
+
+                        <!-- Method Comparison Section -->
+                        <div class="method-box" id="comparison-box" style="background-color: var(--accent-light); border-left-color: var(--accent);">
+                            <div class="method-header">
+                                <span class="method-name" style="color: var(--accent);">⚙️ 技術對比與應用領域</span>
+                                <span class="q-badge" style="background-color: var(--accent); color: white;">方法比較</span>
+                            </div>
+                            <div class="method-explanation" id="comparison-explanation" style="white-space: pre-wrap;">
+                                比較正確答案與其他方法的應用差異...
+                            </div>
+                        </div>
+
+                        <!-- Knowledge Card Section -->
+                        <h3 class="panel-title">📚 知識擴充圖卡</h3>
+                        <div class="card" style="padding: 1.75rem; margin-bottom: 2rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--primary); display: flex; align-items: center; gap: 0.25rem;">
+                                    🏷️ 核心關鍵字 (Keywords)
+                                </h4>
+                                <div class="tag-container" id="keywords-tags">
+                                    <!-- Keyword tags -->
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: #7c3aed; display: flex; align-items: center; gap: 0.25rem;">
+                                    🧠 延伸應用與技術 (Extended Applications)
+                                </h4>
+                                <div id="extended-tech-list">
+                                    <!-- Extended tech list -->
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent); display: flex; align-items: center; gap: 0.25rem;">
+                                    📖 相關領域術語 (Terminology)
+                                </h4>
+                                <div class="tag-container" id="terminology-tags">
+                                    <!-- Terminology tags -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Examples section -->
+                        <h3 class="panel-title">🚀 生活與業務應用場景實例</h3>
+                        <div class="examples-grid" id="examples-grid">
+                            <div class="example-card">
+                                <h4 class="example-title" id="example1-title">實例一</h4>
+                                <p class="example-content" id="example1-content">實例內容描述...</p>
+                            </div>
+                            <div class="example-card">
+                                <h4 class="example-title" id="example2-title">實例二</h4>
+                                <p class="example-content" id="example2-content">實例內容描述...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WIKI CONTAINER (ALGORITHM ENCYCLOPEDIA) -->
+            <section class="practice-container" id="wiki-container" style="display: none;">
+                <!-- Wiki Sidebar -->
+                <aside class="question-sidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title">📚 技術百科目錄</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">收錄本考科涉及的核心人工智慧與機器學習演算法，提供深度原理解析與商業應用說明。</p>
+                    </div>
+                    <div class="questions-grid-wrapper" style="padding-top: 0.5rem;">
+                        <input type="text" id="wiki-search-input" placeholder="🔍 搜尋考綱與項目..." style="width: 100%; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); font-size: 0.88rem; margin-bottom: 0.6rem; box-sizing: border-box; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+                        
+                        <!-- Wiki Category Filter Tabs -->
+                        <div class="wiki-category-tabs" id="wiki-category-tabs">
+                            <button class="wiki-cat-tab active" data-category="all">全部</button>
+                            <button class="wiki-cat-tab" data-category="code">💻 程式相關</button>
+                            <button class="wiki-cat-tab" data-category="theory">📚 理論專題</button>
+                            <button class="wiki-cat-tab" data-category="syllabus">👑 考綱大綱</button>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="wiki-menu-list">
+                            <!-- Wiki buttons dynamically loaded -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Wiki workspace content -->
+                <div class="workspace-area">
+                    <div class="nav-breadcrumb">
+                        <a id="wiki-breadcrumb-home">首頁</a> &gt; <span>技術百科</span> &gt; <span id="wiki-breadcrumb-algo" style="color: var(--primary); font-weight: 600;">演算法名稱</span>
+                    </div>
+                    
+                    <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
+                        <h2 id="wiki-title" style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--primary);">演算法名稱</h2>
+                        <p id="wiki-summary" style="font-size: 1rem; color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); padding-left: 0.75rem;">演算法摘要...</p>
+                        
+                        <div class="section-divider" style="margin: 1.5rem 0;"></div>
+                        
+                        <!-- Rich HTML body -->
+                        <div id="wiki-content" class="explanation-text" style="font-size: 1rem; color: var(--text-primary); line-height: 1.7;">
+                            讀取中...
+                        </div>
+                        
+                        <div class="section-divider" style="margin: 2rem 0;"></div>
+                        
+                        <!-- Back-links to related questions -->
+                        <h3 class="panel-title" style="color: var(--accent); margin-bottom: 1.25rem;">💡 本考科有使用到此技術的題目</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="wiki-related-questions">
+                            <!-- Related questions links dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script imports -->
+    <script src="questions_data.js"></script>
+    <script src="wiki_data.js"></script>
+    <script>
+        // Web Application Application Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            // State
+            let currentView = "landing"; // 'landing', 'practice', 'wiki'
+            let currentSubject = null;
+            let currentQuestionIdx = 0; // 0-based
+            let filterMode = "all"; // 'all' or 'wrong'
+            let searchKeyword = "";
+            let userProgress = {}; // subjectKey -> { questionId -> { userAnswer, isCorrect } }
+            let studyMode = false; // true = 背題模式 (直接看答案)
+            let activeWikiKey = "ExamSyllabus"; // Default active wiki page
+
+            // LocalStorage loading
+            if (localStorage.getItem("ai_exam_user_progress")) {
+                try {
+                    userProgress = JSON.parse(localStorage.getItem("ai_exam_user_progress"));
+                } catch(e) {
+                    userProgress = {};
+                }
+            }
+
+            // Theme Management
+            const getPreferredTheme = () => {
+                return localStorage.getItem("theme") || "light";
+            };
+            
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                if (theme === "dark") {
+                    document.getElementById("sun-icon").classList.remove("hidden");
+                    document.getElementById("moon-icon").classList.add("hidden");
+                } else {
+                    document.getElementById("sun-icon").classList.add("hidden");
+                    document.getElementById("moon-icon").classList.remove("hidden");
+                }
+            };
+
+            setTheme(getPreferredTheme());
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                setTheme(currentTheme === "dark" ? "light" : "dark");
+            });
+
+            // UI Elements
+            const landingPanel = document.getElementById("landing-panel");
+            const practiceContainer = document.getElementById("practice-container");
+            const wikiContainer = document.getElementById("wiki-container");
+            const btnBackLanding = document.getElementById("btn-back-landing");
+            const sidebarSubjectTitle = document.getElementById("sidebar-subject-title");
+            const questionsGrid = document.getElementById("questions-grid");
+            const questionNumberBadge = document.getElementById("question-number-badge");
+            const questionMlBadge = document.getElementById("question-ml-method-badge");
+            const questionText = document.getElementById("question-text");
+            const questionImageWrapper = document.getElementById("question-image-wrapper");
+            const questionImgElement = document.getElementById("question-img-element");
+            const optionsList = document.getElementById("options-list");
+            const explanationPanel = document.getElementById("explanation-panel");
+            const explanationText = document.getElementById("explanation-text");
+            const resultBanner = document.getElementById("result-banner");
+            const resultIcon = document.getElementById("result-icon");
+            const resultText = document.getElementById("result-text");
+            const methodName = document.getElementById("method-name");
+            const methodExplanation = document.getElementById("method-explanation");
+            const example1Title = document.getElementById("example1-title");
+            const example1Content = document.getElementById("example1-content");
+            const example2Title = document.getElementById("example2-title");
+            const example2Content = document.getElementById("example2-content");
+            const btnPrevQ = document.getElementById("btn-prev-q");
+            const btnNextQ = document.getElementById("btn-next-q");
+            const breadcrumbSubject = document.getElementById("breadcrumb-subject");
+            const modeToggle = document.getElementById("mode-toggle");
+            const modeToggleWrapper = document.getElementById("mode-toggle-wrapper");
+            const searchInput = document.getElementById("search-input");
+            const btnFilterAll = document.getElementById("btn-filter-all");
+            const btnFilterWrong = document.getElementById("btn-filter-wrong");
+            const btnResetCurrent = document.getElementById("btn-reset-current");
+            const btnClearAll = document.getElementById("btn-clear-all");
+            
+            // View toggle button
+            const btnToggleView = document.getElementById("btn-toggle-view");
+
+            // Quick Jump UI Elements
+            const jumpQuestionSelect = document.getElementById("jump-question-select");
+            const navJumpSelect = document.getElementById("nav-jump-select");
+            const navTotalQ = document.getElementById("nav-total-q");
+            const btnMobileSheetToggle = document.getElementById("btn-mobile-sheet-toggle");
+            const mobileSheetModal = document.getElementById("mobile-sheet-modal");
+            const mobileSheetBackdrop = document.getElementById("mobile-sheet-backdrop");
+            const btnCloseMobileSheet = document.getElementById("btn-close-mobile-sheet");
+            const mobileQuestionsGrid = document.getElementById("mobile-questions-grid");
+
+            // Subject Cards Init progress status on Landing Panel
+            const updateLandingProgress = () => {
+                document.querySelectorAll(".subj-progress-status").forEach(span => {
+                    const key = span.getAttribute("data-subj");
+                    if (userProgress[key]) {
+                        const total = 50;
+                        const answered = Object.keys(userProgress[key]).length;
+                        const correct = Object.values(userProgress[key]).filter(v => v.isCorrect).length;
+                        if (answered === 0) {
+                            span.textContent = "未開始";
+                            span.style.color = "var(--text-muted)";
+                        } else if (answered === total) {
+                            span.textContent = `已完成 (得分率: ${Math.round(correct/total*100)}%)`;
+                            span.style.color = "var(--success)";
+                        } else {
+                            span.textContent = `答題中 (${answered}/${total})`;
+                            span.style.color = "var(--primary)";
+                        }
+                    } else {
+                        span.textContent = "未開始";
+                        span.style.color = "var(--text-muted)";
+                    }
+                });
+            };
+            updateLandingProgress();
+
+            // Mode Toggle
+            modeToggle.addEventListener("change", (e) => {
+                studyMode = e.target.checked;
+                renderQuestion();
+            });
+
+            // View Management Functions
+            const switchToLandingView = () => {
+                currentView = "landing";
+                landingPanel.classList.remove("hidden");
+                practiceContainer.style.display = "none";
+                wikiContainer.style.display = "none";
+                btnBackLanding.classList.add("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
+                currentSubject = null;
+                updateLandingProgress();
+            };
+
+            const switchToPracticeView = () => {
+                currentView = "practice";
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "flex";
+                wikiContainer.style.display = "none";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.remove("hidden");
+                btnToggleView.textContent = "📚 技術百科";
+                btnToggleView.className = "btn btn-secondary";
+            };
+
+            const switchToWikiView = (wikiKey = "ExamSyllabus") => {
+                currentView = "wiki";
+                activeWikiKey = wikiKey;
+                
+                landingPanel.classList.add("hidden");
+                practiceContainer.style.display = "none";
+                wikiContainer.style.display = "flex";
+                btnBackLanding.classList.remove("hidden");
+                modeToggleWrapper.classList.add("hidden"); // Hide test mode switch in wiki
+                
+                btnToggleView.textContent = "📝 考古題練習";
+                btnToggleView.className = "btn btn-primary";
+                
+                renderWikiMenu();
+                renderWikiArticle(activeWikiKey);
+            };
+
+            // Global helper to jump to a question from wiki links
+            window.jumpToQuestion = (subjKey, questionId) => {
+                if (typeof EXAM_DATA === 'undefined') return;
+                const subj = EXAM_DATA[subjKey];
+                if (!subj) return;
+                const index = subj.questions.findIndex(q => q.id === questionId);
+                if (index !== -1) {
+                    loadSubject(subjKey);
+                    currentQuestionIdx = index;
+                    renderSidebarGrid();
+                    renderQuestion();
+                    switchToPracticeView();
+                }
+            };
+
+            // Toggle view button event
+            btnToggleView.addEventListener("click", () => {
+                if (currentView === "wiki") {
+                    if (currentSubject) {
+                        switchToPracticeView();
+                    } else {
+                        switchToLandingView();
+                    }
+                } else {
+                    switchToWikiView(activeWikiKey);
+                }
+            });
+
+            document.getElementById("btn-home").addEventListener("click", switchToLandingView);
+            btnBackLanding.addEventListener("click", switchToLandingView);
+            document.getElementById("breadcrumb-home").addEventListener("click", switchToLandingView);
+            document.getElementById("wiki-breadcrumb-home").addEventListener("click", switchToLandingView);
+
+            // Subject Select
+            document.querySelectorAll(".subject-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    const subjKey = card.getAttribute("data-subject");
+                    if (typeof EXAM_DATA !== 'undefined' && EXAM_DATA[subjKey]) {
+                        loadSubject(subjKey);
+                    } else {
+                        alert("尚未加載此考古題資料。");
+                    }
+                });
+            });
+
+            const loadSubject = (subjKey) => {
+                currentSubject = subjKey;
+                currentQuestionIdx = 0;
+                filterMode = "all";
+                searchKeyword = "";
+                searchInput.value = "";
+                
+                // Toggle active button style
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+
+                if (!userProgress[currentSubject]) {
+                    userProgress[currentSubject] = {};
+                }
+
+                sidebarSubjectTitle.textContent = EXAM_DATA[currentSubject].title;
+                breadcrumbSubject.textContent = EXAM_DATA[currentSubject].title.split(" - ")[0];
+                
+                switchToPracticeView();
+                renderSidebarGrid();
+                renderQuestion();
+                updateStats();
+            };
+
+            // Sidebar Filtering
+            btnFilterAll.addEventListener("click", () => {
+                filterMode = "all";
+                btnFilterAll.style.backgroundColor = "var(--primary-light)";
+                btnFilterAll.style.color = "var(--primary)";
+                btnFilterAll.style.borderColor = "var(--primary)";
+                btnFilterWrong.style.backgroundColor = "transparent";
+                btnFilterWrong.style.color = "var(--text-secondary)";
+                btnFilterWrong.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            btnFilterWrong.addEventListener("click", () => {
+                filterMode = "wrong";
+                btnFilterWrong.style.backgroundColor = "var(--error-light)";
+                btnFilterWrong.style.color = "var(--error)";
+                btnFilterWrong.style.borderColor = "var(--error)";
+                btnFilterAll.style.backgroundColor = "transparent";
+                btnFilterAll.style.color = "var(--text-secondary)";
+                btnFilterAll.style.borderColor = "var(--border-color)";
+                renderSidebarGrid();
+            });
+
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.toLowerCase();
+                renderSidebarGrid();
+            });
+
+            // Dropdown jump selectors update
+            const updateJumpSelects = () => {
+                if (!currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                const subject = EXAM_DATA[currentSubject];
+                const questions = subject.questions;
+                if (!questions || questions.length === 0) return;
+
+                if (navTotalQ) {
+                    navTotalQ.textContent = questions.length;
+                }
+
+                // Populate Top Jump Select
+                if (jumpQuestionSelect) {
+                    jumpQuestionSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        let qSnippet = q.question.replace(/\s+/g, ' ').trim();
+                        if (qSnippet.length > 28) {
+                            qSnippet = qSnippet.substring(0, 28) + "...";
+                        }
+                        const methodTag = q.ml_method ? ` [${q.ml_method}]` : "";
+                        opt.textContent = `${statusIcon} 第 ${q.id} 題：${qSnippet}${methodTag}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        jumpQuestionSelect.appendChild(opt);
+                    });
+                    jumpQuestionSelect.value = currentQuestionIdx;
+                }
+
+                // Populate Bottom Nav Jump Select
+                if (navJumpSelect) {
+                    navJumpSelect.innerHTML = "";
+                    questions.forEach((q, idx) => {
+                        const opt = document.createElement("option");
+                        opt.value = idx;
+                        const progress = userProgress[currentSubject] ? userProgress[currentSubject][q.id] : null;
+                        let statusIcon = "⚪";
+                        if (progress) {
+                            statusIcon = progress.isCorrect ? "✅" : "❌";
+                        }
+                        opt.textContent = `${q.id} ${statusIcon}`;
+                        if (idx === currentQuestionIdx) {
+                            opt.selected = true;
+                        }
+                        navJumpSelect.appendChild(opt);
+                    });
+                    navJumpSelect.value = currentQuestionIdx;
+                }
+            };
+
+            // Mobile Question Sheet rendering
+            const renderMobileSheetGrid = () => {
+                if (!mobileQuestionsGrid || !currentSubject || typeof EXAM_DATA === 'undefined' || !EXAM_DATA[currentSubject]) return;
+                mobileQuestionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject] ? userProgress[currentSubject][qId] : null;
+                    
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        renderSidebarGrid();
+                        renderQuestion();
+                        if (mobileSheetModal) {
+                            mobileSheetModal.classList.add("hidden");
+                        }
+                    });
+                    
+                    mobileQuestionsGrid.appendChild(qBtn);
+                });
+            };
+
+            // Sidebar Grid rendering
+            const renderSidebarGrid = () => {
+                questionsGrid.innerHTML = "";
+                const subject = EXAM_DATA[currentSubject];
+                
+                subject.questions.forEach((q, index) => {
+                    const qId = q.id;
+                    const progress = userProgress[currentSubject][qId];
+                    
+                    // Match Filters
+                    if (filterMode === "wrong") {
+                        if (!progress || progress.isCorrect) return;
+                    }
+                    
+                    if (searchKeyword) {
+                        const questionMatch = q.question.toLowerCase().includes(searchKeyword);
+                        const methodMatch = q.ml_method && q.ml_method.toLowerCase().includes(searchKeyword);
+                        if (!questionMatch && !methodMatch) return;
+                    }
+
+                    const qBtn = document.createElement("button");
+                    qBtn.className = "q-btn";
+                    qBtn.textContent = qId;
+                    
+                    // Style by answer state
+                    if (progress) {
+                        if (progress.isCorrect) {
+                            qBtn.classList.add("correct");
+                        } else {
+                            qBtn.classList.add("incorrect");
+                        }
+                    }
+                    
+                    if (index === currentQuestionIdx) {
+                        qBtn.classList.add("active");
+                    }
+                    
+                    qBtn.addEventListener("click", () => {
+                        currentQuestionIdx = index;
+                        // Update active state in UI
+                        document.querySelectorAll(".q-btn").forEach(b => b.classList.remove("active"));
+                        qBtn.classList.add("active");
+                        renderQuestion();
+                    });
+                    
+                    questionsGrid.appendChild(qBtn);
+                });
+            };
+
+            // Main Area rendering
+            const renderQuestion = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const q = subject.questions[currentQuestionIdx];
+                
+                document.getElementById("current-q-index").textContent = q.id;
+                questionNumberBadge.textContent = `Question ${q.id}`;
+                questionText.textContent = q.question;
+                
+                if (q.ml_method) {
+                    questionMlBadge.textContent = q.ml_method;
+                    questionMlBadge.style.display = "inline-block";
+                } else {
+                    questionMlBadge.style.display = "none";
+                }
+
+                // Render Attached Image if exists
+                if (q.image) {
+                    questionImgElement.src = q.image;
+                    questionImgElement.onclick = () => openImageModal(q.image);
+                    questionImageWrapper.style.display = "flex";
+                } else {
+                    questionImageWrapper.style.display = "none";
+                    questionImgElement.src = "";
+                }
+
+                // Render Options
+                optionsList.innerHTML = "";
+                const userChoice = userProgress[currentSubject][q.id]?.userAnswer;
+                const isAnswered = userChoice !== undefined;
+                
+                Object.keys(q.options).forEach(letter => {
+                    const optionItem = document.createElement("div");
+                    optionItem.className = "option-item";
+                    
+                    const optionLetter = document.createElement("span");
+                    optionLetter.className = "option-letter";
+                    optionLetter.textContent = letter;
+                    
+                    const optionTextSpan = document.createElement("span");
+                    optionTextSpan.className = "option-text";
+                    optionTextSpan.textContent = q.options[letter];
+                    
+                    optionItem.appendChild(optionLetter);
+                    optionItem.appendChild(optionTextSpan);
+                    
+                    // Style options depending on answer states
+                    if (studyMode) {
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct");
+                        }
+                    } else if (isAnswered) {
+                        if (letter === q.answer) {
+                            optionItem.classList.add("correct");
+                        } else if (letter === userChoice) {
+                            optionItem.classList.add("incorrect");
+                        }
+                    } else {
+                        optionItem.addEventListener("click", () => handleSelectOption(letter));
+                    }
+                    
+                    optionsList.appendChild(optionItem);
+                });
+
+                // Bidirectional Link to Wiki
+                const wikiLinkContainer = document.getElementById("algo-wiki-link-container");
+                const wikiLink = document.getElementById("algo-wiki-link");
+                const wikiName = document.getElementById("algo-wiki-name");
+                
+                let matchedWikiKey = null;
+                if (q.ml_method && typeof WIKI_DATA !== 'undefined') {
+                    const method = q.ml_method.trim();
+                    if (WIKI_DATA[method]) {
+                        matchedWikiKey = method;
+                    } else {
+                        // Fallback substring matching
+                        for (let k in WIKI_DATA) {
+                            if (method.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(method.toLowerCase())) {
+                                matchedWikiKey = k;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                if (matchedWikiKey) {
+                    wikiLinkContainer.style.display = "block";
+                    wikiName.textContent = WIKI_DATA[matchedWikiKey].title.split(" (")[0];
+                    
+                    // Replace to remove previous event listeners
+                    const newWikiLink = wikiLink.cloneNode(true);
+                    wikiLink.parentNode.replaceChild(newWikiLink, wikiLink);
+                    
+                    newWikiLink.addEventListener("click", () => {
+                        switchToWikiView(matchedWikiKey);
+                    });
+                } else {
+                    wikiLinkContainer.style.display = "none";
+                }
+
+                // Render Explanation Panel
+                if (studyMode || isAnswered) {
+                    explanationPanel.style.display = "block";
+                    explanationText.textContent = q.explanation;
+                    
+                    // Show correct/incorrect indicator if answered in test mode
+                    if (isAnswered && !studyMode) {
+                        const isCorrect = userProgress[currentSubject][q.id].isCorrect;
+                        resultBanner.className = isCorrect ? "result-banner correct" : "result-banner incorrect";
+                        resultIcon.textContent = isCorrect ? "✓" : "✗";
+                        resultText.textContent = isCorrect ? "回答正確！" : `回答錯誤！正確答案是 (${q.answer})`;
+                    } else {
+                        resultBanner.className = "result-banner correct";
+                        resultIcon.textContent = "★";
+                        resultText.textContent = `參考答案是 (${q.answer})`;
+                    }
+
+                    // Render ML info
+                    methodName.textContent = q.ml_method || "相關 AI 技術";
+                    methodExplanation.textContent = q.ml_method_explanation || "此題目涉及特定的機器學習架構或評估指標。";
+                    
+                    // Render comparison
+                    const comparisonBox = document.getElementById("comparison-box");
+                    const comparisonExplanation = document.getElementById("comparison-explanation");
+                    if (q.comparison) {
+                        comparisonBox.style.display = "block";
+                        comparisonExplanation.textContent = q.comparison;
+                    } else {
+                        comparisonBox.style.display = "none";
+                    }
+
+                    // Render keywords (Tags)
+                    const keywordsTags = document.getElementById("keywords-tags");
+                    keywordsTags.innerHTML = "";
+                    if (q.keywords && q.keywords.length > 0) {
+                        q.keywords.forEach(kw => {
+                            const tag = document.createElement("span");
+                            tag.className = "keyword-tag";
+                            tag.textContent = kw;
+                            keywordsTags.appendChild(tag);
+                        });
+                    } else {
+                        keywordsTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無關鍵字資訊</span>";
+                    }
+
+                    // Render extended tech list
+                    const extTechList = document.getElementById("extended-tech-list");
+                    extTechList.innerHTML = "";
+                    if (q.extended_tech && q.extended_tech.length > 0) {
+                        q.extended_tech.forEach(tech => {
+                            const item = document.createElement("div");
+                            item.className = "extended-tech-item";
+                            
+                            const nameSpan = document.createElement("div");
+                            nameSpan.className = "extended-tech-name";
+                            nameSpan.textContent = tech.name;
+                            
+                            const descSpan = document.createElement("div");
+                            descSpan.className = "extended-tech-desc";
+                            descSpan.textContent = tech.desc;
+                            
+                            item.appendChild(nameSpan);
+                            item.appendChild(descSpan);
+                            extTechList.appendChild(item);
+                        });
+                    } else {
+                        extTechList.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無延伸應用技術</span>";
+                    }
+
+                    // Render terminology (Tags)
+                    const termTags = document.getElementById("terminology-tags");
+                    termTags.innerHTML = "";
+                    if (q.terminology && q.terminology.length > 0) {
+                        q.terminology.forEach(term => {
+                            const tag = document.createElement("span");
+                            tag.className = "term-tag";
+                            tag.textContent = term;
+                            termTags.appendChild(tag);
+                        });
+                    } else {
+                        termTags.innerHTML = "<span style='color: var(--text-muted); font-size: 0.85rem;'>無領域術語資訊</span>";
+                    }
+                    
+                    example1Title.textContent = "應用情境一";
+                    example1Content.textContent = q.examples && q.examples[0] ? q.examples[0] : "生活應用例子一";
+                    example2Title.textContent = "應用情境二";
+                    example2Content.textContent = q.examples && q.examples[1] ? q.examples[1] : "生活應用例子二";
+                } else {
+                    explanationPanel.style.display = "none";
+                }
+
+                // Update prev / next buttons
+                btnPrevQ.disabled = currentQuestionIdx === 0;
+                btnNextQ.disabled = currentQuestionIdx === subject.questions.length - 1;
+
+                // Sync Jump Dropdowns
+                updateJumpSelects();
+            };
+
+            const handleSelectOption = (letter) => {
+                const q = EXAM_DATA[currentSubject].questions[currentQuestionIdx];
+                const isCorrect = letter === q.answer;
+                
+                userProgress[currentSubject][q.id] = {
+                    userAnswer: letter,
+                    isCorrect: isCorrect
+                };
+                
+                // Save to local storage
+                localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                
+                // Re-render
+                renderQuestion();
+                renderSidebarGrid();
+                updateStats();
+            };
+
+            // Stats Update
+            const updateStats = () => {
+                const subject = EXAM_DATA[currentSubject];
+                const total = subject.questions.length;
+                const progressObj = userProgress[currentSubject];
+                
+                const answered = Object.keys(progressObj).length;
+                const correct = Object.values(progressObj).filter(v => v.isCorrect).length;
+                const incorrect = answered - correct;
+                const unanswered = total - answered;
+                
+                const pct = Math.round((answered / total) * 100);
+                
+                document.getElementById("progress-percent").textContent = `${pct}%`;
+                document.getElementById("progress-bar").style.width = `${pct}%`;
+                document.getElementById("stat-correct").textContent = correct;
+                document.getElementById("stat-incorrect").textContent = incorrect;
+                document.getElementById("stat-unanswered").textContent = unanswered;
+            };
+
+            // Previous / Next button controls
+            btnPrevQ.addEventListener("click", () => {
+                if (currentQuestionIdx > 0) {
+                    currentQuestionIdx--;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            btnNextQ.addEventListener("click", () => {
+                const subject = EXAM_DATA[currentSubject];
+                if (currentQuestionIdx < subject.questions.length - 1) {
+                    currentQuestionIdx++;
+                    renderSidebarGrid();
+                    renderQuestion();
+                }
+            });
+
+            // Quick jump dropdown change events
+            if (jumpQuestionSelect) {
+                jumpQuestionSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            if (navJumpSelect) {
+                navJumpSelect.addEventListener("change", (e) => {
+                    const newIdx = parseInt(e.target.value, 10);
+                    if (!isNaN(newIdx)) {
+                        currentQuestionIdx = newIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                    }
+                });
+            }
+
+            // Mobile Sheet Modal events
+            if (btnMobileSheetToggle) {
+                btnMobileSheetToggle.addEventListener("click", () => {
+                    renderMobileSheetGrid();
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.remove("hidden");
+                    }
+                });
+            }
+
+            if (btnCloseMobileSheet) {
+                btnCloseMobileSheet.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
+
+            if (mobileSheetBackdrop) {
+                mobileSheetBackdrop.addEventListener("click", () => {
+                    if (mobileSheetModal) {
+                        mobileSheetModal.classList.add("hidden");
+                    }
+                });
+            }
+
+            // Reset current subject history
+            btnResetCurrent.addEventListener("click", () => {
+                if (confirm("確定要重置本科目的所有答題紀錄嗎？此動作無法復原。")) {
+                    userProgress[currentSubject] = {};
+                    localStorage.setItem("ai_exam_user_progress", JSON.stringify(userProgress));
+                    loadSubject(currentSubject);
+                }
+            });
+
+            // Clear all database history
+            btnClearAll.addEventListener("click", () => {
+                if (confirm("確定要清除本系統中的所有科目練習紀錄嗎？")) {
+                    userProgress = {};
+                    localStorage.removeItem("ai_exam_user_progress");
+                    updateLandingProgress();
+                    alert("已清除所有練習紀錄。");
+                }
+            });
+
+            // ==========================================
+            // WIKI ENCYCLOPEDIA LOGIC
+            // ==========================================
+            const wikiMenuList = document.getElementById("wiki-menu-list");
+            const wikiTitle = document.getElementById("wiki-title");
+            const wikiSummary = document.getElementById("wiki-summary");
+            const wikiContent = document.getElementById("wiki-content");
+            const wikiBreadcrumbAlgo = document.getElementById("wiki-breadcrumb-algo");
+            const wikiRelatedQuestions = document.getElementById("wiki-related-questions");
+
+            let activeWikiCategory = "all";
+
+            const renderWikiMenu = (filterKeyword = "", category = activeWikiCategory) => {
+                wikiMenuList.innerHTML = "";
+                if (typeof WIKI_DATA === 'undefined') return;
+                
+                const kw = filterKeyword.trim().toLowerCase();
+                
+                Object.keys(WIKI_DATA).forEach(key => {
+                    const algo = WIKI_DATA[key];
+                    const itemCat = algo.category || (key === "ExamSyllabus" ? "syllabus" : "theory");
+                    
+                    // Category filter
+                    if (category !== "all" && itemCat !== category) {
+                        return;
+                    }
+                    
+                    const isSyllabus = key === "ExamSyllabus";
+                    const matches = isSyllabus || 
+                        key.toLowerCase().includes(kw) || 
+                        algo.title.toLowerCase().includes(kw) || 
+                        (algo.summary && algo.summary.toLowerCase().includes(kw)) ||
+                        (algo.keywords && algo.keywords.some(k => k.toLowerCase().includes(kw)));
+                        
+                    if (!matches) return;
+                    
+                    const btn = document.createElement("button");
+                    btn.className = "wiki-menu-btn";
+                    if (key === activeWikiKey) btn.classList.add("active");
+                    
+                    btn.innerHTML = `<span>${algo.title}</span> <span>&gt;</span>`;
+                    btn.addEventListener("click", () => {
+                        document.querySelectorAll(".wiki-menu-btn").forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        renderWikiArticle(key);
+                    });
+                    
+                    wikiMenuList.appendChild(btn);
+                });
+            };
+
+            const wikiSearchInput = document.getElementById("wiki-search-input");
+            if (wikiSearchInput) {
+                wikiSearchInput.addEventListener("input", (e) => {
+                    renderWikiMenu(e.target.value, activeWikiCategory);
+                });
+            }
+
+            // Wiki Category Tabs Event Listeners
+            const wikiCatTabs = document.querySelectorAll(".wiki-cat-tab");
+            wikiCatTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    wikiCatTabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    activeWikiCategory = tab.dataset.category;
+                    const searchVal = wikiSearchInput ? wikiSearchInput.value : "";
+                    renderWikiMenu(searchVal, activeWikiCategory);
+                });
+            });
+
+            const getWikiStats = () => {
+                const stats = [];
+                Object.keys(WIKI_DATA).forEach(key => {
+                    if (key === "ExamSyllabus" || key === "MLMethodology") return;
+                    
+                    let count = 0;
+                    const keywords = WIKI_DATA[key].keywords || [key];
+                    
+                    for (let subjKey in EXAM_DATA) {
+                        const subj = EXAM_DATA[subjKey];
+                        subj.questions.forEach(question => {
+                            if (question.ml_method) {
+                                const method = question.ml_method.trim().toLowerCase();
+                                const isMatch = keywords.some(kw => {
+                                    const kwLow = kw.toLowerCase();
+                                    return method.includes(kwLow) || kwLow.includes(method);
+                                });
+                                if (isMatch) count++;
+                            }
+                        });
+                    }
+                    
+                    stats.push({
+                        key: key,
+                        title: WIKI_DATA[key].title,
+                        count: count
+                    });
+                });
+                
+                return stats.sort((a, b) => b.count - a.count).slice(0, 30);
+            };
+
+            const renderWikiArticle = (wikiKey) => {
+                activeWikiKey = wikiKey;
+                const algo = WIKI_DATA[wikiKey];
+                
+                wikiTitle.textContent = algo.title;
+                wikiSummary.textContent = algo.summary;
+                
+                if (wikiKey === "ExamSyllabus") {
+                    const dashboardHtml = `
+                        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                            <h4 style="margin-top: 0; margin-bottom: 1rem; color: var(--primary); font-weight: bold; display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                                📊 考點熱度排行榜 (400 題考古題高頻考點 Top 30)
+                            </h4>
+                            <div id="wiki-dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; margin-bottom: 0.5rem;">
+                                <!-- Dynamic statistics items -->
+                            </div>
+                        </div>
+                    `;
+                    wikiContent.innerHTML = dashboardHtml + algo.content;
+                    
+                    const grid = document.getElementById("wiki-dashboard-grid");
+                    if (grid) {
+                        const top30 = getWikiStats();
+                        top30.forEach((item, index) => {
+                            const card = document.createElement("div");
+                            card.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); cursor: pointer; transition: all 0.2s; box-sizing: border-box;";
+                            
+                            let badgeColor = "#ffffff";
+                            let badgeBg = "var(--text-muted)";
+                            if (index === 0) { badgeBg = "#ef4444"; }
+                            else if (index === 1) { badgeBg = "#f97316"; }
+                            else if (index === 2) { badgeBg = "#eab308"; }
+                            else { badgeColor = "var(--text-muted)"; badgeBg = "rgba(0,0,0,0.05)"; }
+                            
+                            let displayTitle = item.title.split(" (")[0];
+                            if (displayTitle.length > 12) {
+                                displayTitle = displayTitle.substring(0, 11) + "...";
+                            }
+                            
+                            card.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 0.4rem; overflow: hidden;">
+                                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 1.2rem; height: 1.2rem; border-radius: 50%; font-size: 0.7rem; font-weight: bold; background-color: ${badgeBg}; color: ${badgeColor}; flex-shrink: 0;">${index + 1}</span>
+                                    <span style="font-weight: 500; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${item.title}">${displayTitle}</span>
+                                </div>
+                                <span style="font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.35rem; border-radius: 10px; background-color: var(--primary-light); color: var(--primary); flex-shrink: 0;">${item.count} 題</span>
+                            `;
+                            
+                            card.addEventListener("mouseenter", () => {
+                                card.style.borderColor = "var(--primary)";
+                                card.style.transform = "translateY(-1px)";
+                                card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.04)";
+                            });
+                            card.addEventListener("mouseleave", () => {
+                                card.style.borderColor = "var(--border-color)";
+                                card.style.transform = "none";
+                                card.style.boxShadow = "none";
+                            });
+                            
+                            card.addEventListener("click", () => {
+                                activeWikiKey = item.key;
+                                const searchVal = document.getElementById("wiki-search-input") ? document.getElementById("wiki-search-input").value : "";
+                                renderWikiMenu(searchVal);
+                                renderWikiArticle(item.key);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            });
+                            
+                            grid.appendChild(card);
+                        });
+                    }
+                } else {
+                    wikiContent.innerHTML = algo.content;
+                }
+                
+                wikiBreadcrumbAlgo.textContent = algo.title.split(" (")[0];
+                
+                window.typesetMath([document.getElementById("wiki-article-body") || wikiContent]);
+                
+                renderRelatedQuestions(wikiKey);
+            };
+
+            const renderRelatedQuestions = (wikiKey) => {
+                wikiRelatedQuestions.innerHTML = "";
+                if (wikiKey === "ExamSyllabus" || wikiKey === "MLMethodology") {
+                    wikiRelatedQuestions.innerHTML = "<p style='color: var(--text-muted); font-size: 0.95rem; font-style: italic; margin-top: 1rem;'>💡 此條目為官方能力鑑定學習大綱與方法論指引，不針對單一考題進行關聯跳轉。</p>";
+                    return;
+                }
+                let foundAny = false;
+                
+                const subjShortNames = {
+                    "114_2_1": "114年第二次 - 第一科",
+                    "114_2_3": "114年第二次 - 第三科",
+                    "115_1_1": "115年第一次 - 第一科",
+                    "115_1_3": "115年第一次 - 第三科",
+                    "primary_115_1_1": "115年第一次初級 - 第一科",
+                    "primary_115_1_2": "115年第一次初級 - 第二科",
+                    "primary_115_2_1": "115年第二次初級 - 第一科",
+                    "primary_115_2_2": "115年第二次初級 - 第二科",
+                    "primary_115_3_1": "115年第三次初級 - 第一科",
+                    "primary_115_3_2": "115年第三次初級 - 第二科"
+                };
+
+                for (let subjKey in EXAM_DATA) {
+                    const subj = EXAM_DATA[subjKey];
+                    subj.questions.forEach((question, index) => {
+                        let isMatch = false;
+                        if (question.ml_method) {
+                            const method = question.ml_method.trim().toLowerCase();
+                            const key = wikiKey.toLowerCase();
+                            const keywords = (WIKI_DATA[wikiKey] && WIKI_DATA[wikiKey].keywords) ? WIKI_DATA[wikiKey].keywords : [wikiKey];
+                            
+                            // Check keywords mapping
+                            isMatch = keywords.some(kw => {
+                                const kwLow = kw.toLowerCase();
+                                return method.includes(kwLow) || kwLow.includes(method);
+                            });
+                        }
+                        
+                        if (isMatch) {
+                            foundAny = true;
+                            
+                            const qLink = document.createElement("a");
+                            qLink.style.cssText = "color: var(--primary); font-weight: 500; font-size: 0.95rem; text-decoration: none; cursor: pointer; display: block; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background-color: var(--bg-main); transition: all 0.2s;";
+                            
+                            qLink.innerHTML = `✏️ <b>${subjShortNames[subjKey]}</b> - 第 ${question.id} 題 <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; margin-left: 0.5rem; display: block; margin-top: 0.25rem;">${question.question.substring(0, 90)}...</span>`;
+                            
+                            qLink.addEventListener("mouseenter", () => {
+                                qLink.style.borderColor = "var(--primary)";
+                                qLink.style.backgroundColor = "var(--primary-light)";
+                            });
+                            qLink.addEventListener("mouseleave", () => {
+                                qLink.style.borderColor = "var(--border-color)";
+                                qLink.style.backgroundColor = "var(--bg-main)";
+                            });
+                            
+                            qLink.addEventListener("click", () => {
+                                // Jump directly to this question
+                                loadSubject(subjKey);
+                                currentQuestionIdx = index;
+                                renderSidebarGrid();
+                                renderQuestion();
+                                updateStats();
+                            });
+                            
+                            wikiRelatedQuestions.appendChild(qLink);
+                        }
+                    });
+                }
+
+                if (!foundAny) {
+                    wikiRelatedQuestions.innerHTML = "<span style='color: var(--text-muted); font-size: 0.9rem;'>此演算法目前在 200 題考古題中尚無直接對應的題目。</span>";
+                }
+            };
+
+            // URL Deep Linking (?subj=xxx&qid=yyy)
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetSubj = urlParams.get("subj");
+            const targetQid = parseInt(urlParams.get("qid"), 10);
+            if (targetSubj && typeof EXAM_DATA !== 'undefined' && EXAM_DATA[targetSubj]) {
+                loadSubject(targetSubj);
+                if (!isNaN(targetQid)) {
+                    const qIdx = EXAM_DATA[targetSubj].questions.findIndex(q => q.id === targetQid);
+                    if (qIdx !== -1) {
+                        currentQuestionIdx = qIdx;
+                        renderSidebarGrid();
+                        renderQuestion();
+                        updateStats();
+                    }
+                }
+            }
+        });
+
+        // Global Image Modal (Lightbox) Functions
+        function openImageModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-image");
+            if (modal && modalImg) {
+                modalImg.src = src;
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeImageModal();
+            }
+        });
+    </script>
+
+    <!-- Mobile Question Sheet Drawer / Modal -->
+    <div class="mobile-sheet-modal hidden" id="mobile-sheet-modal">
+        <div class="mobile-sheet-backdrop" id="mobile-sheet-backdrop"></div>
+        <div class="mobile-sheet-content">
+            <div class="mobile-sheet-header">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>📋</span> 題目清單快速跳轉
+                </h3>
+                <button class="modal-close" id="btn-close-mobile-sheet" aria-label="關閉">&times;</button>
+            </div>
+            <div class="questions-grid-wrapper" style="max-height: 60vh; padding: 0.5rem 0;">
+                <div class="questions-grid" id="mobile-questions-grid">
+                    <!-- Dynamically populated 1-50 buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal" style="display: none;" onclick="closeImageModal()">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img class="image-modal-content" id="modal-image" src="" alt="放大附圖" onclick="event.stopPropagation()">
+        <div id="image-modal-caption" class="image-modal-caption">點擊背景或右上角 &times; 關閉</div>
+    </div>
+</body>
+</html>
+], ['\\(', '\\)']],
+                displayMath: [['$', '$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                    MathJax.startup.promise.then(() => {
+                        if (window.typesetMath) {
+                            window.typesetMath();
+                        }
+                    });
+                }
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -1425,9 +4614,7 @@
                 
                 wikiBreadcrumbAlgo.textContent = algo.title.split(" (")[0];
                 
-                if (typeof MathJax !== 'undefined' && MathJax.typeset) {
-                    MathJax.typeset();
-                }
+                window.typesetMath([document.getElementById("wiki-article-body") || wikiContent]);
                 
                 renderRelatedQuestions(wikiKey);
             };
