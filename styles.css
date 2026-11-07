@@ -1634,3 +1634,188 @@ div[style*="border-left: 4px solid #8e44ad"] ul li::before {
 .modal-close:hover {
     color: var(--error);
 }
+
+
+        /* =================================================== */
+        /* 高對比頂部導航列按鈕樣式（完美兼顧深色與淺色模式） */
+        /* =================================================== */
+        .nav-btn-link {
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            padding: 0.4rem 0.75rem !important;
+            border-radius: 6px !important;
+            border: 1px solid var(--border-color, #cbd5e1) !important;
+            background-color: var(--bg-card, #ffffff) !important;
+            color: var(--text-primary, #1e293b) !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.35rem !important;
+            white-space: nowrap !important;
+            transition: all 0.2s ease !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .nav-btn-link:hover {
+            border-color: var(--primary, #2563eb) !important;
+            color: var(--primary, #2563eb) !important;
+            background-color: var(--primary-light, #eff6ff) !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn-link.active {
+            background-color: var(--primary, #2563eb) !important;
+            color: #ffffff !important;
+            border-color: var(--primary, #2563eb) !important;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35) !important;
+        }
+
+        /* 深色模式 Dark Mode：極高對比，純白文字徹底解決看不清問題 */
+        [data-theme="dark"] .nav-btn-link {
+            background-color: #1e293b !important;
+            border-color: #475569 !important;
+            color: #f8fafc !important; /* 鮮明純白文字 */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] .nav-btn-link:hover {
+            background-color: #334155 !important;
+            border-color: #60a5fa !important;
+            color: #93c5fd !important;
+        }
+
+        [data-theme="dark"] .nav-btn-link.active {
+            background-color: #2563eb !important;
+            border-color: #3b82f6 !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5) !important;
+        }
+
+
+
+/* =================================================== */
+/* 頂部導航按鈕樣式 (高對比、支援深淺色模式)            */
+/* =================================================== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn-link {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    padding: 0.45rem 0.8rem !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    background-color: #ffffff !important;
+    color: #1e293b !important; /* 淺色模式：深黑文字，極高對比 */
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.nav-btn-link:hover {
+    border-color: #2563eb !important;
+    color: #2563eb !important;
+    background-color: #eff6ff !important;
+    transform: translateY(-1px);
+}
+
+.nav-btn-link.active {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* 深色模式 Dark Mode：徹底解決導航文字暗沉看不清楚問題 */
+[data-theme="dark"] .nav-btn-link {
+    background-color: #1e293b !important;
+    border-color: #475569 !important;
+    color: #f8fafc !important; /* 純白明亮文字，對比度 > 12:1 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .nav-btn-link:hover {
+    background-color: #334155 !important;
+    border-color: #60a5fa !important;
+    color: #93c5fd !important;
+}
+
+[data-theme="dark"] .nav-btn-link.active {
+    background-color: #2563eb !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5) !important;
+}
+
+
+
+        /* =================================================== */
+        /* 高對比頂部導航列按鈕樣式（完美支援深淺色模式）     */
+        /* =================================================== */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn-link {
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            padding: 0.42rem 0.75rem !important;
+            border-radius: 6px !important;
+            border: 1px solid #cbd5e1 !important;
+            background-color: #ffffff !important;
+            color: #1e293b !important; /* 淺色模式：清晰深黑字體 */
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.35rem !important;
+            white-space: nowrap !important;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .nav-btn-link:hover {
+            border-color: #2563eb !important;
+            color: #2563eb !important;
+            background-color: #eff6ff !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn-link.active {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+            border-color: #2563eb !important;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35) !important;
+        }
+
+        /* 深色模式 Dark Mode：高對比純白文字，告別看不清 */
+        [data-theme="dark"] .nav-btn-link {
+            background-color: #1e293b !important;
+            border-color: #475569 !important;
+            color: #f8fafc !important; /* 極度清晰的純白字體 */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        [data-theme="dark"] .nav-btn-link:hover {
+            background-color: #334155 !important;
+            border-color: #60a5fa !important;
+            color: #93c5fd !important;
+        }
+
+        [data-theme="dark"] .nav-btn-link.active {
+            background-color: #2563eb !important;
+            border-color: #3b82f6 !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5) !important;
+        }
+
