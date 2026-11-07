@@ -39,6 +39,7 @@
 | **L21** | **中級 科目1：人工智慧技術應用與規劃** | [`quick_notes_l21.html`](quick_notes_l21.html) | NLP/CV/GenAI、多模態架構、模型生命週期、PoC 概念驗證、PILOT 試行、歐盟 AI 法案合規、技術成熟度 |
 | **L22** | **中級 科目2：大數據處理分析與應用** | [`quick_notes_l22.html`](quick_notes_l22.html) | 大數據 5V 特性、ETL vs ELT、Data Lakehouse、Spark vs MapReduce、辛普森悖論、差分隱私、聯邦學習 |
 | **L23** | **中級 科目3：機器學習技術與應用** | [`quick_notes_l23.html`](quick_notes_l23.html) | 特徵工程、偏差-方差權衡、ROC-AUC、梯度下降與各類優化器、隨機森林/XGBoost、過擬合處理方針 |
+| **指引精華** | **官方學習指引核心精華速記** | [`study_guide_notes.html`](study_guide_notes.html) | 深度提煉官方「學習指引」三冊與勘誤表：TF-IDF 算式嚴格修正、Recall 公式修正、台灣個資法 PDPA 告知 6 要件、NMF 元素級非負、邏輯迴歸對數勝算、各章公式與圖解 |
 
 ---
 
@@ -72,6 +73,8 @@
 ├── quick_notes_l21.html       # 中級 科目1（L21）核心考點速記頁面
 ├── quick_notes_l22.html       # 中級 科目2（L22）核心考點速記頁面
 ├── quick_notes_l23.html       # 中級 科目3（L23）核心考點速記頁面
+├── study_guide_notes.html     # iPAS 中級官方學習指引核心精華速記頁面
+├── study_guide_data.js        # 學習指引精華資料庫（涵蓋三科教材與勘誤特輯）
 ├── l11_cheat_sheet_data.js    # 初級 科目一 考點資料庫（32 個核心考點）
 ├── l12_cheat_sheet_data.js    # 初級 科目二 考點資料庫（20 個核心考點）
 ├── l21_cheat_sheet_data.js    # 中級 科目1 考點資料庫（48 個核心考點）
