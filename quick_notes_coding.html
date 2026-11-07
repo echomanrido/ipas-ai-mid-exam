@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 程式實戰速記 - NumPy / pandas / scikit-learn / PyTorch / Keras / Matplotlib</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --card-border: #e2e8f0;
+            --card-hover-border: #cbd5e1;
+            --badge-blue-bg: #eff6ff;
+            --badge-blue-text: #2563eb;
+            --badge-green-bg: #ecfdf5;
+            --badge-green-text: #059669;
+            --warning-bg: #fffbeb;
+            --warning-border: #fef3c7;
+            --warning-text: #b45309;
+            --warning-title: #d97706;
+            --code-bg: #0f172a;
+            --code-text: #e2e8f0;
+        }
+
+        [data-theme="dark"] {
+            --card-border: #1e293b;
+            --card-hover-border: #334155;
+            --badge-blue-bg: #172554;
+            --badge-blue-text: #60a5fa;
+            --badge-green-bg: #064e3b;
+            --badge-green-text: #34d399;
+            --warning-bg: #291e0a;
+            --warning-border: #451a03;
+            --warning-text: #fcd34d;
+            --warning-title: #fbbf24;
+            --code-bg: #030712;
+            --code-text: #f8fafc;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* Top Sticky Header */
+        .notes-header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .notes-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notes-title-main {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .notes-subject-badge {
+            background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #7c3aed 100%);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            letter-spacing: 0.02em;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #f8fafc;
+            background: #1e293b;
+            border: 1px solid #475569;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn-link:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #64748b;
+        }
+
+        .nav-btn-link.active {
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            border-color: var(--primary) !important;
+        }
+
+        .theme-toggle-btn {
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #f8fafc;
+            padding: 0.4rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            background: #334155;
+        }
+
+        /* Main Container */
+        .notes-main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 4rem;
+        }
+
+        /* Control Filter Panel */
+        .control-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .notes-search-input {
+            width: 100%;
+            padding: 0.75rem 2.85rem 0.75rem 2.85rem;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .notes-search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .btn-clear-search {
+            position: absolute;
+            right: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btn-clear-search.show {
+            display: block;
+        }
+
+        .filter-tags-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pills-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-pill {
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.825rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-pill.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .filter-pill.warning-pill.active {
+            background-color: #d97706;
+            border-color: #d97706;
+            color: white;
+        }
+
+        .stats-counter-group {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-pill-bar {
+            width: 100px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-pill-fill {
+            height: 100%;
+            background-color: #10b981;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .total-counter-text {
+            font-weight: 600;
+        }
+
+        /* Note Cards Grid */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 900px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .note-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--card-hover-border);
+        }
+
+        .note-card.mastered {
+            opacity: 0.75;
+            border-color: #10b981;
+            background-color: rgba(16, 185, 129, 0.03);
+        }
+
+        .note-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            flex: 1;
+        }
+
+        .custom-checkbox {
+            margin-top: 0.25rem;
+            width: 1.15rem;
+            height: 1.15rem;
+            accent-color: #10b981;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .card-topic-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .badges-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .lib-badge {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .lib-numpy { background: #e0f2fe; color: #0369a1; }
+        .lib-pandas { background: #dbeafe; color: #1d4ed8; }
+        .lib-sklearn { background: #ffedd5; color: #c2410c; }
+        .lib-pytorch { background: #fee2e2; color: #b91c1c; }
+        .lib-keras { background: #fae8ff; color: #a21caf; }
+        .lib-matplotlib { background: #dcfce7; color: #15803d; }
+
+        [data-theme="dark"] .lib-numpy { background: #082f49; color: #38bdf8; }
+        [data-theme="dark"] .lib-pandas { background: #1e3a8a; color: #93c5fd; }
+        [data-theme="dark"] .lib-sklearn { background: #431407; color: #fb923c; }
+        [data-theme="dark"] .lib-pytorch { background: #450a0a; color: #f87171; }
+        [data-theme="dark"] .lib-keras { background: #4a044e; color: #f472b6; }
+        [data-theme="dark"] .lib-matplotlib { background: #052e16; color: #4ade80; }
+
+        .code-tag-badge {
+            background-color: var(--bg-main);
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Summary text */
+        .card-summary {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .card-summary code {
+            background: rgba(148, 163, 184, 0.15);
+            padding: 1px 4px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.85em;
+            color: #0284c7;
+        }
+
+        /* Code Snippet Box */
+        .code-snippet-box {
+            background-color: var(--code-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .code-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.35rem 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-family: Consolas, monospace;
+        }
+
+        .btn-copy-code {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #cbd5e1;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .btn-copy-code:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .code-pre {
+            margin: 0;
+            padding: 0.75rem;
+            overflow-x: auto;
+            font-family: "Fira Code", Consolas, "Courier New", monospace;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--code-text);
+        }
+
+        /* Confusing Box */
+        .confusing-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: 8px;
+            padding: 0.75rem 0.85rem;
+        }
+
+        .confusing-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--warning-title);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .confusing-list {
+            margin: 0;
+            padding-left: 1.15rem;
+            font-size: 0.825rem;
+            color: var(--warning-text);
+            line-height: 1.5;
+        }
+
+        .confusing-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        .confusing-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .confusing-list code {
+            background: rgba(217, 119, 6, 0.12);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            font-weight: 700;
+        }
+
+        /* Visual Box */
+        .visual-diagram-box {
+            background-color: var(--bg-main);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 0.55rem 0.75rem;
+        }
+
+        /* Keywords Footer */
+        .keywords-row {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 0.35rem;
+        }
+
+        .kw-tag {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--bg-main);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .empty-results-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Sticky Header -->
+    <header class="notes-header-sticky">
+        <div class="notes-title-group">
+            <h1 class="notes-title-main">
+                <span>💻</span> AI 核心程式庫速記
+            </h1>
+            <span class="notes-subject-badge">NumPy · pandas · sklearn · PyTorch · Keras · Matplotlib</span>
+        </div>
+        <div class="header-actions">
+            <a href="index.html" class="nav-btn-link" title="返回首頁測驗">
+                <span>🏠</span> 首頁
+            </a>
+            <a href="quick_notes_l11.html" class="nav-btn-link" title="初級科目一考點速記">
+                <span>⚡</span> 初級一
+            </a>
+            <a href="quick_notes_l12.html" class="nav-btn-link" title="初級科目二考點速記">
+                <span>⚡</span> 初級二
+            </a>
+            <a href="quick_notes_l21.html" class="nav-btn-link" title="中級科目1考點速記">
+                <span>⚡</span> L21
+            </a>
+            <a href="quick_notes_l22.html" class="nav-btn-link" title="中級科目2考點速記">
+                <span>⚡</span> L22
+            </a>
+            <a href="quick_notes_l23.html" class="nav-btn-link" title="中級科目3考點速記">
+                <span>⚡</span> L23
+            </a>
+            <a href="quick_notes_coding.html" class="nav-btn-link active" title="AI 核心程式庫重點整理速記">
+                <span>💻</span> 程式速記
+            </a>
+            <a href="study_guide_notes.html" class="nav-btn-link" title="官方學習指引一頁式重點速記">
+                <span>📖</span> 學習指引
+            </a>
+            <a href="syllabus.html" class="nav-btn-link" title="考試評鑑大綱對照表">
+                <span>📋</span> 大綱對照
+            </a>
+            <button id="theme-toggle" class="theme-toggle-btn" title="切換深淺色模式">
+                <span id="sun-icon">☀️</span>
+                <span id="moon-icon" class="hidden">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="notes-main-container">
+        <!-- Control Filter Box -->
+        <div class="control-panel">
+            <div class="search-row">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="keyword-search-input" class="notes-search-input" placeholder="搜尋 API、函式庫、程式碼語法、避坑關鍵字（例：reshape、loc、fit_transform、backward、EarlyStopping、twinx）...">
+                <button class="btn-clear-search" id="btn-clear-search" title="清除搜尋">&times;</button>
+            </div>
+
+            <div class="filter-tags-row">
+                <div class="pills-group">
+                    <button class="filter-pill active" data-category="all">全部程式庫 (64)</button>
+                    <button class="filter-pill" data-category="numpy">🔢 NumPy</button>
+                    <button class="filter-pill" data-category="pandas">🐼 pandas</button>
+                    <button class="filter-pill" data-category="sklearn">🔬 scikit-learn</button>
+                    <button class="filter-pill" data-category="pytorch">🔥 PyTorch</button>
+                    <button class="filter-pill" data-category="keras">⚡ Keras / TF</button>
+                    <button class="filter-pill" data-category="matplotlib">📊 Matplotlib</button>
+                    <button class="filter-pill warning-pill" data-category="confusing">⚠️ 易混淆避坑</button>
+                    <button class="filter-pill" data-category="unmastered">⏳ 待複習</button>
+                    <button class="filter-pill" data-category="mastered">✅ 已掌握</button>
+                </div>
+
+                <div class="stats-counter-group">
+                    <div class="progress-indicator">
+                        <span>複習進度:</span>
+                        <div class="progress-pill-bar">
+                            <div class="progress-pill-fill" id="progress-bar-fill"></div>
+                        </div>
+                        <span id="mastered-count-text">0/64 (0%)</span>
+                    </div>
+                    <div class="total-counter-text" id="total-visible-counter">共 64 個程式考點</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note Cards Grid -->
+        <div class="notes-grid" id="notes-grid">
+            <!-- Dynamically populated from coding_cheat_sheet_data.js -->
+        </div>
+    </main>
+
+    <!-- Data Script -->
+    <script src="coding_cheat_sheet_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme Management
+            const themeToggleBtn = document.getElementById("theme-toggle");
+            const sunIcon = document.getElementById("sun-icon");
+            const moonIcon = document.getElementById("moon-icon");
+
+            const savedTheme = localStorage.getItem("ai_exam_theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            updateThemeIcons(savedTheme);
+
+            themeToggleBtn.addEventListener("click", () => {
+                const current = document.documentElement.getAttribute("data-theme");
+                const next = current === "dark" ? "light" : "dark";
+                document.documentElement.setAttribute("data-theme", next);
+                localStorage.setItem("ai_exam_theme", next);
+                updateThemeIcons(next);
+            });
+
+            function updateThemeIcons(theme) {
+                if (theme === "dark") {
+                    sunIcon.classList.add("hidden");
+                    moonIcon.classList.remove("hidden");
+                } else {
+                    sunIcon.classList.remove("hidden");
+                    moonIcon.classList.add("hidden");
+                }
+            }
+
+            // Mastered State Management
+            const STORAGE_KEY = "ai_exam_mastered_coding";
+            let masteredSet = new Set();
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    masteredSet = new Set(JSON.parse(stored));
+                }
+            } catch (e) {
+                console.error("Failed to load mastered coding items", e);
+            }
+
+            const saveMastered = () => {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify([...masteredSet]));
+                } catch (e) {
+                    console.error("Failed to save mastered items", e);
+                }
+                updateProgressUI();
+            };
+
+            // Elements
+            const notesGrid = document.getElementById("notes-grid");
+            const searchInput = document.getElementById("keyword-search-input");
+            const btnClearSearch = document.getElementById("btn-clear-search");
+            const filterPills = document.querySelectorAll(".filter-pill");
+            const totalCounter = document.getElementById("total-visible-counter");
+            const progressBarFill = document.getElementById("progress-bar-fill");
+            const masteredCountText = document.getElementById("mastered-count-text");
+
+            let activeCategory = "all";
+            let searchKeyword = "";
+
+            // Progress Bar UI
+            const updateProgressUI = () => {
+                const total = CODING_CHEATSHEET_DATA.length;
+                const masteredCount = masteredSet.size;
+                const percent = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
+                progressBarFill.style.width = `${percent}%`;
+                masteredCountText.textContent = `${masteredCount}/${total} (${percent}%)`;
+            };
+
+            // Library badge helper
+            const getLibBadge = (cat) => {
+                const map = {
+                    numpy: { name: "NumPy", cls: "lib-numpy" },
+                    pandas: { name: "pandas", cls: "lib-pandas" },
+                    sklearn: { name: "scikit-learn", cls: "lib-sklearn" },
+                    pytorch: { name: "PyTorch", cls: "lib-pytorch" },
+                    keras: { name: "Keras / TF", cls: "lib-keras" },
+                    matplotlib: { name: "Matplotlib", cls: "lib-matplotlib" }
+                };
+                const conf = map[cat] || { name: cat, cls: "" };
+                return `<span class="lib-badge ${conf.cls}">${conf.name}</span>`;
+            };
+
+            // Render Cards
+            const renderCards = () => {
+                notesGrid.innerHTML = "";
+                let visibleCount = 0;
+
+                const filtered = CODING_CHEATSHEET_DATA.filter(item => {
+                    // Category filter
+                    if (activeCategory === "numpy" && item.category !== "numpy") return false;
+                    if (activeCategory === "pandas" && item.category !== "pandas") return false;
+                    if (activeCategory === "sklearn" && item.category !== "sklearn") return false;
+                    if (activeCategory === "pytorch" && item.category !== "pytorch") return false;
+                    if (activeCategory === "keras" && item.category !== "keras") return false;
+                    if (activeCategory === "matplotlib" && item.category !== "matplotlib") return false;
+                    if (activeCategory === "confusing" && (!item.confusing || item.confusing.length === 0)) return false;
+                    if (activeCategory === "mastered" && !masteredSet.has(item.id)) return false;
+                    if (activeCategory === "unmastered" && masteredSet.has(item.id)) return false;
+
+                    // Search Keyword
+                    if (searchKeyword) {
+                        const kw = searchKeyword.toLowerCase();
+                        const matchTitle = item.title.toLowerCase().includes(kw);
+                        const matchSummary = item.summary.toLowerCase().includes(kw);
+                        const matchSnippet = item.snippet && item.snippet.toLowerCase().includes(kw);
+                        const matchKeywords = item.keywords && item.keywords.some(k => k.toLowerCase().includes(kw));
+                        const matchConfusing = item.confusing && item.confusing.some(c => c.toLowerCase().includes(kw));
+                        if (!matchTitle && !matchSummary && !matchSnippet && !matchKeywords && !matchConfusing) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+
+                visibleCount = filtered.length;
+                totalCounter.textContent = `共 ${visibleCount} 個程式考點`;
+
+                if (filtered.length === 0) {
+                    notesGrid.innerHTML = `
+                        <div class="empty-results-box">
+                            <div class="empty-icon">🔎</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">無符合條件的程式考點</div>
+                            <div>請嘗試更換搜尋關鍵字或切換函式庫分類</div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filtered.forEach(item => {
+                    const card = document.createElement("div");
+                    const isMastered = masteredSet.has(item.id);
+                    card.className = `note-card ${isMastered ? "mastered" : ""}`;
+
+                    // Header
+                    const header = document.createElement("div");
+                    header.className = "note-card-header";
+
+                    const headerLeft = document.createElement("div");
+                    headerLeft.className = "header-left";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.className = "custom-checkbox";
+                    checkbox.checked = isMastered;
+                    checkbox.title = isMastered ? "標記為待複習" : "標記為已掌握";
+                    checkbox.addEventListener("change", (e) => {
+                        if (e.target.checked) {
+                            masteredSet.add(item.id);
+                            card.classList.add("mastered");
+                        } else {
+                            masteredSet.delete(item.id);
+                            card.classList.remove("mastered");
+                        }
+                        saveMastered();
+                        if (activeCategory === "mastered" || activeCategory === "unmastered") {
+                            renderCards();
+                        }
+                    });
+
+                    const titleBlock = document.createElement("div");
+                    titleBlock.className = "title-block";
+
+                    const title = document.createElement("h3");
+                    title.className = "card-topic-title";
+                    title.textContent = item.title;
+
+                    const badgesRow = document.createElement("div");
+                    badgesRow.className = "badges-row";
+                    badgesRow.innerHTML = `
+                        ${getLibBadge(item.category)}
+                        <span class="code-tag-badge">${item.code}</span>
+                    `;
+
+                    titleBlock.appendChild(title);
+                    titleBlock.appendChild(badgesRow);
+
+                    headerLeft.appendChild(checkbox);
+                    headerLeft.appendChild(titleBlock);
+                    header.appendChild(headerLeft);
+                    card.appendChild(header);
+
+                    // Summary
+                    const summary = document.createElement("p");
+                    summary.className = "card-summary";
+                    summary.innerHTML = item.summary;
+                    card.appendChild(summary);
+
+                    // Code Snippet Box (含一鍵複製)
+                    if (item.snippet) {
+                        const codeBox = document.createElement("div");
+                        codeBox.className = "code-snippet-box";
+
+                        const codeHeader = document.createElement("div");
+                        codeHeader.className = "code-header-bar";
+                        codeHeader.innerHTML = `
+                            <span>Python</span>
+                            <button class="btn-copy-code" title="複製程式碼">📋 複製代碼</button>
+                        `;
+
+                        const copyBtn = codeHeader.querySelector(".btn-copy-code");
+                        copyBtn.addEventListener("click", () => {
+                            navigator.clipboard.writeText(item.snippet).then(() => {
+                                copyBtn.innerHTML = "✅ 已複製！";
+                                setTimeout(() => {
+                                    copyBtn.innerHTML = "📋 複製代碼";
+                                }, 2000);
+                            }).catch(() => {
+                                copyBtn.innerHTML = "❌ 失敗";
+                            });
+                        });
+
+                        const pre = document.createElement("pre");
+                        pre.className = "code-pre";
+                        const codeElem = document.createElement("code");
+                        codeElem.textContent = item.snippet;
+                        pre.appendChild(codeElem);
+
+                        codeBox.appendChild(codeHeader);
+                        codeBox.appendChild(pre);
+                        card.appendChild(codeBox);
+                    }
+
+                    // Confusing / Pitfall Box
+                    if (item.confusing && item.confusing.length > 0) {
+                        const confBox = document.createElement("div");
+                        confBox.className = "confusing-box";
+
+                        const confTitle = document.createElement("div");
+                        confTitle.className = "confusing-title";
+                        confTitle.innerHTML = `<span>⚠️ 實務避坑指南 / 易混淆考點</span>`;
+                        confBox.appendChild(confTitle);
+
+                        const confList = document.createElement("ul");
+                        confList.className = "confusing-list";
+                        item.confusing.forEach(text => {
+                            const li = document.createElement("li");
+                            li.innerHTML = text;
+                            confList.appendChild(li);
+                        });
+                        confBox.appendChild(confList);
+                        card.appendChild(confBox);
+                    }
+
+                    // Visual Box
+                    if (item.visualHtml) {
+                        const visualBox = document.createElement("div");
+                        visualBox.className = "visual-diagram-box";
+                        visualBox.innerHTML = item.visualHtml;
+                        card.appendChild(visualBox);
+                    }
+
+                    // Keywords
+                    if (item.keywords && item.keywords.length > 0) {
+                        const kwRow = document.createElement("div");
+                        kwRow.className = "keywords-row";
+                        item.keywords.forEach(kw => {
+                            const span = document.createElement("span");
+                            span.className = "kw-tag";
+                            span.textContent = `#${kw}`;
+                            kwRow.appendChild(span);
+                        });
+                        card.appendChild(kwRow);
+                    }
+
+                    notesGrid.appendChild(card);
+                });
+            };
+
+            // Search Event Listener (Debounce)
+            let debounceTimer = null;
+            searchInput.addEventListener("input", (e) => {
+                searchKeyword = e.target.value.trim();
+                if (searchKeyword.length > 0) {
+                    btnClearSearch.classList.add("show");
+                } else {
+                    btnClearSearch.classList.remove("show");
+                }
+
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    renderCards();
+                }, 200);
+            });
+
+            btnClearSearch.addEventListener("click", () => {
+                searchInput.value = "";
+                searchKeyword = "";
+                btnClearSearch.classList.remove("show");
+                renderCards();
+                searchInput.focus();
+            });
+
+            // Filter Pills Event Listener
+            filterPills.forEach(pill => {
+                pill.addEventListener("click", () => {
+                    filterPills.forEach(p => p.classList.remove("active"));
+                    pill.classList.add("active");
+                    activeCategory = pill.getAttribute("data-category");
+                    renderCards();
+                });
+            });
+
+            // Initial Render
+            updateProgressUI();
+            renderCards();
+        });
+    </script>
+</body>
+</html>
